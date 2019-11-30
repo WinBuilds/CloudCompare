@@ -130,7 +130,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 
 	//second header line (should be <num_cameras> <num_points>)
 	currentLine = stream.readLine();
-	QStringList list = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+	QStringList list = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 	if (list.size() != 2)
 	{
 		ccLog::Error("[Bundler] Second line should be <num_cameras> <num_points>!");
@@ -163,12 +163,6 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 
 	//default paths
 	QString imageListFilename = QFileInfo(f).dir().absoluteFilePath("list.txt");
-
-	ccPointCloud* hackCloud = (ccPointCloud*)parameters.additionInfo;
-	if (hackCloud) {
-		if (QFileInfo(hackCloud->getName()).exists())
-			imageListFilename = hackCloud->getName();
-	}
 	QString altKeypointsFilename = QFileInfo(f).dir().absoluteFilePath("pmvs.ply");
 
 	if (parameters.alwaysDisplayLoadDialog)
@@ -180,10 +174,6 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 		biDlg.setVer(majorVer,minorVer);
 		biDlg.setImageListFilename(imageListFilename);
 		biDlg.setAltKeypointsFilename(altKeypointsFilename);
-		if (hackCloud) {
-			biDlg.keepImagesInMemoryCheckBox->setChecked(true);
-			biDlg.generateColoredDTMGroupBox->setChecked(false);
-		}
 
 		if (!biDlg.exec())
 			return CC_FERR_CANCELED_BY_USER;
@@ -254,7 +244,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 				return CC_FERR_READING;
 			if (importImages)
 			{
-				QStringList tokens = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+				QStringList tokens = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 				if (tokens.size() < 3)
 					return CC_FERR_MALFORMED_FILE;
 				bool ok[3] = {true,true,true};
@@ -274,7 +264,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 					return CC_FERR_READING;
 				if (importImages)
 				{
-					QStringList tokens = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+					QStringList tokens = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 					if (tokens.size() < 3)
 						return CC_FERR_MALFORMED_FILE;
 					bool ok[3] = {true,true,true};
@@ -298,7 +288,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 				return CC_FERR_READING;
 			if (importImages)
 			{
-				QStringList tokens = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+				QStringList tokens = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 				if (tokens.size() < 3)
 					return CC_FERR_MALFORMED_FILE;
 				bool ok[3] = {true,true,true};
@@ -366,7 +356,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 				//read point coordinates (as strings)
 				CCVector3d Pd(0,0,0);
 				{
-					QStringList tokens = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+					QStringList tokens = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 					if (tokens.size() < 3)
 					{
 						delete keypointsCloud;
@@ -419,7 +409,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 				{
 					if (hasColors)
 					{
-						QStringList tokens = currentLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+						QStringList tokens = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 						if (tokens.size() < 3)
 						{
 							delete keypointsCloud;
@@ -580,7 +570,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 	QDir imageDir = QFileInfo(f).dir(); //by default we look in the Bundler file folder
 
 	//let's try to open the images list file (if necessary)
-	QStringList imageFilenames; std::vector<std::pair<int, int>> image_width_height;
+	QStringList imageFilenames;
 	{
 		imageFilenames.clear();
 		QFile imageListFile(imageListFilename);
@@ -604,7 +594,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			if (nextLine.isEmpty())
 				break;
 
-			QStringList parts = nextLine.simplified().split(QChar(' '),QString::SkipEmptyParts);
+			QStringList parts = nextLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 			if (!parts.empty())
 			{
 				imageFilenames << parts[0];
@@ -613,9 +603,6 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			{
 				ccLog::Error(QString("[Bundler] Couldn't extract image name from line %1 in file '%2'!").arg(lineIndex).arg(imageListFilename));
 				break;
-			}
-			if (parts.size() >= 3) {				
-				image_width_height.push_back({ parts[1].toInt(), parts[2].toInt() });
 			}
 		}
 	}
@@ -650,8 +637,8 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 	/*** pre-processing steps (colored MNT computation, etc.) ***/
 
 	//for colored DTM generation
-	std::vector<int> mntColors;
-	QScopedPointer<CCLib::PointCloud> mntSamples;
+	int* mntColors = nullptr;
+	CCLib::PointCloud* mntSamples = nullptr;
 	if (generateColoredDTM)
 	{
 		QScopedPointer<ccProgressDialog> toDlg(nullptr);
@@ -685,7 +672,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 		if (dummyMesh)
 		{
 			//2nd step: samples points on resulting mesh
-			mntSamples.reset(CCLib::MeshSamplingTools::samplePointsOnMesh((CCLib::GenericMesh*)dummyMesh, coloredDTMVerticesCount));
+			mntSamples = CCLib::MeshSamplingTools::samplePointsOnMesh((CCLib::GenericMesh*)dummyMesh, coloredDTMVerticesCount);
 			if (!baseDTMMesh)
 				delete dummyMesh;
 			dummyMesh = nullptr;
@@ -694,21 +681,20 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			{
 				//3rd step: project each point in all images and get average color
 				unsigned count = mntSamples->size();
-				try
-				{
-					mntColors.resize(4 * count, 0); //R + G + B + accum count
-				}
-				catch (const std::bad_alloc&)
+				mntColors = new int[4 * count]; //R + G + B + accum count
+				if (!mntColors)
 				{
 					//not enough memory
 					ccLog::Error("Not enough memory to store DTM colors! DTM generation cancelled");
+					delete mntSamples;
+					mntSamples = nullptr;
 					generateColoredDTM = false;
 				}
+				else
+				{
+					memset(mntColors, 0, sizeof(int) * 4 * count);
+				}
 			}
-		}
-		else
-		{
-			generateColoredDTM = false;
 		}
 	}
 
@@ -736,13 +722,9 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 
 		ccImage* image = new ccImage();
 		QString errorStr;
-
-		//! don't save the image in memory
-		if (image_width_height.size() == camCount && !orthoRectifyImages && !undistortImages && !generateColoredDTM) {
-			image->loadWithWidthHeight(imageDir.absoluteFilePath(imageFilenames[i]), image_width_height[i].first, image_width_height[i].second, errorStr);
-		}
-		else if (!image->load(imageDir.absoluteFilePath(imageFilenames[i]), errorStr, true)) {
-			ccLog::Error(QString("[Bundler] %1 (image '%2')").arg(errorStr, imageFilenames[i]));
+		if (!image->load(imageDir.absoluteFilePath(imageFilenames[i]), errorStr))
+		{
+			ccLog::Error(QString("[Bundler] %1 (image '%2')").arg(errorStr,imageFilenames[i]));
 			delete image;
 			image = nullptr;
 			break;
@@ -768,30 +750,17 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 
 			//camera position/orientation
 			ccGLMatrix transf(cameras[i].trans.inverse().data());
-			if (hackCloud) {
-				transf.setTranslation(transf.getTranslationAsVec3D() + CCVector3::fromArray(hackCloud->getGlobalShift().u));
-			}
 			
 			//dist to cloud
 			PointCoordinateType dist = keypointsCloud ? (transf.getTranslationAsVec3D() - keypointsCloud->getOwnBB().getCenter()).norm() : PC_ONE;
-			if (hackCloud) {
-				dist = (transf.getTranslationAsVec3D() - hackCloud->getOwnBB().getCenter()).norm();
-			}
 			params.zFar_mm = dist;
 			params.zNear_mm = 0.001f;
 
 			sensor = new ccCameraSensor(params);
 			sensor->setName(QString("Camera #%1").arg(i + 1));
-			if (hackCloud) {
-				sensor->setName(QFileInfo(image->getName()).completeBaseName());
-			}
 			sensor->setEnabled(true);
 			sensor->setVisible(true/*false*/);
 			sensor->setGraphicScale(keypointsCloud ? keypointsCloud->getOwnBB().getDiagNorm() / 10 : PC_ONE);
-			if (hackCloud) {
-				sensor->setGraphicScale(hackCloud->getOwnBB().getDiagNorm() / 10);
-			}			
-			
 			sensor->setRigidTransformation(transf);
 
 			//distortion parameters
@@ -813,12 +782,8 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			}
 		}
 		//the image is a child of the sensor!
-		//! XYLIU don't add child
-		if (orthoRectifyImages || undistortImages || generateColoredDTM) {
-			image->setAssociatedSensor(sensor);
-			sensor->addChild(image);
-		}
-		sensor->setImagePath(image->getImagePath());
+		image->setAssociatedSensor(sensor);
+		sensor->addChild(image);
 
 		//ortho-rectification
 		if (orthoRectifyImages)
@@ -1079,14 +1044,13 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 		//DTM color 'blending'
 		if (sensor && generateColoredDTM)
 		{
-			assert(mntSamples && !mntColors.empty());
+			assert(mntSamples && mntColors);
 			unsigned sampleCount = mntSamples->size();
 			const QRgb blackValue = qRgb(0, 0, 0);
 
 			ccGLMatrix sensorMatrix = sensor->getRigidTransformation().inverse();
 
 			//back project each MNT samples in this image to get color
-			const QImage image_data = image->data();
 			for (unsigned k=0; k<sampleCount; ++k)
 			{
 				CCVector3 P = *mntSamples->getPointPersistentPtr(k);
@@ -1107,10 +1071,10 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 						int py = static_cast<int>(image->getH() / 2.0f - pprime.y);
 						if (py >= 0 && py < static_cast<int>(image->getH()))
 						{
-							QRgb rgb = image_data.pixel(px, py);
+							QRgb rgb = image->data().pixel(px, py);
 							if (qAlpha(rgb) != 0 && rgb != blackValue) //black pixels are ignored
 							{
-								int* col = mntColors.data() + 4 * k;
+								int* col = mntColors + 4 * k;
 								col[0] += qRed(rgb);
 								col[1] += qGreen(rgb);
 								col[2] += qBlue(rgb);
@@ -1131,11 +1095,6 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			delete sensor;
 			sensor = nullptr;
 		}
-		if (!orthoRectifyImages && !undistortImages && !generateColoredDTM)
-			if (image) {
-				delete image;
-				image = nullptr;
-			}
 
 		QApplication::processEvents();
 
@@ -1188,7 +1147,7 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 
 	if (generateColoredDTM)
 	{
-		assert(mntSamples && !mntColors.empty());
+		assert(mntSamples && mntColors);
 
 		if (!cancelledByUser)
 		{
@@ -1199,9 +1158,9 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 			if (mntCloud->reserve(sampleCount) && mntCloud->reserveTheRGBTable())
 			{
 				//for each point
-				unsigned realCount = 0;
-				const int* col = mntColors.data();
-				for (unsigned i = 0; i < sampleCount; ++i, col += 4)
+				unsigned realCount=0;
+				const int* col = mntColors;
+				for (unsigned i=0; i<sampleCount; ++i,col+=4)
 				{
 					if (col[3] > 0) //accum
 					{
@@ -1251,6 +1210,11 @@ CC_FILE_ERROR BundlerFilter::loadFileExtended(	const QString& filename,
 				mntCloud = nullptr;
 			}
 		}
+
+		delete mntSamples;
+		mntSamples = nullptr;
+		delete[] mntColors;
+		mntColors = nullptr;
 	}
 
 	return cancelledByUser ? CC_FERR_CANCELED_BY_USER : CC_FERR_NO_ERROR;

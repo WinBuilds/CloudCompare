@@ -49,10 +49,10 @@ public:
 	static ccPolyline* ExtractFlatContour(	CCLib::GenericIndexedCloudPersist* points,
 											bool allowMultiPass,
 											PointCoordinateType maxEdgeLength = 0,
-											const PointCoordinateType* preferredNormDim = nullptr,
-											const PointCoordinateType* preferredUpDir = nullptr,
+											const PointCoordinateType* preferredNormDim = 0,
+											const PointCoordinateType* preferredUpDir = 0,
 											ContourType contourType = FULL,
-											std::vector<unsigned>* originalPointIndexes = nullptr,
+											std::vector<unsigned>* originalPointIndexes = 0,
 											bool enableVisualDebugMode = false,
 											double maxAngleDeg = 0.0);
 
@@ -63,7 +63,6 @@ public:
 		\param allowMultiPass whether to allow multi-pass process (with longer edges potentially generated so as 'disturb' the initial guess)
 		\param maxEdgeLength max edge length (ignored if 0, in which case the contour is the convex hull)
 		\param[out] parts output polyline parts
-		\param contourType contour type (FULL by default)
 		\param allowSplitting whether the polyline can be split or not
 		\param preferredNormDim to specifiy a preferred (normal) direction for the polyline extraction
 		\param enableVisualDebugMode whether to display a (debug) window to represent the algorithm process
@@ -73,10 +72,8 @@ public:
 									bool allowMultiPass,
 									PointCoordinateType maxEdgeLength,
 									std::vector<ccPolyline*>& parts,
-									ContourType contourType = FULL,
 									bool allowSplitting = true,
-									const PointCoordinateType* preferredNormDim = nullptr,
-									const PointCoordinateType* preferredUpDir = nullptr,
+									const PointCoordinateType* preferredNormDim = 0,
 									bool enableVisualDebugMode = false);
 
 protected:

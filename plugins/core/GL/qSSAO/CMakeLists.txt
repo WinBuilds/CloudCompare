@@ -9,9 +9,8 @@ if (PLUGIN_GL_QSSAO)
     project( QSSAO_GL_PLUGIN )
     
     set( CC_SHADER_FOLDER SSAO )
-    include( ../../../CMakePluginTpl.cmake )    
+    include( ../../../CMakePluginTpl.cmake )
     
     target_link_libraries( ${PROJECT_NAME} QSSAO_RANDOMKIT_LIB )
     include_directories( ${QSSAO_RANDOMKIT_LIB_SOURCE_DIR} )
-    set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
 endif()

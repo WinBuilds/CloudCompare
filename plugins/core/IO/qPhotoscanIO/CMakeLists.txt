@@ -21,5 +21,5 @@ if (PLUGIN_IO_QPHOTOSCAN)
 	target_link_libraries(${PROJECT_NAME} ${ZLIB_LIBRARIES})
 	# quazip
 	target_link_QUAZIP(${PROJECT_NAME})
-	set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
+
 endif()

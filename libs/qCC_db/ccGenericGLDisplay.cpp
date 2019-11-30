@@ -25,7 +25,7 @@ ccViewportParameters::ccViewportParameters()
 	, zoom(1.0f)
 	, defaultPointSize(1)
 	, defaultLineWidth(1)
-	, perspectiveView(true) // XYLIU 
+	, perspectiveView(false)
 	, objectCenteredView(true)
 	, zNearCoef(0.005)
 	, zNear(0)
@@ -166,15 +166,4 @@ bool ccViewportParameters::fromFile(QFile& in, short dataVersion, int flags)
 	}
 
 	return true;
-}
-
-CCVector3d ccViewportParameters::getViewPoint()
-{
-	CCVector3d viewPoint = cameraCenter;
-	if (objectCenteredView)	{
-		CCVector3d pc = cameraCenter - pivotPoint;
-		viewMat.inverse().apply(pc);
-		viewPoint = pivotPoint + pc;
-	}
-	return viewPoint;
 }

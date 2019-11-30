@@ -30,6 +30,4 @@ if (PLUGIN_STANDARD_QHOUGH_NORMALS)
 
 	target_link_libraries( ${PROJECT_NAME} )
 	target_link_libraries( ${PROJECT_NAME} ${OPENGL_LIBRARIES} )
-
-	set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
 endif()

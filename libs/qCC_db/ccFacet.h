@@ -71,33 +71,19 @@ public:
 	**/
 	void setColor(const ccColor::Rgb& rgb);
 
-	//inherited from ccPlanarEntityInterface //! for planar entity
-	ccHObject* getPlane() override { return this; }
 	//inherited from ccPlanarEntityInterface
 	inline CCVector3 getNormal() const override { return CCVector3(m_planeEquation); }
-	//inherited from ccPlanarEntityInterface //! Returns the facet center
-	CCVector3 getCenter() const override { return m_center; }
-
-	//! Returns the equation of the plane
-	/** Equation:
-		N.P - constVal = 0
-		i.e. Nx.x + Ny.y + Nz.z - constVal = 0
-	**/
-	void getEquation(CCVector3& N, PointCoordinateType& constVal) const override;
-	
-	//inherited from ccPlanarEntityInterface
-	void notifyPlanarEntityChanged(ccGLMatrix mat) override;
 
 	//! Returns associated RMS
 	inline double getRMS() const { return m_rms; }
 	//! Returns associated surface
 	inline double getSurface() const { return m_surface; }
-	inline void setSurface(double s) { m_surface = s; }
 	//! Returns plane equation
 	inline const PointCoordinateType* getPlaneEquation() const { return m_planeEquation; }
 	//! Inverts the facet normal
 	void invertNormal();
-	
+	//! Returns the facet center
+	inline const CCVector3& getCenter() const { return m_center; }
 
 	//! Returns polygon mesh (if any)
 	inline ccMesh* getPolygon() { return m_polygonMesh; }
@@ -131,17 +117,6 @@ public:
 	//! Clones this facet
 	ccFacet* clone() const;
 
-	static ccFacet* CreateFromContour(std::vector<CCVector3> contour_points, QString name = QString(), bool polygon = false, const PointCoordinateType* planeEquation = 0);
-	bool FormByContour(std::vector<CCVector3> contour_points, bool polygon = false, const PointCoordinateType* planeEquation = 0);
-
-	inline double getFitting() const { return m_fitting; }
-	inline void setFitting(double f) { m_fitting = f; }
-	inline double getCoverage() const { return m_coverage; }
-	inline void setCoverage(double c) { m_coverage = c; }
-	inline double getConfidence() const { return m_confidence; }
-	inline void setConfidence(double c) { m_confidence = c; }
-	inline double getDistance() const { return m_distance; }
-	inline void setDistance(double c) { m_distance = c; }
 protected:
 
 	//inherited from ccDrawable
@@ -181,11 +156,6 @@ protected:
 
 	// ccHObject interface
 	void applyGLTransformation(const ccGLMatrix &trans) override;
-
-	double m_fitting;
-	double m_coverage;
-	double m_confidence;
-	double m_distance;
 };
 
 #endif //CC_FACET_PRIMITIVE_HEADER

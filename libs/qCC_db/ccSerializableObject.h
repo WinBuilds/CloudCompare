@@ -151,11 +151,10 @@ public:
 	{
 		assert(out.isOpen() && (out.openMode() & QIODevice::WriteOnly));
 
-		// XYLIU
- 		if (data.empty())
- 		{			
- 			return ccSerializableObject::MemoryError();
- 		}
+		if (data.empty())
+		{
+			return ccSerializableObject::MemoryError();
+		}
 
 		//component count (dataVersion>=20)
 		::uint8_t componentCount = static_cast<::uint8_t>(N);
@@ -205,7 +204,7 @@ public:
 			return ccSerializableObject::CorruptError();
 		}
 
-		if (elementCount) // XYLIU
+		if (elementCount)
 		{
 			//try to allocate memory
 			try

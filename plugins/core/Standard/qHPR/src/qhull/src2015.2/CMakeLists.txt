@@ -16,4 +16,3 @@ add_library( ${PROJECT_NAME} STATIC ${header_list} ${source_list} )
 
 # Add preprocessor definitions
 set_property( TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS _CRT_SECURE_NO_WARNINGS )
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 

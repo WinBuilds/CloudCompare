@@ -24,8 +24,6 @@
 #include <GeometricalAnalysisTools.h>
 #include <ManualSegmentationTools.h>
 #include <ReferenceCloud.h>
-#include "ccPlane.h"
-#include "ccHObjectCaster.h"
 
 //local
 #include "cc2DLabel.h"
@@ -1121,7 +1119,8 @@ bool ccPointCloud::reserveTheRGBTable()
 {
 	if (m_points.capacity() == 0)
 	{
-		ccLog::Warning("[ccPointCloud] Calling reserveTheRGBTable with an zero capacity cloud");
+		ccLog::Warning("[ccPointCloud::reserveTheRGBTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	if (!m_rgbColors)
@@ -1148,7 +1147,8 @@ bool ccPointCloud::resizeTheRGBTable(bool fillWithWhite/*=false*/)
 {
 	if (m_points.empty())
 	{
-		ccLog::Warning("[ccPointCloud] Calling resizeTheRGBTable with an empty cloud");
+		ccLog::Warning("[ccPointCloud::resizeTheRGBTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	if (!m_rgbColors)
@@ -1176,7 +1176,8 @@ bool ccPointCloud::reserveTheNormsTable()
 {
 	if (m_points.capacity() == 0)
 	{
-		ccLog::Warning("[ccPointCloud] Calling reserveTheNormsTable with an zero capacity cloud");
+		ccLog::Warning("[ccPointCloud::reserveTheNormsTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	if (!m_normals)
@@ -1204,7 +1205,8 @@ bool ccPointCloud::resizeTheNormsTable()
 {
 	if (m_points.empty())
 	{
-		ccLog::Warning("[ccPointCloud] Calling resizeTheNormsTable with an empty cloud");
+		ccLog::Warning("[ccPointCloud::resizeTheNormsTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	if (!m_normals)
@@ -1310,7 +1312,8 @@ bool ccPointCloud::reserveTheFWFTable()
 {
 	if (m_points.capacity() == 0)
 	{
-		ccLog::Warning("[ccPointCloud] Calling reserveTheFWFTable with a zero capacity cloud");
+		ccLog::Warning("[ccPointCloud::reserveTheFWFTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	try
@@ -1366,7 +1369,8 @@ bool ccPointCloud::resizeTheFWFTable()
 {
 	if (m_points.capacity() == 0)
 	{
-		ccLog::Warning("[ccPointCloud] Calling resizeTheFWFTable with an empty cloud");
+		ccLog::Warning("[ccPointCloud::resizeTheFWFTable] Internal error: properties (re)allocation before points allocation is forbidden!");
+		return false;
 	}
 
 	try
@@ -2342,7 +2346,7 @@ void ccPointCloud::glChunkSFPointer(const CC_DRAW_CONTEXT& context, size_t chunk
 		{
 			ccLog::Warning("[VBO] Failed to bind VBO?! We'll deactivate them then...");
 			m_vboManager.state = vboSet::FAILED;
-			//call the method again
+			//recall the method
 			glChunkSFPointer(context, chunkIndex, decimStep, false);
 		}
 	}
@@ -2558,7 +2562,7 @@ void ccPointCloud::drawMeOnly(CC_DRAW_CONTEXT& context)
 				)
 			{
 				bool skipLoD = false;
-				
+
 				//is there a LoD structure associated yet?
 				if (!m_lod || !m_lod->isBroken())
 				{
@@ -2657,15 +2661,6 @@ void ccPointCloud::drawMeOnly(CC_DRAW_CONTEXT& context)
 			colorMaterialEnabled = true;
 		}
 
-		if (isSelected() && !MACRO_DRAW_BBOX(context)) {
-			if (getChildrenNumber() > 0) {
-				ccPlane* plane = ccHObjectCaster::ToPlane(getChild(0));
-				if (plane) {
-					plane->draw(context);
-				}
-			}
-		}
-		
 		if (glParams.showColors && isColorOverriden())
 		{
 			ccGL::Color3v(glFunc, m_tempColor.rgb);
@@ -2715,9 +2710,6 @@ void ccPointCloud::drawMeOnly(CC_DRAW_CONTEXT& context)
 		if (m_pointSize != 0)
 		{
 			glFunc->glPointSize(static_cast<GLfloat>(m_pointSize));
-// 			if (isSelected()) {
-// 				glFunc->glPointSize(static_cast<GLfloat>(m_pointSize + 2));
-// 			}
 		}
 
 		//main display procedure
@@ -3501,155 +3493,99 @@ bool ccPointCloud::interpolateColorsFrom(	ccGenericPointCloud* otherCloud,
 											CCLib::GenericProgressCallback* progressCb/*=nullptr*/,
 											unsigned char octreeLevel/*=0*/)
 {
-	if (!otherCloud || otherCloud->size() == 0)
-	{
-		ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Invalid/empty input cloud!");
-		return false;
-	}
-
-	//check that both bounding boxes intersect!
-	ccBBox box = getOwnBB();
-	ccBBox otherBox = otherCloud->getOwnBB();
-
-	CCVector3 dimSum = box.getDiagVec() + otherBox.getDiagVec();
-	CCVector3 dist = box.getCenter() - otherBox.getCenter();
-	if (	fabs(dist.x) > dimSum.x / 2
-		||	fabs(dist.y) > dimSum.y / 2
-		||	fabs(dist.z) > dimSum.z / 2)
-	{
-		ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Clouds are too far from each other! Can't proceed.");
-		return false;
-	}
-
-	//compute the closest-point set of 'this cloud' relatively to 'input cloud'
-	//(to get a mapping between the resulting vertices and the input points)
-	QSharedPointer<CCLib::ReferenceCloud> CPSet = computeCPSet(*otherCloud, progressCb, octreeLevel);
-	if (!CPSet)
-	{
-		return false;
-	}
-
-	if (!resizeTheRGBTable(false))
-	{
-		ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Not enough memory!");
-		return false;
-	}
-
-	//import colors
-	unsigned CPSetSize = CPSet->size();
-	assert(CPSetSize == size());
-	for (unsigned i = 0; i < CPSetSize; ++i)
-	{
-		unsigned index = CPSet->getPointGlobalIndex(i);
-		setPointColor(i, otherCloud->getPointColor(index));
-	}
-
-	//We must update the VBOs
-	colorsHaveChanged();
-
-	return true;
+if (!otherCloud || otherCloud->size() == 0)
+{
+	ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Invalid/empty input cloud!");
+	return false;
 }
 
-static void ProjectOnCylinder(	const CCVector3& AP,
-								const Tuple3ub& dim,
-								PointCoordinateType radius,
-								PointCoordinateType& delta,
-								PointCoordinateType& phi_rad)
+//check that both bounding boxes intersect!
+ccBBox box = getOwnBB();
+ccBBox otherBox = otherCloud->getOwnBB();
+
+CCVector3 dimSum = box.getDiagVec() + otherBox.getDiagVec();
+CCVector3 dist = box.getCenter() - otherBox.getCenter();
+if (fabs(dist.x) > dimSum.x / 2
+	|| fabs(dist.y) > dimSum.y / 2
+	|| fabs(dist.z) > dimSum.z / 2)
 {
-	//2D distance to the center (XY plane)
-	PointCoordinateType APnorm_XY = sqrt(AP.u[dim.x] * AP.u[dim.x] + AP.u[dim.y] * AP.u[dim.y]);
-	//longitude (0 = +X = east)
-	phi_rad = atan2(AP.u[dim.y], AP.u[dim.x]);
-	//deviation
-	delta = APnorm_XY - radius;
+	ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Clouds are too far from each other! Can't proceed.");
+	return false;
 }
 
-static void ProjectOnCone(	const CCVector3& AP,
-							PointCoordinateType alpha_rad,
-							const Tuple3ub& dim,
-							PointCoordinateType& s,
-							PointCoordinateType& delta,
-							PointCoordinateType& phi_rad)
+//compute the closest-point set of 'this cloud' relatively to 'input cloud'
+//(to get a mapping between the resulting vertices and the input points)
+QSharedPointer<CCLib::ReferenceCloud> CPSet = computeCPSet(*otherCloud, progressCb, octreeLevel);
+if (!CPSet)
 {
-	//3D distance to the apex
-	PointCoordinateType normAP = AP.norm();
-	//2D distance to the apex (XY plane)
-	PointCoordinateType normAP_XY = sqrt(AP.u[dim.x] * AP.u[dim.x] + AP.u[dim.y] * AP.u[dim.y]);
-
-	//angle between +Z and AP
-	PointCoordinateType beta_rad = atan2(normAP_XY, -AP.u[dim.z]);
-	//angular deviation
-	PointCoordinateType gamma_rad = beta_rad - alpha_rad; //if gamma_rad > 0, the point is outside the cone
-
-	//projection on the cone
-	{
-		//longitude (0 = +X = east)
-		phi_rad = atan2(AP.u[dim.y], AP.u[dim.x]);
-		//curvilinear distance from the Apex
-		s = normAP * cos(gamma_rad);
-		//(normal) deviation
-		delta = normAP * sin(gamma_rad);
-	}
+	return false;
 }
 
-ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
-									UnrollBaseParams* params,
-									bool exportDeviationSF/*=false*/,
-									double startAngle_deg/*=0.0*/,
-									double stopAngle_deg/*=360.0*/,
-									CCLib::GenericProgressCallback* progressCb/*=nullptr*/) const
+if (!resizeTheRGBTable(false))
 {
-	if (	!params
-		||	params->axisDim > 2
-		||	startAngle_deg >= stopAngle_deg)
+	ccLog::Warning("[ccPointCloud::interpolateColorsFrom] Not enough memory!");
+	return false;
+}
+
+//import colors
+unsigned CPSetSize = CPSet->size();
+assert(CPSetSize == size());
+for (unsigned i = 0; i < CPSetSize; ++i)
+{
+	unsigned index = CPSet->getPointGlobalIndex(i);
+	setPointColor(i, otherCloud->getPointColor(index));
+}
+
+//We must update the VBOs
+colorsHaveChanged();
+
+return true;
+}
+
+ccPointCloud* ccPointCloud::unrollOnCylinder(PointCoordinateType radius,
+	unsigned char coneAxisDim,
+	CCVector3* center,
+	bool exportDeviationSF/*=false*/,
+	double startAngle_deg/*=0.0*/,
+	double stopAngle_deg/*=360.0*/,
+	CCLib::GenericProgressCallback* progressCb/*=nullptr*/) const
+{
+
+	if (startAngle_deg >= stopAngle_deg)
 	{
-		//invalid input parameters
 		assert(false);
 		return nullptr;
 	}
-
-	QString modeStr;
-	UnrollCylinderParams* cylParams = nullptr;
-	UnrollConeParams* coneParams = nullptr;
-
-	switch (mode)
+	if (coneAxisDim > 2)
 	{
-	case CYLINDER:
-		modeStr = "Cylinder";
-		cylParams = static_cast<UnrollCylinderParams*>(params);
-		break;
-	case CONE:
-		modeStr = "Cone";
-		coneParams = static_cast<UnrollConeParams*>(params);
-		break;
-	case STRAIGHTENED_CONE:
-	case STRAIGHTENED_CONE2:
-		modeStr = "Straightened cone";
-		coneParams = static_cast<UnrollConeParams*>(params);
-		break;
-	default:
 		assert(false);
 		return nullptr;
 	}
 
 	Tuple3ub dim;
-	dim.z = params->axisDim;
+	dim.z = coneAxisDim;
 	dim.x = (dim.z < 2 ? dim.z + 1 : 0);
 	dim.y = (dim.x < 2 ? dim.x + 1 : 0);
 
 	unsigned numberOfPoints = size();
+
 	CCLib::NormalizedProgress nprogress(progressCb, numberOfPoints);
 	if (progressCb)
 	{
 		if (progressCb->textCanBeEdited())
 		{
-			progressCb->setMethodTitle(qPrintable(QString("Unroll (%1)").arg(modeStr)));
+			progressCb->setMethodTitle("Unroll (cylinder)");
 			progressCb->setInfo(qPrintable(QString("Number of points = %1").arg(numberOfPoints)));
 		}
 		progressCb->update(0);
 		progressCb->start();
 	}
 
+	//ccPointCloud* clone = const_cast<ccPointCloud*>(this)->cloneThis(0, true);
+	//if (!clone)
+	//{
+	//	return 0;
+	//}
 	CCLib::ReferenceCloud duplicatedPoints(const_cast<ccPointCloud*>(this));
 	std::vector<CCVector3> unrolledPoints;
 	{
@@ -3672,19 +3608,10 @@ ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
 		}
 	}
 
-	std::vector<ScalarType> deviationValues;
-	if (exportDeviationSF)
-	try
-	{
-		deviationValues.resize(size());
-	}
-	catch (const std::bad_alloc&)
-	{
-		//not enough memory
-		return nullptr;
-	}
-
+	
 	std::vector<CCVector3> unrolledNormals;
+	std::vector<ScalarType> deviationValues;
+
 	bool withNormals = hasNormals();
 	if (withNormals)
 	{
@@ -3693,6 +3620,7 @@ ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
 		try
 		{
 			unrolledNormals.resize(size());
+			deviationValues.resize(size());
 		}
 		catch (const std::bad_alloc&)
 		{
@@ -3701,164 +3629,67 @@ ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
 		}
 	}
 	
+	//compute cylinder center (if none was provided)
+	CCVector3 C;
+	if (!center)
+	{
+		C = const_cast<ccPointCloud*>(this)->getOwnBB().getCenter();
+		center = &C;
+	}
+
 	double startAngle_rad = startAngle_deg * CC_DEG_TO_RAD;
 	double stopAngle_rad = stopAngle_deg * CC_DEG_TO_RAD;
-
-	PointCoordinateType alpha_rad = 0, sin_alpha = 0;
-	if (mode != CYLINDER)
-	{
-		alpha_rad = coneParams->coneAngle_deg * CC_DEG_TO_RAD;
-		sin_alpha = static_cast<PointCoordinateType>(sin(alpha_rad));
-	}
 
 	for (unsigned i = 0; i < numberOfPoints; i++)
 	{
 		const CCVector3* Pin = getPoint(i);
+		
+		CCVector3 CP = *Pin - *center;
+
+		PointCoordinateType u = sqrt(CP.u[dim.x] * CP.u[dim.x] + CP.u[dim.y] * CP.u[dim.y]);
+		double longitude_rad = atan2(static_cast<double>(CP.u[dim.x]), static_cast<double>(CP.u[dim.y]));
 
 		//we project the point
-		CCVector3 AP, Pout;
-		PointCoordinateType longitude_rad = 0; //longitude (rad)
-		PointCoordinateType delta = 0; //distance to the cone/cylinder surface
-		PointCoordinateType coneAbscissa = 0;
+		CCVector3 Pout;
+		//Pout.u[dim.x] = longitude_rad * radius;
+		Pout.u[dim.y] = u - radius;
+		Pout.u[dim.z] = Pin->u[dim.z];
 
-		switch (mode)
-		{
-		case CYLINDER:
-		{
-			AP = *Pin - cylParams->center;
-			ProjectOnCylinder(AP, dim, params->radius, delta, longitude_rad);
-
-			//we project the point
-			//Pout.u[dim.x] = longitude_rad * radius;
-			Pout.u[dim.y] = -delta;
-			Pout.u[dim.z] = Pin->u[dim.z];
-		}
-		break;
-
-		case STRAIGHTENED_CONE:
-		{
-			AP = *Pin - coneParams->apex;
-			ProjectOnCone(AP, alpha_rad, dim, coneAbscissa, delta, longitude_rad);
-			//we simply develop the cone as a cylinder
-			//Pout.u[dim.x] = phi_rad * params->radius;
-			Pout.u[dim.y] = -delta;
-			//Pout.u[dim.z] = Pin->u[dim.z];
-			Pout.u[dim.z] = coneParams->apex.u[dim.z] - coneAbscissa;
-		}
-		break;
-
-		case STRAIGHTENED_CONE2:
-		{
-			AP = *Pin - coneParams->apex;
-			ProjectOnCone(AP, alpha_rad, dim, coneAbscissa, delta, longitude_rad);
-			//we simply develop the cone as a cylinder
-			//Pout.u[dim.x] = phi_rad * coneAbscissa * sin_alpha;
-			Pout.u[dim.y] = -delta;
-			//Pout.u[dim.z] = Pin->u[dim.z];
-			Pout.u[dim.z] = coneParams->apex.u[dim.z] - coneAbscissa;
-		}
-		break;
-
-		case CONE:
-		{
-			AP = *Pin - coneParams->apex;
-			ProjectOnCone(AP, alpha_rad, dim, coneAbscissa, delta, longitude_rad);
-			//unrolling
-			PointCoordinateType theta_rad = longitude_rad * sin_alpha; //sin_alpha is a bit arbitrary here. The aim is mostly to reduce the angular range
-			//project the point
-			Pout.u[dim.y] = -coneAbscissa * cos(theta_rad);
-			Pout.u[dim.x] =  coneAbscissa * sin(theta_rad);
-			Pout.u[dim.z] = delta;
-		}
-		break;
-
-		default:
-			assert(false);
-		}
-		
 		// first unroll its normal if necessary
 		if (withNormals)
 		{
 			const CCVector3& N = getPointNormal(i);
-			CCVector3 AP2 = AP + N;
+
+			PointCoordinateType px = CP.u[dim.x] + N.u[dim.x];
+			PointCoordinateType py = CP.u[dim.y] + N.u[dim.y];
+			PointCoordinateType nu = sqrt(px*px + py*py);
+			double nLongitude_rad = atan2(static_cast<double>(px), static_cast<double>(py));
+
 			CCVector3 N2;
-
-			switch (mode)
-			{
-			case CYLINDER:
-			{
-				PointCoordinateType delta2, longitude2_rad;
-				ProjectOnCylinder(AP2, dim, params->radius, delta2, longitude2_rad);
-
-				N2.u[dim.x] = static_cast<PointCoordinateType>((longitude2_rad - longitude_rad) * params->radius);
-				N2.u[dim.y] = -(delta2 - delta);
-				N2.u[dim.z] = N.u[dim.z];
-			}
-			break;
-
-			case STRAIGHTENED_CONE:
-			{
-				PointCoordinateType coneAbscissa2, delta2, longitude2_rad;
-				ProjectOnCone(AP2, alpha_rad, dim, coneAbscissa2, delta2, longitude2_rad);
-				//we simply develop the cone as a cylinder
-				N2.u[dim.x] = static_cast<PointCoordinateType>((longitude2_rad - longitude_rad) * params->radius);
-				N2.u[dim.y] = -(delta2 - delta);
-				N2.u[dim.z] = coneAbscissa - coneAbscissa2;
-			}
-			break;
-
-			case STRAIGHTENED_CONE2:
-			{
-				PointCoordinateType coneAbscissa2, delta2, longitude2_rad;
-				ProjectOnCone(AP2, alpha_rad, dim, coneAbscissa2, delta2, longitude2_rad);
-				//we simply develop the cone as a cylinder
-				N2.u[dim.x] = static_cast<PointCoordinateType>((longitude2_rad * coneAbscissa - longitude_rad * coneAbscissa2) * sin_alpha);
-				N2.u[dim.y] = -(delta2 - delta);
-				N2.u[dim.z] = coneAbscissa - coneAbscissa2;
-			}
-			break;
-
-			case CONE:
-			{
-				PointCoordinateType coneAbscissa2, delta2, longitude2_rad;
-				ProjectOnCone(AP2, alpha_rad, dim, coneAbscissa2, delta2, longitude2_rad);
-				//unrolling
-				PointCoordinateType theta2_rad = longitude2_rad * sin_alpha; //sin_alpha is a bit arbitrary here. The aim is mostly to reduce the angular range
-				//project the point
-				CCVector3 P2out;
-				P2out.u[dim.x] =  coneAbscissa2 * sin(theta2_rad);
-				P2out.u[dim.y] = -coneAbscissa2 * cos(theta2_rad);
-				P2out.u[dim.z] = delta2;
-				N2 = P2out - Pout;
-			}
-			break;
-
-			default:
-				assert(false);
-				break;
-			}
-
+			N2.u[dim.x] = static_cast<PointCoordinateType>((nLongitude_rad - longitude_rad) * radius);
+			N2.u[dim.y] = nu - u;
+			N2.u[dim.z] = N.u[dim.z];
 			N2.normalize();
 			unrolledNormals[i] = N2;
+			//clone->setPointNormal(i, N2);
 		}
 
 		//then compute the deviation (if necessary)
 		if (exportDeviationSF)
 		{
-			deviationValues[i] = static_cast<ScalarType>(delta);
+			deviationValues[i] = static_cast<ScalarType>(Pout.u[dim.y]);
 		}
 
 		//then repeat the unrolling process for the coordinates
-		//1) position the 'point' at the beginning of the angular range
-		double dLongitude_rad = longitude_rad;
-		while (dLongitude_rad >= startAngle_rad)
+		//1) poition the 'point' at the beginning of the angular range
+		while (longitude_rad >= startAngle_rad)
 		{
-			dLongitude_rad -= 2 * M_PI;
+			longitude_rad -= 2 * M_PI;
 		}
-		dLongitude_rad += 2 * M_PI;
+		longitude_rad += 2 * M_PI;
 
 		//2) repeat the unrolling process
-		for (; dLongitude_rad < stopAngle_rad; dLongitude_rad += 2 * M_PI)
+		for (; longitude_rad < stopAngle_rad; longitude_rad += 2 * M_PI)
 		{
 			//do we need to reserve more memory?
 			if (duplicatedPoints.size() == duplicatedPoints.capacity())
@@ -3882,26 +3713,7 @@ ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
 			}
 
 			//add the point
-			switch (mode)
-			{
-			case CYLINDER:
-			case STRAIGHTENED_CONE:
-				Pout.u[dim.x] = dLongitude_rad * params->radius;
-				break;
-			case STRAIGHTENED_CONE2:
-				Pout.u[dim.x] = dLongitude_rad * coneAbscissa * sin_alpha;
-				break;
-
-			case CONE:
-				Pout.u[dim.x] =  coneAbscissa * sin(dLongitude_rad);
-				Pout.u[dim.y] = -coneAbscissa * cos(dLongitude_rad);
-				//Pout = coneParams->apex + Pout; //nope, this projection is arbitrary and should be centered on (0, 0, 0)
-				break;
-
-			default:
-				assert(false);
-			}
-
+			Pout.u[dim.x] = longitude_rad * radius;
 			unrolledPoints.push_back(Pout);
 			duplicatedPoints.addPointIndex(i);
 		}
@@ -3972,6 +3784,192 @@ ccPointCloud* ccPointCloud::unroll(	UnrollMode mode,
 	return clone;
 }
 
+static void ProjectOnCone(	const CCVector3& P,
+							const CCVector3& coneApex,
+							PointCoordinateType alpha_rad,
+							const Tuple3ub& dim,
+							PointCoordinateType& s,
+							PointCoordinateType& delta,
+							PointCoordinateType& phi_rad)
+{
+	CCVector3 AP = P - coneApex;
+	//3D distance to the apex
+	PointCoordinateType normAP = AP.norm();
+	//2D distance to the apex (XY plane)
+	PointCoordinateType u = sqrt(AP.u[dim.x] * AP.u[dim.x] + AP.u[dim.y] * AP.u[dim.y]);
+
+	//angle between +Z and AP
+	PointCoordinateType beta_rad = atan2(u, -AP.u[dim.z]);
+	//angular deviation
+	PointCoordinateType gamma_rad = beta_rad - alpha_rad; //if gamma_rad > 0, the point is outside the cone
+
+	//projection on the cone
+	{
+		//longitude (0 = +X = east)
+		phi_rad = atan2(AP.u[dim.y], AP.u[dim.x]);
+		//curvilinear distance from the Apex
+		s = normAP * cos(gamma_rad);
+		//(normal) deviation
+		delta = normAP * sin(gamma_rad);
+	}
+}
+
+ccPointCloud* ccPointCloud::unrollOnCone(	double coneAngle_deg,
+											const CCVector3& coneApex,
+											unsigned char coneAxisDim,
+											bool developStraightenedCone,
+											PointCoordinateType baseRadius,
+											bool exportDeviationSF/*=false*/,
+											CCLib::GenericProgressCallback* progressCb/*=nullptr*/) const
+{
+	if (coneAxisDim > 2)
+	{
+		assert(false);
+		return nullptr;
+	}
+
+	Tuple3ub dim;
+	dim.z = coneAxisDim;
+	dim.x = (dim.z < 2 ? dim.z + 1 : 0);
+	dim.y = (dim.x < 2 ? dim.x + 1 : 0);
+
+	unsigned numberOfPoints = size();
+
+	CCLib::NormalizedProgress nprogress(progressCb, numberOfPoints);
+	if (progressCb)
+	{
+		if (progressCb->textCanBeEdited())
+		{
+			progressCb->setMethodTitle("Unroll (cone)");
+			progressCb->setInfo(qPrintable(QString("Number of points = %1").arg(numberOfPoints)));
+		}
+		progressCb->update(0);
+		progressCb->start();
+	}
+
+	ccPointCloud* clone = const_cast<ccPointCloud*>(this)->cloneThis(nullptr, true);
+	if (!clone)
+	{
+		return nullptr;
+	}
+
+	CCLib::ScalarField* deviationSF = nullptr;
+	if (exportDeviationSF)
+	{
+		int sfIdx = clone->getScalarFieldIndexByName(s_deviationSFName);
+		if (sfIdx < 0)
+		{
+			sfIdx = clone->addScalarField(s_deviationSFName);
+			if (sfIdx < 0)
+			{
+				ccLog::Warning("[unrollOnCone] Not enough memory to init the deviation scalar field");
+			}
+		}
+		if (sfIdx >= 0)
+		{
+			deviationSF = clone->getScalarField(sfIdx);
+		}
+		clone->setCurrentDisplayedScalarField(sfIdx);
+		clone->showSF(true);
+	}
+	
+	PointCoordinateType alpha_rad = coneAngle_deg * CC_DEG_TO_RAD;
+	PointCoordinateType sin_alpha = static_cast<PointCoordinateType>( sin(alpha_rad) );
+
+	for (unsigned i = 0; i < numberOfPoints; i++)
+	{
+		const CCVector3* Pin = getPoint(i);
+
+		PointCoordinateType s, delta, phi_rad;
+		ProjectOnCone(*Pin, coneApex, alpha_rad, dim, s, delta, phi_rad);
+
+		if (deviationSF)
+		{
+			deviationSF->setValue(i, delta);
+		}
+
+		CCVector3 Pout;
+		if (developStraightenedCone)
+		{
+			//we simply develop the cone as a cylinder
+			Pout.u[dim.x] = (baseRadius + delta) * cos(phi_rad);
+			Pout.u[dim.y] = (baseRadius + delta) * sin(phi_rad);
+			Pout.u[dim.z] = coneApex.u[dim.z] - s;
+		}
+		else
+		{
+			//unrolling
+			PointCoordinateType theta_rad = phi_rad * sin_alpha;
+
+			//project the point
+			Pout.u[dim.y] = -s * cos(theta_rad);
+			Pout.u[dim.x] =  s * sin(theta_rad);
+			Pout.u[dim.z] = delta;
+		}
+
+		//replace the point in the destination cloud
+		*clone->point(i) = Pout;
+
+		//and its normal if necessary
+		if (clone->hasNormals())
+		{
+			const CCVector3& N = clone->getPointNormal(i);
+
+			PointCoordinateType s2, delta2, phi2_rad;
+			ProjectOnCone(*Pin + N, coneApex, alpha_rad, dim, s2, delta2, phi2_rad);
+
+			CCVector3 P2out;
+			if (developStraightenedCone)
+			{
+				//we simply develop the cone as a cylinder
+				P2out.u[dim.x] = (baseRadius + delta2) * cos(phi2_rad);
+				P2out.u[dim.y] = (baseRadius + delta2) * sin(phi2_rad);
+				P2out.u[dim.z] = coneApex.u[dim.z] - s2;
+			}
+			else
+			{
+				//unrolling
+				PointCoordinateType theta2_rad = phi2_rad * sin_alpha;
+
+				//project the point
+				P2out.u[dim.y] = -s2 * cos(theta2_rad);
+				P2out.u[dim.x] =  s2 * sin(theta2_rad);
+				P2out.u[dim.z] = delta2;
+			}
+
+			CCVector3 N2 = P2out - Pout;
+			N2.normalize();
+
+			clone->setPointNormal(i, N2);
+		}
+
+		//process canceled by user?
+		if (progressCb && !nprogress.oneStep())
+		{
+			delete clone;
+			clone = nullptr;
+			break;
+		}
+	}
+
+	if (progressCb)
+	{
+		progressCb->stop();
+	}
+
+	if (clone)
+	{
+		if (deviationSF)
+		{
+			deviationSF->computeMinAndMax();
+		}
+
+		clone->setName(getName() + ".unrolled");
+		clone->refreshBB(); //calls notifyGeometryUpdate + releaseVBOs
+	}
+
+	return clone;
+}
 
 //void ccPointCloud::unrollOnCone(PointCoordinateType baseRadius,
 //	double alpha_deg,
@@ -4795,7 +4793,7 @@ bool ccPointCloud::updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams
 #ifndef DONT_LOAD_NORMALS_IN_VBOS
 		if ( glParams.showNorms && !m_vboManager.hasNormals )
 		{
-			m_vboManager.updateFlags |= vboSet::UPDATE_NORMALS;
+			updateFlags |= UPDATE_NORMALS;
 		}
 #endif
 		//nothing to do?
@@ -4846,9 +4844,9 @@ bool ccPointCloud::updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams
 		assert(!glParams.showSF		|| m_currentDisplayedScalarField);
 		assert(!glParams.showColors	|| m_rgbColors);
 #ifndef DONT_LOAD_NORMALS_IN_VBOS
-		assert(!glParams.showNorms	|| (m_normals && ccChunk::Count(*m_normals) >= chunksCount));
+		assert(!glParams.showNorms	|| (m_normals && m_normals->chunksCount() >= chunksCount));
 #endif
-		
+
 		m_vboManager.hasColors  = glParams.showSF || glParams.showColors;
 		m_vboManager.colorIsSF  = glParams.showSF;
 		m_vboManager.sourceSF   = glParams.showSF ? m_currentDisplayedScalarField : nullptr;
@@ -4871,7 +4869,7 @@ bool ccPointCloud::updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams
 			}
 
 			//allocate memory for current VBO
-			int vboSizeBytes = m_vboManager.vbos[i]->init(chunkSize, m_vboManager.hasColors, m_vboManager.hasNormals, false, &reallocated);
+			int vboSizeBytes = m_vboManager.vbos[i]->init(chunkSize, m_vboManager.hasColors, m_vboManager.hasNormals, &reallocated);
 
 			QOpenGLFunctions_2_1* glFunc = context.glFunctions<QOpenGLFunctions_2_1>(); 
 			if (glFunc)
@@ -4929,10 +4927,10 @@ bool ccPointCloud::updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams
 				}
 #ifndef DONT_LOAD_NORMALS_IN_VBOS
 				//load normals
-				if (glParams.showNorms && (chunkUpdateFlags & vboSet::UPDATE_NORMALS))
+				if (glParams.showNorms && (chunkUpdateFlags & UPDATE_NORMALS))
 				{
 					//we must decode the normals first!
-					CompressedNormType* inNorms = ccChunk::Start(*m_normals, i); //m_normals->chunkStartPtr(i);
+					CompressedNormType* inNorms = m_normals->chunkStartPtr(i);
 					PointCoordinateType* outNorms = s_normalBuffer;
 					for (int j=0; j<chunkSize; ++j)
 					{
@@ -5006,7 +5004,7 @@ bool ccPointCloud::updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams
 	return true;
 }
 
-int VBO::init(int count, bool withColors, bool withNormals, bool withTex, bool* reallocated/*=0*/)
+int ccPointCloud::VBO::init(int count, bool withColors, bool withNormals, bool* reallocated/*=0*/)
 {
 	//required memory
 	int totalSizeBytes = sizeof(PointCoordinateType) * count * 3;
@@ -5019,10 +5017,6 @@ int VBO::init(int count, bool withColors, bool withNormals, bool withTex, bool* 
 	{
 		normalShift = totalSizeBytes;
 		totalSizeBytes += sizeof(PointCoordinateType) * count * 3;
-	}
-	if (withTex) {
-		texShift = totalSizeBytes;
-		totalSizeBytes += sizeof(PointCoordinateType) * count * 2;
 	}
 
 	if (!isCreated())
@@ -5039,7 +5033,7 @@ int VBO::init(int count, bool withColors, bool withNormals, bool withTex, bool* 
 
 	if (!bind())
 	{
-		ccLog::Warning("[VBO::init] Failed to bind VBO to active context!");
+		ccLog::Warning("[ccPointCloud::VBO::init] Failed to bind VBO to active context!");
 		destroy();
 		return -1;
 	}
@@ -5052,7 +5046,7 @@ int VBO::init(int count, bool withColors, bool withNormals, bool withTex, bool* 
 
 		if (size() != totalSizeBytes)
 		{
-			ccLog::Warning("[VBO::init] Not enough (GPU) memory!");
+			ccLog::Warning("[ccPointCloud::VBO::init] Not enough (GPU) memory!");
 			release();
 			destroy();
 			return -1;
@@ -5920,39 +5914,4 @@ bool ccPointCloud::exportCoordToSF(bool exportDims[3])
 	}
 
 	return true;
-}
-
-std::vector<CCVector3> ccPointCloud::getTheVisiblePointsHUll(ccGLCameraParameters camParas) const
-{
-	std::vector<CCLib::PointProjectionTools::IndexedCCVector2> points2D;
-	
-	for (size_t i = 0; i < m_points.size(); i++)
-	{		
-		CCVector3d p2d;
-		if (camParas.project(m_points[i], p2d, true)) {
-			points2D.emplace_back(p2d.x, p2d.y, i);
-		}
-	}
-	
-	std::list<CCLib::PointProjectionTools::IndexedCCVector2*> hullPoints;
-	CCLib::PointProjectionTools::extractConvexHull2D(points2D, hullPoints);
-	std::vector<CCVector3> hulls;
-	for (auto pt : hullPoints) {
-		hulls.push_back(*getPoint((*pt).index));
-	// 		(*profile).push_back(*(cloud->getPoint((*pt).index)));
-	}
-	return hulls;
-}
-ccBBox ccPointCloud::getTheVisiblePointsBBox(ccGLCameraParameters camParas) const
-{
-	ccBBox box;
-	std::vector<CCLib::PointProjectionTools::IndexedCCVector2> points2D;
-
-	for (size_t i = 0; i < m_points.size(); i++)
-	{
-		CCVector3d p2d;
-		if (camParas.project(m_points[i], p2d, true))
-			box.add(m_points[i]);
-	}
-	return box;
 }

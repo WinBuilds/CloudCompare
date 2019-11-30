@@ -77,15 +77,16 @@ class QCPBars;
 
 /*! \file */
 
-
-// decl definitions for shared library compilation/usage:
-#if defined(QCUSTOMPLOT_COMPILE_LIBRARY)
+#ifndef BUILD_STATIC
+# if defined(QCUSTOMPLOT_EXPORTS)
 #  define QCP_LIB_DECL Q_DECL_EXPORT
-#elif defined(QCUSTOMPLOT_USE_LIBRARY)
+# else
 #  define QCP_LIB_DECL Q_DECL_IMPORT
+# endif
 #else
-#  define QCP_LIB_DECL
+# define QCP_LIB_DECL
 #endif
+
 
 /*!
   The QCP Namespace contains general enums and QFlags used throughout the QCustomPlot library

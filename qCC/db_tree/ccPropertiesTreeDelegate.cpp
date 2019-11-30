@@ -54,12 +54,6 @@
 #include <ccSensor.h>
 #include <ccSphere.h>
 #include <ccSubMesh.h>
-#include "StBlock.h"
-#include "StBlockGroup.h"
-#include "StBuilding.h"
-#include "StFootPrint.h"
-#include "StModel.h"
-#include "StPrimGroup.h"
 
 //Qt
 #include <QAbstractItemView>
@@ -74,14 +68,8 @@
 #include <QStandardItemModel>
 #include <QToolButton>
 
-#ifdef USE_STOCKER
-#include "stocker_parser.h"
-#endif // USE_STOCKER
-
 //System
 #include <cassert>
-
-#define VALID_MINUS_INT -999999
 
 // Default 'None' string
 const char* ccPropertiesTreeDelegate::s_noneString = QT_TR_NOOP( "None" );
@@ -159,12 +147,7 @@ QSize ccPropertiesTreeDelegate::sizeHint(const QStyleOptionViewItem& option, con
 		case OBJECT_OCTREE_TYPE:
 		case OBJECT_COLOR_RAMP_STEPS:
 		case OBJECT_CLOUD_POINT_SIZE:
-		case OBJECT_FACET_CONFIDENCE:
-		case OBJECT_FOOTPRINT_BOTTOM:
-		case OBJECT_FOOTPRINT_TOP:
-		case OBJECT_BLOCK_TOP:
-		case OBJECT_BLOCK_BOTTOM:
-			return QSize(30, 24);
+			return QSize(50, 24);
 		case OBJECT_COLOR_SOURCE:
 		case OBJECT_POLYLINE_WIDTH:
 		case OBJECT_CURRENT_COLOR_RAMP:
@@ -216,33 +199,11 @@ void ccPropertiesTreeDelegate::fillModel(ccHObject* hObject)
 	{
 		if (!m_currentObject->isA(CC_TYPES::VIEWPORT_2D_LABEL)) //don't need to display this kind of info for viewport labels!
 		{
-			fillWithDatabase(m_currentObject);
+			fillWithHObject(m_currentObject);
 		}
 	}
-
-	if (m_currentObject->isA(CC_TYPES::ST_PROJECT) && m_currentObject->getDBSourceType() == CC_TYPES::DB_IMAGE) {		
-		fiilWithCameraGroup(m_currentObject);
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_FOOTPRINT)) {
-		fillWithStFootPrint(ccHObjectCaster::ToStFootPrint(m_currentObject));
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_BLOCK)) {
-		fillWithStBlock(ccHObjectCaster::ToStBlock(m_currentObject));
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_BLOCKGROUP)) {
-		fillWithStBlockGroup(ccHObjectCaster::ToStBlockGroup(m_currentObject));
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_BUILDING)) {
-		fillWithStBuilding(ccHObjectCaster::ToStBuilding(m_currentObject));
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_MODEL)) {
-		fillWithStModel(ccHObjectCaster::ToStModel(m_currentObject));
-	}
-	else if (m_currentObject->isA(CC_TYPES::ST_PRIMGROUP)) {
-		fillWithStPrimGroup(ccHObjectCaster::ToStPrimGroup(m_currentObject));
-	}
-
-	else if (m_currentObject->isKindOf(CC_TYPES::POINT_CLOUD))
+	
+	if (m_currentObject->isKindOf(CC_TYPES::POINT_CLOUD))
 	{
 		fillWithPointCloud(ccHObjectCaster::ToGenericPointCloud(m_currentObject));
 	}
@@ -314,14 +275,6 @@ void ccPropertiesTreeDelegate::fillModel(ccHObject* hObject)
 	else if (m_currentObject->isA(CC_TYPES::TRANS_BUFFER))
 	{
 		fillWithTransBuffer(static_cast<ccIndexedTransformationBuffer*>(m_currentObject));
-	}
-
-	if (m_currentObject->isHierarchy())
-	{
-		if (!m_currentObject->isA(CC_TYPES::VIEWPORT_2D_LABEL)) //don't need to display this kind of info for viewport labels!
-		{
-			fillWithHObject(m_currentObject);
-		}
 	}
 
 	//transformation history
@@ -438,27 +391,18 @@ void ccPropertiesTreeDelegate::fillWithMetaData(const ccObject* _obj)
 	}
 }
 
-void ccPropertiesTreeDelegate::fillWithDatabase(ccHObject * _obj)
-{
-	assert(_obj && m_model);
-
-	addSeparator(tr("Database"));
-
-	//name
-	appendRow(ITEM(tr("Name")), ITEM(_obj->getName(), Qt::ItemIsEditable, OBJECT_NAME));
-	appendRow(ITEM(tr("Path")), ITEM(_obj->getPath()));
-	appendRow(ITEM(tr("DBSource")), ITEM(QString::number(int(_obj->getDBSourceType()))));
-}
-
 void ccPropertiesTreeDelegate::fillWithHObject(ccHObject* _obj)
 {
 	assert(_obj && m_model);
 
-	addSeparator( tr( "General" ) );//CC Object
+	addSeparator( tr( "CC Object" ) );
+
+	//name
+	appendRow(ITEM( tr( "Name" ) ), ITEM(_obj->getName(), Qt::ItemIsEditable, OBJECT_NAME));
 
 	//visibility
 	if (!_obj->isVisiblityLocked())
-		appendRow(ITEM(tr("Visible")), CHECKABLE_ITEM(_obj->isVisible(), OBJECT_VISIBILITY));
+		appendRow(ITEM( tr( "Visible" ) ), CHECKABLE_ITEM(_obj->isVisible(), OBJECT_VISIBILITY));
 
 	//normals
 	if (_obj->hasNormals())
@@ -672,18 +616,6 @@ void ccPropertiesTreeDelegate::fillWithFacet(const ccFacet* _obj)
 	//RMS
 	appendRow(ITEM( tr( "RMS" ) ), ITEM(QLocale(QLocale::English).toString(_obj->getRMS())));
 
-	//data fitting
-	appendRow(ITEM(tr("Fitting")), ITEM(QLocale(QLocale::English).toString(_obj->getFitting())));
-
-	//data coverage
-	appendRow(ITEM(tr("Coverage")), ITEM(QLocale(QLocale::English).toString(_obj->getCoverage())));
-
-	//confidence
-	appendRow(ITEM(tr("Confidence")), PERSISTENT_EDITOR(OBJECT_FACET_CONFIDENCE), true);
-
-	//distance
-	appendRow(ITEM(tr("Distance")), ITEM(QLocale(QLocale::English).toString(_obj->getDistance())));
-
 	//center
 	appendRow(ITEM( tr( "Center" ) ), ITEM(QStringLiteral("(%1 ; %2 ; %3)").arg(_obj->getCenter().x).arg(_obj->getCenter().y).arg(_obj->getCenter().z)));
 
@@ -880,8 +812,6 @@ void ccPropertiesTreeDelegate::fillWithViewportObject(const cc2DViewportObject* 
 	//"Update Viewport" button
 	appendRow(ITEM( tr( "Update viewport" ) ), PERSISTENT_EDITOR(OBJECT_UPDATE_LABEL_VIEWPORT), true);
 	
-	addSeparator(tr("Position/Orientation"));
-	appendWideRow(PERSISTENT_EDITOR(OBJECT_SENSOR_MATRIX_EDITOR));
 }
 
 void ccPropertiesTreeDelegate::fillWithTransBuffer(const ccIndexedTransformationBuffer* _obj)
@@ -997,14 +927,13 @@ void ccPropertiesTreeDelegate::fillWithCameraSensor(const ccCameraSensor* _obj)
 	appendRow(ITEM( tr( "Field of view" ) ), ITEM(QString::number(params.vFOV_rad * CC_RAD_TO_DEG) + " deg."));
 
 	//Skewness
-	appendRow(ITEM( tr( "Skew" ) ), ITEM(QString::number(params.skew)));	
+	appendRow(ITEM( tr( "Skew" ) ), ITEM(QString::number(params.skew)));
 
-	addSeparator(tr("Frustum display"));
+	addSeparator( tr( "Frustum display" ) );
 
 	//Draw frustum
-	appendRow(ITEM(tr("Show frustum and plane")), CHECKABLE_ITEM(_obj->frustumIsDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM));
-	appendRow(ITEM(tr("Show side frame")), CHECKABLE_ITEM(_obj->frustumPlanesAreDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM_PLANES));
-	appendRow(ITEM(tr("Show image")), CHECKABLE_ITEM(_obj->imageIsDrawn(), OBJECT_SENSOR_DRAW_IMAGE));
+	appendRow(ITEM( tr( "Show lines" ) ), CHECKABLE_ITEM(_obj->frustumIsDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM));
+	appendRow(ITEM( tr( "Show side planes" ) ), CHECKABLE_ITEM(_obj->frustumPlanesAreDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM_PLANES));
 
 	//Positions
 	fillWithSensor(_obj);
@@ -1034,7 +963,7 @@ void ccPropertiesTreeDelegate::fillWithShareable(const CCShareable* _obj)
 	appendRow(ITEM( tr( "Shared" ) ), ITEM(linkCount < 3 ? tr("No") : tr("Yes (%1)").arg(linkCount - 1)));
 }
 
-template<class Type, int N, class ComponentType>
+template<typename Type, int N, typename ComponentType>
 void ccPropertiesTreeDelegate::fillWithCCArray(const ccArray<Type, N, ComponentType>* _obj)
 {
 	assert(_obj && m_model);
@@ -1441,87 +1370,6 @@ QWidget* ccPropertiesTreeDelegate::createEditor(QWidget *parent,
 		outputWidget = comboBox;
 	}
 	break;
-	case OBJECT_FACET_CONFIDENCE:
-	{
-		QDoubleSpinBox *spinBox = new QDoubleSpinBox(parent);
-		spinBox->setRange(-DBL_MAX, DBL_MAX);
-		spinBox->setSingleStep(1);
-
-		connect(spinBox, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-			this, &ccPropertiesTreeDelegate::facetConfidenceChanged);
-
-		outputWidget = spinBox;
-	}
-	break;
-	case OBJECT_FOOTPRINT_BOTTOM:
-	{
-		QDoubleSpinBox *spinBox = new QDoubleSpinBox(parent);
-		spinBox->setRange(-DBL_MAX, DBL_MAX);
-		spinBox->setSingleStep(0.1);
-
- 		connect(spinBox, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
- 			this, &ccPropertiesTreeDelegate::footprintBottomChanged);
-
-		outputWidget = spinBox;
-	}
-	break;
-	case OBJECT_FOOTPRINT_TOP:
-	{
-		QDoubleSpinBox *spinBox = new QDoubleSpinBox(parent);
-		spinBox->setRange(-DBL_MAX, DBL_MAX);
-		spinBox->setSingleStep(0.1);
-
-		connect(spinBox, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-			this, &ccPropertiesTreeDelegate::footprintTopChanged);
-
-		outputWidget = spinBox;
-	}
-	break;
-	case OBJECT_APPLY_FOOTPRINT_PLANES:
-	{
-		StFootPrint* fp = ccHObjectCaster::ToStFootPrint(m_currentObject);
-		assert(fp);
-		QString button_name = tr("Apply ") + QString::number(fp->getPlaneNames().size());
-		QPushButton* button = new QPushButton(button_name, parent);
-		connect(button, &QAbstractButton::clicked, this, &ccPropertiesTreeDelegate::applyFootprintPlanes);
-
-		button->setMinimumHeight(30);
-		outputWidget = button;
-	}
-	break;
-	case OBJECT_UPDATE_FOOTPRINT_PLANES:
-	{
-		QPushButton* button = new QPushButton(tr("Update"), parent);
-		connect(button, &QAbstractButton::clicked, this, &ccPropertiesTreeDelegate::updateFootprintPlanes);
-
-		button->setMinimumHeight(30);
-		outputWidget = button;
-	}
-	break;
-	case OBJECT_BLOCK_TOP:
-	{
-		QDoubleSpinBox *spinBox = new QDoubleSpinBox(parent);
-		spinBox->setRange(-DBL_MAX, DBL_MAX);
-		spinBox->setSingleStep(0.1);
-
-		connect(spinBox, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-			this, &ccPropertiesTreeDelegate::BlockTopChanged);
-
-		outputWidget = spinBox;
-	}
-	break;
-	case OBJECT_BLOCK_BOTTOM:
-	{
-		QDoubleSpinBox *spinBox = new QDoubleSpinBox(parent);
-		spinBox->setRange(-DBL_MAX, DBL_MAX);
-		spinBox->setSingleStep(0.1);
-
-		connect(spinBox, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-			this, &ccPropertiesTreeDelegate::BlockBottomChanged);
-
-		outputWidget = spinBox;
-	}
-	break;
 	default:
 		return QStyledItemDelegate::createEditor(parent, option, index);
 	}
@@ -1701,32 +1549,19 @@ void ccPropertiesTreeDelegate::setEditorData(QWidget *editor, const QModelIndex 
 		if (!mdd)
 			return;
 
-		if (m_currentObject->isKindOf(CC_TYPES::SENSOR)) {
-			ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject);
-			assert(sensor);
+		ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject);
+		assert(sensor);
 
-			ccIndexedTransformation trans;
-			if (sensor->getActiveAbsoluteTransformation(trans))
-			{
-				mdd->fillDialogWith(trans);
-			}
-			else
-			{
-				mdd->clear();
-				mdd->setEnabled(false);
-			}
+		ccIndexedTransformation trans;
+		if (sensor->getActiveAbsoluteTransformation(trans))
+		{
+			mdd->fillDialogWith(trans);
 		}
-		else if (m_currentObject->isKindOf(CC_TYPES::VIEWPORT_2D_OBJECT)) {
-			cc2DViewportObject* v = ccHObjectCaster::To2DViewportObject(m_currentObject);
-			if (v) {
-				ccViewportParameters params = v->getParameters();
-				ccGLMatrixd mat = params.viewMat;
-				CCVector3d tra = params.getViewPoint();
-				mat.setTranslation(tra);
-				mdd->fillDialogWith(mat);
-			}
+		else
+		{
+			mdd->clear();
+			mdd->setEnabled(false);
 		}
-		
 		break;
 	}
 	case TREE_VIEW_HEADER:
@@ -1817,17 +1652,6 @@ void ccPropertiesTreeDelegate::setEditorData(QWidget *editor, const QModelIndex 
 	}
 	case OBJECT_SENSOR_DISPLAY_SCALE:
 	{
-		if (isImageProject(m_currentObject)) {
-			for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-				ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject->getChild(i));
-				if (sensor) {
-					SetDoubleSpinBoxValue(editor, sensor->getGraphicScale());
-					break;
-				}
-			}
-			break;
-		}
-
 		ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject);
 		assert(sensor);
 		SetDoubleSpinBoxValue(editor, sensor ? sensor->getGraphicScale() : 0.0);
@@ -1873,41 +1697,6 @@ void ccPropertiesTreeDelegate::setEditorData(QWidget *editor, const QModelIndex 
 		SetComboBoxIndex(editor, currentIndex);
 		break;
 	}
-	case OBJECT_FACET_CONFIDENCE:
-	{
-		ccFacet* facet = ccHObjectCaster::ToFacet(m_currentObject);
-		assert(facet);
-		SetDoubleSpinBoxValue(editor, facet ? facet->getConfidence() : VALID_MINUS_INT);
-	}
-	break;
-	case OBJECT_FOOTPRINT_BOTTOM:
-	{
-		StFootPrint* footprint = ccHObjectCaster::ToStFootPrint(m_currentObject);
-		assert(footprint);
-		SetDoubleSpinBoxValue(editor, footprint ? footprint->getBottom() : VALID_MINUS_INT);
-	}
-	break;
-	case OBJECT_FOOTPRINT_TOP:
-	{
-		StFootPrint* footprint = ccHObjectCaster::ToStFootPrint(m_currentObject);
-		assert(footprint);
-		SetDoubleSpinBoxValue(editor, footprint ? footprint->getHighest() : VALID_MINUS_INT);
-	}
-	break;
-	case OBJECT_BLOCK_TOP:
-	{
-		StBlock* block = ccHObjectCaster::ToStBlock(m_currentObject);
-		assert(block); 
-		SetDoubleSpinBoxValue(editor, block ? block->getTopHeight() : VALID_MINUS_INT);
-	}
-	break;
-	case OBJECT_BLOCK_BOTTOM:
-	{
-		StBlock* block = ccHObjectCaster::ToStBlock(m_currentObject);
-		assert(block);
-		SetDoubleSpinBoxValue(editor, block ? block->getBottomHeight() : VALID_MINUS_INT);
-	}
-	break;
 	default:
 		QStyledItemDelegate::setEditorData(editor, index);
 		break;
@@ -1997,18 +1786,9 @@ void ccPropertiesTreeDelegate::updateItem(QStandardItem * item)
 	break;
 	case OBJECT_MESH_STIPPLING:
 	{
-		ccHObject::Container mesh_container;
-		if (m_currentObject->isKindOf(CC_TYPES::MESH)) {
-			mesh_container.push_back(m_currentObject);
-		}
-		else {
-			m_currentObject->filterChildren(mesh_container, true, CC_TYPES::MESH, false, m_currentObject->getDisplay());
-		}
-		for (auto m : mesh_container) {
-			ccGenericMesh* mesh = ccHObjectCaster::ToGenericMesh(m);
-			if (mesh)
-				mesh->enableStippling(item->checkState() == Qt::Checked);
-		}
+		ccGenericMesh* mesh = ccHObjectCaster::ToGenericMesh(m_currentObject);
+		assert(mesh);
+		mesh->enableStippling(item->checkState() == Qt::Checked);
 	}
 	redraw = true;
 	break;
@@ -2050,118 +1830,15 @@ void ccPropertiesTreeDelegate::updateItem(QStandardItem * item)
 	break;
 	case OBJECT_SENSOR_DRAW_FRUSTUM:
 	{
-		if (isImageProject(m_currentObject)) {
-			for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-				ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-				if (sensor) {
-					sensor->drawFrustum(item->checkState() == Qt::Checked);
-				}
-			}
-		}
-		else {
-			ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
-			if (sensor) {
-				sensor->drawFrustum(item->checkState() == Qt::Checked);
-				sensor->drawNearPlane(item->checkState() == Qt::Checked);
-				sensor->drawBaseAxis(item->checkState() == Qt::Checked);
-			}
-		}
-	}
-	redraw = true;
-	break;
-	case OBJECT_SENSOR_DRAW_FRUSTUM_FRAME:
-	{
-		if (isImageProject(m_currentObject)) {
-			for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-				ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-				if (sensor) {
-					sensor->drawNearPlane(item->checkState() == Qt::Checked);
-				}
-			}
-		}
-		else {
-			ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
-			if (sensor) sensor->drawNearPlane(item->checkState() == Qt::Checked);
-		}
+		ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
+		sensor->drawFrustum(item->checkState() == Qt::Checked);
 	}
 	redraw = true;
 	break;
 	case OBJECT_SENSOR_DRAW_FRUSTUM_PLANES:
 	{
-		if (isImageProject(m_currentObject)) {
-			for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-				ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-				if (sensor) {
-					sensor->drawFrustumPlanes(item->checkState() == Qt::Checked);
-				}
-			}
-		}
-		else {
-			ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
-			if (sensor)	{
-				sensor->drawFrustumPlanes(item->checkState() == Qt::Checked);
-			}
-		}
-	}
-	redraw = true;
-	break;
-	case OBJECT_SENSOR_DRAW_IMAGE:
-	{
-		if (isImageProject(m_currentObject)) {
-			if (item->checkState() != Qt::Checked) {
-				for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-					ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-					if (sensor) sensor->drawImage(false);
-				}
-			}
-			else {
-				bool need_thumb_load = false;
-				std::vector<ccCameraSensor*> sens;
-				for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-					ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-					if (!sensor) continue;
-					if (sensor->getImage(false).isNull()) {
-						need_thumb_load = true;
-						sens.push_back(sensor);
-					}
-					else 
-						sensor->drawImage(true);
-				}
-				//! load image	
-				ProgStartNorm_("get image thumb", sens.size())
-				for (ccCameraSensor* cam : sens) {
-					if (!cam->getImage(true, false).isNull())
-						cam->drawImage(true);
-					ProgStep()
-				}
-				ProgEnd
-			}			
-		}
-		else {
-			ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
-			if (sensor)	{
-				sensor->drawImage(item->checkState() == Qt::Checked);
-			}
-		}
-	}
-	redraw = true;
-	break;
-	case OBJECT_SENSOR_DRAW_BASEAXIS:
-	{
-		if (isImageProject(m_currentObject)) {
-			for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-				ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject->getChild(i));
-				if (sensor) {
-					sensor->drawBaseAxis(item->checkState() == Qt::Checked);
-				}
-			}
-		}
-		else {
-			ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
-			if (sensor)	{
-				sensor->drawBaseAxis(item->checkState() == Qt::Checked);
-			}			
-		}
+		ccCameraSensor* sensor = ccHObjectCaster::ToCameraSensor(m_currentObject);
+		sensor->drawFrustumPlanes(item->checkState() == Qt::Checked);
 	}
 	redraw = true;
 	break;
@@ -2519,9 +2196,8 @@ void ccPropertiesTreeDelegate::updateLabelViewport()
 	ccGLWindow* win = MainWindow::GetActiveGLWindow();
 	if (!win)
 		return;
-	
+
 	viewport->setParameters(win->getViewportParameters());
-	updateModel();
 	ccLog::Print(QString("Viewport '%1' has been updated").arg(viewport->getName()));
 }
 
@@ -2552,19 +2228,8 @@ void ccPropertiesTreeDelegate::sensorScaleChanged(double val)
 	if (!m_currentObject)
 		return;
 
-	if (isImageProject(m_currentObject)) {
-		for (size_t i = 0; i < m_currentObject->getChildrenNumber(); i++) {
-			ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject->getChild(i));
-			if (sensor && sensor->getGraphicScale() != static_cast<PointCoordinateType>(val)) {
-				sensor->setGraphicScale(static_cast<PointCoordinateType>(val));
-				updateDisplay();
-			}
-		}
-		return;
-	}
-
 	ccSensor* sensor = ccHObjectCaster::ToSensor(m_currentObject);
-	assert(sensor);	if (!sensor) { return; }
+	assert(sensor);
 
 	if (sensor && sensor->getGraphicScale() != static_cast<PointCoordinateType>(val))
 	{
@@ -2699,211 +2364,4 @@ void ccPropertiesTreeDelegate::colorSourceChanged(const QString & source)
 	{
 		updateDisplay();
 	}
-}
-
-void ccPropertiesTreeDelegate::footprintBottomChanged(double pos)
-{
-	if (!m_currentObject)
-		return;
-
-	StFootPrint* polyline = ccHObjectCaster::ToStFootPrint(m_currentObject);
-	assert(polyline);
-	polyline->setBottom(pos);
-	updateDisplay();
-}
-
-void ccPropertiesTreeDelegate::footprintTopChanged(double pos)
-{
-	if (!m_currentObject)
-		return;
-
-	StFootPrint* polyline = ccHObjectCaster::ToStFootPrint(m_currentObject);
-	assert(polyline);
-	polyline->setHighest(pos);
-	updateDisplay();
-}
-
-void ccPropertiesTreeDelegate::applyFootprintPlanes()
-{
-	if (!m_currentObject)
-		return;
-
-	StFootPrint* fp = ccHObjectCaster::ToStFootPrint(m_currentObject);
-	assert(fp);
-
-	//! get block group
-	BDBaseHObject* baseObj = GetRootBDBase(fp); if (!baseObj) return;
-	ccHObject* building = GetParentBuilding(fp); if (!building) return;
-	StPrimGroup* prim_group = baseObj->GetPrimitiveGroup(building->getName()); if (!prim_group) return;
-	
-	prim_group->filterByName(fp->getPlaneNames()); 
-	prim_group->prepareDisplayForRefresh_recursive();
-	updateDisplay();
-}
-
-void ccPropertiesTreeDelegate::updateFootprintPlanes()
-{
-	if (!m_currentObject)
-		return;
-
-	StFootPrint* fp = ccHObjectCaster::ToStFootPrint(m_currentObject);
-	assert(fp);
-
-	//! get block group
-	BDBaseHObject* baseObj = GetRootBDBase(fp); if (!baseObj) return;
-	ccHObject* building = GetParentBuilding(fp); if (!building) return;
-	StPrimGroup* prim_group = baseObj->GetPrimitiveGroup(building->getName()); if (!prim_group) return;
-
-	ccHObject::Container planes = prim_group->getValidPlanes();
-	QStringList names;
-
-	//! update highest and lowest z
-	stocker::Contour3d cur_all_points;
-	for (ccHObject* pl : planes) {
-		names.append(GetPlaneCloud(pl)->getName());
-
-		stocker::Contour3d cur_points = GetPointsFromCloud3d(pl->getParent());
-		cur_all_points.insert(cur_all_points.end(), cur_points.begin(), cur_points.end());
-	}
-	Concurrency::parallel_sort(cur_all_points.begin(), cur_all_points.end(), [&](stocker::Vec3d l, stocker::Vec3d r) {return l.Z() < r.Z(); });
-	double top_height = cur_all_points.back().Z();
-	double bottom_height = cur_all_points.front().Z();
-
-	fp->setHighest(top_height);
-	fp->setLowest(bottom_height);
-	fp->setPlaneNames(names);
-	updateModel();
-}
-
-void ccPropertiesTreeDelegate::BlockTopChanged(double pos)
-{
-	if (!m_currentObject)
-		return;
-
-	StBlock* block = ccHObjectCaster::ToStBlock(m_currentObject);
-	assert(block);
-	block->setTopHeight(pos);
-	updateDisplay();
-}
-
-void ccPropertiesTreeDelegate::BlockBottomChanged(double pos)
-{
-	if (!m_currentObject)
-		return;
-
-	StBlock* block = ccHObjectCaster::ToStBlock(m_currentObject);
-	assert(block);
-	block->setBottomHeight(pos);
-	updateDisplay();
-}
-
-void ccPropertiesTreeDelegate::facetConfidenceChanged(double pos)
-{
-	if (!m_currentObject)
-		return;
-
-	ccFacet* facet = ccHObjectCaster::ToFacet(m_currentObject);
-	assert(facet);
-	facet->setConfidence(pos);
-}
-
-void ccPropertiesTreeDelegate::fillWithStBlock(const StBlock *_obj)
-{
-	assert(_obj && m_model);
-	addSeparator(tr("Block"));
-
-	//top height add 
-	appendRow(ITEM(tr("Top height")), PERSISTENT_EDITOR(OBJECT_BLOCK_TOP), true);
-
-	//bottom height add
-	appendRow(ITEM(tr("Bottom height")), PERSISTENT_EDITOR(OBJECT_BLOCK_BOTTOM), true);
-
-	appendRow(ITEM(tr("Stippling")), CHECKABLE_ITEM(false, OBJECT_MESH_STIPPLING));
-}
-
-void ccPropertiesTreeDelegate::fillWithStBlockGroup(const StBlockGroup *_obj)
-{
-	assert(_obj && m_model);
-	addSeparator(tr("Blocks"));
-	//footprint number
-	//block number
-	appendRow(ITEM(tr("Stippling")), CHECKABLE_ITEM(false, OBJECT_MESH_STIPPLING));
-}
-
-void ccPropertiesTreeDelegate::fillWithStBuilding(const StBuilding *_obj)
-{
-	assert(_obj && m_model);
-	addSeparator(tr("Building"));
-	
-	BDBaseHObject* baseObj = _obj->getParent()->isA(CC_TYPES::ST_PROJECT) ? static_cast<BDBaseHObject*>(_obj->getParent()) : 0;
-	if (baseObj) {
-		auto bd = baseObj->GetBuildingUnit(_obj->getName().toStdString());
-		//path
-		appendRow(ITEM(tr("Path")), ITEM(QString(bd.file_path.ori_points.c_str())));
-		//average spacing
-		appendRow(ITEM(tr("Average Spacing")), ITEM(QLocale(QLocale::English).toString(bd.average_spacing)));
-		//ground height
-		appendRow(ITEM(tr("Ground Height")), ITEM(QLocale(QLocale::English).toString(bd.ground_height)));
-		//image list
-		appendRow(ITEM(tr("Image List")), ITEM(QLocale(QLocale::English).toString(bd.image_list.size())));
-	}
-}
-
-void ccPropertiesTreeDelegate::fillWithStFootPrint(const StFootPrint *_obj)
-{
-	assert(_obj && m_model);
-	addSeparator(tr("FootPrint"));
-
-	//footprint TOP height
-	//appendRow(ITEM(tr("top height")), PERSISTENT_EDITOR(OBJECT_FOOTPRINT_TOP), true);
-
-	//footprint bottom height
-	appendRow(ITEM(tr("bottom height")), PERSISTENT_EDITOR(OBJECT_FOOTPRINT_BOTTOM), true);
-
-	//"Apply planes" button
-	appendRow(ITEM(tr("Apply planes")), PERSISTENT_EDITOR(OBJECT_APPLY_FOOTPRINT_PLANES), true);
-
-	//"Update planes" button
-	appendRow(ITEM(tr("Update planes")), PERSISTENT_EDITOR(OBJECT_UPDATE_FOOTPRINT_PLANES), true);
-
-	appendRow(ITEM(tr("Stippling")), CHECKABLE_ITEM(false, OBJECT_MESH_STIPPLING));
-
-
-	fillWithPolyline(_obj);
-}
-
-void ccPropertiesTreeDelegate::fillWithStModel(const StModel *_obj)
-{
-	assert(_obj && m_model);
-	addSeparator(tr("Model"));
-	// lod
-	appendRow(ITEM(tr("Stippling")), CHECKABLE_ITEM(false, OBJECT_MESH_STIPPLING));
-}
-
-void ccPropertiesTreeDelegate::fillWithStPrimGroup(const StPrimGroup *_obj)
-{
-	assert(_obj && m_model);
-
-	//Sensor drawing scale
-	addSeparator(tr("Primitive Display"));
-	appendRow(ITEM(tr("Stippling")), CHECKABLE_ITEM(false, OBJECT_MESH_STIPPLING));
-}
-
-void ccPropertiesTreeDelegate::fiilWithCameraGroup(const ccHObject *_obj)
-{
-	assert(_obj && m_model);
-
-	//Sensor drawing scale
-	addSeparator(tr("Cameras Display"));
-	appendRow(ITEM(tr("Drawing scale")), PERSISTENT_EDITOR(OBJECT_SENSOR_DISPLAY_SCALE), true);
-	ccHObject::Container camera_children;
-	_obj->filterChildren(camera_children, false, CC_TYPES::CAMERA_SENSOR, true, _obj->getDisplay());
-	if (camera_children.empty()) return;
-	ccCameraSensor* first_cam = ccHObjectCaster::ToCameraSensor(camera_children.front());
-	//Draw frustum
-	appendRow(ITEM(tr("Show image")), CHECKABLE_ITEM(first_cam->imageIsDrawn(), OBJECT_SENSOR_DRAW_IMAGE));
-	appendRow(ITEM(tr("Show frustum")), CHECKABLE_ITEM(first_cam->frustumIsDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM));
-	appendRow(ITEM(tr("Show near plane")), CHECKABLE_ITEM(first_cam->nearPlaneIsDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM_FRAME));
-	appendRow(ITEM(tr("Show side frame")), CHECKABLE_ITEM(first_cam->frustumPlanesAreDrawn(), OBJECT_SENSOR_DRAW_FRUSTUM_PLANES));
-	appendRow(ITEM(tr("Show base and axis")), CHECKABLE_ITEM(first_cam->baseAxisIsDrawn(), OBJECT_SENSOR_DRAW_BASEAXIS));
 }

@@ -21,10 +21,14 @@
 
 #include <QtCore/QtGlobal>
 
+#ifdef BUILD_STATIC
+#  define QCC_IO_LIB_API
+#else
 #if defined( QCC_IO_LIBRARY_BUILD )
 #  define QCC_IO_LIB_API Q_DECL_EXPORT
 #else
 #  define QCC_IO_LIB_API Q_DECL_IMPORT
+#endif
 #endif
 
 #endif //CC_IO_HEADER

@@ -9,9 +9,6 @@ if ( WIN32 )
         cmake_policy(SET CMP0020 OLD)
         set( POLICY_LIST "${POLICY_LIST} CMP0020" )
     endif()
-
-    cmake_policy(SET CMP0071 NEW)
-    set( POLICY_LIST "${POLICY_LIST} CMP0071" )
 endif()
 
 if ( POLICY_LIST )

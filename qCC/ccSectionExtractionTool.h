@@ -21,7 +21,6 @@
 //Local
 #include "ccContourExtractor.h"
 #include "ccOverlayDialog.h"
-#include "StFootPrint.h"
 
 //qCC_db
 #include <ccHObject.h>
@@ -56,14 +55,11 @@ public:
 	
 	//! Removes all registered entities (clouds & polylines)
 	void removeAllEntities();
-		
+	
 	//inherited from ccOverlayDialog
 	bool linkWith(ccGLWindow* win) override;
 	bool start() override;
 	void stop(bool accepted) override;
-
-	void setExtractMode(bool extract_section = true);
-	void SetDestAndGround(ccHObject* dest, double ground);
 
 protected:
 
@@ -82,8 +78,6 @@ protected:
 	void extractPoints();
 	void unfoldPoints();
 	void exportSections();
-	void exportFootprintInside();
-	void exportFootprintOutside();
 
 	//! To capture overridden shortcuts (pause button, etc.)
 	void onShortcutTriggered(int);
@@ -237,9 +231,6 @@ private: //members
 
 	//! Global clouds bounding-box
 	ccBBox m_cloudsBox;
-
-	double m_ground;
-	ccHObject* m_dest_obj;
 };
 
 #endif //CC_SECTION_EXTRACTION_TOOL_HEADER

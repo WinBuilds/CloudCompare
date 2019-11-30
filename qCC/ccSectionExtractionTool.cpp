@@ -51,11 +51,6 @@
 #include <cassert>
 #include <cmath>
 
-#ifdef USE_STOCKER
-#include "stocker_parser.h"
-#endif // USE_STOCKER
-
-
 //default parameters
 static const ccColor::Rgb& s_defaultPolylineColor = ccColor::magenta;
 static const ccColor::Rgb& s_defaultContourColor = ccColor::green;
@@ -72,9 +67,6 @@ static unsigned s_cloudExportGroupID = 0;
 
 //default arrow size
 static const PointCoordinateType s_defaultArrowSize = 20;
-
-// database
-static CC_TYPES::DB_SOURCE s_dbSource;
 
 ccSectionExtractionTool::ccSectionExtractionTool(QWidget* parent)
 	: ccOverlayDialog(parent)
@@ -104,10 +96,6 @@ ccSectionExtractionTool::ccSectionExtractionTool(QWidget* parent)
 	addOverridenShortcut(Qt::Key_Delete); //delete key to delete the selected polyline
 
 	connect(this, &ccOverlayDialog::shortcutTriggered, this, &ccSectionExtractionTool::onShortcutTriggered);
-	connect(m_UI->saveFootprintInsidetoolButton, &QAbstractButton::clicked, this, &ccSectionExtractionTool::exportFootprintInside);
-	connect(m_UI->saveFootprintOutsidetoolButton, &QAbstractButton::clicked, this, &ccSectionExtractionTool::exportFootprintOutside);
-
-	setExtractMode(true);
 }
 
 ccSectionExtractionTool::~ccSectionExtractionTool()
@@ -404,38 +392,6 @@ void ccSectionExtractionTool::removeAllEntities()
 	m_cloudsBox.clear();
 }
 
-void ccSectionExtractionTool::setExtractMode(bool extract_section)
-{
-	if (extract_section) {
-		m_UI->generateOrthoSectionsToolButton->setVisible(true);
-		m_UI->extractPointsToolButton->setVisible(true);
-		m_UI->unfoldToolButton->setVisible(true);
-		m_UI->exportSectionsToolButton->setVisible(true);
-		m_UI->saveFootprintInsidetoolButton->setVisible(false);
-		m_UI->saveFootprintOutsidetoolButton->setVisible(false);
-		m_UI->label->setVisible(true);
-		m_UI->vertAxisComboBox->setVisible(true);
-		setFixedWidth(360);
-	}
-	else {
-		m_UI->generateOrthoSectionsToolButton->setVisible(false);
-		m_UI->extractPointsToolButton->setVisible(false);
-		m_UI->unfoldToolButton->setVisible(false);
-		m_UI->exportSectionsToolButton->setVisible(false);
-		m_UI->saveFootprintInsidetoolButton->setVisible(true);
-		m_UI->saveFootprintOutsidetoolButton->setVisible(true);
-		m_UI->label->setVisible(false);
-		m_UI->vertAxisComboBox->setVisible(false);
-		setFixedWidth(210);
-	}
-}
-
-void ccSectionExtractionTool::SetDestAndGround(ccHObject * dest, double ground)
-{
-	m_dest_obj = dest;
-	m_ground = ground;
-}
-
 void ccSectionExtractionTool::undo()
 {
 	if (m_undoCount.empty())
@@ -551,7 +507,6 @@ void ccSectionExtractionTool::stop(bool accepted)
 		m_editedPoly = nullptr;
 	}
 	m_editedPolyVertices = nullptr;
-	if (m_dest_obj) m_dest_obj = nullptr;
 
 	enableSectionEditingMode(false);
 	reset(true);
@@ -709,9 +664,6 @@ bool ccSectionExtractionTool::addCloud(ccGenericPointCloud* inputCloud, bool alr
 	}
 
 	m_clouds.push_back(Cloud(inputCloud, alreadyInDB));
-
-	s_dbSource = inputCloud->getDBSourceType();
-
 	if (m_associatedWin)
 	{
 		inputCloud->setDisplay(m_associatedWin);
@@ -862,14 +814,6 @@ void ccSectionExtractionTool::closePolyLine(int, int)
 	{
 		//remove last point!
 		m_editedPoly->resize(vertCount - 1); //can't fail --> smaller
-		CCVector3* end_point = const_cast<CCVector3*>(m_editedPolyVertices->getPoint(vertCount - 2));
-		CCVector3* start_point = const_cast<CCVector3*>(m_editedPolyVertices->getPoint(0));
-		if (((*start_point) - (*end_point)).norm2() < 10) {
-			*end_point = *start_point;
-//			m_editedPoly->setPointIndex(vertCount - 2, 0);
-			m_editedPoly->resize(vertCount - 2);
-			m_editedPoly->setClosed(true);
-		}
 
 		//remove polyline from the 'temporary' world
 		if (m_associatedWin)
@@ -889,10 +833,8 @@ void ccSectionExtractionTool::closePolyLine(int, int)
 		}
 		m_editedPoly = nullptr;
 		m_editedPolyVertices = nullptr;
-
-		enableSectionEditingMode(false); return;	//XYLIU stop now 
 	}
-	
+
 	//stop
 	m_state &= (~RUNNING);
 
@@ -983,7 +925,7 @@ void ccSectionExtractionTool::doImportPolylinesFromDB()
 	if (!mainWindow)
 		return;
 
-	ccHObject* root = mainWindow->dbRootObject(s_dbSource);
+	ccHObject* root = mainWindow->dbRootObject();
 	ccHObject::Container polylines;
 	if (root)
 	{
@@ -1099,7 +1041,7 @@ void ccSectionExtractionTool::generateOrthoSections()
 				destEntity->addChild(m_selectedPoly->entity);
 				m_selectedPoly->isInDB = true;
 				m_selectedPoly->entity->setDisplay_recursive(destEntity->getDisplay());
-				MainWindow::TheInstance()->addToDB(m_selectedPoly->entity, s_dbSource, false, false);
+				MainWindow::TheInstance()->addToDB(m_selectedPoly->entity, false, false);
 			}
 			//and remove
 			deleteSelectedPolyline();
@@ -1212,7 +1154,7 @@ void ccSectionExtractionTool::generateOrthoSections()
 ccHObject* ccSectionExtractionTool::getExportGroup(unsigned& defaultGroupID, const QString& defaultName)
 {
 	MainWindow* mainWin = MainWindow::TheInstance();
-	ccHObject* root = mainWin ? mainWin->dbRootObject(s_dbSource) : nullptr;
+	ccHObject* root = mainWin ? mainWin->dbRootObject() : nullptr;
 	if (!root)
 	{
 		ccLog::Warning("Internal error (no MainWindow or DB?!)");
@@ -1233,7 +1175,7 @@ ccHObject* ccSectionExtractionTool::getExportGroup(unsigned& defaultGroupID, con
 				break;
 			}
 		}
-		mainWin->addToDB(destEntity, s_dbSource);
+		mainWin->addToDB(destEntity);
 		defaultGroupID = destEntity->getUniqueID();
 	}
 	return destEntity;
@@ -1273,7 +1215,7 @@ void ccSectionExtractionTool::exportSections()
 			destEntity->addChild(section.entity);
 			section.isInDB = true;
 			section.entity->setDisplay_recursive(destEntity->getDisplay());
-			mainWin->addToDB(section.entity, s_dbSource, false, false);
+			mainWin->addToDB(section.entity, false, false);
 		}
 	}
 
@@ -1414,7 +1356,7 @@ bool ccSectionExtractionTool::extractSectionContour(const ccPolyline* originalSe
 			//add to main DB
 			destEntity->addChild(contourPart);
 			contourPart->setDisplay_recursive(destEntity->getDisplay());
-			MainWindow::TheInstance()->addToDB(contourPart, s_dbSource, false, false);
+			MainWindow::TheInstance()->addToDB(contourPart, false, false);
 		}
 
 		contourGenerated = true;
@@ -1498,7 +1440,7 @@ bool ccSectionExtractionTool::extractSectionCloud(const std::vector<CCLib::Refer
 
 		//add to main DB
 		destEntity->addChild(sectionCloud);
-		MainWindow::TheInstance()->addToDB(sectionCloud, s_dbSource, false, false);
+		MainWindow::TheInstance()->addToDB(sectionCloud, false, false);
 
 		cloudGenerated = true;
 	}
@@ -1756,7 +1698,7 @@ void ccSectionExtractionTool::unfoldPoints()
 
 			unfoldedCloud->shrinkToFit();
 			unfoldedCloud->setDisplay(pc.originalDisplay);
-			MainWindow::TheInstance()->addToDB(unfoldedCloud, s_dbSource);
+			MainWindow::TheInstance()->addToDB(unfoldedCloud);
 
 			++exportedClouds;
 		}
@@ -2158,182 +2100,4 @@ void ccSectionExtractionTool::extractPoints()
 	{
 		ccLog::Print(QString("[ccSectionExtractionTool] Job done (%1 contour(s) and %2 cloud(s) were generated)").arg(generatedContours).arg(generatedClouds));
 	}
-}
-
-void ccSectionExtractionTool::exportFootprintInside()
-{
-	if (m_sections.empty())
-		return;
-
-	//we only export 'temporary' objects
-	unsigned exportCount = 0;
-	{
-		for (SectionPool::iterator it = m_sections.begin(); it != m_sections.end(); ++it)
-		{
-			Section& section = *it;
-			if (section.entity && !section.isInDB)
-				++exportCount;
-		}
-	}
-
-	if (!exportCount)
-	{
-		//nothing to do
-		ccLog::Warning("[ccSectionExtractionTool] All active sections are already in DB");
-		return;
-	}
-
-	MainWindow* mainWin = MainWindow::TheInstance();
-	
-	if (!m_dest_obj) {
-		return;
-	}
-
-	//export entities
-	{
-		for (SectionPool::iterator it = m_sections.begin(); it != m_sections.end(); ++it)
-		{
-			Section& section = *it;
-			if (section.entity && !section.isInDB) {
-				StFootPrint* duplicatePoly = new StFootPrint(0);
-				ccPointCloud* duplicateVertices = 0;
-
-				int biggest_number = GetMaxNumberExcludeChildPrefix(m_dest_obj, BDDB_FOOTPRINT_PREFIX);
-				QString cur_name = BDDB_FOOTPRINT_PREFIX + QString::number(biggest_number + 1);
-				if (duplicatePoly->initWith(duplicateVertices, *section.entity))
-				{
-					duplicatePoly->setAssociatedCloud(duplicateVertices);
-					assert(duplicateVertices);
-					stocker::Contour2d stocker_points;
-					for (unsigned i = 0; i < duplicateVertices->size(); ++i) {
-						stocker_points.push_back(stocker::parse_xy(*duplicateVertices->getPoint(i)));
-					}
-					if (!stocker::IsCounterClockWise(stocker_points)) {
-						if (duplicatePoly->reverseVertexOrder()) {
-							duplicatePoly->setHoleState(false);
-						}
-						else return;
-					}
-
-					//duplicateVertices->invalidateBoundingBox();
-					duplicateVertices->setEnabled(false);
-					duplicatePoly->set2DMode(false);
-					duplicatePoly->setDisplay_recursive(m_dest_obj->getDisplay());
-					duplicatePoly->setName(cur_name);
-					duplicatePoly->setGlobalScale(section.entity->getGlobalScale());
-					duplicatePoly->setGlobalShift(section.entity->getGlobalShift());
-					duplicatePoly->setBottom(m_ground);
-					duplicatePoly->setLowest(m_ground);
-
-					double highest = (m_cloudsBox.isValid()) ? m_cloudsBox.maxCorner()[2] : m_ground;
-					duplicatePoly->setHighest(highest);
-					duplicatePoly->setHeight(highest);
-						
-					section.entity = duplicatePoly;
-				}
-				else {
-					delete duplicatePoly;
-					duplicatePoly = 0;
-
-					ccLog::Error("Not enough memory to export polyline!");
-					return;
-				}
-				
-				section.isInDB = true;
-				m_dest_obj->addChild(duplicatePoly);
-				mainWin->addToDB(duplicatePoly, s_dbSource, false, false);
-			}
-		}
-	}
-
-	ccLog::Print(QString("[FootPrint Extraction] %1 footprints exported").arg(exportCount));
-}
-
-void ccSectionExtractionTool::exportFootprintOutside()
-{
-	if (m_sections.empty())
-		return;
-
-	//we only export 'temporary' objects
-	unsigned exportCount = 0;
-	{
-		for (SectionPool::iterator it = m_sections.begin(); it != m_sections.end(); ++it)
-		{
-			Section& section = *it;
-			if (section.entity && !section.isInDB)
-				++exportCount;
-		}
-	}
-
-	if (!exportCount)
-	{
-		//nothing to do
-		ccLog::Warning("[ccSectionExtractionTool] All active sections are already in DB");
-		return;
-	}
-
-	MainWindow* mainWin = MainWindow::TheInstance();
-
-	if (!m_dest_obj) {
-		return;
-	}
-
-	//export entites
-	{
-		for (SectionPool::iterator it = m_sections.begin(); it != m_sections.end(); ++it)
-		{
-			Section& section = *it;
-			if (section.entity && !section.isInDB) {
-				StFootPrint* duplicatePoly = new StFootPrint(0);
-				ccPointCloud* duplicateVertices = 0;
-
-				int biggest_number = GetMaxNumberExcludeChildPrefix(m_dest_obj, BDDB_FOOTPRINT_PREFIX);
-				QString cur_name = BDDB_FOOTPRINT_PREFIX + QString::number(biggest_number + 1);
-				if (duplicatePoly->initWith(duplicateVertices, *section.entity))
-				{
-					duplicatePoly->setAssociatedCloud(duplicateVertices);
-					assert(duplicateVertices);
-					stocker::Contour2d stocker_points;
-					for (unsigned i = 0; i < duplicateVertices->size(); ++i) {
-						stocker_points.push_back(stocker::parse_xy(*duplicateVertices->getPoint(i)));
-					}
-					if (stocker::IsCounterClockWise(stocker_points)) {
-						if (duplicatePoly->reverseVertexOrder()) {
-							duplicatePoly->setHoleState(true);
-						}
-						else return;
-					}
-
-					//duplicateVertices->invalidateBoundingBox();
-					duplicateVertices->setEnabled(false);
-					duplicatePoly->set2DMode(false);
-					duplicatePoly->setDisplay_recursive(m_dest_obj->getDisplay());
-					duplicatePoly->setName(cur_name);
-					duplicatePoly->setGlobalScale(section.entity->getGlobalScale());
-					duplicatePoly->setGlobalShift(section.entity->getGlobalShift());
-					duplicatePoly->setBottom(m_ground);
-					duplicatePoly->setLowest(m_ground);
-
-					double highest = (m_cloudsBox.isValid()) ? m_cloudsBox.maxCorner()[2] : m_ground;
-					duplicatePoly->setHighest(highest);
-					duplicatePoly->setHeight(highest);
-
-					section.entity = duplicatePoly;
-				}
-				else {
-					delete duplicatePoly;
-					duplicatePoly = 0;
-
-					ccLog::Error("Not enough memory to export polyline!");
-					return;
-				}
-
-				section.isInDB = true;
-				m_dest_obj->addChild(duplicatePoly);
-				mainWin->addToDB(duplicatePoly, s_dbSource, false, false);
-			}
-		}
-	}
-
-	ccLog::Print(QString("[FootPrint Extraction] %1 footprints exported").arg(exportCount));
 }

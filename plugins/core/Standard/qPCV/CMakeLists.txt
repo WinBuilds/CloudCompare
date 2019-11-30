@@ -13,8 +13,8 @@ if (PLUGIN_STANDARD_QPCV)
 		message( SEND_ERROR "OpenGL required, but not found with 'find_package()'" )
 	endif()
 
-    include( ../../../CMakePluginTpl.cmake )
-    set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
+	include( ../../../CMakePluginTpl.cmake )
+    
 	include_directories( ${OpenGL_INCLUDE_DIR} )
     include_directories( ${PCV_LIB_SOURCE_DIR} )
     

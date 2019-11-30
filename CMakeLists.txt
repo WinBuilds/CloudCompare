@@ -3,19 +3,14 @@ cmake_minimum_required(VERSION 3.0)
 cmake_policy(PUSH)
 
 project( CloudCompareProjects )
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+# set (Qt5Widgets_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5Widgets")
+# set (Qt5PrintSupport_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5PrintSupport")
+# set (Qt5Concurrent_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5Concurrent")
+# set (Qt5OpenGL_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5OpenGL")
+# set (Qt5OpenGLExtensions_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5OpenGLExtensions")
+# set (Qt5Svg_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5Svg")
+# set (Qt5LinguistTools_DIR "D:\\Qt\\5.12.0\\msvc2017_64\\lib\\cmake\\Qt5LinguistTools")
 
-if(CMAKE_CL_64)  
-    set(PLATFORM "x64")      
-else(CMAKE_CL_64)  
-    set(PLATFORM "WIN32")
-endif(CMAKE_CL_64)
-
-# set output directories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${PLATFORM})
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/${PLATFORM})
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/${PLATFORM})
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 option(BUILD_TESTING "" OFF)
 include(CTest)
@@ -50,15 +45,6 @@ OPTION( OPTION_BUILD_CCVIEWER "Check to compile CCViewer project" ON )
 
 # Quad buffer stereo support
 OPTION( OPTION_GL_QUAD_BUFFER_SUPPORT "Check to compile CloudCompare and ccViewer with Quad Buffer support" OFF )
-
-# ScalarType as float (default) or double
-option( OPTION_SCALAR_DOUBLE "Check to define ScalarType as double" OFF )
-
-if ( OPTION_SCALAR_DOUBLE )
-	add_definitions( -DSCALAR_TYPE_DOUBLE )
-else()
-	add_definitions( -DSCALAR_TYPE_FLOAT )
-endif()
 
 # Define target folders
 # (now that ccViewer can have its own plugins, qCC and ccViewer must fall in separate folders!
@@ -104,8 +90,6 @@ endif()
 
 # Load advanced scripts
 include( cmake/CMakeInclude.cmake )
-
-include( contrib/VcgLibSupport.cmake )
 
 add_subdirectory( CC )
 

@@ -58,6 +58,7 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
+.vs
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -96,6 +97,8 @@ UpgradeLog*.XML
 ## Windows
 # Windows image file caches
 Thumbs.db
+*.url
+*.lnk
 # Folder config file
 Desktop.ini
 #############
@@ -124,7 +127,7 @@ pip-log.txt
 .mr.developer.cfg
 # Mac crap
 .DS_Store
-/build_64bits_msvc10/
+/build_*
 /test/
 private_plugins
 /data/

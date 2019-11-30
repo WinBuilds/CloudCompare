@@ -42,12 +42,8 @@
 #include <QMessageBox>
 #include <QPushButton>
 
-#include "stocker_parser.h"
-
 //System
 #include <assert.h>
-
-static CC_TYPES::DB_SOURCE s_dbSource;
 
 ccGraphicalSegmentationTool::ccGraphicalSegmentationTool(QWidget* parent)
 	: ccOverlayDialog(parent)
@@ -58,7 +54,6 @@ ccGraphicalSegmentationTool::ccGraphicalSegmentationTool(QWidget* parent)
 	, m_polyVertices(0)
 	, m_rectangularSelection(false)
 	, m_deleteHiddenParts(false)
-	, m_destination(nullptr)
 {
 	// Set QDialog background as transparent (DGM: doesn't work over an OpenGL context)
 	//setAttribute(Qt::WA_NoSystemBackground);
@@ -79,8 +74,6 @@ ccGraphicalSegmentationTool::ccGraphicalSegmentationTool(QWidget* parent)
 	//import/export options
 	connect(actionUseExistingPolyline,			SIGNAL(triggered()),	this,	SLOT(doActionUseExistingPolyline()));
 	connect(actionExportSegmentationPolyline,	SIGNAL(triggered()),	this,	SLOT(doExportSegmentationPolyline()));
-
-	connect(createBuildingToolButton,			SIGNAL(clicked()),		this,	SLOT(createBuilding()));
 
 	//add shortcuts
 	addOverridenShortcut(Qt::Key_Space);  //space bar for the "pause" button
@@ -278,9 +271,7 @@ void ccGraphicalSegmentationTool::reset()
 	{
 		for (QSet<ccHObject*>::const_iterator p = m_toSegment.constBegin(); p != m_toSegment.constEnd(); ++p)
 		{
-			if (m_segment_mode <= SEGMENT_PLANE_SPLIT) {
-				ccHObjectCaster::ToGenericPointCloud(*p)->resetVisibilityArray();
-			}
+			ccHObjectCaster::ToGenericPointCloud(*p)->resetVisibilityArray();
 		}
 
 		if (m_associatedWin)
@@ -330,12 +321,7 @@ bool ccGraphicalSegmentationTool::addEntity(ccHObject* entity)
 			}
 		}
 
-		if (m_segment_mode == SEGMENT_CLASS_EDIT || m_segment_mode == SEGMENT_BUILD_EIDT) {
-		}
-		else {
-			cloud->resetVisibilityArray();
-		}
-		
+		cloud->resetVisibilityArray();
 		m_toSegment.insert(cloud);
 
 		//automatically add cloud's children
@@ -386,10 +372,6 @@ bool ccGraphicalSegmentationTool::addEntity(ccHObject* entity)
 		//automatically add entity's children
 		for (unsigned i=0;i<entity->getChildrenNumber();++i)
 			result |= addEntity(entity->getChild(i));
-	}
-
-	if (result && getNumberOfValidEntities() == 1) {
-		s_dbSource = entity->getDBSourceType();
 	}
 
 	return result;
@@ -607,10 +589,7 @@ void ccGraphicalSegmentationTool::closePolyLine(int, int)
 	//set the default import/export icon to 'export' mode
 	loadSaveToolButton->setDefaultAction(actionExportSegmentationPolyline);
 	allowPolylineExport(m_segmentationPoly->size() > 1);
-	if (m_segment_mode == SEGMENT_PLANE_CREATE || m_segment_mode == SEGMENT_PLANE_SPLIT) {
-		validButton->setEnabled(m_segmentationPoly->size() > 1);
-		validAndDeleteButton->setEnabled(m_segmentationPoly->size() > 1);
-	}	
+
 	if (m_associatedWin)
 	{
 		m_associatedWin->redraw(true, false);
@@ -784,7 +763,7 @@ void ccGraphicalSegmentationTool::doActionUseExistingPolyline()
 	MainWindow* mainWindow = MainWindow::TheInstance();
 	if (mainWindow)
 	{
-		ccHObject* root = mainWindow->dbRootObject(s_dbSource);
+		ccHObject* root = mainWindow->dbRootObject();
 		ccHObject::Container polylines;
 		if (root)
 		{
@@ -989,25 +968,19 @@ void ccGraphicalSegmentationTool::doExportSegmentationPolyline()
 		viewportObject->setDisplay(m_associatedWin);
 		poly->addChild(viewportObject);
 
-		mainWindow->addToDB(poly, s_dbSource, false, false, false);
+		mainWindow->addToDB(poly, false, false, false);
 		ccLog::Print(QString("[Segmentation] Polyline exported (%1 vertices)").arg(poly->size()));
 	}
 }
 
 void ccGraphicalSegmentationTool::apply()
 {
-	if (m_segment_mode == SEGMENT_PLANE_CREATE || m_segment_mode == SEGMENT_PLANE_SPLIT) {
-		segmentIn();
-	}
 	m_deleteHiddenParts = false;
 	stop(true);
 }
 
 void ccGraphicalSegmentationTool::applyAndDelete()
 {
-	if (m_segment_mode == SEGMENT_PLANE_CREATE || m_segment_mode == SEGMENT_PLANE_SPLIT) {
-		segmentOut();
-	}
 	m_deleteHiddenParts = true;
 	stop(true);
 }
@@ -1017,126 +990,4 @@ void ccGraphicalSegmentationTool::cancel()
 	reset();
 	m_deleteHiddenParts = false;
 	stop(false);
-}
-
-void ccGraphicalSegmentationTool::setSegmentMode(SegmentMode mode)
-{
-// 	if (mode != SEGMENT_GENERAL) 
-// 		setFixedWidth(210);	
-// 	else 
-// 		setFixedWidth(250);
-
-	m_segment_mode = mode;
-
-	switch (mode)
-	{
-	case ccGraphicalSegmentationTool::SEGMENT_GENERAL:
-		inButton->setVisible(true);
-		outButton->setVisible(true);
-		validAndDeleteButton->setToolTip("Confirm and delete hidden points");
-		validButton->setToolTip("Confirm segmentation");
-		createBuildingToolButton->setVisible(false);
-		break;
-	case ccGraphicalSegmentationTool::SEGMENT_PLANE_CREATE:
-	case ccGraphicalSegmentationTool::SEGMENT_PLANE_SPLIT:
-		inButton->setVisible(false);
-		outButton->setVisible(false);
-		validAndDeleteButton->setToolTip("Confirm and delete points inside the polygon");
-		validButton->setToolTip("Create a new plane by points inside the polygon");
-		createBuildingToolButton->setVisible(false);
-		break;
-	case ccGraphicalSegmentationTool::SEGMENT_CLASS_EDIT:
-		inButton->setVisible(false);
-		outButton->setVisible(false);
-		break;
-	case ccGraphicalSegmentationTool::SEGMENT_BUILD_EIDT:
-		inButton->setVisible(false);
-		outButton->setVisible(false);
-		createBuildingToolButton->setVisible(true);
-		validAndDeleteButton->setVisible(false);
-		break;
-	default:
-		break;
-	}
-}
-
-void ccGraphicalSegmentationTool::createBuilding()
-{
-	if (!m_associatedWin)
-		return;
-
-	if (!m_segmentationPoly)
-	{
-		ccLog::Error("No polyline defined!");
-		return;
-	}
-
-	if (!m_segmentationPoly->isClosed())
-	{
-		ccLog::Error("Define and/or close the segmentation polygon first! (right click to close)");
-		return;
-	}
-
-	if (!m_destination) {
-		return;
-	}
-
-	//viewing parameters
-	ccGLCameraParameters camera;
-	m_associatedWin->getGLCameraParameters(camera);
-	const double half_w = camera.viewport[2] / 2.0;
-	const double half_h = camera.viewport[3] / 2.0;
-
-	//for each selected entity
-	for (QSet<ccHObject*>::const_iterator p = m_toSegment.constBegin(); p != m_toSegment.constEnd(); ++p)
-	{
-		ccGenericPointCloud* cloud = ccHObjectCaster::ToGenericPointCloud(*p);
-		assert(cloud);
-
-		ccGenericPointCloud::VisibilityTableType& visibilityArray = cloud->getTheVisibilityArray();
-
-		unsigned cloudSize = cloud->size();
-
-		//! create a new point cloud
-		int number = GetMaxNumberExcludeChildPrefix(m_destination, BDDB_BUILDING_PREFIX);
-		ccPointCloud* new_building = new ccPointCloud(BuildingNameByNumber(number + 1));
-		new_building->setGlobalScale(cloud->getGlobalScale());
-		new_building->setGlobalShift(cloud->getGlobalShift());
-
-		//we project each point and we check if it falls inside the segmentation polyline
-// #if defined(_OPENMP)
-// #pragma omp parallel for
-// #endif
-		for (int i = 0; i < static_cast<int>(cloudSize); ++i)
-		{
-			if (visibilityArray.size() == cloudSize && visibilityArray[i] != POINT_VISIBLE)	{
-				continue;
-			}
-			const CCVector3* P3D = cloud->getPoint(i);
-
-			CCVector3d Q2D;
-			bool pointInFrustrum = camera.project(*P3D, Q2D, true);
-
-			CCVector2 P2D(static_cast<PointCoordinateType>(Q2D.x - half_w),
-				static_cast<PointCoordinateType>(Q2D.y - half_h));
-
-			bool pointInside = pointInFrustrum && CCLib::ManualSegmentationTools::isPointInsidePoly(P2D, m_segmentationPoly);
-
-			if (!pointInside) { continue; }
-			
-			new_building->addPoint(*P3D);
-		}
-				
-		new_building->setDisplay(m_destination->getDisplay());
-		new_building->setRGBColor(ccColor::Generator::Random());
-		new_building->showColors(true);
-		m_destination->addChild(new_building);
-		MainWindow::TheInstance()->addToDB(new_building, m_destination->getDBSourceType());
-	}
-
-	m_somethingHasChanged = true;
-	validButton->setEnabled(true);
-	validAndDeleteButton->setEnabled(true);
-	razButton->setEnabled(true);
-	pauseSegmentationMode(true);
 }

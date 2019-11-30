@@ -67,15 +67,14 @@ enum CC_OBJECT_FLAG {	//CC_UNUSED			= 1, //DGM: not used anymore (former CC_FATH
 #define CC_TEX_COORDS_BIT				0x00000080000000	//Texture coordinates (u,v)
 #define CC_CAMERA_BIT					0x00000100000000	//For camera sensors (projective sensors)
 #define CC_QUADRIC_BIT					0x00000200000000	//Quadric (primitive)
-#define ST_PROJECT_BIT					0x00000400000000	//building
-#define ST_BUILDING_BIT					0x00000800000000	//building
-#define ST_STPRIMITIVE_BIT				0x00001000000000					//stprimitive
-#define ST_BLOCKGROUP_BIT				0x00002000000000	//footprint
-#define ST_MODEL_BIT					0x00004000000000	//blockgroup
-#define ST_BLOCK_BIT					0x00008000000000	//block
-#define ST_FOOTPRINT_BIT				0x00010000000000	//model
-#define ST_HYPOTHESIS_BIT				0x00020000000000	//hypothesis
-//#define 								0x00020000000000	//
+//#define CC_FREE_BIT					0x00000400000000
+//#define CC_FREE_BIT					0x00000800000000
+//#define CC_FREE_BIT					0x00000400000000
+//#define CC_FREE_BIT					0x00001000000000
+//#define CC_FREE_BIT					0x00002000000000
+//#define CC_FREE_BIT					0x00004000000000
+//#define CC_FREE_BIT					0x00008000000000
+//#define CC_FREE_BIT					0x00004000000000
 //#define CC_FREE_BIT					...
 
 //! Type of object type flags (64 bits)
@@ -122,18 +121,6 @@ namespace CC_TYPES
 		VIEWPORT_2D_LABEL	=	VIEWPORT_2D_OBJECT	| CC_LABEL_BIT,
 		CLIPPING_BOX		=	CC_CLIP_BOX_BIT		| CC_LEAF_BIT,
 		TRANS_BUFFER		=	HIERARCHY_OBJECT	| CC_TRANS_BUFFER_BIT		| CC_LEAF_BIT,
-
-		//! group type
-		ST_PROJECT = HIERARCHY_OBJECT | ST_PROJECT_BIT,
-		ST_BUILDING = HIERARCHY_OBJECT | ST_BUILDING_BIT,
-		ST_PRIMGROUP = HIERARCHY_OBJECT | ST_STPRIMITIVE_BIT,		
-		ST_BLOCKGROUP = HIERARCHY_OBJECT | ST_BLOCKGROUP_BIT,		
-		ST_MODEL = HIERARCHY_OBJECT | ST_MODEL_BIT,
-		//! stocker type
-		ST_FOOTPRINT = HIERARCHY_OBJECT | POLY_LINE | ST_FOOTPRINT_BIT,
-		ST_BLOCK = HIERARCHY_OBJECT | PRIMITIVE | ST_BLOCK_BIT,
-
-		//ST_CAMERAGROUP = ST_MODEL | CC_CUSTOM_BIT,	// now, only used for show icon in tree
 		
 		//  Custom types
 		/** Custom objects are typically defined by plugins. They can be inserted in an object
@@ -154,13 +141,6 @@ namespace CC_TYPES
 		**/
 		CUSTOM_H_OBJECT		=	HIERARCHY_OBJECT | CC_CUSTOM_BIT,
 		CUSTOM_LEAF_OBJECT	=	CUSTOM_H_OBJECT | CC_LEAF_BIT,
-	};
-
-	enum DB_SOURCE
-	{
-		DB_MAINDB,
-		DB_BUILDING,
-		DB_IMAGE,
 	};
 }
 
@@ -211,16 +191,6 @@ public:
 	//! Returns class ID
 	virtual CC_CLASS_ENUM getClassID() const = 0;
 
-	//! Returns database
-	virtual CC_TYPES::DB_SOURCE getDBSourceType() const { return m_dbSource; }
-	//! set database
-	virtual inline void setDBSourceType(const CC_TYPES::DB_SOURCE tp) { m_dbSource = tp; }
-
-	//! Returns path
-	virtual inline QString getPath() const { return m_path; }
-	//! set path
-	virtual inline void setPath(const QString& tp) { m_path = tp; }
-
 	//! Returns object name
 	virtual inline QString getName() const { return m_name; }
 
@@ -265,17 +235,7 @@ public:
 	inline bool isHierarchy() const { return (getClassID() & CC_HIERARCH_BIT) != 0; }
 
 	inline bool isKindOf(CC_CLASS_ENUM type) const { return (getClassID() & type) == type; }
-	inline bool isA(CC_CLASS_ENUM type) const {
-		if (type == CC_TYPES::HIERARCHY_OBJECT) {
-			return getClassID() == type || 
-				getClassID() == CC_TYPES::ST_PROJECT || 
-				getClassID() == CC_TYPES::ST_BUILDING || 
-				getClassID() == CC_TYPES::ST_PRIMGROUP || 
-				getClassID() == CC_TYPES::ST_BLOCKGROUP || 
-				getClassID() == CC_TYPES::ST_MODEL;
-		}
-		return (getClassID() == type); 
-	}
+	inline bool isA(CC_CLASS_ENUM type) const { return (getClassID() == type); }
 
 	//! Returns a new unassigned unique ID
 	/** Unique IDs are handled with persistent settings
@@ -358,10 +318,6 @@ protected:
 
 	//! Associated meta-data
 	QVariantMap m_metaData;
-
-	CC_TYPES::DB_SOURCE m_dbSource;
-
-	QString m_path;
 
 private:
 

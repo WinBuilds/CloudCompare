@@ -19,9 +19,10 @@
 #define CC_OBJ_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! Wavefront meshes file I/O filter
-class ObjFilter : public FileIOFilter
+class QCOREIODLL_EXPORT ObjFilter : public FileIOFilter
 {
 public:
 	ObjFilter();

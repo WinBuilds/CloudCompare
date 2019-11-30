@@ -105,14 +105,12 @@ ccObject::ccObject(const QString& name)
 	: m_name(name.isEmpty() ? "unnamed" : name)
 	, m_flags(CC_ENABLED)
 	, m_uniqueID(GetNextUniqueID())
-	, m_dbSource(CC_TYPES::DB_MAINDB)
 {}
 
 ccObject::ccObject(const ccObject& object)
 	: m_name(object.m_name)
 	, m_flags(object.m_flags)
 	, m_uniqueID(GetNextUniqueID())
-	, m_dbSource(CC_TYPES::DB_MAINDB)
 {}
 
 void ccObject::setUniqueID(unsigned ID)
@@ -154,7 +152,6 @@ bool ccObject::toFile(QFile& out) const
 	{
 		QDataStream outStream(&out);
 		outStream << m_name;
-		outStream << m_path;
 	}
 
 	//flags (dataVersion>=20)
@@ -282,7 +279,6 @@ bool ccObject::fromFile(QFile& in, short dataVersion, int flags)
 	{
 		QDataStream inStream(&in);
 		inStream >> m_name;
-		inStream >> m_path;
 	}
 
 	//flags (dataVersion>=20)

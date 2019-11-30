@@ -62,10 +62,6 @@
 #include <cassert>
 #include <cstring>
 
-#ifdef USE_STOCKER
-#include "stocker_parser.h"
-#endif // USE_STOCKER
-
 //Minimum width of the left column of the properties tree view
 static const int c_propViewLeftColumnWidth = 115;
 
@@ -134,7 +130,7 @@ private:
 							QIcon(QStringLiteral(":/CC/images/dbHObjectSymbolLocked.png")) } );
 		
 		const int	cloudIndex = mIconList.count();
-		mIconList.append( { QIcon(QStringLiteral(":/CC/Stocker/images/stocker/pickpts.png")),
+		mIconList.append( { QIcon(QStringLiteral(":/CC/images/dbCloudSymbol.png")),
 							QIcon(QStringLiteral(":/CC/images/dbCloudSymbolLocked.png")) } );
 		
 		const int	geomIndex = mIconList.count();
@@ -192,44 +188,11 @@ private:
 		const int	viewportLabelIndex = mIconList.count();
 		mIconList.append( { QIcon(QStringLiteral(":/CC/images/dbAreaLabelSymbol.png")),
 							{} } );
-				
-		const int	projectIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/database.png")),{} });
-
-		const int	buildingIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/building.png")),{} });
-
-		const int	stprimitiveIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/primitives.png")),{} });
-
-		const int	footprintIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/footprint.png")),{} });
-
-		const int	blockgroupIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/blockgroup.png")),{} });
-
-		const int	blockIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/block.png")),{} });
-
-		const int	modelIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/buildingmodel.png")),{} });
-
-		const int	planeIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/plane.png")),{} });
-
-		const int	facetIndex = mIconList.count();
-		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/primfacet.png")),{} });
-
-// 		const int	cameragroupIndex = mIconList.count();
-// 		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/camera.png")),{} });
-// 
-// 		const int	todoIndex = mIconList.count();
-// 		mIconList.append({ QIcon(QStringLiteral(":/CC/Stocker/images/stocker/task.png")),{} });
 		
 		mIconMap = {
 			{ CC_TYPES::HIERARCHY_OBJECT, hObjectIndex },
 			{ CC_TYPES::POINT_CLOUD, cloudIndex },
-			{ CC_TYPES::PLANE, planeIndex },
+			{ CC_TYPES::PLANE, geomIndex },
 			{ CC_TYPES::SPHERE, geomIndex },
 			{ CC_TYPES::TORUS, geomIndex },
 			{ CC_TYPES::CYLINDER, geomIndex },
@@ -237,7 +200,7 @@ private:
 			{ CC_TYPES::BOX, geomIndex },
 			{ CC_TYPES::DISH, geomIndex },
 			{ CC_TYPES::EXTRU, geomIndex },
-			{ CC_TYPES::FACET, facetIndex },
+			{ CC_TYPES::FACET, geomIndex },
 			{ CC_TYPES::QUADRIC, geomIndex },
 			{ CC_TYPES::MESH, meshIndex },
 			{ CC_TYPES::MESH_GROUP, subMeshIndex },
@@ -257,14 +220,7 @@ private:
 			{ CC_TYPES::TRANS_BUFFER, containerIndex },
 			{ CC_TYPES::LABEL_2D, labelIndex },
 			{ CC_TYPES::VIEWPORT_2D_OBJECT, viewportObjIndex },
-			{ CC_TYPES::ST_PROJECT, projectIndex },
-			{ CC_TYPES::ST_BUILDING, buildingIndex },
-			{ CC_TYPES::ST_BLOCKGROUP, blockgroupIndex },
-			{ CC_TYPES::ST_BLOCK, blockIndex },
-			{ CC_TYPES::ST_PRIMGROUP, stprimitiveIndex },
-			{ CC_TYPES::ST_FOOTPRINT, footprintIndex },
-			{ CC_TYPES::ST_MODEL, modelIndex },
-			//{ CC_TYPES::ST_CAMERAGROUP, cameragroupIndex },
+			{ CC_TYPES::VIEWPORT_2D_LABEL, viewportLabelIndex },
 		};
 	}
 	
@@ -313,7 +269,6 @@ ccDBRoot::ccDBRoot(ccCustomQTreeView* dbTreeWidget, QTreeView* propertiesTreeWid
 	m_alignCameraWithEntityReverse = new QAction("Align camera (reverse)", this);
 	m_enableBubbleViewMode = new QAction("Bubble-view", this);
 	m_editLabelScalarValue = new QAction("Edit scalar value", this);
-	m_deselectOtherChildren = new QAction("Deselect Others", this);
 
 	m_contextMenuPos = QPoint(-1,-1);
 
@@ -339,11 +294,9 @@ ccDBRoot::ccDBRoot(ccCustomQTreeView* dbTreeWidget, QTreeView* propertiesTreeWid
 	connect(m_alignCameraWithEntityReverse,		&QAction::triggered,					this, &ccDBRoot::alignCameraWithEntityIndirect);
 	connect(m_enableBubbleViewMode,				&QAction::triggered,					this, &ccDBRoot::enableBubbleViewMode);
 	connect(m_editLabelScalarValue,				&QAction::triggered,					this, &ccDBRoot::editLabelScalarValue);
-	connect(m_deselectOtherChildren,			&QAction::triggered,					this, &ccDBRoot::deselectOtherChildren);
 
 	//other DB tree signals/slots connection
 	connect(m_dbTreeWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &ccDBRoot::changeSelection);
-	connect(m_dbTreeWidget, &QAbstractItemView::clicked, this, &ccDBRoot::clickItem);
 
 	//Properties Tree
 	assert(propertiesTreeWidget);
@@ -709,12 +662,6 @@ QVariant ccDBRoot::data(const QModelIndex &index, int role) const
 		switch (item->getClassID())
 		{
 			case CC_TYPES::HIERARCHY_OBJECT:
-				if (item->getName().endsWith(BDDB_CAMERA_SUFFIX)) {
-					return QIcon(QStringLiteral(":/CC/Stocker/images/stocker/camera.png"));
-				}
-				else if (item->getName().endsWith(BDDB_TODOGROUP_SUFFIX)) {
-					return QIcon(QStringLiteral(":/CC/Stocker/images/stocker/task.png"));
-				}
 				if ( item->getChildrenNumber() )
 				{
 					return gDBRootIcons->icon( item->getClassID(), locked );
@@ -1843,63 +1790,6 @@ void ccDBRoot::sortChildrenType()
 	sortSelectedEntitiesChildren(SORT_BY_TYPE);
 }
 
-void ccDBRoot::sortItemChildren(ccHObject* item, SortRules sortRule)
-{
-	unsigned childCount = (item ? item->getChildrenNumber() : 0);
-	if (childCount > 1)
-	{
-		//remove all children from DB tree
-		beginRemoveRows(/*selectedIndexes[i]*/index(item), 0, childCount - 1);
-
-		//row removal operation (end)
-		endRemoveRows();
-
-		//sort
-		for (unsigned k = 0; k < childCount - 1; ++k)
-		{
-			unsigned firstChildIndex = k;
-			ccHObject* firstChild = item->getChild(k);
-			QString firstChildName = firstChild->getName().toUpper();
-
-			for (unsigned j = k + 1; j < childCount; ++j)
-			{
-				bool swap = false;
-				QString currentName = item->getChild(j)->getName().toUpper();
-				switch (sortRule)
-				{
-				case SORT_A2Z:
-					swap = (firstChildName.compare(currentName) > 0);
-					break;
-				case SORT_Z2A:
-					swap = (firstChildName.compare(currentName) < 0);
-					break;
-				case SORT_BY_TYPE:
-					if (firstChild->getClassID() == item->getChild(j)->getClassID())
-						swap = (firstChildName.compare(currentName) > 0); //A2Z in second choice
-					else
-						swap = (firstChild->getClassID() > item->getChild(j)->getClassID());
-					break;
-				}
-
-				if (swap)
-				{
-					firstChildIndex = j;
-					firstChildName = currentName;
-				}
-			}
-
-			if (k != firstChildIndex)
-				item->swapChildren(k, firstChildIndex);
-		}
-
-		//add children back
-		beginInsertRows(/*selectedIndexes[i]*/index(item), 0, childCount - 1);
-
-		//row insertion operation (end)
-		endInsertRows();
-	}
-}
-
 void ccDBRoot::sortSelectedEntitiesChildren(SortRules sortRule)
 {
 	QItemSelectionModel* qism = m_dbTreeWidget->selectionModel();
@@ -1911,8 +1801,6 @@ void ccDBRoot::sortSelectedEntitiesChildren(SortRules sortRule)
 	for (int i = 0; i < selCount; ++i)
 	{
 		ccHObject* item = static_cast<ccHObject*>(selectedIndexes[i].internalPointer());
-		sortItemChildren(item, sortRule);
-#if 0
 		unsigned childCount = (item ? item->getChildrenNumber() : 0);
 		if (childCount > 1)
 		{
@@ -1966,7 +1854,6 @@ void ccDBRoot::sortSelectedEntitiesChildren(SortRules sortRule)
 			//row insertion operation (end)
 			endInsertRows();
 		}
-#endif
 	}
 }
 
@@ -2278,7 +2165,6 @@ void ccDBRoot::showContextMenu(const QPoint& menuPos)
 			bool hasMoreThanOneChild = false;
 			bool leafObject = false;
 			bool hasExacltyOneGBLSenor = false;
-			bool hasExacltyOneCamSenor = false;
 			bool hasExactlyOnePlane = false;
 			bool canEditLabelScalarValue = false;
 			unsigned planarEntityCount = 0;
@@ -2337,10 +2223,6 @@ void ccDBRoot::showContextMenu(const QPoint& menuPos)
 						{
 							hasExacltyOneGBLSenor = true;
 						}
-						else if (item->isA(CC_TYPES::CAMERA_SENSOR))
-						{
-							hasExacltyOneCamSenor = true;
-						}
 					}
 				}
 			}
@@ -2361,7 +2243,6 @@ void ccDBRoot::showContextMenu(const QPoint& menuPos)
 			}
 			
 			menu.addAction(m_gatherInformation);
-			if (selCount == 1) menu.addAction(m_deselectOtherChildren);
 			menu.addSeparator();
 			menu.addAction(m_toggleSelectedEntities);
 			if (toggleVisibility)
@@ -2433,88 +2314,4 @@ QItemSelectionModel::SelectionFlags ccCustomQTreeView::selectionCommand(const QM
 	}
 
 	return QTreeView::selectionCommand(index,event);
-}
-
-void ccDBRoot::deselectOtherChildren()
-{
-	QItemSelectionModel* qism = m_dbTreeWidget->selectionModel();
-	QModelIndexList selectedIndexes = qism->selectedIndexes();
-	int selCount = selectedIndexes.size();
-	if (selCount != 1)
-		return;
-	
-	hidePropertiesView();
-	ccHObject* item = static_cast<ccHObject*>(selectedIndexes[0].internalPointer());
-	ccHObject* parent = item->getParent();
-	if (!parent || parent->getChildrenNumber() < 2) return;
-
-	int cur_index = parent->getChildIndex(item);
-	bool enable = !item->isEnabled();
-	for (size_t i = 0; i < parent->getChildrenNumber(); i++) {
-		if (i == cur_index) continue;
-		parent->getChild(i)->setEnabled(enable);
-		parent->getChild(i)->prepareDisplayForRefresh();
-	}
-	
-	ccGLWindow* win = static_cast<ccGLWindow*>(item->getDisplay());
-	ccBBox box = item->getDisplayBB_recursive(false, win);
-	win->updateConstellationCenterAndZoom(&box);
-	//we restablish properties view
-	updatePropertiesView();
-
-	MainWindow::RefreshAllGLWindow(false);
-}
-
-void ccDBRoot::gotoNextZoom()
-{
-	QItemSelectionModel* qism = m_dbTreeWidget->selectionModel();
-	QModelIndexList selectedIndexes = qism->selectedIndexes();
-	int selCount = selectedIndexes.size();
-	if (selCount != 1)
-		return;
-	ccHObject* item = static_cast<ccHObject*>(selectedIndexes[0].internalPointer());
-	ccHObject* parent = item->getParent();
-	if (!parent || parent->getChildrenNumber() < 2) return;
-
-	int cur_index = parent->getChildIndex(item);
-	int next_index = (cur_index + 1) % parent->getChildrenNumber();
-
-	hidePropertiesView();
-	ccHObject* next_entity = parent->getChild(next_index);	
-
-	if (item->isEnabled() && !next_entity->isEnabled()) {
-		item->setEnabled(false);
-		next_entity->setEnabled(true);
-	}
-	unselectEntity(item);		item->prepareDisplayForRefresh();
-	selectEntity(next_entity);	next_entity->prepareDisplayForRefresh();
-
-	ccGLWindow* win = static_cast<ccGLWindow*>(item->getDisplay());
-	ccBBox box = next_entity->getDisplayBB_recursive(false, win);
-	win->updateConstellationCenterAndZoom(&box);
-	updatePropertiesView();
-	MainWindow::RefreshAllGLWindow(false);
-}
-
-void ccDBRoot::clickItem(const QModelIndex &index)
-{
-	emit itemClicked();
-}
-
-StDBMainRoot::StDBMainRoot(ccCustomQTreeView * dbTreeWidget, QTreeView * propertiesTreeWidget, QObject * parent)
-	: ccDBRoot(dbTreeWidget, propertiesTreeWidget, parent)
-{
-	m_treeRoot->setDBSourceType(CC_TYPES::DB_MAINDB);
-}
-
-StDBBuildingRoot::StDBBuildingRoot(ccCustomQTreeView * dbTreeWidget, QTreeView * propertiesTreeWidget, QObject * parent)
-	: ccDBRoot(dbTreeWidget, propertiesTreeWidget, parent)
-{
-	m_treeRoot->setDBSourceType(CC_TYPES::DB_BUILDING);
-}
-
-StDBImageRoot::StDBImageRoot(ccCustomQTreeView * dbTreeWidget, QTreeView * propertiesTreeWidget, QObject * parent)
-	: ccDBRoot(dbTreeWidget, propertiesTreeWidget, parent)
-{
-	m_treeRoot->setDBSourceType(CC_TYPES::DB_IMAGE);
 }

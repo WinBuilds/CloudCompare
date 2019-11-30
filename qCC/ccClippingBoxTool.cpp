@@ -20,6 +20,7 @@
 //Local
 #include "ccBoundingBoxEditorDlg.h"
 #include "ccClippingBoxRepeatDlg.h"
+#include "ccContourExtractor.h"
 #include "ccCropTool.h"
 #include "ccGLWindow.h"
 #include "mainwindow.h"
@@ -37,11 +38,11 @@
 //Last contour unique ID
 static std::vector<unsigned> s_lastContourUniqueIDs;
 
-// database
-static CC_TYPES::DB_SOURCE s_dbSource;
-
-//Contour extraction parameters (global)
+//Contour extraction parameters
 static double s_maxEdgeLength = -1.0;
+static bool s_splitContours = false;
+static bool s_multiPass = false;
+static double s_defaultGap = 0.0;
 
 // persistent map of the previous box used for each entity
 struct ccClipBoxParams
@@ -110,21 +111,6 @@ void ccClippingBoxTool::editBox()
 	ccGLMatrix transformation;
 	m_clipBox->get(box, transformation);
 
-	//shift the box to its real center
-	{
-		CCVector3 C = box.getCenter();
-		CCVector3 realC = transformation * C;
-		box += (realC - C);
-
-		ccGLMatrix transMat;
-		transMat.setTranslation(-realC);
-		transformation.clearTranslation();
-		transMat = transformation * transMat;
-		transMat.setTranslation(transMat.getTranslationAsVec3D() + realC);
-		transformation = transMat;
-	}
-
-
 	ccBoundingBoxEditorDlg bbeDlg(this);
 	bbeDlg.setBaseBBox(box, false);
 	bbeDlg.showInclusionWarning(false);
@@ -141,10 +127,11 @@ void ccClippingBoxTool::editBox()
 		return;
 
 	box = bbeDlg.getBox();
+	m_clipBox->setBox(box);
 
 	//construct the local box orientation matrix
 	{
-		CCVector3d X, Y, Z;
+		CCVector3 X, Y, Z;
 		bbeDlg.getBoxAxes(X, Y, Z);
 		//make sure the vectors define an orthogonal basis
 		Z = X.cross(Y);
@@ -153,21 +140,19 @@ void ccClippingBoxTool::editBox()
 		X.normalize();
 		Y.normalize();
 		Z.normalize();
-		ccGLMatrixd rotMat;
+		ccGLMatrix rotMat;
 		rotMat.setColumn(0, X);
 		rotMat.setColumn(1, Y);
 		rotMat.setColumn(2, Z);
 
 		CCVector3 C = box.getCenter();
-		ccGLMatrixd transMat;
+		ccGLMatrix transMat;
 		transMat.setTranslation(-C);
-		transMat = rotMat * transMat;
-		transMat.setTranslation(transMat.getTranslationAsVec3D() + CCVector3d::fromArray(C.u));
+		transMat = rotMat.inverse() * transMat;
+		transMat.setTranslation(transMat.getTranslationAsVec3D() + C);
 
-		m_clipBox->setGLTransformation(ccGLMatrix(transMat.data()));
+		m_clipBox->setGLTransformation(transMat.inverse());
 	}
-
-	m_clipBox->setBox(box);
 
 	//onBoxModified(&box); //DGM: automatically called by 'm_clipBox'
 
@@ -232,7 +217,6 @@ bool ccClippingBoxTool::addAssociatedEntity(ccHObject* entity)
 	{
 		restoreToolButton->setEnabled(false);
 		contourGroupBox->setEnabled(false);
-		s_dbSource = entity->getDBSourceType();
 	}
 
 	if (!m_clipBox->addAssociatedEntity(entity))
@@ -370,7 +354,7 @@ void ccClippingBoxTool::removeLastContour()
 	{
 		for (size_t i = 0; i < s_lastContourUniqueIDs.size(); ++i)
 		{
-			ccHObject* obj = mainWindow->db(s_dbSource)->find(s_lastContourUniqueIDs[i]);
+			ccHObject* obj = mainWindow->db()->find(s_lastContourUniqueIDs[i]);
 			if (obj)
 			{
 				//obj->prepareDisplayForRefresh();
@@ -474,7 +458,7 @@ void ccClippingBoxTool::exportSlice()
 			result->prepareDisplayForRefresh();
 			if (obj->getParent())
 				obj->getParent()->addChild(result);
-			MainWindow::TheInstance()->addToDB(result, s_dbSource);
+			MainWindow::TheInstance()->addToDB(result);
 		}
 	}
 }
@@ -542,7 +526,6 @@ bool ccClippingBoxTool::ExtractSlicesAndContours
 	bool extractContours,
 	PointCoordinateType maxEdgeLength,
 	std::vector<ccPolyline*>& outputContours,
-	ccContourExtractor::ContourType contourType,
 	PointCoordinateType gap/*=0*/,
 	bool multiPass/*=false*/,
 	bool splitContours/*=false*/,
@@ -922,22 +905,15 @@ bool ccClippingBoxTool::ExtractSlicesAndContours
 			}
 
 			//preferred dimension?
-			PointCoordinateType* preferredNormDir = nullptr;
-			PointCoordinateType* preferredUpDir = nullptr;
-			if (repeatDimensionsSum == 1)
+			int preferredDim = -1;
+			if (repeatDimensionsSum == 1 && !projectOnBestFitPlane)
 			{
 				for (int i = 0; i < 3; ++i)
-				{
 					if (repeatDimensions[i])
-					{
-						ccGLMatrix invLocalTrans = localTrans.inverse();
-						if (!projectOnBestFitPlane) //otherwise the normal will be automatically computed
-							preferredNormDir = invLocalTrans.getColumn(i);
-						preferredUpDir = invLocalTrans.getColumn(i < 2 ? 2 : 0);
-						break;
-					}
-				}
+						preferredDim = i;
 			}
+			ccGLMatrix invLocalTrans = localTrans.inverse();
+			PointCoordinateType* preferredOrientation = (preferredDim != -1 ? invLocalTrans.getColumn(preferredDim) : 0);
 
 			assert(cloudSliceCount <= outputSlices.size());
 
@@ -952,10 +928,8 @@ bool ccClippingBoxTool::ExtractSlicesAndContours
 					multiPass,
 					maxEdgeLength,
 					polys,
-					contourType,
 					splitContours,
-					preferredNormDir,
-					preferredUpDir,
+					preferredOrientation,
 					visualDebugMode))
 				{
 					if (!polys.empty())
@@ -1095,15 +1069,6 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 	//random colors is only useful for mutliple slice/contour mode
 	repeatDlg.randomColorCheckBox->setEnabled(!singleContourMode);
 	
-	//Semi persistent contour extraction parameters
-	static bool s_splitContours = false;
-	static bool s_multiPass = false;
-	static double s_defaultGap = 0.0;
-	static int s_contourTypeIndex = 2; //full
-	static bool s_projectOnBestFitPlane = false;
-	static bool s_visualDebugMode = false;
-	static bool s_generateRandomColors = false;
-
 	//set default max edge length
 	if (s_maxEdgeLength < 0)
 		s_maxEdgeLength = m_clipBox->getBox().getDiagNorm() / 100.0;
@@ -1111,10 +1076,6 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 	repeatDlg.splitContourCheckBox->setChecked(s_splitContours);
 	repeatDlg.multiPassCheckBox->setChecked(s_multiPass);
 	repeatDlg.gapDoubleSpinBox->setValue(s_defaultGap);
-	repeatDlg.contourTypeComboBox->setCurrentIndex(s_contourTypeIndex);
-	repeatDlg.projectOnBestFitCheckBox->setChecked(s_projectOnBestFitPlane);
-	repeatDlg.debugModeCheckBox->setChecked(s_visualDebugMode);
-	repeatDlg.randomColorCheckBox->setChecked(s_generateRandomColors);
 
 	if (!repeatDlg.exec())
 	{
@@ -1132,28 +1093,10 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 	s_maxEdgeLength = repeatDlg.maxEdgeLengthDoubleSpinBox->value();
 	s_splitContours = repeatDlg.splitContourCheckBox->isChecked();
 	s_multiPass = repeatDlg.multiPassCheckBox->isChecked();
-	s_contourTypeIndex = repeatDlg.contourTypeComboBox->currentIndex();
-	s_projectOnBestFitPlane = repeatDlg.projectOnBestFitCheckBox->isChecked();
-	s_visualDebugMode = repeatDlg.debugModeCheckBox->isChecked();
-	s_generateRandomColors = repeatDlg.randomColorCheckBox->isChecked();
-
-	ccContourExtractor::ContourType contourType = ccContourExtractor::ContourType::FULL;
-	switch (s_contourTypeIndex)
-	{
-	case 0:
-		contourType = ccContourExtractor::ContourType::LOWER;
-		break;
-	case 1:
-		contourType = ccContourExtractor::ContourType::UPPER;
-		break;
-	case 2:
-		contourType = ccContourExtractor::ContourType::FULL;
-		break;
-	default:
-		assert(false);
-		ccLog::Warning("Internal error: unhandled contour type");
-		break;
-	}
+	s_defaultGap = repeatDlg.gapDoubleSpinBox->value();
+	bool projectOnBestFitPlane = repeatDlg.projectOnBestFitCheckBox->isChecked();
+	bool visualDebugMode = repeatDlg.debugModeCheckBox->isChecked();
+	bool generateRandomColors = repeatDlg.randomColorCheckBox->isChecked();
 
 	//whether to extract contours or not
 	if (!singleContourMode)
@@ -1177,13 +1120,12 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 									extractContours,
 									static_cast<PointCoordinateType>(s_maxEdgeLength),
 									outputContours,
-									contourType,
 									static_cast<PointCoordinateType>(s_defaultGap),
 									s_multiPass,
 									s_splitContours,
-									s_projectOnBestFitPlane,
-									s_visualDebugMode,
-									s_generateRandomColors,
+									projectOnBestFitPlane,
+									visualDebugMode,
+									generateRandomColors,
 									&pDlg
 									))
 	{
@@ -1224,7 +1166,7 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 		{
 			sliceGroup->setDisplay_recursive(m_clipBox->getContainer().getFirstChild()->getDisplay());
 		}
-		MainWindow::TheInstance()->addToDB(sliceGroup, s_dbSource);
+		MainWindow::TheInstance()->addToDB(sliceGroup);
 	}
 	else if (!singleContourMode)
 	{
@@ -1245,7 +1187,7 @@ void ccClippingBoxTool::extractSlicesAndContours(bool extractSlices, bool extrac
 		{
 			contourGroup->setDisplay_recursive(m_clipBox->getContainer().getFirstChild()->getDisplay());
 		}
-		MainWindow::TheInstance()->addToDB(contourGroup, s_dbSource);
+		MainWindow::TheInstance()->addToDB(contourGroup);
 
 		s_lastContourUniqueIDs.clear();
 		s_lastContourUniqueIDs.push_back(contourGroup->getUniqueID());

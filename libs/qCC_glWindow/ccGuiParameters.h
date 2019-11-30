@@ -18,6 +18,8 @@
 #ifndef GUI_PARAMETERS_HEADER
 #define GUI_PARAMETERS_HEADER
 
+#include <qCC_gl.h>
+
 //Qt
 #include <QString>
 
@@ -32,12 +34,12 @@
 /** Values of persistent parameters are stored by the system
 	(either in the registry or in a separate file depending on the OS).
 **/
-class ccGui
+class QCC_GL_LIB_API ccGui
 {
 public:
 
 	//! GUI parameters
-	struct ParamStruct
+	struct QCC_GL_LIB_API ParamStruct
 	{
 		//! Light diffuse color (RGBA)
 		ccColor::Rgbaf lightDiffuseColor;

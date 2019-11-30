@@ -117,21 +117,14 @@ namespace ccColor
 	//! 4 components, default type
 	using Rgba = RgbaTpl<ColorCompType>;
 
-	// https://www.sioe.cn/yingyong/yanse-rgb-16/
 	// Predefined colors (default type)
 	constexpr Rgb white						(MAX, MAX, MAX);
 	constexpr Rgb lightGrey					(static_cast<ColorCompType>(MAX*0.8), static_cast<ColorCompType>(MAX*0.8), static_cast<ColorCompType>(MAX*0.8));
 	constexpr Rgb darkGrey					(MAX / 2, MAX / 2, MAX / 2);
 	constexpr Rgb red						(MAX, 0, 0);
 	constexpr Rgb green						(0, MAX, 0);
-	constexpr Rgb springGreen				(60, 179, 113); 
-	constexpr Rgb lightGreen				(144, 238, 144);
 	constexpr Rgb blue						(0, 0, MAX);
 	constexpr Rgb darkBlue					(0, 0, MAX / 2);
-	constexpr Rgb doderBlue					(30, 144, 255);
-	constexpr Rgb skyBlue					(135, 206, 235);
-	constexpr Rgb lightCoral				(240, 128, 128);
-	
 	constexpr Rgb magenta					(MAX, 0, MAX);
 	constexpr Rgb cyan						(0, MAX, MAX);
 	constexpr Rgb orange					(MAX, MAX / 2, 0);
@@ -146,13 +139,13 @@ namespace ccColor
 	constexpr Rgbaf dark					(0.34f, 0.34f, 0.34f, 1.00f);
 	constexpr Rgbaf darker					(0.17f, 0.17f, 0.17f, 1.00f);
 	constexpr Rgbaf darkest					(0.08f, 0.08f, 0.08f, 1.00f);
-	constexpr Rgbaf night					(0.09f, 0.09f, 0.09f, 1.00F);	//(0.00f, 0.00f, 0.00f, 1.00F);
-	constexpr Rgbaf defaultMeshFrontDiff	(0.35f, 0.72f, 1.00f, 1.00f);	//(0.00f, 0.90f, 0.27f, 1.00f);
+	constexpr Rgbaf night					(0.00f, 0.00f, 0.00f, 1.00F);
+	constexpr Rgbaf defaultMeshFrontDiff	(0.00f, 0.90f, 0.27f, 1.00f);
 	constexpr Rgbaf defaultMeshBackDiff		(0.27f, 0.90f, 0.90f, 1.00f);
 
 	// Default foreground color (unsigned byte)
 	constexpr Rgbub defaultColor			(255, 255, 255);	// white
-	constexpr Rgbub defaultBkgColor			(222, 222, 222);	// white	( 10, 102, 151);	// dark blue
+	constexpr Rgbub defaultBkgColor			( 10, 102, 151);	// dark blue
 	constexpr Rgbub defaultLabelBkgColor	(255, 255, 255);	// white
 	constexpr Rgbub defaultLabelMarkerColor	(255,   0, 255);	// magenta
 

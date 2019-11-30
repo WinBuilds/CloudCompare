@@ -26,7 +26,7 @@ if (PLUGIN_STANDARD_QSRA)
 									${CloudCompare_SOURCE_DIR}/ui_templates/renderToFileDialog.ui )
 
 	include( ../../../CMakePluginTpl.cmake )
-	set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
+	
 	#DXF support
 	target_link_DXFLIB( ${PROJECT_NAME} )
 endif()

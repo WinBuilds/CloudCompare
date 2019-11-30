@@ -119,8 +119,6 @@ ccMesh::~ccMesh()
 		m_triMtlIndexes->release();
 	if (m_triNormalIndexes)
 		m_triNormalIndexes->release();
-
-	releaseVBOs();
 }
 
 void ccMesh::setAssociatedCloud(ccGenericPointCloud* cloud)
@@ -138,7 +136,7 @@ void ccMesh::onUpdateOf(ccHObject* obj)
 	if (obj == m_associatedCloud)
 	{
 		m_bBox.setValidity(false);
-		ccHObject::notifyGeometryUpdate(); //for sub-meshes
+		notifyGeometryUpdate(); //for sub-meshes
 	}
 
 	ccGenericMesh::onUpdateOf(obj);
@@ -174,9 +172,7 @@ bool ccMesh::hasScalarFields() const
 
 bool ccMesh::computeNormals(bool perVertex)
 {
-	bool ret = perVertex ? computePerVertexNormals() : computePerTriangleNormals();
-	notifyNormalUpdate();
-	return ret;
+	return perVertex ? computePerVertexNormals() : computePerTriangleNormals();
 }
 
 bool ccMesh::computePerVertexNormals()
@@ -261,8 +257,6 @@ bool ccMesh::computePerVertexNormals()
 
 	if (!normalsWereAllocated)
 		cloud->showNormals(true);
-	
-	cloud->normalsHaveChanged();
 
 	return true;
 }
@@ -1465,7 +1459,6 @@ bool ccMesh::merge(const ccMesh* mesh, bool createSubMesh)
 		resize(triNumBefore);
 	}
 
-	notifyGeometryUpdate();	// call releaseVBOs
 	return success;
 }
 
@@ -1548,7 +1541,7 @@ void ccMesh::refreshBB()
 		m_bBox.add(*m_associatedCloud->getPoint(tri.i3));
 	}
 
-	notifyGeometryUpdate();	// call releaseVBOs
+	notifyGeometryUpdate();
 }
 
 void ccMesh::getBoundingBox(CCVector3& bbMin, CCVector3& bbMax)
@@ -1577,7 +1570,6 @@ const ccGLMatrix& ccMesh::getGLTransformationHistory() const
 void ccMesh::addTriangle(unsigned i1, unsigned i2, unsigned i3)
 {
 	m_triVertIndexes->emplace_back(CCLib::VerticesIndexes(i1, i2, i3));
-	notifyGeometryUpdate();	// call releaseVBOs
 }
 
 bool ccMesh::reserve(size_t n)
@@ -1600,7 +1592,7 @@ bool ccMesh::reserve(size_t n)
 bool ccMesh::resize(size_t n)
 {
 	m_bBox.setValidity(false);
-	notifyGeometryUpdate();	// call releaseVBOs
+	notifyGeometryUpdate();
 
 	if (m_triMtlIndexes)
 	{
@@ -1637,7 +1629,6 @@ void ccMesh::swapTriangles(unsigned index1, unsigned index2)
 		m_texCoordIndexes->swap(index1, index2);
 	if (m_triNormalIndexes)
 		m_triNormalIndexes->swap(index1, index2);
-	notifyGeometryUpdate();	// call releaseVBOs
 }
 
 CCLib::VerticesIndexes* ccMesh::getTriangleVertIndexes(unsigned triangleIndex)
@@ -1674,9 +1665,6 @@ unsigned ccMesh::getUniqueIDForDisplay() const
 
 void ccMesh::drawMeOnly(CC_DRAW_CONTEXT& context)
 {
-	ccGenericMesh::drawMeOnly(context);
-	return;
-
 	if (!m_associatedCloud)
 		return;
 
@@ -2609,7 +2597,6 @@ void ccMesh::removePerTriangleNormalIndexes()
 	if (m_triNormalIndexes)
 		m_triNormalIndexes->release();
 	m_triNormalIndexes = nullptr;
-	notifyNormalUpdate();
 }
 
 bool ccMesh::reservePerTriangleNormalIndexes()
@@ -2630,14 +2617,12 @@ void ccMesh::addTriangleNormalIndexes(int i1, int i2, int i3)
 {
 	assert(m_triNormalIndexes && m_triNormalIndexes->isAllocated());
 	m_triNormalIndexes->emplace_back(Tuple3i(i1, i2, i3));
-	notifyNormalUpdate();
 }
 
 void ccMesh::setTriangleNormalIndexes(unsigned triangleIndex, int i1, int i2, int i3)
 {
 	assert(m_triNormalIndexes && m_triNormalIndexes->size() > triangleIndex);
 	m_triNormalIndexes->setValue(triangleIndex, Tuple3i(i1, i2, i3));
-	notifyNormalUpdate();
 }
 
 void ccMesh::getTriangleNormalIndexes(unsigned triangleIndex, int& i1, int& i2, int& i3) const
@@ -2714,8 +2699,6 @@ void ccMesh::setTexCoordinatesTable(TextureCoordsContainer* texCoordsTable, bool
 	{
 		removePerTriangleTexCoordIndexes(); //auto-remove per-triangle indexes (we don't need them anymore)
 	}
-
-	notifyTextureUpdate();
 }
 
 void ccMesh::getTriangleTexCoordinates(unsigned triIndex, TexCoords2D* &tx1, TexCoords2D* &tx2, TexCoords2D* &tx3) const
@@ -2754,22 +2737,18 @@ void ccMesh::removePerTriangleTexCoordIndexes()
 
 	if (texCoordIndexes)
 		texCoordIndexes->release();
-
-	notifyTextureUpdate();
 }
 
 void ccMesh::addTriangleTexCoordIndexes(int i1, int i2, int i3)
 {
 	assert(m_texCoordIndexes && m_texCoordIndexes->isAllocated());
 	m_texCoordIndexes->emplace_back(Tuple3i(i1, i2, i3));
-	notifyTextureUpdate();
 }
 
 void ccMesh::setTriangleTexCoordIndexes(unsigned triangleIndex, int i1, int i2, int i3)
 {
 	assert(m_texCoordIndexes && m_texCoordIndexes->size() > triangleIndex);
 	m_texCoordIndexes->setValue(triangleIndex, Tuple3i(i1, i2, i3));
-	notifyTextureUpdate();
 }
 
 void ccMesh::getTriangleTexCoordinatesIndexes(unsigned triangleIndex, int& i1, int& i2, int& i3) const
@@ -2812,7 +2791,6 @@ void ccMesh::setTriangleMtlIndexesTable(triangleMaterialIndexesSet* matIndexesTa
 	{
 		m_triMtlIndexes->link();
 	}
-	notifyTextureUpdate();
 }
 
 bool ccMesh::reservePerTriangleMtlIndexes()
@@ -2834,21 +2812,18 @@ void ccMesh::removePerTriangleMtlIndexes()
 	if (m_triMtlIndexes)
 		m_triMtlIndexes->release();
 	m_triMtlIndexes = nullptr;
-	notifyTextureUpdate();
 }
 
 void ccMesh::addTriangleMtlIndex(int mtlIndex)
 {
 	assert(m_triMtlIndexes && m_triMtlIndexes->isAllocated());
 	m_triMtlIndexes->emplace_back(mtlIndex);
-	notifyTextureUpdate();
 }
 
 void ccMesh::setTriangleMtlIndex(unsigned triangleIndex, int mtlIndex)
 {
 	assert(m_triMtlIndexes && m_triMtlIndexes->size() > triangleIndex);
 	m_triMtlIndexes->setValue(triangleIndex, mtlIndex);
-	notifyTextureUpdate();
 }
 
 int ccMesh::getTriangleMtlIndex(unsigned triangleIndex) const

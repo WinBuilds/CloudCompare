@@ -19,9 +19,10 @@
 #define CC_VTK_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! VTK point cloud or mesh I/O filter
-class VTKFilter : public FileIOFilter
+class QCOREIODLL_EXPORT VTKFilter : public FileIOFilter
 {
 public:
 	VTKFilter();

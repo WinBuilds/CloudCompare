@@ -32,6 +32,4 @@ if (PLUGIN_STANDARD_QPCL)
     #import PCL dlls (if any, WIN32 only)
     include( ExportPCLDlls.cmake )
     export_PCL_dlls( ${CLOUDCOMPARE_DEST_FOLDER} )
-
-	set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
 endif()

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E0B05B1-86F6-4510-B8F9-D49FD4DB97E2}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/lib/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/lib/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;USE_QT;CC_DEBUG;CC_CORE_LIB_EXPORTS;CCCOREDLL_LIB;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_USE_QSTRINGBUILDER;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5Concurrentd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;USE_QT;CC_DEBUG;CC_CORE_LIB_EXPORTS;CCCOREDLL_LIB;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_USE_QSTRINGBUILDER;BUILD_STATIC;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;USE_QT;NDEBUG;CC_CORE_LIB_EXPORTS;CCCOREDLL_LIB;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_USE_QSTRINGBUILDER;BUILD_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5Concurrent.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;__STDC_LIMIT_MACROS;USE_QT;NDEBUG;CC_CORE_LIB_EXPORTS;CCCOREDLL_LIB;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_USE_QSTRINGBUILDER;BUILD_STATIC;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CC\include\AutoSegmentationTools.h" />
+    <ClInclude Include="..\..\..\CC\include\BoundingBox.h" />
+    <ClInclude Include="..\..\..\CC\include\CCConst.h" />
+    <ClInclude Include="..\..\..\CC\include\CCCoreLib.h" />
+    <ClInclude Include="..\..\..\CC\include\CCCoreLibExport.h" />
+    <ClInclude Include="..\..\..\CC\include\CCGeom.h" />
+    <ClInclude Include="..\..\..\CC\include\CCMiscTools.h" />
+    <ClInclude Include="..\..\..\CC\include\CCPlatform.h" />
+    <ClInclude Include="..\..\..\CC\include\CCShareable.h" />
+    <ClInclude Include="..\..\..\CC\include\CCToolbox.h" />
+    <ClInclude Include="..\..\..\CC\include\CCTypes.h" />
+    <ClInclude Include="..\..\..\CC\include\ChamferDistanceTransform.h" />
+    <ClInclude Include="..\..\..\CC\include\CloudSamplingTools.h" />
+    <ClInclude Include="..\..\..\CC\include\ConjugateGradient.h" />
+    <ClInclude Include="..\..\..\CC\include\Delaunay2dMesh.h" />
+    <ClInclude Include="..\..\..\CC\include\DgmOctree.h" />
+    <ClInclude Include="..\..\..\CC\include\DgmOctreeReferenceCloud.h" />
+    <ClInclude Include="..\..\..\CC\include\DistanceComputationTools.h" />
+    <ClInclude Include="..\..\..\CC\include\ErrorFunction.h" />
+    <ClInclude Include="..\..\..\CC\include\FastMarching.h" />
+    <ClInclude Include="..\..\..\CC\include\FastMarchingForPropagation.h" />
+    <ClInclude Include="..\..\..\CC\include\Garbage.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericCloud.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericDistribution.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericIndexedCloud.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericIndexedCloudPersist.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericIndexedMesh.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericMesh.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericOctree.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericProgressCallback.h" />
+    <ClInclude Include="..\..\..\CC\include\GenericTriangle.h" />
+    <ClInclude Include="..\..\..\CC\include\GeometricalAnalysisTools.h" />
+    <ClInclude Include="..\..\..\CC\include\Grid3D.h" />
+    <ClInclude Include="..\..\..\CC\include\Jacobi.h" />
+    <ClInclude Include="..\..\..\CC\include\KdTree.h" />
+    <ClInclude Include="..\..\..\CC\include\LocalModel.h" />
+    <ClInclude Include="..\..\..\CC\include\ManualSegmentationTools.h" />
+    <ClInclude Include="..\..\..\CC\include\MathTools.h" />
+    <ClInclude Include="..\..\..\CC\include\MeshSamplingTools.h" />
+    <ClInclude Include="..\..\..\CC\include\Neighbourhood.h" />
+    <ClInclude Include="..\..\..\CC\include\NormalDistribution.h" />
+    <ClInclude Include="..\..\..\CC\include\ParallelSort.h" />
+    <ClInclude Include="..\..\..\CC\include\PointCloud.h" />
+    <ClInclude Include="..\..\..\CC\include\PointCloudTpl.h" />
+    <ClInclude Include="..\..\..\CC\include\PointProjectionTools.h" />
+    <ClInclude Include="..\..\..\CC\include\Polyline.h" />
+    <ClInclude Include="..\..\..\CC\include\RayAndBox.h" />
+    <ClInclude Include="..\..\..\CC\include\ReferenceCloud.h" />
+    <ClInclude Include="..\..\..\CC\include\RegistrationTools.h" />
+    <ClInclude Include="..\..\..\CC\include\SaitoSquaredDistanceTransform.h" />
+    <ClInclude Include="..\..\..\CC\include\ScalarField.h" />
+    <ClInclude Include="..\..\..\CC\include\ScalarFieldTools.h" />
+    <ClInclude Include="..\..\..\CC\include\SimpleMesh.h" />
+    <ClInclude Include="..\..\..\CC\include\SimpleTriangle.h" />
+    <ClInclude Include="..\..\..\CC\include\SquareMatrix.h" />
+    <ClInclude Include="..\..\..\CC\include\StatisticalTestingTools.h" />
+    <ClInclude Include="..\..\..\CC\include\TrueKdTree.h" />
+    <ClInclude Include="..\..\..\CC\include\WeibullDistribution.h" />
+    <ClInclude Include="..\..\..\CC\src\Chi2Helper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\CC\src\AutoSegmentationTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\BoundingBox.cpp" />
+    <ClCompile Include="..\..\..\CC\src\CCMiscTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\CCShareable.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ChamferDistanceTransform.cpp" />
+    <ClCompile Include="..\..\..\CC\src\CloudSamplingTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\Delaunay2dMesh.cpp" />
+    <ClCompile Include="..\..\..\CC\src\DgmOctree.cpp" />
+    <ClCompile Include="..\..\..\CC\src\DgmOctreeReferenceCloud.cpp" />
+    <ClCompile Include="..\..\..\CC\src\DistanceComputationTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ErrorFunction.cpp" />
+    <ClCompile Include="..\..\..\CC\src\FastMarching.cpp" />
+    <ClCompile Include="..\..\..\CC\src\FastMarchingForPropagation.cpp" />
+    <ClCompile Include="..\..\..\CC\src\GeometricalAnalysisTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\KdTree.cpp" />
+    <ClCompile Include="..\..\..\CC\src\LocalModel.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ManualSegmentationTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\MeshSamplingTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\Neighbourhood.cpp" />
+    <ClCompile Include="..\..\..\CC\src\NormalDistribution.cpp" />
+    <ClCompile Include="..\..\..\CC\src\NormalizedProgress.cpp" />
+    <ClCompile Include="..\..\..\CC\src\PointProjectionTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\Polyline.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ReferenceCloud.cpp" />
+    <ClCompile Include="..\..\..\CC\src\RegistrationTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\SaitoSquaredDistanceTransform.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ScalarField.cpp" />
+    <ClCompile Include="..\..\..\CC\src\ScalarFieldTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\SimpleMesh.cpp" />
+    <ClCompile Include="..\..\..\CC\src\StatisticalTestingTools.cpp" />
+    <ClCompile Include="..\..\..\CC\src\TrueKdTree.cpp" />
+    <ClCompile Include="..\..\..\CC\src\WeibullDistribution.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2017_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

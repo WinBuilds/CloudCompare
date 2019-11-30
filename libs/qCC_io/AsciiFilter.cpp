@@ -216,7 +216,7 @@ CC_FILE_ERROR AsciiFilter::saveToFile(ccHObject* entity, const QString& filename
 	//output precision
 	const int s_coordPrecision = saveDialog->coordsPrecision();
 	const int s_sfPrecision = saveDialog->sfPrecision(); 
-	const int s_nPrecision = 2 + sizeof(PointCoordinateType);
+	const int s_nPrecision = 2+sizeof(PointCoordinateType);
 
 	//other parameters
 	bool saveColumnsHeader = saveDialog->saveColumnsNamesHeader();
@@ -433,7 +433,6 @@ CC_FILE_ERROR AsciiFilter::loadFile(const QString& filename,
 
 	AsciiOpenDlg::Sequence openSequence = openDialog->getOpenSequence();
 	char separator = static_cast<char>(openDialog->getSeparator());
-	bool commaAsDecimal = openDialog->useCommaAsDecimal();
 	unsigned maxCloudSize = openDialog->getMaxCloudSize();
 	unsigned skipLineCount = openDialog->getSkippedLinesCount();
 	bool showLabelsIn2D = openDialog->showLabelsIn2D();
@@ -447,7 +446,6 @@ CC_FILE_ERROR AsciiFilter::loadFile(const QString& filename,
 											container,
 											openSequence,
 											separator,
-											commaAsDecimal,
 											approximateNumberOfLines,
 											fileSize,
 											maxCloudSize,
@@ -527,6 +525,7 @@ void clearStructure(cloudAttributesDescriptor &cloudDesc)
 cloudAttributesDescriptor prepareCloud(	const AsciiOpenDlg::Sequence &openSequence,
 										unsigned numberOfPoints,
 										int& maxIndex,
+										char separator,
 										unsigned step = 1)
 {
 	ccPointCloud* cloud = new ccPointCloud();
@@ -537,9 +536,9 @@ cloudAttributesDescriptor prepareCloud(	const AsciiOpenDlg::Sequence &openSequen
 	}
 
 	if (step == 1)
-		cloud->setName("unnamed"); //- Cloud
+		cloud->setName("unnamed - Cloud");
 	else
-		cloud->setName(QString("unnamed (part %1)").arg(step));// - Cloud
+		cloud->setName(QString("unnamed - Cloud (part %1)").arg(step));
 
 	cloudAttributesDescriptor cloudDesc;
 	cloudDesc.cloud = cloud;
@@ -610,7 +609,7 @@ cloudAttributesDescriptor prepareCloud(	const AsciiOpenDlg::Sequence &openSequen
 				}
 				else
 				{
-					sfName.replace('_', ' ');
+					sfName.replace('_',separator);
 				}
 
 				ccScalarField* sf = new ccScalarField(qPrintable(sfName));
@@ -719,7 +718,6 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 															ccHObject& container,
 															const AsciiOpenDlg::Sequence& openSequence,
 															char separator,
-															bool commaAsDecimal,
 															unsigned approximateNumberOfLines,
 															qint64 fileSize,
 															unsigned maxCloudSize,
@@ -735,7 +733,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 
 	//we initialize the loading accelerator structure and point cloud
 	int maxPartIndex = -1;
-	cloudAttributesDescriptor cloudDesc = prepareCloud(openSequence, cloudChunkSize, maxPartIndex, chunkRank);
+	cloudAttributesDescriptor cloudDesc = prepareCloud(openSequence, cloudChunkSize, maxPartIndex, separator, chunkRank);
 
 	if (!cloudDesc.cloud)
 	{
@@ -790,8 +788,6 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 	unsigned pointsRead = 0;
 
 	CC_FILE_ERROR result = CC_FERR_NO_ERROR;
-
-	QLocale locale(commaAsDecimal ? QLocale::French : QLocale::English);
 
 	//main process
 	unsigned nextLimit = /*cloudChunkPos+*/cloudChunkSize;
@@ -865,7 +861,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 				//and create new one
 				cloudChunkPos = pointsRead;
 				cloudChunkSize = std::min(maxCloudSize, approximateNumberOfLines - cloudChunkPos);
-				cloudDesc = prepareCloud(openSequence, cloudChunkSize, maxPartIndex, ++chunkRank);
+				cloudDesc = prepareCloud(openSequence, cloudChunkSize, maxPartIndex, separator, ++chunkRank);
 				if (!cloudDesc.cloud)
 				{
 					ccLog::Error("Not enough memory! Process stopped ...");
@@ -888,7 +884,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 		}
 
 		//we split current line
-		QStringList parts = currentLine.simplified().split(separator, QString::SkipEmptyParts);
+		QStringList parts = currentLine.split(separator, QString::SkipEmptyParts);
 
 		int nParts = parts.size();
 		if (nParts > maxPartIndex) //fake loop for easy break
@@ -900,7 +896,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 				bool ok = true;
 				if (cloudDesc.xCoordIndex >= 0)
 				{
-					P.x = locale.toDouble(parts[cloudDesc.xCoordIndex], &ok);
+					P.x = parts[cloudDesc.xCoordIndex].toDouble(&ok);
 					if (!ok)
 					{
 						break;
@@ -908,7 +904,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 				}
 				if (cloudDesc.yCoordIndex >= 0)
 				{
-					P.y = locale.toDouble(parts[cloudDesc.yCoordIndex], &ok);
+					P.y = parts[cloudDesc.yCoordIndex].toDouble(&ok);
 					if (!ok)
 					{
 						break;
@@ -916,7 +912,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 				}
 				if (cloudDesc.zCoordIndex >= 0)
 				{
-					P.z = locale.toDouble(parts[cloudDesc.zCoordIndex], &ok);
+					P.z = parts[cloudDesc.zCoordIndex].toDouble(&ok);
 					if (!ok)
 					{
 						break;
@@ -952,11 +948,11 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 			if (cloudDesc.hasNorms)
 			{
 				if (cloudDesc.xNormIndex >= 0)
-					N.x = static_cast<PointCoordinateType>(locale.toDouble(parts[cloudDesc.xNormIndex]));
+					N.x = static_cast<PointCoordinateType>(parts[cloudDesc.xNormIndex].toDouble());
 				if (cloudDesc.yNormIndex >= 0)
-					N.y = static_cast<PointCoordinateType>(locale.toDouble(parts[cloudDesc.yNormIndex]));
+					N.y = static_cast<PointCoordinateType>(parts[cloudDesc.yNormIndex].toDouble());
 				if (cloudDesc.zNormIndex >= 0)
-					N.z = static_cast<PointCoordinateType>(locale.toDouble(parts[cloudDesc.zNormIndex]));
+					N.z = static_cast<PointCoordinateType>(parts[cloudDesc.zNormIndex].toDouble());
 				cloudDesc.cloud->addNorm(N);
 			}
 
@@ -973,7 +969,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 				}
 				else if (cloudDesc.fRgbaIndex >= 0)
 				{
-					const float rgbf = locale.toFloat(parts[cloudDesc.fRgbaIndex]);
+					const float rgbf = parts[cloudDesc.fRgbaIndex].toFloat();
 					const uint32_t rgb = *(reinterpret_cast<const uint32_t *>(&rgbf));
 					col.r = ((rgb >> 16) & 0x0000ff);
 					col.g = ((rgb >>  8) & 0x0000ff);
@@ -984,24 +980,24 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 					if (cloudDesc.redIndex >= 0)
 					{
 						float multiplier = cloudDesc.hasFloatRGBColors[0] ? static_cast<float>(ccColor::MAX) : 1.0f;
-						col.r = static_cast<ColorCompType>(locale.toFloat(parts[cloudDesc.redIndex]) * multiplier);
+						col.r = static_cast<ColorCompType>(parts[cloudDesc.redIndex].toFloat() * multiplier);
 					}
 					if (cloudDesc.greenIndex >= 0)
 					{
 						float multiplier = cloudDesc.hasFloatRGBColors[1] ? static_cast<float>(ccColor::MAX) : 1.0f;
-						col.g = static_cast<ColorCompType>(locale.toFloat(parts[cloudDesc.greenIndex]) * multiplier);
+						col.g = static_cast<ColorCompType>(parts[cloudDesc.greenIndex].toFloat() * multiplier);
 					}
 					if (cloudDesc.blueIndex >= 0)
 					{
 						float multiplier = cloudDesc.hasFloatRGBColors[2] ? static_cast<float>(ccColor::MAX) : 1.0f;
-						col.b = static_cast<ColorCompType>(locale.toFloat(parts[cloudDesc.blueIndex]) * multiplier);
+						col.b = static_cast<ColorCompType>(parts[cloudDesc.blueIndex].toFloat() * multiplier);
 					}
 				}
 				cloudDesc.cloud->addRGBColor(col);
 			}
 			else if (cloudDesc.greyIndex >= 0)
 			{
-				col.r = col.g = col.b = static_cast<ColorCompType>(parts[cloudDesc.greyIndex].toInt());
+				col.r = col.r = col.b = static_cast<ColorCompType>(parts[cloudDesc.greyIndex].toInt());
 				cloudDesc.cloud->addRGBColor(col);
 			}
 
@@ -1010,7 +1006,7 @@ CC_FILE_ERROR AsciiFilter::loadCloudFromFormatedAsciiFile(	const QString& filena
 			{
 				for (size_t j = 0; j < cloudDesc.scalarIndexes.size(); ++j)
 				{
-					D = static_cast<ScalarType>(locale.toDouble(parts[cloudDesc.scalarIndexes[j]]));
+					D = static_cast<ScalarType>(parts[cloudDesc.scalarIndexes[j]].toDouble());
 					cloudDesc.scalarFields[j]->emplace_back(D);
 				}
 			}

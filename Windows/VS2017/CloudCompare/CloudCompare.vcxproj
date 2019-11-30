@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ccCoreDll\ccCoreDll.vcxproj">
+      <Project>{ec793248-056c-48f2-99aa-571aeca5fb24}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ccFBODll\ccFBODll.vcxproj">
+      <Project>{9dc62cf4-684f-4a6d-ac3e-e4a57e8ba346}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccDBDll\qccDBDll.vcxproj">
+      <Project>{23699103-a948-4704-a324-585e905e38d5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccGLDll\qccGLDll.vcxproj">
+      <Project>{d74e2387-682e-4ac4-94eb-ab3cb66e201d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccIODll\qccIODll.vcxproj">
+      <Project>{b0b66ed8-d1d3-4e72-a91e-542228c5ddcb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qCustomPlotDll\qCustomPlotDll.vcxproj">
+      <Project>{48ff58ba-b3a8-442f-bf92-e819571273fb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\..\..\common\ui_templates\cameraParamDlg.ui" />
+    <QtUic Include="..\..\..\common\ui_templates\displayOptionsDlg.ui" />
+    <QtUic Include="..\..\..\common\ui_templates\pickOneElementDlg.ui" />
+    <QtUic Include="..\..\..\common\ui_templates\stereoModeDlg.ui" />
+    <QtUic Include="..\..\..\qCC\pluginManager\ui\ccPluginInfoDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\aboutDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\adjustZoomDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\alignDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\applyTransformationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneDoubleValueDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneIntValueDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneStringDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\askThreeDoubleValuesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\askTwoDoubleValuesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\boundingBoxEditorDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\camSensorProjectDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\clippingBoxDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\clippingBoxRepeatDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\colorGradientDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\colorLevelsDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\colorScaleEditorDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\commandLineDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\comparisonDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\computeOctreeDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\contourExtractorDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\dipDirTransformationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\distanceMapDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\exportCoordToSFDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\filterByValueDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\gblSensorProjectDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\geomFeaturesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\globalShiftSettingsDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\graphicalSegmentationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\graphicalTransformationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\heightGridGenerationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\histogramDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\interpolationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\itemSelectionDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\labelingDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\mainWindow.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\matchScalesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\matrixDisplayDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\noiseFilterDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\normalComputationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\orthoSectionGenerationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\planeEditDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\pointListPickingDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\pointPairRegistrationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\pointPropertiesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\primitiveFactoryDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\ptsSamplingDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\rasterExportOptionsDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\rasterizeDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\registrationDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\renderToFileDialog.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\roleChoiceDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\scalarFieldFromColorDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\scaleDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sectionExtractionDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sectionExtractionSubDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\selectChildrenDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sensorComputeDistancesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sensorComputeScatteringAnglesDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sfArithmeticsDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sfEditDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\sorFilterDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\statisticalTestDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\subsamplingDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\tracePolylineDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\unrollDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\volumeCalcDlg.ui" />
+    <QtUic Include="..\..\..\qCC\ui_templates\waveDlg.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\common\ccApplicationBase.cpp" />
+    <ClCompile Include="..\..\..\common\ccCameraParamEditDlg.cpp" />
+    <ClCompile Include="..\..\..\common\ccDisplayOptionsDlg.cpp" />
+    <ClCompile Include="..\..\..\common\ccOptions.cpp" />
+    <ClCompile Include="..\..\..\common\ccOverlayDialog.cpp" />
+    <ClCompile Include="..\..\..\common\ccPickingHub.cpp" />
+    <ClCompile Include="..\..\..\common\ccPickOneElementDlg.cpp" />
+    <ClCompile Include="..\..\..\common\ccPluginManager.cpp" />
+    <ClCompile Include="..\..\..\common\ccStereoModeDlg.cpp" />
+    <ClCompile Include="..\..\..\common\ccTranslationManager.cpp" />
+    <ClCompile Include="..\..\..\qCC\cc2.5DimEditor.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccAboutDialog.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccAdjustZoomDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccAlignDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccApplication.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccAskThreeDoubleValuesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccAskTwoDoubleValuesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccBoundingBoxEditorDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCamSensorProjectionDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccClippingBoxRepeatDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccClippingBoxTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccColorGradientDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccColorLevelsDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccColorScaleEditorDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccColorScaleEditorWidget.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccColorScaleSelector.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCommandCrossSection.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCommandLineCommands.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCommandLineParser.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCommandRaster.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccComparisonDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccComputeOctreeDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccConsole.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccContourExtractor.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccContourExtractorDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccCropTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccEntityAction.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccExportCoordToSFDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccFilterByValueDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccGBLSensorProjectionDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccGeomFeaturesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccGraphicalSegmentationTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccGraphicalTransformationTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccHistogramWindow.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccInnerRect2DFinder.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccInterpolationDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccItemSelectionDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccLabelingDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccLibAlgorithms.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccMatchScalesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccNoiseFilterDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccNormalComputationDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccOrderChoiceDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccOrthoSectionGenerationDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPlaneEditDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPointListPickingDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPointPairRegistrationDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPointPickingGenericInterface.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPointPropertiesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPrimitiveFactoryDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccPtsSamplingDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccRasterizeTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccRecentFiles.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccRegistrationDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccRegistrationTools.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccRenderToFileDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccScalarFieldArithmeticsDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccScalarFieldFromColorDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccScaleDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSectionExtractionSubDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSectionExtractionTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSelectChildrenDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSensorComputeDistancesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSensorComputeScatteringAnglesDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSORFilterDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccStatisticalTestDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccSubsamplingDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccTracePolylineTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccUnrollDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccUtils.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccVolumeCalcTool.cpp" />
+    <ClCompile Include="..\..\..\qCC\ccWaveformDialog.cpp" />
+    <ClCompile Include="..\..\..\qCC\db_tree\ccDBRoot.cpp" />
+    <ClCompile Include="..\..\..\qCC\db_tree\ccPropertiesTreeDelegate.cpp" />
+    <ClCompile Include="..\..\..\qCC\db_tree\matrixDisplayDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\db_tree\sfEditDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\main.cpp" />
+    <ClCompile Include="..\..\..\qCC\mainwindow.cpp" />
+    <ClCompile Include="..\..\..\qCC\pluginManager\ccPluginInfoDlg.cpp" />
+    <ClCompile Include="..\..\..\qCC\pluginManager\ccPluginUIManager.cpp" />
+    <QtMoc Include="..\..\..\qCC\ccApplyTransformationDlg.cpp">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\common\ccApplicationBase.h" />
+    <ClInclude Include="..\..\..\common\ccOptions.h" />
+    <ClInclude Include="..\..\..\common\ccPickingListener.h" />
+    <ClInclude Include="..\..\..\common\ccQtHelpers.h" />
+    <QtMoc Include="..\..\..\qCC\pluginManager\ccPluginUIManager.h" />
+    <QtMoc Include="..\..\..\qCC\pluginManager\ccPluginInfoDlg.h" />
+    <QtMoc Include="..\..\..\qCC\db_tree\sfEditDlg.h" />
+    <QtMoc Include="..\..\..\qCC\db_tree\matrixDisplayDlg.h" />
+    <QtMoc Include="..\..\..\qCC\db_tree\ccPropertiesTreeDelegate.h" />
+    <QtMoc Include="..\..\..\qCC\db_tree\ccDBRoot.h" />
+    <QtMoc Include="..\..\..\common\ccTranslationManager.h" />
+    <QtMoc Include="..\..\..\common\ccStereoModeDlg.h" />
+    <QtMoc Include="..\..\..\common\ccPluginManager.h" />
+    <QtMoc Include="..\..\..\common\ccPickOneElementDlg.h" />
+    <QtMoc Include="..\..\..\common\ccPickingHub.h" />
+    <QtMoc Include="..\..\..\common\ccOverlayDialog.h" />
+    <QtMoc Include="..\..\..\common\ccDisplayOptionsDlg.h" />
+    <QtMoc Include="..\..\..\common\ccCameraParamEditDlg.h" />
+    <ClInclude Include="..\..\..\qCC\cc2.5DimEditor.h" />
+    <ClInclude Include="..\..\..\qCC\ccCommandCrossSection.h" />
+    <ClInclude Include="..\..\..\qCC\ccCommandLineCommands.h" />
+    <ClInclude Include="..\..\..\qCC\ccCommandLineParser.h" />
+    <ClInclude Include="..\..\..\qCC\ccCommandRaster.h" />
+    <ClInclude Include="..\..\..\qCC\ccCommon.h" />
+    <ClInclude Include="..\..\..\qCC\ccContourExtractor.h" />
+    <ClInclude Include="..\..\..\qCC\ccCropTool.h" />
+    <ClInclude Include="..\..\..\qCC\ccEntityAction.h" />
+    <ClInclude Include="..\..\..\qCC\ccGeomFeaturesDlg.h" />
+    <ClInclude Include="..\..\..\qCC\ccInnerRect2DFinder.h" />
+    <ClInclude Include="..\..\..\qCC\ccIsolines.h" />
+    <ClInclude Include="..\..\..\qCC\ccLibAlgorithms.h" />
+    <ClInclude Include="..\..\..\qCC\ccPersistentSettings.h" />
+    <ClInclude Include="..\..\..\qCC\ccRegistrationTools.h" />
+    <ClInclude Include="..\..\..\qCC\ccStatisticalTestDlg.h" />
+    <ClInclude Include="..\..\..\qCC\ccUtils.h" />
+    <QtMoc Include="..\..\..\qCC\mainwindow.h" />
+    <QtMoc Include="..\..\..\qCC\ccWaveformDialog.h" />
+    <QtMoc Include="..\..\..\qCC\ccVolumeCalcTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccUnrollDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccTracePolylineTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccSubsamplingDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccSORFilterDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccSensorComputeScatteringAnglesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccSensorComputeDistancesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccSelectChildrenDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccSectionExtractionTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccSectionExtractionSubDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccScaleDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccScalarFieldFromColorDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccScalarFieldArithmeticsDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccRenderToFileDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccRegistrationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccRecentFiles.h" />
+    <QtMoc Include="..\..\..\qCC\ccRasterizeTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccQCustomPlot.h" />
+    <QtMoc Include="..\..\..\qCC\ccPtsSamplingDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccPrimitiveFactoryDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccPointPropertiesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccPointPickingGenericInterface.h" />
+    <QtMoc Include="..\..\..\qCC\ccPointPairRegistrationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccPointListPickingDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccPlaneEditDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccOrthoSectionGenerationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccOrderChoiceDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccNormalComputationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccNoiseFilterDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccMatchScalesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccLabelingDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccItemSelectionDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccInterpolationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccHistogramWindow.h" />
+    <QtMoc Include="..\..\..\qCC\ccGraphicalTransformationTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccGraphicalSegmentationTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccGBLSensorProjectionDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccFilterByValueDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccExportCoordToSFDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccCustomDoubleValidator.h" />
+    <QtMoc Include="..\..\..\qCC\ccContourExtractorDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccConsole.h" />
+    <QtMoc Include="..\..\..\qCC\ccComputeOctreeDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccComparisonDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccColorScaleSelector.h" />
+    <QtMoc Include="..\..\..\qCC\ccColorScaleEditorWidget.h" />
+    <QtMoc Include="..\..\..\qCC\ccColorScaleEditorDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccColorLevelsDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccColorGradientDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccClippingBoxTool.h" />
+    <QtMoc Include="..\..\..\qCC\ccClippingBoxRepeatDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccCamSensorProjectionDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccBoundingBoxEditorDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccAskTwoDoubleValuesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccAskThreeDoubleValuesDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccApplyTransformationDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccApplication.h" />
+    <QtMoc Include="..\..\..\qCC\ccAlignDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccAdjustZoomDlg.h" />
+    <QtMoc Include="..\..\..\qCC\ccAboutDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\..\qCC\icones.qrc" />
+    <QtRcc Include="..\..\..\qCC\pluginManager\pluginManager.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\qCC\images\ccAddConstSF.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccAlign.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccBilateralFilter.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCCExtract.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCenteredPerspective32.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBox.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBoxMultExport.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBoxSingleExport.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClone.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCloudCloudDistance.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCloudMeshDistance.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccComputeStat.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccConsole.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccDelete.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccDeleteSF.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccExit.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccFilterByValue.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccFullScreen.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGaussianFilter.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGear.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGlobalZoom.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGradient.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGrid.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccHistogram.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccInteractiveTransformation.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccLevel.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccLightParams.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccMerge.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccMinus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccOpen.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccOrthoMode32.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPencil.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPickCenter.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPickCenterAuto.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotAuto.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotOff.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotOn.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPlus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointListPicking.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointPicking.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointSize.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccRegister.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSampleCloud.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSamplePoints.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSave.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSegment.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSfArithmetic.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSORFilter.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccStatTest.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccStereo.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSunLight.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSwapUpDown.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccTracePolyline.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccUnstack.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewerBasedPerspective32.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewIso1.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewIso2.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewXneg.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewXpos.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewYneg.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewYpos.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewZneg.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewZpos.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccZoomIn.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbAreaLabelSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCalibratedImageSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCamSensorSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCloudSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCloudSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbContainerSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbContainerSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbGBLSensorSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbHObjectSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbHObjectSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbImageSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbLabelSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbLockSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMaterialSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMeshSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMeshSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMiscGeomSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMiscGeomSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbOctreeSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbOctreeSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbPolylineSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbSubMeshSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbSubMeshSymbolLocked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbViewportSymbol.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\donate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\gamepad.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_16.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_32.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_64.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_16.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_32.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_64.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\im3DxLogo.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\imLogoV2Qt.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\interactors.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\mapIcon.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\noFilter.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\nvidia.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\oculus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\orthoSections.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primBox.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primCone.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primCylinder.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primDish.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primPlane.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primSphere.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primTorus.gif">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\qCompass.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-closed.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-end.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-more.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-open.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\vline.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\restore.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\sectionExtraction.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallBasket.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallCancel.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallCSVFile.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPause.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointDistance.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointProperties.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointsAngle.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPolygonSelect.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallRectangleSelect.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallReset.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallRevert.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSegmentIn.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSegmentOut.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSphere.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallTrash.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallValidate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\square.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\theme\snowman.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeGrayColor.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeNormal.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typePositiveSF.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeRgbCcolor.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeSF.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeXCoordinate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeYCoordinate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeZCoordinate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\images\unfoldSmall.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\gl_plugin.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\io_plugin.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\std_plugin.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\qCC\images\monitor.svg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\..\..\qCC\images\photo-camera.svg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\..\..\qCC\images\search.svg">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_es_AR.ts" />
+    <None Include="..\..\..\qCC\translations\CloudCompare_fr.ts" />
+    <None Include="..\..\..\qCC\translations\CloudCompare_ja.ts" />
+    <None Include="..\..\..\qCC\translations\CloudCompare_pt.ts" />
+    <None Include="..\..\..\qCC\translations\CloudCompare_ru.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\qCC\images\icon\cc_icon.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B12702AD-ABFB-343A-A199-8E24837244A3}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_HELP_LIB;QT_PRINTSUPPORT_LIB;QT_TESTLIB_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\common;..\..\..\plugins;..\..\..\CC\include;..\..\..\qCC;..\..\..\qCC\db_tree;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\qCC_io;..\..\..\libs\qcustomplot;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtTest;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Helpd.lib;Qt5PrintSupportd.lib;Qt5Testd.lib;Qt5Widgetsd.lib;Qt5Concurrentd.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensionsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\common;..\..\..\plugins;..\..\..\CC\include;..\..\..\qCC;..\..\..\qCC\db_tree;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\qCC_io;..\..\..\libs\qcustomplot;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtTest;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_HELP_LIB;QT_PRINTSUPPORT_LIB;QT_TESTLIB_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+    <PostBuildEvent>
+      <Command>mkdir "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\"
+xcopy "$(SolutionDir)..\..\qCC\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\libs\CCFbo\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\plugins\core\GL\qEDL\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\plugins\core\GL\qSSAO\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_HELP_LIB;QT_PRINTSUPPORT_LIB;QT_TESTLIB_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\common;..\..\..\plugins;..\..\..\CC\include;..\..\..\qCC;..\..\..\qCC\db_tree;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\qCC_io;..\..\..\libs\qcustomplot;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtTest;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Help.lib;Qt5PrintSupport.lib;Qt5Test.lib;Qt5Widgets.lib;Qt5Concurrent.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <IncludePath>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\common;..\..\..\plugins;..\..\..\CC\include;..\..\..\qCC;..\..\..\qCC\db_tree;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\qCC_io;..\..\..\libs\qcustomplot;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtHelp;$(QTDIR)\include\QtPrintSupport;$(QTDIR)\include\QtTest;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_HELP_LIB;QT_PRINTSUPPORT_LIB;QT_TESTLIB_LIB;QT_WIDGETS_LIB;QT_CONCURRENT_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</Define>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+    </QtUic>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+    <PostBuildEvent>
+      <Command>mkdir "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\"
+xcopy "$(SolutionDir)..\..\qCC\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\libs\CCFbo\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\plugins\core\GL\qEDL\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+xcopy "$(SolutionDir)..\..\plugins\core\GL\qSSAO\shaders" "$(WINBUILDS_ROOT)build_msvc15_$(Platform)\$(Configuration)\bin\shaders\" /E /I /R /Y /D
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2017_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

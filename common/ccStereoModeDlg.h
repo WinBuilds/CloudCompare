@@ -46,9 +46,6 @@ public:
 	//! Sets the current parameters
 	void setParameters(const ccGLWindow::StereoParams& params);
 
-	//! Returns whether the FOV should be updated or not
-	bool updateFOV() const;
-
 protected slots:
 
 	//! Slot called when the glass type is modified

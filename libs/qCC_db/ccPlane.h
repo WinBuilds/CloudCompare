@@ -46,9 +46,6 @@ public:
 	**/
 	ccPlane(QString name = QString("Plane"));
 
-	//! for planar entity
-	ccHObject* getPlane() override { return this; }
-
 	//! Returns class ID
 	virtual CC_CLASS_ENUM getClassID() const override { return CC_TYPES::PLANE; }
 
@@ -66,7 +63,7 @@ public:
 	PointCoordinateType getYWidth() const { return m_yWidth; }
 
 	//! Returns the center
-	CCVector3 getCenter() const override { return m_transformation.getTranslationAsVec3D(); }
+	CCVector3 getCenter() const { return m_transformation.getTranslationAsVec3D(); }
 
 	//! Sets 'X' width
 	void setXWidth(PointCoordinateType w, bool autoUpdate = true) { m_xWidth = w; if (autoUpdate) updateRepresentation(); }
@@ -76,8 +73,6 @@ public:
 
 	//inherited from ccPlanarEntityInterface
 	CCVector3 getNormal() const override { return m_transformation.getColumnAsVec3D(2); }
-
-	void notifyPlanarEntityChanged(ccGLMatrix mat) override;
 
 	//! Sets an image as texture
 	/** \return The created material (if successful)
@@ -96,22 +91,14 @@ public:
 		\param[out] rms plane fitting rms (optional)
 		\return plane primitive (if successful)
 	**/
-	static ccPlane* Fit(CCLib::GenericIndexedCloudPersist * cloud, double* rms = 0, std::vector<CCVector3> * profile = 0);
-
-	static ccPlane* Fit(const std::vector<CCVector3> profiles);
+	static ccPlane* Fit(CCLib::GenericIndexedCloudPersist * cloud, double* rms = 0);
 
 	//! Returns the equation of the plane
 	/** Equation:
 		N.P + constVal = 0
 		i.e. Nx.x + Ny.y + Nz.z + constVal = 0
 	**/
-	void getEquation(CCVector3& N, PointCoordinateType& constVal) const override;
-
-	bool isVerticalToDirection(CCVector3 dir, double angle_degree = 15);
-
-	void setProfile(std::vector<CCVector3> profile, bool update = false);
-	std::vector<CCVector3> getProfile() { return m_profile; }
-	CCVector3 getProfileCenter();
+	void getEquation(CCVector3& N, PointCoordinateType& constVal) const;
 
 protected:
 
@@ -128,8 +115,6 @@ protected:
 
 	//! Width along 'Y' dimension
 	PointCoordinateType m_yWidth;
-
-	std::vector<CCVector3> m_profile;
 };
 
 #endif //CC_PLANE_PRIMITIVE_HEADER

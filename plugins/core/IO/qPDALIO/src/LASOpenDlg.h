@@ -82,5 +82,3 @@ protected:
 };
 
 #endif //CC_LAS_OPEN_DIALOG
-
-bool FieldIsPresent(const std::vector<std::string>& dimensions, LAS_FIELDS field);

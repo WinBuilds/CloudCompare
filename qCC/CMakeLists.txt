@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project( BlockBuilder VERSION 1.0 )
+project( CloudCompare VERSION 2.11.0 )
 
 include_directories( ${CC_FBO_LIB_SOURCE_DIR}/include )
 include_directories( ${CC_CORE_LIB_SOURCE_DIR}/include )
@@ -169,58 +169,4 @@ else()
 	install_ext( FILES ${CC_FBO_LIB_SOURCE_DIR}/shaders/Bilateral/bilateral.frag ${CLOUDCOMPARE_DEST_FOLDER} /shaders/Bilateral )
 	install_ext( FILES ${CC_FBO_LIB_SOURCE_DIR}/shaders/Bilateral/bilateral.vert ${CLOUDCOMPARE_DEST_FOLDER} /shaders/Bilateral )
 	install_ext( FILES ${CMAKE_CURRENT_SOURCE_DIR}/shaders/ColorRamp/color_ramp.frag ${CLOUDCOMPARE_DEST_FOLDER} /shaders/ColorRamp )
-endif()
-
-option(OPTION_CONSOLE "show console window" ON)
-if(OPTION_CONSOLE)
-	set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS /SUBSYSTEM:CONSOLE)
-endif()
-
-# building reconstruction
-option(OPTION_USE_STOCKER "Building Reconstruction" ON)
-if(OPTION_USE_STOCKER)
-    if(VCGLIB_FOUND)
-    else()
-		message(FATAL_ERROR "no vcglib support")
-    endif(VCGLIB_FOUND)
-	
-	set(STOCKER_HOME $ENV{STOCKER_HOME} CACHE PATH "stocker home")
-	set_property( TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS USE_STOCKER USE_STOCKER_AS_DLL )
-	# TODO:
-	set(STOCKER_LIBS BuilderBase linear_solver polyfit_basic polyfit_math polyfit_model polyfit_method BuilderCore builderlod2 builderlod3 builderpoly)
-	set(STOCKER_INCLUDE_DIR ${STOCKER_HOME}/include CACHE PATH "stocker include")
-	set(STOCKER_LIBRARY_DIR_DEBUG ${STOCKER_HOME}/lib/${PLATFORM}/Debug CACHE PATH "stocker lib dir")
-	set(STOCKER_LIBRARY_DIR_RELEASE ${STOCKER_HOME}/lib/${PLATFORM}/Release CACHE PATH "stocker lib dir")
-	set(STOCKER_BIN_DIR_DEBUG ${STOCKER_HOME}/bin/${PLATFORM}/Debug CACHE PATH "stocker bin dir")
-	set(STOCKER_BIN_DIR_RELEASE ${STOCKER_HOME}/bin/${PLATFORM}/Release CACHE PATH "stocker bin dir")
-
-	foreach(_lib ${STOCKER_LIBS})
-		set(STOCKER_LIB_DEBUG ${STOCKER_LIBRARY_DIR_DEBUG}/${_lib}d.lib)
-		set(STOCKER_LIB_RELEASE ${STOCKER_LIBRARY_DIR_RELEASE}/${_lib}.lib)
-
-		if (EXISTS ${STOCKER_BIN_DIR_DEBUG}/${_lib}d.dll)
-			file(COPY ${STOCKER_BIN_DIR_DEBUG}/${_lib}d.dll DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/debug/)
-			install( FILES ${STOCKER_BIN_DIR_DEBUG}/${_lib}d.dll CONFIGURATIONS Debug DESTINATION ${CLOUDCOMPARE_DEST_FOLDER}_debug)
-		endif ()
-
-		if (EXISTS ${STOCKER_BIN_DIR_RELEASE}/${_lib}.dll)
-			file(COPY ${STOCKER_BIN_DIR_RELEASE}/${_lib}.dll DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/release/)
-			install( FILES ${STOCKER_BIN_DIR_RELEASE}/${_lib}.dll CONFIGURATIONS Release DESTINATION ${CLOUDCOMPARE_DEST_FOLDER} )
-		endif ()
-
-		target_link_libraries(${PROJECT_NAME} debug ${STOCKER_LIB_DEBUG} optimized ${STOCKER_LIB_RELEASE})
-	endforeach()
-
-	include( ../cmake/LASLibSupport.cmake )
-	target_link_LASLib( ${PROJECT_NAME} )
-
-	include( ../cmake/PCATPSSupport.cmake )
-	target_link_PCATPS( ${PROJECT_NAME} )
-	
-	target_include_directories(${PROJECT_NAME} 
-		PUBLIC	${STOCKER_INCLUDE_DIR}/modules/internal 
-				${STOCKER_INCLUDE_DIR}/utils
-				${STOCKER_INCLUDE_DIR}/utils/3d4em/libs
-				${VCGLIB_INCLUDE_DIRS}
-				${EIGEN_INCLUDE_DIRS})
 endif()

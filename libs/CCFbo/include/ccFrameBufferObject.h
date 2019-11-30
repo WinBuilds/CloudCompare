@@ -18,6 +18,8 @@
 #ifndef CC_FRAME_BUFFER_OBJECT
 #define CC_FRAME_BUFFER_OBJECT
 
+#include "CCFBOLibExports.h"
+
 //Qt
 #include <QOpenGLExtensions>
 #include <QOpenGLFunctions_2_1>
@@ -27,7 +29,7 @@
 	- get the attached depth texture ID
 	- attach a custom COLOR texture
 **/
-class ccFrameBufferObject
+class CCFBODLL_EXPORT ccFrameBufferObject
 {
 public:
 	ccFrameBufferObject();

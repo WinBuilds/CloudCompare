@@ -107,7 +107,7 @@ ccApplicationBase::ccApplicationBase(int &argc, char **argv, bool isCommandLine,
 	ccPluginManager::get().setPaths( m_PluginPaths );
 	
 	ccTranslationManager::get().registerTranslatorFile( QStringLiteral( "qt" ), m_TranslationPath );
-	ccTranslationManager::get().registerTranslatorFile( QStringLiteral( "BlockBuilder" ), m_TranslationPath );
+	ccTranslationManager::get().registerTranslatorFile( QStringLiteral( "CloudCompare" ), m_TranslationPath );
 	ccTranslationManager::get().loadTranslations();
 	
 	connect( this, &ccApplicationBase::aboutToQuit, [=](){ ccMaterial::ReleaseTextures(); } );

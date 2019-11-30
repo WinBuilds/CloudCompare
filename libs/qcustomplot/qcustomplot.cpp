@@ -10341,13 +10341,13 @@ QList<QCPLegend*> QCustomPlot::selectedLegends() const
   
   \see setInteractions, selectedPlottables, selectedItems, selectedAxes, selectedLegends
 */
-void QCustomPlot::deselectAll()
-{
-  foreach (QCPLayer *layer, mLayers)
-  {
-    foreach (QCPLayerable *layerable, layer->children())
+void QCustomPlot::deselectAll() {
+  //foreach (QCPLayer *layer, mLayers)  {
+   for (QCPLayer *layer : mLayers)
+    //foreach (QCPLayerable *layerable, layer->children())
+      for (QCPLayerable * layerable : layer->children())
       layerable->deselectEvent(0);
-  }
+  //}
 }
 
 /*!
@@ -10790,9 +10790,11 @@ void QCustomPlot::mouseReleaseEvent(QMouseEvent *event)
       // deselect all other layerables if not additive selection:
       if (!additive)
       {
-        foreach (QCPLayer *layer, mLayers)
+        //foreach (QCPLayer *layer, mLayers)
+         for(QCPLayer *layer : mLayers)
         {
-          foreach (QCPLayerable *layerable, layer->children())
+          //foreach (QCPLayerable *layerable, layer->children())
+          for (QCPLayerable *layerable : layer->children())
           {
             if (layerable != clickedLayerable && mInteractions.testFlag(layerable->selectionCategory()))
             {
@@ -10882,20 +10884,22 @@ void QCustomPlot::draw(QCPPainter *painter)
   drawBackground(painter);
 
   // draw all layered objects (grid, axes, plottables, items, legend,...):
-  foreach (QCPLayer *layer, mLayers)
-  {
-    foreach (QCPLayerable *child, layer->children())
-    {
-      if (child->realVisibility())
+   // foreach (QCPLayer *layer, mLayers)
+   for(QCPLayer *layer: mLayers)
       {
-        painter->save();
-        painter->setClipRect(child->clipRect().translated(0, -1));
-        child->applyDefaultAntialiasingHint(painter);
-        child->draw(painter);
-        painter->restore();
+      //foreach (QCPLayerable *child, layer->children())
+      for(QCPLayerable *child: layer->children())
+      {
+         if (child->realVisibility())
+            {
+            painter->save();
+            painter->setClipRect(child->clipRect().translated(0, -1));
+            child->applyDefaultAntialiasingHint(painter);
+            child->draw(painter);
+            painter->restore();
+         }
       }
-    }
-  }
+   }
   
   /* Debug code to draw all layout element rects
   foreach (QCPLayoutElement* el, findChildren<QCPLayoutElement*>())

@@ -25,8 +25,6 @@
 //system
 #include <unordered_set>
 
-#include <QImage>
-
 class ccImage;
 class ccMesh;
 class ccPointCloud;
@@ -168,15 +166,11 @@ public: //general
 		bool initFrustumHull();
 
 		bool isComputed;
-		bool drawFrustum;	// XYLIU use this to control LINES
+		bool drawFrustum;
 		bool drawSidePlanes;
 		ccPointCloud* frustumCorners;
 		ccMesh* frustumHull;
 		CCVector3 center;					/**< center of the circumscribed sphere **/
-
-		bool drawImage;
-		bool drawBaseAxis;
-		bool drawNearPlane;
 	};
 
 	//! Default constructor
@@ -243,27 +237,6 @@ public: //frustum display
 
 	//! Sets whether the frustum planes should be displayed or not
 	inline void drawFrustumPlanes(bool state) { m_frustumInfos.drawSidePlanes = state; }
-
-	inline bool nearPlaneIsDrawn() const { return m_frustumInfos.drawNearPlane; }
-	inline void drawNearPlane(bool state) { m_frustumInfos.drawNearPlane = state; }
-
-	inline bool baseAxisIsDrawn() const { return m_frustumInfos.drawBaseAxis; }
-	inline void drawBaseAxis(bool state) { m_frustumInfos.drawBaseAxis = state; }
-
-public: //image
-	//! Returns whether the image should be displayed or not
-	inline bool imageIsDrawn() const { return m_frustumInfos.drawImage; }
-
-	//! Sets whether the image should be displayed or not
-	inline void drawImage(bool state) { m_frustumInfos.drawImage = state; }
-
-	inline QString imagePath() const { return m_image_path; }
-	inline void setImagePath(QString path) { m_image_path = path; }
-
-	inline QImage getImage(bool forceLoad = true, bool save = false);
-
-	inline void setDisplayOrder(int order) { m_display_order = order ; }
-	inline int getDisplayOrder() { return m_display_order; }
 
 public: //coordinate systems conversion methods
 
@@ -541,10 +514,6 @@ protected:
 	ccGLMatrix m_projectionMatrix;
 	//! Whether the intrinsic matrix is valid or not
 	bool m_projectionMatrixIsValid;
-
-	QImage m_image_thumb;
-	QString m_image_path;
-	int m_display_order;		// sort by area visible
 };
 
 class ccOctreeFrustumIntersector

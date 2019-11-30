@@ -84,8 +84,9 @@ bool FieldIsPresent(const std::vector<std::string>& dimensions, LAS_FIELDS field
 
 void LASOpenDlg::setDimensions(const std::vector<std::string>& dimensions)
 {
-	colorCheckBox->setEnabled(FieldIsPresent(dimensions, LAS_RED) || FieldIsPresent(dimensions, LAS_RED) || FieldIsPresent(dimensions, LAS_GREEN));
-	
+	redCheckBox->setEnabled(FieldIsPresent(dimensions,LAS_RED));
+	greenCheckBox->setEnabled(FieldIsPresent(dimensions,LAS_GREEN));
+	blueCheckBox->setEnabled(FieldIsPresent(dimensions,LAS_BLUE));
 	intensityCheckBox->setEnabled(FieldIsPresent(dimensions,LAS_INTENSITY));
 
 	bool hasClassif = FieldIsPresent(dimensions,LAS_CLASSIFICATION);
@@ -135,11 +136,11 @@ bool LASOpenDlg::doLoad(LAS_FIELDS field) const
 	case LAS_POINT_SOURCE_ID:
 		return pointSourceIDCheckBox->isEnabled() && pointSourceIDCheckBox->isChecked();
 	case LAS_RED:
-		return colorCheckBox->isEnabled() && colorCheckBox->isChecked();
+		return redCheckBox->isEnabled() && redCheckBox->isChecked();
 	case LAS_GREEN:
-		return colorCheckBox->isEnabled() && colorCheckBox->isChecked();
+		return greenCheckBox->isEnabled() && greenCheckBox->isChecked();
 	case LAS_BLUE:
-		return colorCheckBox->isEnabled() && colorCheckBox->isChecked();
+		return blueCheckBox->isEnabled() && blueCheckBox->isChecked();
 	case LAS_TIME:
 		return timeCheckBox->isEnabled() && timeCheckBox->isChecked();
 	case LAS_EXTRA:
@@ -152,8 +153,6 @@ bool LASOpenDlg::doLoad(LAS_FIELDS field) const
 		return classifCheckBox->isEnabled() && classifCheckBox->isChecked() && decomposeClassifGroupBox->isChecked() && classifKeypointCheckBox->isChecked();
 	case LAS_CLASSIF_WITHHELD:
 		return classifCheckBox->isEnabled() && classifCheckBox->isChecked() && decomposeClassifGroupBox->isChecked() && classifWithheldCheckBox->isChecked();
-	case LAS_CLASSIF_OVERLAP:
-		return classifCheckBox->isEnabled() && classifCheckBox->isChecked() && decomposeClassifGroupBox->isChecked() && classifOverlapCheckBox->isChecked();
 	case LAS_INVALID:
 	default:
 		assert(false);

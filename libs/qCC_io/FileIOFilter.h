@@ -69,8 +69,6 @@ public:
 			, autoComputeNormals(false)
 			, parentWidget(nullptr)
 			, sessionStart(true)
-			, additionInfo(nullptr)
-			, fastLoad(false)
 		{}
 		
 		//! How to handle big coordinates
@@ -89,10 +87,6 @@ public:
 		QWidget* parentWidget;
 		//! Session start (whether the load action is the first of a session)
 		bool sessionStart;
-		//! additional information
-		void* additionInfo;
-		//! load files faster
-		bool fastLoad;
 	};
 	
 	//! Generic saving parameters

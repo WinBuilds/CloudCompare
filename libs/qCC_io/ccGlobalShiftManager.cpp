@@ -26,11 +26,12 @@
 #include <string.h>
 #include <assert.h>
 
-double ccGlobalShiftManager::MAX_COORDINATE_ABS_VALUE = 1.0e4;
-double ccGlobalShiftManager::MAX_DIAGONAL_LENGTH = 1.0e6;
-
 //semi-persistent settings
 static std::vector<ccGlobalShiftManager::ShiftInfo> s_lastInfoBuffer;
+
+
+QCC_IO_LIB_API double ccGlobalShiftManager::MAX_COORDINATE_ABS_VALUE = 1.0e4;
+QCC_IO_LIB_API double ccGlobalShiftManager::MAX_DIAGONAL_LENGTH = 1.0e6;
 
 void ccGlobalShiftManager::StoreShift(const CCVector3d& shift, double scale, bool preserve/*=true*/)
 {

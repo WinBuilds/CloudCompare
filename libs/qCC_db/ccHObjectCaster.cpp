@@ -44,12 +44,6 @@
 #include "ccSphere.h"
 #include "ccSubMesh.h"
 #include "ccTorus.h"
-#include "StBlock.h"
-#include "StBlockGroup.h"
-#include "StBuilding.h"
-#include "StFootPrint.h"
-#include "StModel.h"
-#include "StPrimGroup.h"
 
 /*** helpers ***/
 
@@ -148,7 +142,7 @@ ccSubMesh* ccHObjectCaster::ToSubMesh(ccHObject* obj)
 
 ccPolyline* ccHObjectCaster::ToPolyline(ccHObject* obj)
 {
-	return (obj && (obj->isA(CC_TYPES::POLY_LINE) || obj->isA(CC_TYPES::ST_FOOTPRINT)) ? static_cast<ccPolyline*>(obj) : 0);
+	return (obj && obj->isA(CC_TYPES::POLY_LINE) ? static_cast<ccPolyline*>(obj) : 0);
 }
 
 ccFacet* ccHObjectCaster::ToFacet(ccHObject* obj)
@@ -167,9 +161,6 @@ ccPlanarEntityInterface* ccHObjectCaster::ToPlanarEntity(ccHObject* obj)
 		else if (obj->isA(CC_TYPES::PLANE))
 		{
 			return static_cast<ccPlane*>(obj);
-		}
-		else if (obj->isA(CC_TYPES::ST_BLOCK)) {
-			return static_cast<StBlock*>(obj);
 		}
 	}
 	return nullptr;
@@ -269,34 +260,4 @@ cc2DViewportObject* ccHObjectCaster::To2DViewportObject(ccHObject* obj)
 ccIndexedTransformationBuffer* ccHObjectCaster::ToTransBuffer(ccHObject* obj)
 {
 	return obj && obj->isKindOf(CC_TYPES::TRANS_BUFFER) ? static_cast<ccIndexedTransformationBuffer*>(obj) : nullptr;
-}
-
-StBlock * ccHObjectCaster::ToStBlock(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_BLOCK) ? static_cast<StBlock*>(obj) : nullptr;
-}
-
-StBlockGroup * ccHObjectCaster::ToStBlockGroup(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_BLOCKGROUP) ? static_cast<StBlockGroup*>(obj) : nullptr;
-}
-
-StBuilding * ccHObjectCaster::ToStBuilding(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_BUILDING) ? static_cast<StBuilding*>(obj) : nullptr;
-}
-
-StFootPrint * ccHObjectCaster::ToStFootPrint(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_FOOTPRINT) ? static_cast<StFootPrint*>(obj) : nullptr;
-}
-
-StModel * ccHObjectCaster::ToStModel(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_MODEL) ? static_cast<StModel*>(obj) : nullptr;
-}
-
-StPrimGroup * ccHObjectCaster::ToStPrimGroup(ccHObject * obj)
-{
-	return obj && obj->isKindOf(CC_TYPES::ST_PRIMGROUP) ? static_cast<StPrimGroup*>(obj) : nullptr;
 }

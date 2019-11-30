@@ -19,9 +19,10 @@
 #define CC_SIMPLE_BIN_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! Simple binary file (with attached text meta-file)
-class SimpleBinFilter : public FileIOFilter
+class QCOREIODLL_EXPORT SimpleBinFilter : public FileIOFilter
 {
 public:
 	SimpleBinFilter();

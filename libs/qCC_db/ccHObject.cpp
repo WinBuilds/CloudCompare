@@ -43,14 +43,6 @@
 #include "ccSubMesh.h"
 #include "ccTorus.h"
 
-#include "StBuilding.h"
-#include "StPrimGroup.h"
-#include "StBlockGroup.h"
-#include "StModel.h"
-
-#include "StBlock.h"
-#include "StFootPrint.h"
-
 //Qt
 #include <QIcon>
 
@@ -207,20 +199,6 @@ ccHObject* ccHObject::New(CC_CLASS_ENUM objectType, const char* name/*=0*/)
 		//construction this way is not supported (yet)
 		ccLog::ErrorDebug("[ccHObject::New] This object (type %i) can't be constructed this way (yet)!",objectType);
 		break;
- 	case CC_TYPES::ST_PROJECT:
- 		return new BDBaseHObject_(name);
-	case CC_TYPES::ST_BUILDING:
-		return new StBuilding(name);
-	case CC_TYPES::ST_PRIMGROUP:
-		return new StPrimGroup(name);
-	case CC_TYPES::ST_BLOCKGROUP:
-		return new StBlockGroup(name);
-	case CC_TYPES::ST_MODEL:
-		return new StModel(name);
-	case CC_TYPES::ST_BLOCK:
-		return new StBlock(name);
-	case CC_TYPES::ST_FOOTPRINT:
-		return new StFootPrint(nullptr);
 	default:
 		//unhandled ID
 		ccLog::ErrorDebug("[ccHObject::New] Invalid object type (%i)!",objectType);
@@ -456,41 +434,6 @@ unsigned ccHObject::filterChildren(	Container& filteredChildren,
 	return static_cast<unsigned>(filteredChildren.size());
 }
 
-unsigned ccHObject::filterChildrenByName( Container& filteredChildren,
-	bool recursive,
-	QString filter,
-	bool strict,
-	CC_CLASS_ENUM type_filter/*=CC_TYPES::OBJECT*/,
-	ccGenericGLDisplay* inDisplay/*=0*/) const
-{
-	for (auto child : m_children)
-	{
-		if (!child->isKindOf(type_filter)) {
-			continue;
-		}
-		QString child_name = child->getName();
-		if ((!strict && child_name.indexOf(filter) >= 0)
-			|| (strict && child_name == filter))
-		{
-			if (!inDisplay || child->getDisplay() == inDisplay)
-			{
-				//warning: we have to handle unicity as a sibling may be in the same container as its parent!
-				if (std::find(filteredChildren.begin(), filteredChildren.end(), child) == filteredChildren.end()) //not yet in output vector?
-				{
-					filteredChildren.push_back(child);
-				}
-			}
-		}
-
-		if (recursive)
-		{
-			child->filterChildrenByName(filteredChildren, true, filter, strict, type_filter, inDisplay);
-		}
-	}
-
-	return static_cast<unsigned>(filteredChildren.size());
-}
-
 int ccHObject::getChildIndex(const ccHObject* child) const
 {
 	for (size_t i=0; i<m_children.size(); ++i)
@@ -610,7 +553,7 @@ ccBBox ccHObject::getDisplayBB_recursive(bool relative, const ccGenericGLDisplay
 
 	if (!display || display == m_currentDisplay)
 		box = getOwnBB(true);
-	
+
 	for (auto child : m_children)
 	{
 		if (child->isEnabled())
@@ -634,55 +577,6 @@ ccBBox ccHObject::getDisplayBB_recursive(bool relative, const ccGenericGLDisplay
 
 	return box;
 }
-
-ccBBox ccHObject::getDisplayScreenBB_recursive(bool relative, const ccGenericGLDisplay* display, bool check_in_screen)
-{
-	ccBBox box;
-
-	if (!display || display == m_currentDisplay) {
-		box = getOwnBB(true);
-		if (display) {
-			ccGenericGLDisplay* dis = const_cast<ccGenericGLDisplay*>(display);
-			ccGLCameraParameters cam;
-			dis->getGLCameraParameters(cam);
-
-			bool in_frustrum = false;
-			ccBBox box_2d;
-			for (size_t i = 0; i < 8; i++) {
-				CCVector3d b_2d;
-				if (cam.project(box.P(i), b_2d, true)) {
-					in_frustrum = true;
-				}
-				box_2d.add(CCVector3(b_2d.x, b_2d.y, 0));
-			}
-			if (!in_frustrum) box.clear();
-		}
-	}
-
-	for (auto child : m_children)
-	{
-		if (child->isEnabled())
-		{
-			ccBBox childBox = child->getDisplayScreenBB_recursive(true, display, check_in_screen);
-			if (child->isGLTransEnabled())
-			{
-				childBox = childBox * child->getGLTransformation();
-			}
-			box += childBox;
-		}
-	}
-
-	if (!relative && box.isValid())
-	{
-		//get absolute bounding-box?
-		ccGLMatrix trans;
-		getAbsoluteGLTransformation(trans);
-		box = box * trans;
-	}
-
-	return box;
-}
-
 
 bool ccHObject::isDisplayed() const
 {
@@ -768,11 +662,9 @@ void ccHObject::drawNameIn3D(CC_DRAW_CONTEXT& context)
 	//CCVector3d Q2D;
 	//camera.project(C, Q2D);
 
-	//! XYLIU 
-	QString name(getName()); 
-	QString name_show = name.mid(0, name.indexOf('.'));
+	
 	QFont font = context.display->getTextDisplayFont(); //takes rendering zoom into account!
-	context.display->displayText(	name_show,
+	context.display->displayText(	getName(),
 									static_cast<int>(m_nameIn3DPos.x),
 									static_cast<int>(m_nameIn3DPos.y),
 									ccGenericGLDisplay::ALIGN_HMIDDLE | ccGenericGLDisplay::ALIGN_VMIDDLE,
@@ -797,7 +689,7 @@ void ccHObject::draw(CC_DRAW_CONTEXT& context)
 	bool draw3D = MACRO_Draw3D(context);
 	
 	//the entity must be either visible or selected, and of course it should be displayed in this context
-	bool drawInThisContext = (((m_visible || isA(CC_TYPES::PLANE)) || m_selected) && m_currentDisplay == context.display);
+	bool drawInThisContext = ((m_visible || m_selected) && m_currentDisplay == context.display);
 
 	if (draw3D)
 	{
@@ -819,7 +711,7 @@ void ccHObject::draw(CC_DRAW_CONTEXT& context)
 	}
 
 	//draw entity
-	if (/*m_visible && */drawInThisContext) // even if it is not visible, once selected, display it!
+	if (m_visible && drawInThisContext)
 	{
 		if (( !m_selected || !MACRO_SkipSelected(context) ) &&
 			(  m_selected || !MACRO_SkipUnselected(context) ))
@@ -1046,8 +938,7 @@ void ccHObject::removeAllChildren()
 bool ccHObject::isSerializable() const
 {
 	//we only handle pure CC_TYPES::HIERARCHY_OBJECT here (object groups)
-	return isA(CC_TYPES::HIERARCHY_OBJECT);
-//	return (getClassID() == CC_TYPES::HIERARCHY_OBJECT);
+	return (getClassID() == CC_TYPES::HIERARCHY_OBJECT);
 }
 
 bool ccHObject::toFile(QFile& out) const
@@ -1321,29 +1212,4 @@ bool ccHObject::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	}
 
 	return true;
-}
-
-ccHObject::Container BDBaseHObject_::GetHObjContainer(CC_CLASS_ENUM type, QString suffix, bool check_enable)
-{
-	ccHObject::Container entities = GetEnabledObjFromGroup(this, type, check_enable);
-	ccHObject::Container output;
-	for (auto & entity : entities) {
-		if (entity->getName().endsWith(suffix)) {
-			output.push_back(entity);
-		}
-	}
-	return output;
-}
-
-ccHObject * BDBaseHObject_::GetHObj(CC_CLASS_ENUM type, QString suffix, QString basename, bool check_enable)
-{
-	ccHObject::Container entities = GetEnabledObjFromGroup(this, type, check_enable);
-	ccHObject* output = nullptr;
-	for (auto & entity : entities) {
-		if (entity->getName().endsWith(suffix) &&
-			GetBaseName(entity->getName()) == basename) {
-			return entity;
-		}
-	}
-	return nullptr;
 }

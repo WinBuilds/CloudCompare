@@ -18,6 +18,8 @@
 #ifndef CC_GL_WIDGET_HEADER
 #define CC_GL_WIDGET_HEADER
 
+#include <qCC_gl.h>
+
 //Local
 #include <ccGLWindow.h>
 
@@ -33,7 +35,7 @@
 #include <assert.h>
 
 //! Container widget for ccGLWindow
-class ccGLWidget : public QWidget
+class QCC_GL_LIB_API ccGLWidget : public QWidget
 {
 	Q_OBJECT
 
@@ -106,7 +108,7 @@ inline void CreateGLWindow(ccGLWindow*& window, QWidget*& widget, bool stereoMod
 	format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
 	format.setStereo(stereoMode);
 
-	window = new ccGLWindow(&format, nullptr, silentInitialization);
+	window = new ccGLWindow(&format, (ccGLWindowParent*)nullptr, silentInitialization);
 
 #ifdef CC_GL_WINDOW_USE_QWINDOW
 	widget = new ccGLWidget(window);

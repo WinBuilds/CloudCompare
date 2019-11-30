@@ -195,28 +195,16 @@ void ccPolyline::drawMeOnly(CC_DRAW_CONTEXT& context)
 	if (pushName)
 		glFunc->glPushName(getUniqueIDForDisplay());
 
-	if (isSelected() && !MACRO_DRAW_BBOX(context)) {
-		ccGL::Color3v(glFunc, ccColor::red.rgb);
-	}
-	else if (isColorOverriden())
+	if (isColorOverriden())
 		ccGL::Color3v(glFunc, getTempColor().rgb);
 	else if (colorsShown())
 		ccGL::Color3v(glFunc, m_rgbColor.rgb);
 
 	//display polyline
-	bool line_bit_pushed = false;
 	if (m_width != 0)
 	{
 		glFunc->glPushAttrib(GL_LINE_BIT);
-		line_bit_pushed = true;
 		glFunc->glLineWidth(static_cast<GLfloat>(m_width));
-	}
-	if (isSelected()) {
-		if (!line_bit_pushed) {
-			glFunc->glPushAttrib(GL_LINE_BIT);
-			line_bit_pushed = true;
-		}		
-		glFunc->glLineWidth(static_cast<GLfloat>(m_width + 2));
 	}
 
 	//DGM: we do the 'GL_LINE_LOOP' manually as I have a strange bug
@@ -287,9 +275,9 @@ void ccPolyline::drawMeOnly(CC_DRAW_CONTEXT& context)
 		}
 	}
 
-	if (line_bit_pushed/*m_width != 0*/)
+	if (m_width != 0)
 	{
-		glFunc->glPopAttrib();	//GL_LINE_BIT
+		glFunc->glPopAttrib();
 	}
 
 	//display vertices
@@ -305,7 +293,7 @@ void ccPolyline::drawMeOnly(CC_DRAW_CONTEXT& context)
 		}
 		glFunc->glEnd();
 
-		glFunc->glPopAttrib();//GL_POINT_BIT
+		glFunc->glPopAttrib();
 	}
 
 	if (pushName)
@@ -699,21 +687,4 @@ ccPointCloud* ccPolyline::samplePoints(	bool densityBased,
 	cloud->setGLTransformationHistory(getGLTransformationHistory());
 
 	return cloud;
-}
-
-std::vector<CCVector3> ccPolyline::getPoints(bool close)
-{
-	std::vector<CCVector3> points;
-
-	unsigned vertCount = size();
-	if (vertCount > 1 && m_theAssociatedCloud) {
-		for (unsigned i = 0; i < vertCount; ++i) {
-			points.push_back(*getPoint(i));
-		}
-		if (close) {
-			points.push_back(points.front());
-		}
-	}
-
-	return points;
 }

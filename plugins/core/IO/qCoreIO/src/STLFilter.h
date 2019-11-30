@@ -19,6 +19,7 @@
 #define CC_STL_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 class ccGenericMesh;
 class ccMesh;
@@ -27,7 +28,7 @@ class ccPointCloud;
 //! StereoLithography file I/O filter
 /** See http://www.ennex.com/~fabbers/StL.asp
 **/
-class STLFilter : public FileIOFilter
+class QCOREIODLL_EXPORT STLFilter : public FileIOFilter
 {
 public:
 	STLFilter();

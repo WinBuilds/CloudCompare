@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1365</width>
-    <height>1024</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,7 +23,7 @@
    <bool>false</bool>
   </property>
   <property name="windowTitle">
-   <string>BlockBuilder</string>
+   <string>CloudCompare</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../icones.qrc">
@@ -38,7 +38,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1365</width>
+     <width>1024</width>
      <height>21</height>
     </rect>
    </property>
@@ -65,10 +65,8 @@
       <string>Toolbars</string>
      </property>
      <addaction name="actionDisplayMainTools"/>
-     <addaction name="actionDisplayBuildingReconTools"/>
-     <addaction name="actionDisplayEditorTools"/>
-     <addaction name="actionDisplayViewTools"/>
      <addaction name="actionDisplayScalarFieldsTools"/>
+     <addaction name="actionDisplayViewTools"/>
     </widget>
     <widget class="QMenu" name="menuLights">
      <property name="title">
@@ -94,20 +92,11 @@
       <string>Language Translation</string>
      </property>
     </widget>
-    <widget class="QMenu" name="menuSet_Pivot_Display_State">
-     <property name="title">
-      <string>Set Pivot Display State</string>
-     </property>
-     <addaction name="actionSetPivotAlwaysOn"/>
-     <addaction name="actionSetPivotRotationOnly"/>
-     <addaction name="actionSetPivotOff"/>
-    </widget>
     <addaction name="actionFullScreen"/>
     <addaction name="actionExclusiveFullScreen"/>
     <addaction name="actionRefresh"/>
     <addaction name="actionToggleCenteredPerspective"/>
     <addaction name="actionToggleViewerBasedPerspective"/>
-    <addaction name="menuSet_Pivot_Display_State"/>
     <addaction name="actionShowCursor3DCoordinates"/>
     <addaction name="actionLockRotationAxis"/>
     <addaction name="actionEnterBubbleViewMode"/>
@@ -127,8 +116,6 @@
     <addaction name="menuToolbars"/>
     <addaction name="menuLanguage"/>
     <addaction name="actionResetGUIElementsPos"/>
-    <addaction name="actionImageViewer"/>
-    <addaction name="actionPointViewEditMode"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -414,7 +401,6 @@
      <addaction name="actionCloudCloudDist"/>
      <addaction name="actionCloudMeshDist"/>
      <addaction name="actionCPS"/>
-     <addaction name="actionCloudModelDist"/>
     </widget>
     <widget class="QMenu" name="menuRegistration">
      <property name="title">
@@ -424,10 +410,6 @@
      <addaction name="actionMatchScales"/>
      <addaction name="actionPointPairsAlign"/>
      <addaction name="actionRegister"/>
-     <addaction name="separator"/>
-     <addaction name="actionBBCenterToOrigin"/>
-     <addaction name="actionBBMinCornerToOrigin"/>
-     <addaction name="actionBBMaxCornerToOrigin"/>
     </widget>
     <widget class="QMenu" name="menuOther">
      <property name="title">
@@ -458,7 +440,6 @@
      <addaction name="actionComputeBestICPRmsMatrix"/>
      <addaction name="separator"/>
      <addaction name="actionEnableVisualDebugTraces"/>
-     <addaction name="actionClearEmptyItems"/>
     </widget>
     <widget class="QMenu" name="menuFit">
      <property name="title">
@@ -504,158 +485,32 @@
     <addaction name="actionPointPicking"/>
     <addaction name="actionPointListPicking"/>
     <addaction name="actionTracePolyline"/>
-    <addaction name="actionBDFootPrintManual"/>
     <addaction name="separator"/>
     <addaction name="menuSandBox"/>
     <addaction name="separator"/>
-    <addaction name="actionGotoNextZoom"/>
-   </widget>
-   <widget class="QMenu" name="menuBDRecon">
-    <property name="title">
-     <string>BDRecon</string>
-    </property>
-    <widget class="QMenu" name="menuPrimitive">
-     <property name="title">
-      <string>Planar Primitive</string>
-     </property>
-     <addaction name="actionBDPrimPlaneFromSharp"/>
-     <addaction name="actionBDPrimCreateGround"/>
-     <addaction name="actionBDPrimShrinkPlane"/>
-     <addaction name="actionBDPrimMergePlane"/>
-     <addaction name="actionBDPrimMakePlane"/>
-     <addaction name="actionBDPrimPointProjection"/>
-    </widget>
-    <widget class="QMenu" name="menuLine_Primitive">
-     <property name="title">
-      <string>Line Primitive</string>
-     </property>
-     <addaction name="actionBDPrimAssignSharpLines"/>
-     <addaction name="actionBDPrimIntersections"/>
-     <addaction name="actionBDPrimOutline"/>
-     <addaction name="actionBDPrimBoundary"/>
-    </widget>
-    <widget class="QMenu" name="menuPolyFit">
-     <property name="title">
-      <string>LoD3 Generation</string>
-     </property>
-     <addaction name="actionBDPolyFit"/>
-     <addaction name="separator"/>
-     <addaction name="actionBDPolyFitHypothesis"/>
-     <addaction name="actionBDPolyFitFacetFilter"/>
-     <addaction name="actionBDPolyFitConfidence"/>
-     <addaction name="actionBDPolyFitSelection"/>
-     <addaction name="separator"/>
-     <addaction name="actionBDPolyFitSettings"/>
-    </widget>
-    <widget class="QMenu" name="menuDisplay_2">
-     <property name="title">
-      <string>Display</string>
-     </property>
-     <addaction name="actionBDDisplayPlaneOn"/>
-     <addaction name="actionBDDisplayPlaneOff"/>
-     <addaction name="actionBDDisplayPointOn"/>
-     <addaction name="actionBDDisplayPointOff"/>
-     <addaction name="actionDisplayWireframe"/>
-     <addaction name="actionDisplayFace"/>
-     <addaction name="actionDisplayNormalPerFace"/>
-     <addaction name="actionDisplayNormalPerVertex"/>
-     <addaction name="actionSetPivotAlwaysOn"/>
-     <addaction name="actionSetPivotRotationOnly"/>
-     <addaction name="actionSetPivotOff"/>
-    </widget>
-    <widget class="QMenu" name="menuLoD2">
-     <property name="title">
-      <string>LoD2 Generation</string>
-     </property>
-     <addaction name="actionBD3D4EM"/>
-     <addaction name="actionAutomaticLoD2Generation"/>
-     <addaction name="separator"/>
-     <addaction name="actionSettingLoD2"/>
-    </widget>
-    <addaction name="actionBDProjectLoad"/>
-    <addaction name="actionBDProjectSave"/>
-    <addaction name="separator"/>
-    <addaction name="actionBDPlaneSegmentation"/>
-    <addaction name="separator"/>
-    <addaction name="actionBDImage_Lines"/>
-    <addaction name="menuLine_Primitive"/>
-    <addaction name="actionBDPrimPlaneFrame"/>
-    <addaction name="separator"/>
-    <addaction name="menuPrimitive"/>
-    <addaction name="actionBDPlane_Deduction"/>
-    <addaction name="separator"/>
-    <addaction name="menuLoD2"/>
-    <addaction name="menuPolyFit"/>
-    <addaction name="separator"/>
-    <addaction name="actionBDRetrieve"/>
-    <addaction name="menuDisplay_2"/>
-    <addaction name="actionBDConstrainedMesh"/>
-    <addaction name="actionBDRetrievePlanePoints"/>
-    <addaction name="actionBDFootPrintGetPlane"/>
-    <addaction name="actionBDMeshToBlock"/>
-    <addaction name="separator"/>
-    <addaction name="actionShowBestImage"/>
-    <addaction name="actionShowSelectedImage"/>
-    <addaction name="actionImageOverlay"/>
-    <addaction name="actionProjectToImage"/>
-    <addaction name="actionTogglePlaneEditState"/>
-    <addaction name="actionSelectWorkingPlane"/>
-    <addaction name="actionEditSelectedItem"/>
-   </widget>
-   <widget class="QMenu" name="menuSegmentation_2">
-    <property name="title">
-     <string>Segmentation</string>
-    </property>
-    <widget class="QMenu" name="menuSettings">
-     <property name="title">
-      <string>Settings</string>
-     </property>
-     <addaction name="actionSettingsGroundFiltering"/>
-     <addaction name="actionSettingsClassification"/>
-     <addaction name="actionSettingsBuildingSeg"/>
-    </widget>
-    <addaction name="actionGroundFilteringBatch"/>
-    <addaction name="actionClassificationBatch"/>
-    <addaction name="actionPointClassEditor"/>
-    <addaction name="separator"/>
-    <addaction name="actionBuildingSegmentationBatch"/>
-    <addaction name="actionBuildingSegmentEditor"/>
-    <addaction name="menuSettings"/>
-   </widget>
-   <widget class="QMenu" name="menuSchedule">
-    <property name="title">
-     <string>Schedule</string>
-    </property>
-    <addaction name="actionScheduleProjectID"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuTools"/>
    <addaction name="menuDisplay"/>
    <addaction name="menu3DViews"/>
-   <addaction name="menuSegmentation_2"/>
-   <addaction name="menuBDRecon"/>
    <addaction name="menuHelp"/>
-   <addaction name="menuSchedule"/>
   </widget>
   <widget class="QDockWidget" name="DockableDBTree">
    <property name="minimumSize">
     <size>
-     <width>276</width>
-     <height>397</height>
+     <width>146</width>
+     <height>175</height>
     </size>
    </property>
    <property name="floating">
     <bool>false</bool>
    </property>
    <property name="features">
-    <set>QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea</set>
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="windowTitle">
-    <string>Project</string>
+    <string>DB Tree</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
@@ -663,647 +518,9 @@
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QVBoxLayout">
      <item>
-      <widget class="QTabWidget" name="ProjectTabWidget">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="tabPosition">
-        <enum>QTabWidget::West</enum>
-       </property>
-       <property name="currentIndex">
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="Database">
-        <attribute name="icon">
-         <iconset resource="../icones.qrc">
-          <normaloff>:/CC/Stocker/images/stocker/database.png</normaloff>:/CC/Stocker/images/stocker/database.png</iconset>
-        </attribute>
-        <attribute name="title">
-         <string>Database</string>
-        </attribute>
-        <layout class="QVBoxLayout">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <property name="spacing">
-            <number>1</number>
-           </property>
-           <item>
-            <widget class="QToolButton" name="NewDatabaseToolButton">
-             <property name="palette">
-              <palette>
-               <active>
-                <colorrole role="WindowText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Button">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Light">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Midlight">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Dark">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Mid">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>170</red>
-                   <green>170</green>
-                   <blue>170</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="BrightText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ButtonText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Base">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Window">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Shadow">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="AlternateBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>220</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-               </active>
-               <inactive>
-                <colorrole role="WindowText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Button">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Light">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Midlight">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Dark">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Mid">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>170</red>
-                   <green>170</green>
-                   <blue>170</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="BrightText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ButtonText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Base">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Window">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Shadow">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="AlternateBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>220</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-               </inactive>
-               <disabled>
-                <colorrole role="WindowText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Button">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Light">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Midlight">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Dark">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Mid">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>170</red>
-                   <green>170</green>
-                   <blue>170</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Text">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="BrightText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ButtonText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>127</red>
-                   <green>127</green>
-                   <blue>127</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Base">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Window">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="Shadow">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="AlternateBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>255</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipBase">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>255</red>
-                   <green>255</green>
-                   <blue>220</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-                <colorrole role="ToolTipText">
-                 <brush brushstyle="SolidPattern">
-                  <color alpha="255">
-                   <red>0</red>
-                   <green>0</green>
-                   <blue>0</blue>
-                  </color>
-                 </brush>
-                </colorrole>
-               </disabled>
-              </palette>
-             </property>
-             <property name="toolTip">
-              <string>create a new database</string>
-             </property>
-             <property name="statusTip">
-              <string>create a new database</string>
-             </property>
-             <property name="autoFillBackground">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/createdatabase.png</normaloff>:/CC/Stocker/images/stocker/createdatabase.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="popupMode">
-              <enum>QToolButton::DelayedPopup</enum>
-             </property>
-             <property name="toolButtonStyle">
-              <enum>Qt::ToolButtonIconOnly</enum>
-             </property>
-             <property name="autoRaise">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="OpenDatabaseToolButton">
-             <property name="toolTip">
-              <string>Open an existing database</string>
-             </property>
-             <property name="statusTip">
-              <string>Open an existing database</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/databaseload.png</normaloff>:/CC/Stocker/images/stocker/databaseload.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="SaveDatabaseToolButton">
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/databasesave.png</normaloff>:/CC/Stocker/images/stocker/databasesave.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="ImportDataToolButton">
-             <property name="toolTip">
-              <string>import data</string>
-             </property>
-             <property name="statusTip">
-              <string>import data</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/importdatabase.png</normaloff>:/CC/Stocker/images/stocker/importdatabase.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="popupMode">
-              <enum>QToolButton::MenuButtonPopup</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="createBuildingProjectToolButton">
-             <property name="toolTip">
-              <string>create building reconstruction project from selection</string>
-             </property>
-             <property name="statusTip">
-              <string>create building reconstruction project from selection</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/buildingblack.png</normaloff>:/CC/Stocker/images/stocker/buildingblack.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="EditDatabaseToolButton">
-             <property name="toolTip">
-              <string>database settings</string>
-             </property>
-             <property name="statusTip">
-              <string>database settings</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/setting.png</normaloff>:/CC/Stocker/images/stocker/setting.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="loadSubstanceToolButton">
-             <property name="toolTip">
-              <string>load substance - original points, etc.</string>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../icones.qrc">
-               <normaloff>:/CC/Stocker/images/stocker/pointon.png</normaloff>:/CC/Stocker/images/stocker/pointon.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="Line" name="line">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="ccCustomQTreeView" name="dbMainTreeView">
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>250</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QTreeView::branch:has-siblings:!adjoins-item {
+      <widget class="ccCustomQTreeView" name="dbTreeView">
+       <property name="styleSheet">
+        <string notr="true">QTreeView::branch:has-siblings:!adjoins-item {
     border-image: url(:/CC/images/QTreeView/vline.png) 0;
 }
 
@@ -1326,181 +543,125 @@ QTreeView::branch:open:has-children:has-siblings  {
         border-image: none;
         image: url(:/CC/images/QTreeView/branch-open.png);
 }</string>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
-           </property>
-           <property name="dragEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="dragDropMode">
-            <enum>QAbstractItemView::InternalMove</enum>
-           </property>
-           <property name="selectionMode">
-            <enum>QAbstractItemView::ExtendedSelection</enum>
-           </property>
-           <property name="uniformRowHeights">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="Buildings">
-        <attribute name="icon">
-         <iconset resource="../icones.qrc">
-          <normaloff>:/CC/Stocker/images/stocker/building.png</normaloff>:/CC/Stocker/images/stocker/building.png</iconset>
-        </attribute>
-        <attribute name="title">
-         <string>Buildings</string>
-        </attribute>
-        <layout class="QVBoxLayout">
-         <item>
-          <layout class="QHBoxLayout" name="buildingsHorizontalLayout"/>
-         </item>
-         <item>
-          <widget class="ccCustomQTreeView" name="dbBuildTreeView">
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>250</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QTreeView::branch:has-siblings:!adjoins-item {
-    border-image: url(:/CC/images/QTreeView/vline.png) 0;
-}
-
-QTreeView::branch:has-siblings:adjoins-item {
-    border-image: url(:/CC/images/QTreeView/branch-more.png) 0;
-}
-
-QTreeView::branch:!has-children:!has-siblings:adjoins-item {
-    border-image: url(:/CC/images/QTreeView/branch-end.png) 0;
-}
-
-QTreeView::branch:has-children:!has-siblings:closed,
-QTreeView::branch:closed:has-children:has-siblings {
-        border-image: none;
-        image: url(:/CC/images/QTreeView/branch-closed.png);
-}
-
-QTreeView::branch:open:has-children:!has-siblings,
-QTreeView::branch:open:has-children:has-siblings  {
-        border-image: none;
-        image: url(:/CC/images/QTreeView/branch-open.png);
-}</string>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
-           </property>
-           <property name="dragEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="dragDropMode">
-            <enum>QAbstractItemView::InternalMove</enum>
-           </property>
-           <property name="selectionMode">
-            <enum>QAbstractItemView::ExtendedSelection</enum>
-           </property>
-           <property name="uniformRowHeights">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="Images">
-        <attribute name="icon">
-         <iconset resource="../icones.qrc">
-          <normaloff>:/CC/Stocker/images/stocker/camera.png</normaloff>:/CC/Stocker/images/stocker/camera.png</iconset>
-        </attribute>
-        <attribute name="title">
-         <string>Images</string>
-        </attribute>
-        <layout class="QVBoxLayout">
-         <item>
-          <layout class="QHBoxLayout" name="imagesHorizontalLayout"/>
-         </item>
-         <item>
-          <widget class="ccCustomQTreeView" name="dbImageTreeView">
-           <property name="minimumSize">
-            <size>
-             <width>150</width>
-             <height>250</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QTreeView::branch:has-siblings:!adjoins-item {
-    border-image: url(:/CC/images/QTreeView/vline.png) 0;
-}
-
-QTreeView::branch:has-siblings:adjoins-item {
-    border-image: url(:/CC/images/QTreeView/branch-more.png) 0;
-}
-
-QTreeView::branch:!has-children:!has-siblings:adjoins-item {
-    border-image: url(:/CC/images/QTreeView/branch-end.png) 0;
-}
-
-QTreeView::branch:has-children:!has-siblings:closed,
-QTreeView::branch:closed:has-children:has-siblings {
-        border-image: none;
-        image: url(:/CC/images/QTreeView/branch-closed.png);
-}
-
-QTreeView::branch:open:has-children:!has-siblings,
-QTreeView::branch:open:has-children:has-siblings  {
-        border-image: none;
-        image: url(:/CC/images/QTreeView/branch-open.png);
-}</string>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::NoFrame</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
-           </property>
-           <property name="dragEnabled">
-            <bool>true</bool>
-           </property>
-           <property name="dragDropMode">
-            <enum>QAbstractItemView::InternalMove</enum>
-           </property>
-           <property name="selectionMode">
-            <enum>QAbstractItemView::ExtendedSelection</enum>
-           </property>
-           <property name="uniformRowHeights">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::InternalMove</enum>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::ExtendedSelection</enum>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
     </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBarView">
+   <property name="windowTitle">
+    <string>Viewing tools</string>
+   </property>
+   <property name="toolTip">
+    <string>Viewing tools</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionDisplayOptions"/>
+   <addaction name="actionEditCamera"/>
+   <addaction name="actionGlobalZoom"/>
+   <addaction name="actionPickRotationCenter"/>
+   <addaction name="actionAutoPickRotationCenter"/>
+   <addaction name="actionLevel"/>
+   <addaction name="actionZoomAndCenter"/>
+   <addaction name="actionSetViewTop"/>
+   <addaction name="actionSetViewFront"/>
+   <addaction name="actionSetViewLeft"/>
+   <addaction name="actionSetViewBack"/>
+   <addaction name="actionSetViewRight"/>
+   <addaction name="actionSetViewBottom"/>
+   <addaction name="actionSetViewIso1"/>
+   <addaction name="actionSetViewIso2"/>
+   <addaction name="actionEnableStereo"/>
+  </widget>
+  <widget class="QDockWidget" name="DockableConsole">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>91</width>
+     <height>128</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetFloatable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Console</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout">
+     <item>
+      <widget class="ccCustomQListWidget" name="consoleWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>80</height>
+        </size>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="showDropIndicator" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::ExtendedSelection</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <widget class="QToolBar" name="toolBarMainTools">
    <property name="windowTitle">
     <string>Main tools</string>
    </property>
    <property name="toolTip">
     <string>Main tools</string>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonIconOnly</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -1510,58 +671,31 @@ QTreeView::branch:open:has-children:has-siblings  {
    </attribute>
    <addaction name="actionOpen"/>
    <addaction name="actionSave"/>
-   <addaction name="actionBDProjectLoad"/>
-   <addaction name="actionBDProjectSave"/>
-   <addaction name="actionBDImagesLoad"/>
-  </widget>
-  <widget class="QToolBar" name="toolBarView">
-   <property name="windowTitle">
-    <string>Viewing tools</string>
-   </property>
-   <property name="toolTip">
-    <string>Viewing tools</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionDisplayShowBBox"/>
-   <addaction name="actionDisplayWireframe"/>
-   <addaction name="actionDisplayFace"/>
-   <addaction name="actionDisplayNormalPerFace"/>
-   <addaction name="actionDisplayNormalPerVertex"/>
-   <addaction name="actionBDDisplayPlaneOn"/>
-   <addaction name="actionBDDisplayPlaneOff"/>
-   <addaction name="actionBDDisplayPointOn"/>
-   <addaction name="actionBDDisplayPointOff"/>
+   <addaction name="separator"/>
    <addaction name="actionPointPicking"/>
-   <addaction name="actionGlobalZoom"/>
-   <addaction name="actionZoomAndCenter"/>
-   <addaction name="actionSetViewTop"/>
-   <addaction name="actionSetViewFront"/>
-   <addaction name="actionSetViewBottom"/>
-   <addaction name="actionSetViewBack"/>
-   <addaction name="actionSetViewLeft"/>
-   <addaction name="actionSetViewRight"/>
-  </widget>
-  <widget class="QToolBar" name="toolBarEditor">
-   <property name="windowTitle">
-    <string>Edit tools</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
+   <addaction name="actionPointListPicking"/>
+   <addaction name="actionTracePolyline"/>
+   <addaction name="actionClone"/>
+   <addaction name="actionMerge"/>
+   <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionPointPairsAlign"/>
+   <addaction name="actionRegister"/>
+   <addaction name="actionSubsample"/>
+   <addaction name="actionSamplePointsOnMesh"/>
+   <addaction name="actionCloudCloudDist"/>
+   <addaction name="actionCloudMeshDist"/>
+   <addaction name="actionLabelConnectedComponents"/>
+   <addaction name="actionPrimitiveFactory"/>
+   <addaction name="actionRasterize"/>
+   <addaction name="actionSORFilter"/>
+   <addaction name="separator"/>
    <addaction name="actionSegment"/>
+   <addaction name="actionTranslateRotate"/>
+   <addaction name="actionCrossSection"/>
+   <addaction name="actionExtractSections"/>
   </widget>
   <widget class="QToolBar" name="toolBarSFTools">
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
    <property name="windowTitle">
     <string>Scalar field tools</string>
    </property>
@@ -1582,75 +716,11 @@ QTreeView::branch:open:has-children:has-siblings  {
    <addaction name="actionScalarFieldArithmetic"/>
    <addaction name="actionOpenColorScalesManager"/>
   </widget>
-  <widget class="QToolBar" name="toolBarSegmentation">
-   <property name="windowTitle">
-    <string>Segmentation tools</string>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>true</bool>
-   </attribute>
-   <addaction name="actionGroundFilteringBatch"/>
-   <addaction name="actionClassificationBatch"/>
-   <addaction name="actionPointClassEditor"/>
-   <addaction name="separator"/>
-   <addaction name="actionBuildingSegmentationBatch"/>
-   <addaction name="actionBuildingSegmentEditor"/>
-  </widget>
-  <widget class="QToolBar" name="toolBarBDRecon">
-   <property name="windowTitle">
-    <string>Reconstruction tools</string>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionBDPlaneSegmentation"/>
-   <addaction name="separator"/>
-   <addaction name="actionEditSelectedItem"/>
-   <addaction name="separator"/>
-   <addaction name="actionBDPrimBoundary"/>
-   <addaction name="actionBDPrimOutline"/>
-   <addaction name="actionBDPrimIntersections"/>
-   <addaction name="actionBDPrimPlaneFrame"/>
-   <addaction name="separator"/>
-   <addaction name="actionBDPrimMergePlane"/>
-   <addaction name="actionBDPrimSplitPlane"/>
-   <addaction name="actionBDPlane_Deduction"/>
-   <addaction name="actionBDPlaneFromPoints"/>
-   <addaction name="actionBDPlaneFromPolygon"/>
-   <addaction name="actionBDPrimMakePlane"/>
-   <addaction name="actionTogglePlaneEditState"/>
-   <addaction name="separator"/>
-   <addaction name="actionBDFootPrintAuto"/>
-   <addaction name="actionBDFootPrintManual"/>
-   <addaction name="actionProjectToImage"/>
-   <addaction name="actionBDFootPrintPack"/>
-   <addaction name="actionBDLoD1Generation"/>
-   <addaction name="actionBD3D4EM"/>
-   <addaction name="separator"/>
-   <addaction name="actionBDPolyFitHypothesis"/>
-   <addaction name="actionBDPolyFitFacetFilter"/>
-   <addaction name="actionBDPolyFitSelection"/>
-   <addaction name="actionBDPolyFitSettings"/>
-   <addaction name="separator"/>
-   <addaction name="actionBDTextureMapping"/>
-  </widget>
   <widget class="QDockWidget" name="DockableProperties">
    <property name="minimumSize">
     <size>
-     <width>100</width>
-     <height>259</height>
+     <width>109</width>
+     <height>135</height>
     </size>
    </property>
    <property name="floating">
@@ -1659,9 +729,6 @@ QTreeView::branch:open:has-children:has-siblings  {
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
-   <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
    <property name="windowTitle">
     <string>Properties</string>
    </property>
@@ -1669,289 +736,9 @@ QTreeView::branch:open:has-children:has-siblings  {
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_4">
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QTreeView" name="propertiesTreeView_Build">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="showDropIndicator" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::NoSelection</enum>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="allColumnsShowFocus">
-        <bool>true</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
-       </property>
-       <attribute name="headerDefaultSectionSize">
-        <number>200</number>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTreeView" name="propertiesTreeView_Main">
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="showDropIndicator" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::NoSelection</enum>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="allColumnsShowFocus">
-        <bool>true</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
-       </property>
-       <attribute name="headerDefaultSectionSize">
-        <number>200</number>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTreeView" name="propertiesTreeView_Image">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="editTriggers">
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="showDropIndicator" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="alternatingRowColors">
-        <bool>true</bool>
-       </property>
-       <property name="selectionMode">
-        <enum>QAbstractItemView::NoSelection</enum>
-       </property>
-       <property name="rootIsDecorated">
-        <bool>false</bool>
-       </property>
-       <property name="itemsExpandable">
-        <bool>false</bool>
-       </property>
-       <property name="allColumnsShowFocus">
-        <bool>true</bool>
-       </property>
-       <property name="expandsOnDoubleClick">
-        <bool>false</bool>
-       </property>
-       <attribute name="headerDefaultSectionSize">
-        <number>200</number>
-       </attribute>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="DockableImage">
-   <property name="minimumSize">
-    <size>
-     <width>100</width>
-     <height>78</height>
-    </size>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Image(F8)</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>2</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_3">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayoutImageEditor">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="sizeConstraint">
-        <enum>QLayout::SetDefaultConstraint</enum>
-       </property>
-      </layout>
-     </item>
-     <item>
-      <widget class="QFrame" name="mapFrame">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="DockablePanel">
-   <property name="minimumSize">
-    <size>
-     <width>87</width>
-     <height>109</height>
-    </size>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Panel</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_5">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QScrollArea" name="scrollArea">
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="widgetResizable">
-        <bool>true</bool>
-       </property>
-       <widget class="QWidget" name="scrollAreaWidgetContents">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>304</width>
-          <height>69</height>
-         </rect>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayoutPanel">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="DockableConsole">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>91</width>
-     <height>120</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>524287</width>
-     <height>524287</height>
-    </size>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetFloatable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Output</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2">
     <layout class="QVBoxLayout">
      <item>
-      <widget class="ccCustomQListWidget" name="consoleWidget">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>80</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
+      <widget class="QTreeView" name="propertiesTreeView">
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>
        </property>
@@ -1962,8 +749,23 @@ QTreeView::branch:open:has-children:has-siblings  {
         <bool>true</bool>
        </property>
        <property name="selectionMode">
-        <enum>QAbstractItemView::ExtendedSelection</enum>
+        <enum>QAbstractItemView::NoSelection</enum>
        </property>
+       <property name="rootIsDecorated">
+        <bool>false</bool>
+       </property>
+       <property name="itemsExpandable">
+        <bool>false</bool>
+       </property>
+       <property name="allColumnsShowFocus">
+        <bool>true</bool>
+       </property>
+       <property name="expandsOnDoubleClick">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerDefaultSectionSize">
+        <number>200</number>
+       </attribute>
       </widget>
      </item>
     </layout>
@@ -1972,7 +774,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/open.png</normaloff>:/CC/Stocker/images/stocker/open.png</iconset>
+     <normaloff>:/CC/images/ccOpen.png</normaloff>:/CC/images/ccOpen.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Open</string>
@@ -1987,7 +789,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSave">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/save.png</normaloff>:/CC/Stocker/images/stocker/save.png</iconset>
+     <normaloff>:/CC/images/ccSave.png</normaloff>:/CC/images/ccSave.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Save</string>
@@ -2146,38 +948,32 @@ QTreeView::branch:open:has-children:has-siblings  {
    <property name="text">
     <string>Console</string>
    </property>
+   <property name="shortcut">
+    <string>F8</string>
+   </property>
    <property name="shortcutContext">
     <enum>Qt::ApplicationShortcut</enum>
    </property>
   </action>
   <action name="actionClose3DView">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>Cl&amp;ose</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+F4</string>
+   </property>
   </action>
   <action name="actionCloseAll3DViews">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>Close &amp;All</string>
    </property>
   </action>
   <action name="actionTile3DViews">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>&amp;Tile</string>
    </property>
   </action>
   <action name="actionCascade3DViews">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>&amp;Cascade</string>
    </property>
@@ -2193,11 +989,11 @@ QTreeView::branch:open:has-children:has-siblings  {
    </property>
   </action>
   <action name="actionNew3DView">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F3</string>
    </property>
   </action>
   <action name="actionClone">
@@ -2233,7 +1029,7 @@ QTreeView::branch:open:has-children:has-siblings  {
     <string>Delete</string>
    </property>
    <property name="shortcut">
-    <string>Shift+Del</string>
+    <string>Del</string>
    </property>
    <property name="shortcutContext">
     <enum>Qt::ApplicationShortcut</enum>
@@ -2327,18 +1123,6 @@ QTreeView::branch:open:has-children:has-siblings  {
    </property>
    <property name="statusTip">
     <string>Label connected components</string>
-   </property>
-   <property name="autoRepeat">
-    <bool>true</bool>
-   </property>
-   <property name="visible">
-    <bool>true</bool>
-   </property>
-   <property name="iconVisibleInMenu">
-    <bool>true</bool>
-   </property>
-   <property name="shortcutVisibleInContextMenu">
-    <bool>false</bool>
    </property>
   </action>
   <action name="actionSegment">
@@ -2665,7 +1449,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionZoomAndCenter">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/zoomfit.png</normaloff>:/CC/Stocker/images/stocker/zoomfit.png</iconset>
+     <normaloff>:/CC/images/search.svg</normaloff>:/CC/images/search.svg</iconset>
    </property>
    <property name="text">
     <string>Zoom &amp; Center</string>
@@ -2686,7 +1470,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewTop">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewtop.png</normaloff>:/CC/Stocker/images/stocker/viewtop.png</iconset>
+     <normaloff>:/CC/images/ccViewZpos.png</normaloff>:/CC/images/ccViewZpos.png</iconset>
    </property>
    <property name="text">
     <string>Top View</string>
@@ -2707,7 +1491,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewFront">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewfront.png</normaloff>:/CC/Stocker/images/stocker/viewfront.png</iconset>
+     <normaloff>:/CC/images/ccViewYpos.png</normaloff>:/CC/images/ccViewYpos.png</iconset>
    </property>
    <property name="text">
     <string>Front View</string>
@@ -2728,7 +1512,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewBack">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewback.png</normaloff>:/CC/Stocker/images/stocker/viewback.png</iconset>
+     <normaloff>:/CC/images/ccViewYneg.png</normaloff>:/CC/images/ccViewYneg.png</iconset>
    </property>
    <property name="text">
     <string>Back View</string>
@@ -2749,7 +1533,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewLeft">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewleft.png</normaloff>:/CC/Stocker/images/stocker/viewleft.png</iconset>
+     <normaloff>:/CC/images/ccViewXpos.png</normaloff>:/CC/images/ccViewXpos.png</iconset>
    </property>
    <property name="text">
     <string>Left Side View</string>
@@ -2770,7 +1554,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewRight">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewright.png</normaloff>:/CC/Stocker/images/stocker/viewright.png</iconset>
+     <normaloff>:/CC/images/ccViewXneg.png</normaloff>:/CC/images/ccViewXneg.png</iconset>
    </property>
    <property name="text">
     <string>Right Side View</string>
@@ -2791,7 +1575,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionSetViewBottom">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewbottom.png</normaloff>:/CC/Stocker/images/stocker/viewbottom.png</iconset>
+     <normaloff>:/CC/images/ccViewZneg.png</normaloff>:/CC/images/ccViewZneg.png</iconset>
    </property>
    <property name="text">
     <string>Bottom View</string>
@@ -2848,7 +1632,7 @@ QTreeView::branch:open:has-children:has-siblings  {
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>Scalar fields</string>
@@ -2897,7 +1681,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionGlobalZoom">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/viewglobe.png</normaloff>:/CC/Stocker/images/stocker/viewglobe.png</iconset>
+     <normaloff>:/CC/images/ccGlobalZoom.png</normaloff>:/CC/images/ccGlobalZoom.png</iconset>
    </property>
    <property name="text">
     <string>Global Zoom</string>
@@ -3059,7 +1843,7 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionPointPicking">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/info.png</normaloff>:/CC/Stocker/images/stocker/info.png</iconset>
+     <normaloff>:/CC/images/ccPointPicking.png</normaloff>:/CC/images/ccPointPicking.png</iconset>
    </property>
    <property name="text">
     <string>Point picking</string>
@@ -3094,13 +1878,10 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionPointListPicking">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pickpts.png</normaloff>:/CC/Stocker/images/stocker/pickpts.png</iconset>
+     <normaloff>:/CC/images/ccPointListPicking.png</normaloff>:/CC/images/ccPointListPicking.png</iconset>
    </property>
    <property name="text">
     <string>Point list picking</string>
-   </property>
-   <property name="iconText">
-    <string>PickPts</string>
    </property>
    <property name="statusTip">
     <string>Pick several points (and export them to ASCII file, a new cloud, etc.)</string>
@@ -3848,13 +2629,10 @@ QTreeView::branch:open:has-children:has-siblings  {
   <action name="actionExtractSections">
    <property name="icon">
     <iconset resource="../icones.qrc">
-     <normaloff>:/CC/images/sectionExtraction.png</normaloff>:/CC/images/sectionExtraction.png</iconset>
+     <normaloff>:/CC/images/dbPolylineSymbol.png</normaloff>:/CC/images/dbPolylineSymbol.png</iconset>
    </property>
    <property name="text">
     <string>Extract sections / Unfold</string>
-   </property>
-   <property name="iconText">
-    <string>FootPrint</string>
    </property>
    <property name="toolTip">
     <string>Extract cloud sections along polylines or unfold a cloud along a polyline</string>
@@ -4011,9 +2789,6 @@ QTreeView::branch:open:has-children:has-siblings  {
    <property name="text">
     <string>Trace Polyline</string>
    </property>
-   <property name="iconText">
-    <string>PickLine</string>
-   </property>
    <property name="toolTip">
     <string>Trace a polyline by point picking</string>
    </property>
@@ -4129,24 +2904,11 @@ QTreeView::branch:open:has-children:has-siblings  {
    <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pointCoord.png</normaloff>:/CC/Stocker/images/stocker/pointCoord.png</iconset>
-   </property>
    <property name="text">
     <string>Show cursor coordinates</string>
    </property>
-   <property name="iconText">
-    <string>P</string>
-   </property>
    <property name="toolTip">
-    <string>Snap to a point when mouse moving</string>
-   </property>
-   <property name="statusTip">
-    <string>snap to a point when mouse moving, may be slow if points are massive</string>
+    <string>Show cursor coordinates (2D and 3D if possible)</string>
    </property>
   </action>
   <action name="actionDeleteScanGrid">
@@ -4202,833 +2964,6 @@ QTreeView::branch:open:has-children:has-siblings  {
    </property>
    <property name="toolTip">
     <string>Compute geometric features (density, curvature, roughness, etc.)</string>
-   </property>
-  </action>
-  <action name="actionBBMinCornerToOrigin">
-   <property name="text">
-    <string>Move bounding-box min corner to origin</string>
-   </property>
-   <property name="toolTip">
-    <string>Move the bounding-box min corner to the origin</string>
-   </property>
-  </action>
-  <action name="actionBBMaxCornerToOrigin">
-   <property name="text">
-    <string>Move bounding-box max corner to origin</string>
-   </property>
-   <property name="toolTip">
-    <string>Move the bounding-box max corner to the origin</string>
-   </property>
-  </action>
-  <action name="actionBBCenterToOrigin">
-   <property name="text">
-    <string>Move bounding-box center to origin</string>
-   </property>
-   <property name="toolTip">
-    <string>Move the bounding-box center to the origin</string>
-   </property>
-  </action>
-  <action name="actionBDImage_Lines">
-   <property name="text">
-    <string>Image Lines</string>
-   </property>
-  </action>
-  <action name="actionBDPlane_Deduction">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/deduction.png</normaloff>:/CC/Stocker/images/stocker/deduction.png</iconset>
-   </property>
-   <property name="text">
-    <string>Plane Deduction</string>
-   </property>
-   <property name="iconText">
-    <string>Deduce</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFit">
-   <property name="text">
-    <string>PolyFit Excute</string>
-   </property>
-  </action>
-  <action name="actionBD3D4EM">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/lod2.png</normaloff>:/CC/Stocker/images/stocker/lod2.png</iconset>
-   </property>
-   <property name="text">
-    <string>LoD2 Generation</string>
-   </property>
-   <property name="iconText">
-    <string>LoD2</string>
-   </property>
-  </action>
-  <action name="actionBDRename_Plane">
-   <property name="text">
-    <string>Plane</string>
-   </property>
-  </action>
-  <action name="actionBDRename_Line">
-   <property name="text">
-    <string>Line</string>
-   </property>
-  </action>
-  <action name="actionBDPrimIntersections">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/intersect.png</normaloff>:/CC/Stocker/images/stocker/intersect.png</iconset>
-   </property>
-   <property name="text">
-    <string>Intersections</string>
-   </property>
-   <property name="iconText">
-    <string>Intersect</string>
-   </property>
-  </action>
-  <action name="actionBDPrimAssignSharpLines">
-   <property name="text">
-    <string>Assign Sharp Lines</string>
-   </property>
-  </action>
-  <action name="actionBDPrimBoundary">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/boundary.png</normaloff>:/CC/Stocker/images/stocker/boundary.png</iconset>
-   </property>
-   <property name="text">
-    <string>Boundary</string>
-   </property>
-   <property name="iconText">
-    <string>Boundary</string>
-   </property>
-  </action>
-  <action name="actionBDPrimPlaneFrame">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/frame.png</normaloff>:/CC/Stocker/images/stocker/frame.png</iconset>
-   </property>
-   <property name="text">
-    <string>Plane Frame</string>
-   </property>
-   <property name="iconText">
-    <string>Frame</string>
-   </property>
-  </action>
-  <action name="actionBDPrimPlaneFromSharp">
-   <property name="text">
-    <string>Plane from Sharps</string>
-   </property>
-  </action>
-  <action name="actionBDPrimCreateGround">
-   <property name="text">
-    <string>Create Ground Plane</string>
-   </property>
-  </action>
-  <action name="actionBDPrimShrinkPlane">
-   <property name="text">
-    <string>Shrink Plane to Outline</string>
-   </property>
-  </action>
-  <action name="actionBDPrimOutline">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/outline.png</normaloff>:/CC/Stocker/images/stocker/outline.png</iconset>
-   </property>
-   <property name="text">
-    <string>Outline</string>
-   </property>
-  </action>
-  <action name="actionBDProjectLoad">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/databaseload.png</normaloff>:/CC/Stocker/images/stocker/databaseload.png</iconset>
-   </property>
-   <property name="text">
-    <string>Load Project</string>
-   </property>
-   <property name="iconText">
-    <string>Load</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+O</string>
-   </property>
-  </action>
-  <action name="actionBDPlaneSegmentation">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/primitives.png</normaloff>:/CC/Stocker/images/stocker/primitives.png</iconset>
-   </property>
-   <property name="text">
-    <string>Plane Segmentation</string>
-   </property>
-   <property name="iconText">
-    <string>Primitive</string>
-   </property>
-  </action>
-  <action name="actionGotoNextZoom">
-   <property name="text">
-    <string>Go to Next and Zoom</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Tab</string>
-   </property>
-  </action>
-  <action name="actionBDPrimMergePlane">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/merge.png</normaloff>:/CC/Stocker/images/stocker/merge.png</iconset>
-   </property>
-   <property name="text">
-    <string>Merge Planes</string>
-   </property>
-   <property name="iconText">
-    <string>Merge</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFitHypothesis">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/facet.png</normaloff>:/CC/Stocker/images/stocker/facet.png</iconset>
-   </property>
-   <property name="text">
-    <string>Generate Hypothesis</string>
-   </property>
-   <property name="iconText">
-    <string>Facet</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFitConfidence">
-   <property name="text">
-    <string>Compute Confidence</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFitSelection">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/lod3.png</normaloff>:/CC/Stocker/images/stocker/lod3.png</iconset>
-   </property>
-   <property name="text">
-    <string>Face Selection</string>
-   </property>
-   <property name="iconText">
-    <string>LoD3</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFitSettings">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/setting.png</normaloff>:/CC/Stocker/images/stocker/setting.png</iconset>
-   </property>
-   <property name="text">
-    <string>Settings</string>
-   </property>
-  </action>
-  <action name="actionBDPrimMakePlane">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/makeplane.png</normaloff>:/CC/Stocker/images/stocker/makeplane.png</iconset>
-   </property>
-   <property name="text">
-    <string>Make Plane</string>
-   </property>
-   <property name="iconText">
-    <string>Create</string>
-   </property>
-  </action>
-  <action name="actionBDDisplayPlaneOn">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/planeon.png</normaloff>:/CC/Stocker/images/stocker/planeon.png</iconset>
-   </property>
-   <property name="text">
-    <string>PlaneOn</string>
-   </property>
-  </action>
-  <action name="actionBDDisplayPlaneOff">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/planeoff.png</normaloff>:/CC/Stocker/images/stocker/planeoff.png</iconset>
-   </property>
-   <property name="text">
-    <string>PlaneOff</string>
-   </property>
-  </action>
-  <action name="actionBDDisplayPointOn">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pointon.png</normaloff>:/CC/Stocker/images/stocker/pointon.png</iconset>
-   </property>
-   <property name="text">
-    <string>PointOn</string>
-   </property>
-  </action>
-  <action name="actionBDDisplayPointOff">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pointoff.png</normaloff>:/CC/Stocker/images/stocker/pointoff.png</iconset>
-   </property>
-   <property name="text">
-    <string>PointOff</string>
-   </property>
-  </action>
-  <action name="actionBDPolyFitFacetFilter">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/filter.png</normaloff>:/CC/Stocker/images/stocker/filter.png</iconset>
-   </property>
-   <property name="text">
-    <string>Facet Filter</string>
-   </property>
-   <property name="iconText">
-    <string>Filter</string>
-   </property>
-  </action>
-  <action name="actionDisplayBuildingReconTools">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>BuildingRecon</string>
-   </property>
-  </action>
-  <action name="actionDisplayEditorTools">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Model Editor</string>
-   </property>
-  </action>
-  <action name="actionBDTextureMapping">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/texture.png</normaloff>:/CC/Stocker/images/stocker/texture.png</iconset>
-   </property>
-   <property name="text">
-    <string>Texture Mapping</string>
-   </property>
-   <property name="iconText">
-    <string>Texture</string>
-   </property>
-  </action>
-  <action name="actionBDConstrainedMesh">
-   <property name="text">
-    <string>Constrained Mesh</string>
-   </property>
-  </action>
-  <action name="actionBDLoD1Generation">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/lod1.png</normaloff>:/CC/Stocker/images/stocker/lod1.png</iconset>
-   </property>
-   <property name="text">
-    <string>LoD1 Generation</string>
-   </property>
-   <property name="iconText">
-    <string>LoD1</string>
-   </property>
-  </action>
-  <action name="actionBDFootPrintManual">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/footprint.png</normaloff>:/CC/Stocker/images/stocker/footprint.png</iconset>
-   </property>
-   <property name="text">
-    <string>FootPrint Manual</string>
-   </property>
-   <property name="iconText">
-    <string>Manual</string>
-   </property>
-   <property name="toolTip">
-    <string>extract footPrint manually</string>
-   </property>
-  </action>
-  <action name="actionBDProjectSave">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/databasesave.png</normaloff>:/CC/Stocker/images/stocker/databasesave.png</iconset>
-   </property>
-   <property name="text">
-    <string>Save Project</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Shift+S</string>
-   </property>
-  </action>
-  <action name="actionBDPrimSplitPlane">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/splitplane.png</normaloff>:/CC/Stocker/images/stocker/splitplane.png</iconset>
-   </property>
-   <property name="text">
-    <string>Split Plane</string>
-   </property>
-   <property name="iconText">
-    <string>Split</string>
-   </property>
-  </action>
-  <action name="actionBDImagesLoad">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/camera.png</normaloff>:/CC/Stocker/images/stocker/camera.png</iconset>
-   </property>
-   <property name="text">
-    <string>Load Images</string>
-   </property>
-  </action>
-  <action name="actionDisplayShowBBox">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/images/primBox.gif</normaloff>:/CC/images/primBox.gif</iconset>
-   </property>
-   <property name="text">
-    <string>Show BBox</string>
-   </property>
-  </action>
-  <action name="actionBDRetrieve">
-   <property name="text">
-    <string>Retrieve Unassigned Points</string>
-   </property>
-  </action>
-  <action name="actionBDPlaneFromPolygon">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pickline.png</normaloff>:/CC/Stocker/images/stocker/pickline.png</iconset>
-   </property>
-   <property name="text">
-    <string>PickLine</string>
-   </property>
-   <property name="toolTip">
-    <string>Create Plane From Polygon</string>
-   </property>
-  </action>
-  <action name="actionBDPlaneFromPoints">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/pickpts.png</normaloff>:/CC/Stocker/images/stocker/pickpts.png</iconset>
-   </property>
-   <property name="text">
-    <string>PickPts</string>
-   </property>
-   <property name="toolTip">
-    <string>Extract Plane From Points</string>
-   </property>
-  </action>
-  <action name="actionBDRetrievePlanePoints">
-   <property name="text">
-    <string>Retrieve Plane Points</string>
-   </property>
-  </action>
-  <action name="actionCloudModelDist">
-   <property name="text">
-    <string>Cloud/Model Dist</string>
-   </property>
-  </action>
-  <action name="actionBDFootPrintAuto">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/footprint.png</normaloff>:/CC/Stocker/images/stocker/footprint.png</iconset>
-   </property>
-   <property name="text">
-    <string>FootPrint</string>
-   </property>
-   <property name="toolTip">
-    <string>extract footprints</string>
-   </property>
-  </action>
-  <action name="actionBDFootPrintPack">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/footprint.png</normaloff>:/CC/Stocker/images/stocker/footprint.png</iconset>
-   </property>
-   <property name="text">
-    <string>Pack Footprints</string>
-   </property>
-   <property name="iconText">
-    <string>Pack</string>
-   </property>
-   <property name="toolTip">
-    <string>Pack Footprints</string>
-   </property>
-  </action>
-  <action name="actionBDFootPrintGetPlane">
-   <property name="text">
-    <string>Get Plane in footprint</string>
-   </property>
-   <property name="toolTip">
-    <string>Get Plane in footprint</string>
-   </property>
-  </action>
-  <action name="actionBDMeshToBlock">
-   <property name="text">
-    <string>Mesh To Block</string>
-   </property>
-  </action>
-  <action name="actionShowBestImage">
-   <property name="text">
-    <string>Show Best Image</string>
-   </property>
-   <property name="shortcut">
-    <string>I</string>
-   </property>
-  </action>
-  <action name="actionShowSelectedImage">
-   <property name="text">
-    <string>Show Selected Image</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+I</string>
-   </property>
-  </action>
-  <action name="actionImageViewer">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Image Viewer</string>
-   </property>
-   <property name="shortcut">
-    <string>F8</string>
-   </property>
-  </action>
-  <action name="actionImageOverlay">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Image Overlay</string>
-   </property>
-  </action>
-  <action name="actionBDPrimPointProjection">
-   <property name="text">
-    <string>Points Project to Plane</string>
-   </property>
-  </action>
-  <action name="actionPointViewEditMode">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Enter point-view edit mode</string>
-   </property>
-  </action>
-  <action name="actionProjectToImage">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/imgedit.png</normaloff>:/CC/Stocker/images/stocker/imgedit.png</iconset>
-   </property>
-   <property name="text">
-    <string>Project To Image</string>
-   </property>
-   <property name="iconText">
-    <string>ToImage</string>
-   </property>
-  </action>
-  <action name="actionDisplayWireframe">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/showframe.png</normaloff>:/CC/Stocker/images/stocker/showframe.png</iconset>
-   </property>
-   <property name="text">
-    <string>Display Wireframe</string>
-   </property>
-   <property name="toolTip">
-    <string>Display Wireframe</string>
-   </property>
-  </action>
-  <action name="actionDisplayNormalPerFace">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/normalface.png</normaloff>:/CC/Stocker/images/stocker/normalface.png</iconset>
-   </property>
-   <property name="text">
-    <string>Normal Per Face</string>
-   </property>
-   <property name="toolTip">
-    <string>Display Normal Per Face</string>
-   </property>
-  </action>
-  <action name="actionDisplayNormalPerVertex">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/normalvert.png</normaloff>:/CC/Stocker/images/stocker/normalvert.png</iconset>
-   </property>
-   <property name="text">
-    <string>Normal Per Vertex</string>
-   </property>
-   <property name="toolTip">
-    <string>Display Normal Per Vertex</string>
-   </property>
-  </action>
-  <action name="actionDisplayFace">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/showface.png</normaloff>:/CC/Stocker/images/stocker/showface.png</iconset>
-   </property>
-   <property name="text">
-    <string>Display Face</string>
-   </property>
-   <property name="iconText">
-    <string>Display Face</string>
-   </property>
-   <property name="toolTip">
-    <string>Display Face</string>
-   </property>
-  </action>
-  <action name="actionDisplayGlobalCoord">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/global.png</normaloff>:/CC/Stocker/images/stocker/global.png</iconset>
-   </property>
-   <property name="text">
-    <string>Display global coord</string>
-   </property>
-   <property name="toolTip">
-    <string>display global coord</string>
-   </property>
-   <property name="statusTip">
-    <string>display global coord or local coord</string>
-   </property>
-  </action>
-  <action name="actionTogglePlaneEditState">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/editplane.png</normaloff>:/CC/Stocker/images/stocker/editplane.png</iconset>
-   </property>
-   <property name="text">
-    <string>toggle plane editor mode</string>
-   </property>
-   <property name="iconText">
-    <string>Plane</string>
-   </property>
-   <property name="toolTip">
-    <string>toggle plane based objects editor mode</string>
-   </property>
-   <property name="statusTip">
-    <string>toggle plane based objects editor mode</string>
-   </property>
-  </action>
-  <action name="actionSelectWorkingPlane">
-   <property name="text">
-    <string>SelectWorkingPlane</string>
-   </property>
-   <property name="toolTip">
-    <string>select a main plane for sketcher</string>
-   </property>
-  </action>
-  <action name="actionEditSelectedItem">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/editor1.png</normaloff>:/CC/Stocker/images/stocker/editor1.png</iconset>
-   </property>
-   <property name="text">
-    <string>Edit Selected Item</string>
-   </property>
-   <property name="iconText">
-    <string>Edit (E)</string>
-   </property>
-   <property name="toolTip">
-    <string>edit the selected item</string>
-   </property>
-   <property name="shortcut">
-    <string>E</string>
-   </property>
-  </action>
-  <action name="actionImportFile">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/importdatabase.png</normaloff>:/CC/Stocker/images/stocker/importdatabase.png</iconset>
-   </property>
-   <property name="text">
-    <string>ImportFile</string>
-   </property>
-   <property name="toolTip">
-    <string>import files to database</string>
-   </property>
-   <property name="statusTip">
-    <string>import files to database</string>
-   </property>
-  </action>
-  <action name="actionImportFolder">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/importfolder.png</normaloff>:/CC/Stocker/images/stocker/importfolder.png</iconset>
-   </property>
-   <property name="text">
-    <string>ImportFolder</string>
-   </property>
-   <property name="toolTip">
-    <string>import files from the filefolder</string>
-   </property>
-   <property name="statusTip">
-    <string>import files from the filefolder</string>
-   </property>
-  </action>
-  <action name="actionGroundFilteringBatch">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/groundfiltering.png</normaloff>:/CC/Stocker/images/stocker/groundfiltering.png</iconset>
-   </property>
-   <property name="text">
-    <string>Ground Filtering</string>
-   </property>
-   <property name="iconText">
-    <string>Filter</string>
-   </property>
-   <property name="toolTip">
-    <string>segment ground points and off-ground points</string>
-   </property>
-   <property name="statusTip">
-    <string>segment ground points and off-ground points</string>
-   </property>
-  </action>
-  <action name="actionClassificationBatch">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/classification.png</normaloff>:/CC/Stocker/images/stocker/classification.png</iconset>
-   </property>
-   <property name="text">
-    <string>Classification</string>
-   </property>
-   <property name="iconText">
-    <string>Classify</string>
-   </property>
-   <property name="toolTip">
-    <string>point classification</string>
-   </property>
-   <property name="statusTip">
-    <string>point classification</string>
-   </property>
-   <property name="iconVisibleInMenu">
-    <bool>true</bool>
-   </property>
-  </action>
-  <action name="actionBuildingSegmentationBatch">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/buildingblack.png</normaloff>:/CC/Stocker/images/stocker/buildingblack.png</iconset>
-   </property>
-   <property name="text">
-    <string>Building Segmentation</string>
-   </property>
-   <property name="iconText">
-    <string>Building</string>
-   </property>
-   <property name="toolTip">
-    <string>single building segmentation</string>
-   </property>
-   <property name="statusTip">
-    <string>single building segmentation</string>
-   </property>
-  </action>
-  <action name="actionBuildingSegmentEditor">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/editor2.png</normaloff>:/CC/Stocker/images/stocker/editor2.png</iconset>
-   </property>
-   <property name="text">
-    <string>Building Segment Editor</string>
-   </property>
-   <property name="iconText">
-    <string>Editor</string>
-   </property>
-  </action>
-  <action name="actionPointClassEditor">
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/editor2.png</normaloff>:/CC/Stocker/images/stocker/editor2.png</iconset>
-   </property>
-   <property name="text">
-    <string>Point Class Editor</string>
-   </property>
-   <property name="iconText">
-    <string>Editor</string>
-   </property>
-  </action>
-  <action name="actionSettingsGroundFiltering">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Ground Filtering</string>
-   </property>
-  </action>
-  <action name="actionSettingsClassification">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Classification</string>
-   </property>
-  </action>
-  <action name="actionSettingsBuildingSeg">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Building Segmentation</string>
-   </property>
-  </action>
-  <action name="actionAutomaticLoD2Generation">
-   <property name="text">
-    <string>Automatic</string>
-   </property>
-  </action>
-  <action name="actionSettingLoD2">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../icones.qrc">
-     <normaloff>:/CC/Stocker/images/stocker/setting.png</normaloff>:/CC/Stocker/images/stocker/setting.png</iconset>
-   </property>
-   <property name="text">
-    <string>Settings</string>
-   </property>
-  </action>
-  <action name="actionScheduleProjectID">
-   <property name="text">
-    <string>Project ID</string>
-   </property>
-  </action>
-  <action name="actionClearEmptyItems">
-   <property name="text">
-    <string>Clear empty items</string>
    </property>
   </action>
  </widget>
@@ -5157,70 +3092,6 @@ QTreeView::branch:open:has-children:has-siblings  {
     <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionDisplayBuildingReconTools</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>toolBarBDRecon</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>458</x>
-     <y>46</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionDisplayEditorTools</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>toolBarEditor</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1006</x>
-     <y>409</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>DockableImage</sender>
-   <signal>visibilityChanged(bool)</signal>
-   <receiver>actionImageViewer</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>160</x>
-     <y>774</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionImageViewer</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>DockableImage</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>160</x>
-     <y>774</y>
     </hint>
    </hints>
   </connection>

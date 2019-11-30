@@ -19,11 +19,12 @@
 #define CC_OFF_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! OFF file I/O filter
 /** See http://people.sc.fsu.edu/~jburkardt/data/off/off.html
 **/
-class OFFFilter : public FileIOFilter
+class QCOREIODLL_EXPORT OFFFilter : public FileIOFilter
 {
 public:
 	OFFFilter();

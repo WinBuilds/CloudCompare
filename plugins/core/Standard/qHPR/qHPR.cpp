@@ -358,7 +358,7 @@ void qHPR::doAction()
 		delete visibleCells;
 		visibleCells = nullptr;
 
-		m_app->dispToConsole(QString("[HPR] Visible points: %1").arg(/*visiblePointCount*/visiblePoints.size()));
+		m_app->dispToConsole(QString("[HPR] Visible points: %1").arg(visiblePointCount));
 
 		if (visiblePoints.size() == cloud->size())
 		{

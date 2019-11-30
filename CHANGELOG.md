@@ -4,29 +4,12 @@ CloudCompare Version History
 v2.11 (Anoia) - (in development)
 ----------------------
 
-- New features
-  - 3 methods to quickly change the coordinate system of one or several entities
-    - Tools > Registration > Move bounding-box center to origin
-    - Tools > Registration > Move bounding-box min corner to origin
-    - Tools > Registration > Move bounding-box max corner to origin
-
 - Improvements
-  - Clipping box tool:
-    - option to select the extracted contour type (LOWER, UPPER or FULL)
-	  - The 'up' direction is always Z for slices normal to X or Y (the local X, Y or Z directions of the active cross-section)
-	  - The 'up' direction is X for slices normal to Z
-	- all parameters should now be properly remembered from one call to the other (during the same session)
-	- the current box/slice position can now be exported (resp. imported) to (resp. from) the clipboard via the 'Advanced' menu
   - Command line tool:
     - The C2M_DIST command (Cloud-to-Mesh distances) can now be called with 2 meshes as input.
         In this case the first mesh vertices are used as compared cloud.
 	- New suboption for the -O -GLOBAL_SHIFT option: 'FIRST'
 		To use the first encountered (non null) global shift for all loaded entities (must be defined for all entities nevertheless ;)
-	- The PCV tool can now be accessed via the command line mode:
-		- Option -PCV (see https://www.cloudcompare.org/doc/wiki/index.php?title=Command_line_mode for sub-options)
-		- Can be called on any number of clouds or meshes
-		- (the tool was already accessible in V2.10, but in a very limited way)
-	- the 'FWF_O' command (to load LAS files with associated waveform data) nows properly supports the '-GLOBAL_SHIFT' option
   - Raster import:
     - new "Apply all" option when CC asks whether invalid pixels of a raster should be ignored or not
   - Point picking:
@@ -47,33 +30,11 @@ v2.11 (Anoia) - (in development)
 	- we now correctly handle faces with more than 4 vertices! (they should be properly tesselated)
 	- support of escaped lines ('\' at the end of the line)
 	- CC now accepts MTL files with the 'Tf' keyword (well, CC just ignores it and doesn't complain about a wrong MTL file anymore ;)
-	- enhanced progress report (thanks to https://gitlab.com/Epic_Wink)
   - Translation:
 	- new (argentinian) Spanish translation
-  - M3C2:
-	- the computation speed should be improved when using a small projection radius (smarter selection of the octree level)
   - Others:
     - CC now saves the radius (parameter) after computing normals (as meta-data associated to the cloud)
-  - LAS files:
-	- the standard LAS Filter now handles the OVERLAP classification bit (for point format >= 6)
-	- improved/fixed management of classification and classification flags
-	- LAS offset (chosen at saving time) should be a little bit smarter (CC will try to keep the previous one,
-		or use the bounding-box min corner ONLY if the coordinates are too large)
-  - ASCII files:
-	- CloudCompare can now load ASCII files with mixed whitespaces (spaces / tabs)
-	- the ASCII load dialog option has now an option to load numerical values with a comma as digit separator
-		('use comma as decimal character' checkbox)
-  - Unroll
-	- ability to set the start and stop angles for the cone unrolling options
-	- new unrolling mode: 'Straightened cone' (the previous one has been renamed 'Straightened cone (fixed radius)'). This new mode unrolls the cone as a cylinder but with a varying radius.
-	- the 'Straightened cone' options are now using the real curvilinear abscissa (0 = cone apex)
-  - Tools > Others > Compute geometric features
-	- option to compute the 1st moment added
-  - Stereo mode updated:
-	- New stereo mode (Generic stereo display) to handle more stereo displays (PluraView, etc.)
-	- New stereo parameters (screen/display size, distance to screen, and eye separation)
-  - E57 files:
-    - after loading an E57 file, the scan (sensor) origin and orientation is stored as meta-data and should be properly restored and saved when exporting the scan(s) back to E57
+
 - Changes
   - Command line tool:
     - The `-FBX_EXPORT_FMT` command is now split. Use `-FBX -EXPORT_FMT`.
@@ -91,14 +52,7 @@ v2.11 (Anoia) - (in development)
     - The GL plugin interface has changed, so if you have your own GL plugins, you will need to update them.
       - The interface name changed from `ccGLFilterPluginInterface` to `ccGLPluginInterface`.
 
-- Bug fix:
-	- LAS classification flags were not always properly extracted/saved by the standard LAS filter (depending on the point format)
-	- Trace Polyline tool: when changing the OpenGL camera position while tracing a polyline AND using oversampling, strange spikes could appear
-	- the Unroll dialog was not enabling all the apex coordinate fields after switching from Cylinder to Cone mode
-	- the Clipping-box tool 'edit' dialog would sometimes move the box in an unepected way when opening and closing it without making any change
-	- M3C2: the 'subsampling' option was not properly restored when loading the parameters from a file (if 'SubsampleEnabled = false')
-
-v2.10.3 (Zephyrus) - 13/06/2019
+v2.10.3 (Zephyrus) - (in development)
 ----------------------
 
 - Enhancements
@@ -122,7 +76,6 @@ v2.10.3 (Zephyrus) - 13/06/2019
   - Fix potential crash with qCSF (see github issue #909)
   - In some cases, the (subsampled) core points cloud was not exported and saved at the end of the call to M3C2 through the command line
   - Some points were incorrectly removed by the 'Clean > Noise filer' method (parallelism issue)
-  - The radius was not updated during the refinement pass of the Sphere fitting algorithm  (i.e. the final radius was not optimal)
 
 v2.10.2 (Zephyrus) - 24/02/2019
 ----------------------

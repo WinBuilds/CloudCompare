@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\libs\qCC_db\cc2DLabel.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\cc2DViewportLabel.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\cc2DViewportObject.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccAdvancedTypes.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccBBox.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccBox.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccCameraSensor.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccClipBox.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccColorRampShader.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccColorScale.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccColorScalesManager.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccColorTypes.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccCone.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccCylinder.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccDepthBuffer.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccDish.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccDrawableObject.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccExternalFactory.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccExtru.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccFacet.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccFastMarchingForNormsDirection.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGBLSensor.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGenericGLDisplay.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGenericMesh.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGenericPointCloud.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGenericPrimitive.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccGriddedTools.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccHObject.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccHObjectCaster.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccImage.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccIndexedTransformation.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccIndexedTransformationBuffer.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccKdTree.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccLog.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccMaterial.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccMaterialSet.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccMesh.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccMeshGroup.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccMinimumSpanningTreeForNormsDirection.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccNormalCompressor.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccNormalVectors.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccObject.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccOctree.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccOctreeProxy.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccOctreeSpinBox.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccPlanarEntityInterface.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccPlane.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccPointCloud.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccPointCloudInterpolator.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccPolyline.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccProgressDialog.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccQuadric.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccRasterGrid.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccScalarField.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccSensor.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccShiftedObject.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccSphere.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccSubMesh.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccTorus.cpp" />
+    <ClCompile Include="..\..\..\libs\qCC_db\ccWaveform.cpp" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccPointCloudLOD.cpp">
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\%(Filename).moc</OutputFile>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\..\..\libs\CCFbo\include\ccShader.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);.\..\..\..\CC\include;.\..\..\..\libs\CCFbo\include;.\..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);.\..\..\..\CC\include;.\..\..\..\libs\CCFbo\include;.\..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets</IncludePath>
+    </QtMoc>
+    <ClInclude Include="..\..\..\libs\qCC_db\cc2DLabel.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\cc2DViewportLabel.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\cc2DViewportObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccAdvancedTypes.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccArray.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccBasicTypes.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccBBox.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccBox.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccCameraSensor.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccChunk.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccColorScale.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccColorScalesManager.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccColorTypes.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccCone.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccCustomObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccCylinder.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccDepthBuffer.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccDish.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccDrawableObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccExternalFactory.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccExtru.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccFacet.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccFastMarchingForNormsDirection.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccFileUtils.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccFlags.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccFrustum.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGBLSensor.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGenericGLDisplay.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGenericMesh.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGenericPointCloud.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGenericPrimitive.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGLDrawContext.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGLMatrix.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGLMatrixTpl.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccGriddedTools.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccHObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccHObjectCaster.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccImage.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccIncludeGL.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccIndexedTransformation.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccIndexedTransformationBuffer.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccInteractor.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccKdTree.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccLog.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccMaterial.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccMaterialSet.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccMesh.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccMeshGroup.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccMinimumSpanningTreeForNormsDirection.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccNormalCompressor.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccNormalVectors.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccOctreeProxy.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPlanarEntityInterface.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPlane.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPointCloud.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPointCloudInterpolator.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPointCloudLOD.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccPolyline.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccQuadric.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccRasterGrid.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccScalarField.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccSensor.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccSerializableObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccShiftedObject.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccSingleton.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccSphere.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccSubMesh.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccTorus.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\ccWaveform.h" />
+    <ClInclude Include="..\..\..\libs\qCC_db\qCC_db.h" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccProgressDialog.h" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccOctreeSpinBox.h" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccOctree.h" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccColorRampShader.h" />
+    <QtMoc Include="..\..\..\libs\qCC_db\ccClipBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ccCoreDll\ccCoreDll.vcxproj">
+      <Project>{ec793248-056c-48f2-99aa-571aeca5fb24}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ccFBODll\ccFBODll.vcxproj">
+      <Project>{9dc62cf4-684f-4a6d-ac3e-e4a57e8ba346}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{23699103-A948-4704-A324-585E905E38D5}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/$(ProjectName)/</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;__STDC_LIMIT_MACROS;NOMINMAX;QCC_DB_LIB_EXPORTS;QCC_DB_LIBRARY_BUILD;QCCDBDLL_LIB;QT_DLL;QT_USE_QSTRINGBUILDER;QT_CORE_LIB;QT_CONCURRENT_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Concurrentd.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensionsd.lib;Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)..\lib\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;__STDC_LIMIT_MACROS;NOMINMAX;QCC_DB_LIB_EXPORTS;QCC_DB_LIBRARY_BUILD;QCCDBDLL_LIB;QT_DLL;QT_USE_QSTRINGBUILDER;QT_CORE_LIB;QT_CONCURRENT_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;__STDC_LIMIT_MACROS;NOMINMAX;QCC_DB_LIB_EXPORTS;QCC_DB_LIBRARY_BUILD;QCCDBDLL_LIB;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_USE_QSTRINGBUILDER;QT_CORE_LIB;QT_CONCURRENT_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Concurrent.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensions.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)..\lib\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;_WINDOWS;_ENABLE_EXTENDED_ALIGNED_STORAGE;_CRT_SECURE_NO_WARNINGS;_SECURE_SCL=0;__STDC_LIMIT_MACROS;NOMINMAX;QCC_DB_LIB_EXPORTS;QCC_DB_LIBRARY_BUILD;QCCDBDLL_LIB;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_USE_QSTRINGBUILDER;QT_CORE_LIB;QT_CONCURRENT_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_db;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2017_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

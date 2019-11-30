@@ -1,0 +1,1313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\..\..\qCC\ui_templates\aboutDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\adjustZoomDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\alignDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\applyTransformationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneDoubleValueDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneIntValueDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\askOneStringDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\askThreeDoubleValuesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\askTwoDoubleValuesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\boundingBoxEditorDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\camSensorProjectDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\clippingBoxDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\clippingBoxRepeatDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\colorGradientDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\colorLevelsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\colorScaleEditorDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\commandLineDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\comparisonDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\computeOctreeDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\contourExtractorDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\dipDirTransformationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\distanceMapDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\exportCoordToSFDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\filterByValueDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\gblSensorProjectDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\geomFeaturesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\globalShiftSettingsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\graphicalSegmentationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\graphicalTransformationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\heightGridGenerationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\histogramDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\interpolationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\itemSelectionDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\labelingDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\mainWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\matchScalesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\matrixDisplayDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\noiseFilterDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\normalComputationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\orthoSectionGenerationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\planeEditDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\pointListPickingDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\pointPairRegistrationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\pointPropertiesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\primitiveFactoryDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\ptsSamplingDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\rasterExportOptionsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\rasterizeDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\registrationDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\renderToFileDialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\roleChoiceDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\scalarFieldFromColorDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\scaleDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sectionExtractionDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sectionExtractionSubDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\selectChildrenDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sensorComputeDistancesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sensorComputeScatteringAnglesDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sfArithmeticsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sfEditDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\sorFilterDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\statisticalTestDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\subsamplingDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\tracePolylineDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\unrollDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\volumeCalcDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\ui_templates\waveDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\cameraParamDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\displayOptionsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\pickOneElementDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\stereoModeDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\qCC\pluginManager\ui\ccPluginInfoDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\qCC\cc2.5DimEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccAboutDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccAdjustZoomDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccAlignDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccAskThreeDoubleValuesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccAskTwoDoubleValuesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccBoundingBoxEditorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCamSensorProjectionDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccClippingBoxRepeatDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccClippingBoxTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccColorGradientDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccColorLevelsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccColorScaleEditorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccColorScaleEditorWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccColorScaleSelector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCommandCrossSection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCommandLineCommands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCommandLineParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCommandRaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccComparisonDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccComputeOctreeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccContourExtractor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccContourExtractorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccCropTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccEntityAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccExportCoordToSFDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccFilterByValueDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccGBLSensorProjectionDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccGeomFeaturesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccGraphicalSegmentationTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccGraphicalTransformationTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccHistogramWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccInnerRect2DFinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccInterpolationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccItemSelectionDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccLabelingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccLibAlgorithms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccMatchScalesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccNoiseFilterDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccNormalComputationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccOrderChoiceDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccOrthoSectionGenerationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPlaneEditDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPointListPickingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPointPairRegistrationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPointPickingGenericInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPointPropertiesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPrimitiveFactoryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccPtsSamplingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccRasterizeTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccRecentFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccRegistrationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccRegistrationTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccRenderToFileDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccScalarFieldArithmeticsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccScalarFieldFromColorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccScaleDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSectionExtractionSubDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSectionExtractionTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSelectChildrenDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSensorComputeDistancesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSensorComputeScatteringAnglesDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSORFilterDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccStatisticalTestDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccSubsamplingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccTracePolylineTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccUnrollDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccVolumeCalcTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\ccWaveformDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccApplicationBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccCameraParamEditDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccDisplayOptionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccOverlayDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPickingHub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPickOneElementDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPluginManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccStereoModeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccTranslationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\db_tree\ccDBRoot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\db_tree\ccPropertiesTreeDelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\db_tree\matrixDisplayDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\db_tree\sfEditDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\pluginManager\ccPluginInfoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\qCC\pluginManager\ccPluginUIManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\qCC\cc2.5DimEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCommandCrossSection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCommandLineCommands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCommandLineParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCommandRaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccContourExtractor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccCropTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccEntityAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccGeomFeaturesDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccInnerRect2DFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccIsolines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccLibAlgorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccPersistentSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccRegistrationTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccStatisticalTestDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\qCC\ccUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccApplicationBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccPickingListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccQtHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\..\..\qCC\ccAboutDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccAdjustZoomDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccAlignDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccApplication.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccApplyTransformationDlg.cpp">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccApplyTransformationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccAskThreeDoubleValuesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccAskTwoDoubleValuesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccBoundingBoxEditorDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccCamSensorProjectionDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccClippingBoxRepeatDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccClippingBoxTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccColorGradientDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccColorLevelsDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccColorScaleEditorDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccColorScaleEditorWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccColorScaleSelector.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccComparisonDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccComputeOctreeDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccConsole.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccContourExtractorDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccCustomDoubleValidator.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccExportCoordToSFDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccFilterByValueDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccGBLSensorProjectionDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccGraphicalSegmentationTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccGraphicalTransformationTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccHistogramWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccInterpolationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccItemSelectionDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccLabelingDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccMatchScalesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccNoiseFilterDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccNormalComputationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccOrderChoiceDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccOrthoSectionGenerationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPlaneEditDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPointListPickingDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPointPairRegistrationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPointPickingGenericInterface.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPointPropertiesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPrimitiveFactoryDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccPtsSamplingDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccQCustomPlot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccRasterizeTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccRecentFiles.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccRegistrationDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccRenderToFileDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccScalarFieldArithmeticsDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccScalarFieldFromColorDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccScaleDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSectionExtractionSubDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSectionExtractionTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSelectChildrenDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSensorComputeDistancesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSensorComputeScatteringAnglesDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSORFilterDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccSubsamplingDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccTracePolylineTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccUnrollDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccVolumeCalcTool.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\ccWaveformDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccCameraParamEditDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccDisplayOptionsDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccOverlayDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPickingHub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPickOneElementDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPluginManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccStereoModeDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccTranslationManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\db_tree\ccDBRoot.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\db_tree\ccPropertiesTreeDelegate.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\db_tree\matrixDisplayDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\db_tree\sfEditDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\pluginManager\ccPluginInfoDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\qCC\pluginManager\ccPluginUIManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\qCC\images\donate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPickCenterAuto.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\theme\snowman.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-end.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-more.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\branch-open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\QTreeView\vline.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\gamepad.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\restore.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\square.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\interactors.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\oculus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\nvidia.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSwapUpDown.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\unfoldSmall.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccStereo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSORFilter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallCSVFile.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSphere.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccLevel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGrid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\sectionExtraction.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\orthoSections.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccExit.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccFullScreen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSunLight.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBox.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBoxMultExport.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClippingBoxSingleExport.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGear.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCenteredPerspective32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccOrthoMode32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewerBasedPerspective32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbAreaLabelSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbViewportSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbHObjectSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbHObjectSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbImageSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCalibratedImageSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbContainerSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbContainerSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMaterialSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbLabelSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCloudSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCloudSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbLockSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbSubMeshSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbSubMeshSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMeshSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMeshSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMiscGeomSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbMiscGeomSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbOctreeSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbOctreeSymbolLocked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbPolylineSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotAuto.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotOff.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPivotOn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbGBLSensorSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\dbCamSensorSymbol.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallTrash.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallRectangleSelect.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\im3DxLogo.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPolygonSelect.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallCancel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPause.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointDistance.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointProperties.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallPointsAngle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallReset.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSegmentIn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallSegmentOut.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallValidate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallBasket.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\smallRevert.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointListPicking.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointPicking.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSfArithmetic.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccAddConstSF.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPickCenter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewXneg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewXpos.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewYneg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewYpos.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewZneg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewZpos.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCCExtract.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccClone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCloudCloudDistance.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccCloudMeshDistance.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccComputeStat.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccDeleteSF.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccFilterByValue.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccMerge.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGaussianFilter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGlobalZoom.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccGradient.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccHistogram.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccInteractiveTransformation.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccAlign.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccRegister.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSampleCloud.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSamplePoints.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSegment.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccStatTest.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccConsole.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccOpen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPointSize.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccSave.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccDelete.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccZoomIn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccBilateralFilter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccUnstack.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPencil.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccPlus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccMinus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccLightParams.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\imLogoV2Qt.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primBox.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primPlane.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primCone.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primCylinder.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewIso1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccViewIso2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primDish.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primSphere.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\primTorus.gif">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typePositiveSF.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeGrayColor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeNormal.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeRgbCcolor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeSF.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeXCoordinate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeYCoordinate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\typeZCoordinate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\ccTracePolyline.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\qCompass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\mapIcon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\noFilter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_viewer_icon_64.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_32.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\images\icon\cc_icon_64.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\std_plugin.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\io_plugin.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\qCC\pluginManager\images\gl_plugin.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\qCC\images\monitor.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\images\photo-camera.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\images\search.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_fr.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_ja.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_pt.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_ru.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+    <None Include="..\..\..\qCC\translations\CloudCompare_es_AR.ts">
+      <Filter>Translation Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\..\qCC\icones.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+    <QtRcc Include="..\..\..\qCC\pluginManager\pluginManager.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\qCC\images\icon\cc_icon.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

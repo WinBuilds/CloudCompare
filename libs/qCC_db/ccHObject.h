@@ -63,7 +63,7 @@ public: //base members access
 	inline CC_CLASS_ENUM getClassID() const override { return CC_TYPES::HIERARCHY_OBJECT; }
 
 	//! Returns whether the instance is a group
-	inline bool isGroup() const { return isA(CC_TYPES::HIERARCHY_OBJECT);/*getClassID() == static_cast<CC_CLASS_ENUM>(CC_TYPES::HIERARCHY_OBJECT);*/ }
+	inline bool isGroup() const { return getClassID() == static_cast<CC_CLASS_ENUM>(CC_TYPES::HIERARCHY_OBJECT); }
 
 	//! Returns parent object
 	/** \return parent object (nullptr if no parent)
@@ -169,12 +169,6 @@ public: //children management
 							bool strict = false,
 							ccGenericGLDisplay* inDisplay = nullptr) const;
 
-	unsigned filterChildrenByName(Container& filteredChildren,
-		bool recursive = false,
-		QString filter = QString(),
-		bool strict = false, CC_CLASS_ENUM type_filter = CC_TYPES::OBJECT,
-		ccGenericGLDisplay* inDisplay = nullptr) const;
-
 	//! Detaches a specific child
 	/** This method does not delete the child.
 		Removes any dependency between the flag and this object
@@ -240,8 +234,6 @@ public: //bounding-box
 		\return bounding-box
 	**/
 	virtual ccBBox getDisplayBB_recursive(bool relative, const ccGenericGLDisplay* display = nullptr);
-
-	virtual ccBBox getDisplayScreenBB_recursive(bool relative, const ccGenericGLDisplay* display, bool check_in_screen);
 
 	//! Returns best-fit bounding-box (if available)
 	/** \warning Only suitable for leaf objects (i.e. without children)
@@ -326,7 +318,6 @@ public: //display
 	ccHObject_recursive_call0(toggleSF, toggleSF_recursive)
 	ccHObject_recursive_call0(toggleShowName, toggleShowName_recursive)
 	ccHObject_recursive_call0(toggleMaterials, toggleMaterials_recursive)
-	ccHObject_recursive_call1(setDBSourceType, CC_TYPES::DB_SOURCE, setDBSourceType_recursive)
 
 	//! Transfers the entity from one display to the other
 	inline virtual void transferDisplay(ccGenericGLDisplay* oldDisplay, ccGenericGLDisplay* newDisplay)
@@ -499,46 +490,5 @@ inline void ConvertToGroup(const ccHObject::Container& origin, ccHObject& dest, 
 		}
 	}
 }
-
-inline QString GetBaseName(QString name){ return name.mid(0, name.indexOf('.')); }
-
-inline ccHObject::Container GetEnabledObjFromGroup(ccHObject* entity, CC_CLASS_ENUM type, bool check_enable = true, bool recursive = true)
-{
-	if (entity) {
-		ccHObject::Container group;
-		entity->filterChildren(group, recursive, type, true, entity->getDisplay());
-		if (check_enable) {
-			ccHObject::Container group_enabled;
-			for (auto & gp : group) {
-				if (gp->isBranchEnabled()) {
-					group_enabled.push_back(gp);
-				}	
-			}
-			return group_enabled;
-		}
-		else {
-			return group;
-		}
-	}
-	return ccHObject::Container();
-}
-
-// project
-class QCC_DB_LIB_API BDBaseHObject_ : public ccHObject
-{
-public:
-public:
-	BDBaseHObject_(QString name = QString()) :
-		ccHObject(name) {}
-	BDBaseHObject_(const ccHObject& s) :
-		ccHObject(s) {}
-	~BDBaseHObject_() {}
-
-	//! Returns class ID
-	virtual CC_CLASS_ENUM getClassID() const override { return CC_TYPES::ST_PROJECT; }
-
-	ccHObject::Container GetHObjContainer(CC_CLASS_ENUM type, QString suffix, bool check_enable = false);
-	ccHObject* GetHObj(CC_CLASS_ENUM type, QString suffix, QString basename = QString(), bool check_enable = false);
-};
 
 #endif //CC_HIERARCHY_OBJECT_HEADER

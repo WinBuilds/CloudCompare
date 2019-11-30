@@ -19,9 +19,10 @@
 #define CC_PDMS_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "../qCoreIOExports.h"
 
 //! PDMS .mac file I/O filter
-class PDMSFilter : public FileIOFilter
+class QCOREIODLL_EXPORT PDMSFilter : public FileIOFilter
 {
 public:
 	PDMSFilter();

@@ -20,9 +20,10 @@
 #define CC_PTX_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! PTX point cloud I/O filter
-class PTXFilter : public FileIOFilter
+class QCOREIODLL_EXPORT PTXFilter : public FileIOFilter
 {
 public:
 	PTXFilter();

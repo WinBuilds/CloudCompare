@@ -41,66 +41,6 @@ class QGLBuffer;
 class ccProgressDialog;
 class ccPointCloudLOD;
 
-class VBO : public QGLBuffer
-{
-public:
-	int rgbShift;
-	int normalShift;
-	int texShift;
-	std::vector<std::pair<int, unsigned int>> matIndexTrisNum; // texture id and triangle number for each material
-
-	//! Inits the VBO
-	/** \return the number of allocated bytes (or -1 if an error occurred)
-	**/
-	int init(int count, bool withColors, bool withNormals, bool withTex, bool* reallocated = nullptr);
-
-	VBO()
-		: QGLBuffer(QGLBuffer::VertexBuffer)
-		, rgbShift(0)
-		, normalShift(0)
-		, texShift(0)
-	{}
-};
-
-//! VBO set
-struct vboSet
-{
-	//! States of the VBO(s)
-	enum STATES { NEW, INITIALIZED, FAILED };
-
-	//! Update flags
-	enum UPDATE_FLAGS {
-		UPDATE_POINTS = 1,
-		UPDATE_COLORS = 2,
-		UPDATE_NORMALS = 4,
-		UPDATE_TEXTURE = 8,
-		UPDATE_ALL = UPDATE_POINTS | UPDATE_COLORS | UPDATE_NORMALS | UPDATE_TEXTURE,
-	};
-
-	vboSet()
-		: hasColors(false)
-		, colorIsSF(false)
-		, sourceSF(nullptr)
-		, hasNormals(false)
-		, hasTexture(false)
-		, totalMemSizeBytes(0)
-		, updateFlags(0)
-		, state(NEW)
-	{}
-
-	std::vector<VBO*> vbos;
-	bool hasColors;
-	bool colorIsSF;
-	ccScalarField* sourceSF;
-	bool hasNormals;
-	bool hasTexture;
-	int totalMemSizeBytes;
-	int updateFlags;
-
-	//! Current state
-	STATES state;
-};
-
 /***************************************************
 				ccPointCloud
 ***************************************************/
@@ -693,40 +633,41 @@ public: //other methods
 	**/
 	void hidePointsByScalarValue(ScalarType minVal, ScalarType maxVal);
 
-	enum UnrollMode { CYLINDER = 0, CONE = 1, STRAIGHTENED_CONE = 2, STRAIGHTENED_CONE2 = 3 };
-
-	struct UnrollBaseParams
-	{
-		PointCoordinateType radius;	//!< unrolling cylinder radius (or cone base radius)
-		unsigned char axisDim;		//!< unrolling cylinder/cone axis (X=0, Y=1 or Z=2)
-	};
-	struct UnrollCylinderParams : public UnrollBaseParams
-	{
-		CCVector3 center;			//! A point belonging to the cylinder axis
-	};
-	struct UnrollConeParams : public UnrollBaseParams
-	{
-		CCVector3 apex;				//! Cone apex
-		double coneAngle_deg;		//! Cone aperture angle (in degrees)
-	};
-
-	//! Unrolls the cloud and its normals on a cylinder or a cone
+	//! Unrolls the cloud and its normals on a cylinder
 	/** This method is redundant with the "developCloudOnCylinder" method of CCLib,
 		apart that it can also handle the cloud normals.
-		\param mode unrolling mode
-		\param params unrolling parameters (must match the unrolling mode)
+		\param radius unrolling cylinder radius
+		\param coneAxisDim dimension along which the cylinder axis is aligned (X=0, Y=1, Z=2)
+		\param center a point belonging to the cylinder axis (automatically computed if not specified)
 		\param exportDeviationSF to export the deviation fro the ideal cone as a scalar field
-		\param startAngle_deg start angle (in degrees) - 0 corresponds to +X (east)
-		\param stopAngle_deg stop angle (in degrees)
 		\param progressCb for progress notification
 		\return the unrolled point cloud
 		**/
-	ccPointCloud* unroll(	UnrollMode mode,
-							UnrollBaseParams* params,
-							bool exportDeviationSF = false,
-							double startAngle_deg = 0.0,
-							double stopAngle_deg = 360.0,
-							CCLib::GenericProgressCallback* progressCb = nullptr) const;
+	ccPointCloud* unrollOnCylinder(	PointCoordinateType radius,
+									unsigned char coneAxisDim,
+									CCVector3* center = nullptr,
+									bool exportDeviationSF = false,
+									double startAngle_deg = 0.0,
+									double stopAngle_deg = 360.0,
+									CCLib::GenericProgressCallback* progressCb = nullptr) const;
+
+	//! Unrolls the cloud (and its normals) on a cone
+	/** \param coneAngle_deg cone apex angle (between 0 and 180 degrees)
+		\param coneApex cone apex 3D position
+		\param coneAxisDim dimension along which the cone axis is aligned (X=0, Y=1, Z=2)
+		\param developStraightenedCone if true, this method will unroll a straightened version of the cone (as a cylinder)
+		\param baseRadius unrolling straightened cone base radius (necessary if developStraightenedCone is true)
+		\param exportDeviationSF to export the deviation fro the ideal cone as a scalar field
+		\param progressCb for progress notification
+		\return the unrolled point cloud
+	**/
+	ccPointCloud* unrollOnCone(	double coneAngle_deg,
+								const CCVector3& coneApex,
+								unsigned char coneAxisDim,
+								bool developStraightenedCone,
+								PointCoordinateType baseRadius,
+								bool exportDeviationSF = false,
+								CCLib::GenericProgressCallback* progressCb = nullptr) const;
 
 	//! Adds associated SF color ramp info to current GL context
 	void addColorRampInfo(CC_DRAW_CONTEXT& context);
@@ -768,8 +709,6 @@ public: //other methods
 	//! Exports the specified coordinate dimension(s) to scalar field(s)
 	bool exportCoordToSF(bool exportDims[3]);
 
-	std::vector<CCVector3> getTheVisiblePointsHUll(ccGLCameraParameters camParas) const;
-	ccBBox getTheVisiblePointsBBox(ccGLCameraParameters camParas) const;
 protected:
 
 	//inherited from ccHObject
@@ -814,6 +753,59 @@ protected: // VBO
 	//! Release VBOs
 	void releaseVBOs();
 
+	class VBO : public QGLBuffer
+	{
+	public:
+		int rgbShift;
+		int normalShift;
+
+		//! Inits the VBO
+		/** \return the number of allocated bytes (or -1 if an error occurred)
+		**/
+		int init(int count, bool withColors, bool withNormals, bool* reallocated = nullptr);
+
+		VBO()
+			: QGLBuffer(QGLBuffer::VertexBuffer)
+			, rgbShift(0)
+			, normalShift(0)
+		{}
+	};
+
+	//! VBO set
+	struct vboSet
+	{
+		//! States of the VBO(s)
+		enum STATES { NEW, INITIALIZED, FAILED };
+
+		//! Update flags
+		enum UPDATE_FLAGS {
+			UPDATE_POINTS = 1,
+			UPDATE_COLORS = 2,
+			UPDATE_NORMALS = 4,
+			UPDATE_ALL = UPDATE_POINTS | UPDATE_COLORS | UPDATE_NORMALS
+		};
+
+		vboSet()
+			: hasColors(false)
+			, colorIsSF(false)
+			, sourceSF(nullptr)
+			, hasNormals(false)
+			, totalMemSizeBytes(0)
+			, updateFlags(0)
+			, state(NEW)
+		{}
+
+		std::vector<VBO*> vbos;
+		bool hasColors;
+		bool colorIsSF;
+		ccScalarField* sourceSF;
+		bool hasNormals;
+		int totalMemSizeBytes;
+		int updateFlags;
+
+		//! Current state
+		STATES state;
+	};
 
 	//! Set of VBOs attached to this cloud
 	vboSet m_vboManager;

@@ -851,7 +851,7 @@ ccPointCloud* ccRasterizeTool::generateCloud(bool autoExport/*=true*/) const
 		MainWindow* mainWindow = MainWindow::TheInstance();
 		if (mainWindow)
 		{
-			mainWindow->addToDB(rasterCloud, m_cloud->getDBSourceType());
+			mainWindow->addToDB(rasterCloud);
 			ccLog::Print(QString("[Rasterize] Cloud '%1' successfully exported").arg(rasterCloud->getName()));
 		}
 		else
@@ -897,7 +897,7 @@ void ccRasterizeTool::generateMesh() const
 
 			MainWindow* mainWindow = MainWindow::TheInstance();
 			if (mainWindow)
-				MainWindow::TheInstance()->addToDB(rasterMesh, m_cloud->getDBSourceType());
+				MainWindow::TheInstance()->addToDB(rasterMesh);
 			ccLog::Print(QString("[Rasterize] Mesh '%1' successfully exported").arg(rasterMesh->getName()));
 		}
 		else
@@ -2104,7 +2104,7 @@ void ccRasterizeTool::exportContourLines()
 	m_UI->exportContoursPushButton->setEnabled(false);
 
 	group->setDisplay_recursive(m_cloud->getDisplay());
-	mainWindow->addToDB(group, m_cloud->getDBSourceType());
+	mainWindow->addToDB(group);
 
 	ccLog::Print(QString("Contour lines have been successfully exported to DB (group name: %1)").arg(group->getName()));
 }

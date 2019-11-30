@@ -146,8 +146,6 @@ public:
 								double samplingParameter,
 								bool withRGB);
 
-	std::vector<CCVector3> ccPolyline::getPoints(bool close = false);
-
 public: //meta-data keys
 	
 	//! Meta data key: vertical direction (for 2D polylines, contour plots, etc.)

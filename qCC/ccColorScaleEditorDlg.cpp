@@ -500,7 +500,7 @@ bool ccColorScaleEditorDialog::exportCustomLabelsList(ccColorScale::LabelSet& la
 	labels.clear();
 
 	QString text = customLabelsPlainTextEdit->toPlainText();
-	QStringList items = text.simplified().split(QChar(' '), QString::SkipEmptyParts);
+	QStringList items = text.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 	if (items.size() < 2)
 	{
 		assert(false);
@@ -533,7 +533,7 @@ bool ccColorScaleEditorDialog::exportCustomLabelsList(ccColorScale::LabelSet& la
 bool ccColorScaleEditorDialog::checkCustomLabelsList(bool showWarnings)
 {
 	QString text = customLabelsPlainTextEdit->toPlainText();
-	QStringList items = text.simplified().split(QChar(' '), QString::SkipEmptyParts);
+	QStringList items = text.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 	if (items.size() < 2)
 	{
 		if (showWarnings)
@@ -637,10 +637,10 @@ bool ccColorScaleEditorDialog::saveCurrentScale()
 
 	//DGM: warning, if the relative state has changed
 	//we must update all the SFs currently relying on this scale!
-	if ((!isRelative || isRelative != wasRelative) && m_mainApp && m_mainApp->dbRootObject(m_mainApp->getCurrentDB()))
+	if ((!isRelative || isRelative != wasRelative) && m_mainApp && m_mainApp->dbRootObject())
 	{
 		ccHObject::Container clouds;
-		m_mainApp->dbRootObject(m_mainApp->getCurrentDB())->filterChildren(clouds, true, CC_TYPES::POINT_CLOUD, true);
+		m_mainApp->dbRootObject()->filterChildren(clouds, true, CC_TYPES::POINT_CLOUD, true);
 		for (size_t i=0; i<clouds.size(); ++i)
 		{
 			ccPointCloud* cloud = static_cast<ccPointCloud*>(clouds[i]);

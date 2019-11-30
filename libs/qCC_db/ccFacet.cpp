@@ -19,15 +19,11 @@
 #include "ccMesh.h"
 #include "ccPointCloud.h"
 #include "ccPolyline.h"
-#include "StBlock.h"
-#include "ccHObjectCaster.h"
 
 //CCLib
 #include <Delaunay2dMesh.h>
 #include <DistanceComputationTools.h>
 #include <MeshSamplingTools.h>
-
-#include "wrap/gl/glu_tesselator.h"
 
 constexpr const char* DEFAULT_POLYGON_MESH_NAME = "2D polygon";
 constexpr const char* DEFAULT_CONTOUR_NAME = "Contour";
@@ -45,10 +41,6 @@ ccFacet::ccFacet(	PointCoordinateType maxEdgeLength/*=0*/,
 	, m_rms(0.0)
 	, m_surface(0.0)
 	, m_maxEdgeLength(maxEdgeLength)
-	, m_distance(-999999)
-	, m_confidence(-999999)
-	, m_fitting(-1)
-	, m_coverage(-1)
 {
 	m_planeEquation[0] = 0;
 	m_planeEquation[1] = 0;
@@ -209,7 +201,7 @@ bool ccFacet::createInternalRepresentation(	CCLib::GenericIndexedCloudPersist* p
 	//we project the input points on a plane
 	std::vector<CCLib::PointProjectionTools::IndexedCCVector2> points2D;
 	CCVector3 X, Y; //local base
-	if (!Yk.projectIndexedPointsOn2DPlane/*<CCLib::PointProjectionTools::IndexedCCVector2>*/(points2D, nullptr, &m_center, &X, &Y, false))
+	if (!Yk.projectPointsOn2DPlane<CCLib::PointProjectionTools::IndexedCCVector2>(points2D, nullptr, &m_center, &X, &Y))
 	{
 		ccLog::Error("[ccFacet::createInternalRepresentation] Not enough memory!");
 		return false;
@@ -218,14 +210,13 @@ bool ccFacet::createInternalRepresentation(	CCLib::GenericIndexedCloudPersist* p
 	//compute resulting RMS
 	m_rms = CCLib::DistanceComputationTools::computeCloud2PlaneDistanceRMS(points, m_planeEquation);
 	
-	//! XYLIU done by projectIndexedPointsOn2DPlane
-//  //update the points indexes (not done by Neighbourhood::projectPointsOn2DPlane)
-//  {
-//  	for (unsigned i = 0; i < ptsCount; ++i)
-//  	{
-//  		points2D[i].index = i;
-//  	}
-//  }
+	//update the points indexes (not done by Neighbourhood::projectPointsOn2DPlane)
+	{
+		for (unsigned i = 0; i < ptsCount; ++i)
+		{
+			points2D[i].index = i;
+		}
+	}
 
 	//try to get the points on the convex/concave hull to build the contour and the polygon
 	{
@@ -390,7 +381,7 @@ void ccFacet::drawMeOnly(CC_DRAW_CONTEXT& context)
 		return;
 
 	//show normal vector
-	if ((normalVectorIsShown() || getNormalEditState()) && m_contourPolyline)
+	if (normalVectorIsShown() && m_contourPolyline)
 	{
 		PointCoordinateType scale = 0;
 		if (m_surface > 0) //the surface might be 0 if Delaunay 2.5D triangulation is not supported
@@ -401,8 +392,7 @@ void ccFacet::drawMeOnly(CC_DRAW_CONTEXT& context)
 		{
 			scale = sqrt(m_contourPolyline->computeLength());
 		}
-		//glDrawNormal(context, m_center, scale, &m_contourPolyline->getColor());
-		glDrawNormal(context, getUniqueIDForDisplay(), m_center, scale, &m_contourPolyline->getColor());
+		glDrawNormal(context, m_center, scale, &m_contourPolyline->getColor());
 	}
 }
 
@@ -465,22 +455,6 @@ bool ccFacet::toFile_MeOnly(QFile& out) const
 
 	//Max edge length (dataVersion>=31)
 	if (out.write((const char*)&m_maxEdgeLength,sizeof(PointCoordinateType)) < 0)
-		return WriteError();
-
-	//m_fitting (dataVersion>=32)
-	if (out.write((const char*)&m_fitting, sizeof(double)) < 0)
-		return WriteError();
-
-	//m_coverage (dataVersion>=32)
-	if (out.write((const char*)&m_coverage, sizeof(double)) < 0)
-		return WriteError();
-
-	//m_confidence (dataVersion>=32)
-	if (out.write((const char*)&m_confidence, sizeof(double)) < 0)
-		return WriteError();
-
-	//m_distance (dataVersion>=32)
-	if (out.write((const char*)&m_distance, sizeof(double)) < 0)
 		return WriteError();
 
 	return true;
@@ -558,22 +532,6 @@ bool ccFacet::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	if (in.read((char*)&m_maxEdgeLength,sizeof(PointCoordinateType)) < 0)
 		return WriteError();
 
-	//m_fitting (dataVersion>=32)
-	if (in.read((char*)&m_fitting, sizeof(double)) < 0)
-		return ReadError();
-
-	//m_coverage (dataVersion>=32)
-	if (in.read((char*)&m_coverage, sizeof(double)) < 0)
-		return ReadError();
-
-	//m_confidence (dataVersion>=32)
-	if (in.read((char*)&m_confidence, sizeof(double)) < 0)
-		return ReadError();
-
-	//m_distance (dataVersion>=32)
-	if (in.read((char*)&m_distance, sizeof(double)) < 0)
-		return ReadError();
-
 	return true;
 }
 
@@ -597,244 +555,5 @@ void ccFacet::invertNormal()
 	for (int i=0; i<4; ++i)
 	{
 		m_planeEquation[i] = -m_planeEquation[i];
-	}
-}
-
-ccFacet* ccFacet::CreateFromContour(std::vector<CCVector3> contour_points, QString name /*= QString()*/, bool polygon, const PointCoordinateType* planeEquation /*= 0*/)
-{
-	QString name_(name);
-	if (name_.isEmpty()) {
-		name_ = "facet";
-	}
-	ccFacet* facet = new ccFacet(0, name_);
-	if (!facet->FormByContour(contour_points, polygon, planeEquation)) {
-		return nullptr;
-	}
-	return facet;
-}
-
-inline double angle_facet_(CCVector3 p1, CCVector3 p2) {
-	PointCoordinateType w = p1.norm()*p2.norm();
-	if (w == 0) return -1;
-	PointCoordinateType t = p1.dot(p2) / w;
-	if (t > 1) t = 1;
-	else if (t < -1) t = -1;
-	return (PointCoordinateType)acos(t);
-}
-
-bool ccFacet::FormByContour(std::vector<CCVector3> contour_points, bool polygon, const PointCoordinateType* planeEquation/*=0*/)
-{
-	assert(!contour_points.empty());
-	
-	unsigned int hullPtsCount = static_cast<unsigned>(contour_points.size());
-	if (hullPtsCount < 3)
-		return false;	
-
-	//create vertices	
-	if (m_contourVertices) {
-		m_contourVertices->clear();
-		m_contourVertices->detatchAllChildren();
-		detatchAllChildren();
-	}
-	else {
-		m_contourVertices = new ccPointCloud();
-	}
-	{
-		if (!m_contourVertices->reserve(hullPtsCount))
-		{
-			delete m_contourVertices;
-			m_contourVertices = nullptr;
-			ccLog::Error("[ccFacet::createInternalRepresentation] Not enough memory!");
-			return false;
-		}
-
-		//projection on the LS plane (in 3D)
-		for (auto & pt : contour_points) {
-			m_contourVertices->addPoint(pt);
-		}
-		m_contourVertices->setName(DEFAULT_CONTOUR_POINTS_NAME);
-		m_contourVertices->setLocked(true);
-		m_contourVertices->setEnabled(false);
-		addChild(m_contourVertices);
-	}
-
-	CCLib::Neighbourhood Yk(m_contourVertices);
-
-	//get corresponding plane
-	if (!planeEquation) {
-		planeEquation = Yk.getLSPlane();
-		if (!planeEquation)
-		{
-			ccLog::Warning("[ccFacet::createInternalRepresentation] Failed to compute the LS plane passing through the input points!");
-			return false;
-		}
-	}
-	memcpy(m_planeEquation, planeEquation, sizeof(PointCoordinateType) * 4);
-
-	//we project the input points on a plane
-	std::vector<CCLib::PointProjectionTools::IndexedCCVector2> points2D;
-	CCVector3 X, Y; //local base
-	if (!Yk.projectIndexedPointsOn2DPlane(points2D, nullptr, &m_center, &X, &Y))
-	{
-		ccLog::Warning("[ccFacet::createInternalRepresentation] Not enough memory!");
-		return false;
-	}
-	if (polygon) {
-		double   area = 0;
-		for (size_t i = 0, j = points2D.size() - 1; i < points2D.size(); i++) {
-			area += (points2D[j][0] + points2D[i][0])*(points2D[j][1] - points2D[i][1]);
-			j = i;
-		}
-		area = -area * .5;
-		if (area < 0) {
-			for (size_t i = 0; i < 4; i++) {
-				PointCoordinateType& t = const_cast<PointCoordinateType&>(planeEquation[i]);
-				t = -planeEquation[i];
-			}
-		}
-		if (fabs(area) < 1e-6) {
-			return false;
-		}
-	}
-
-	//compute resulting RMS
-	m_rms = CCLib::DistanceComputationTools::computeCloud2PlaneDistanceRMS(m_contourVertices, m_planeEquation);
-
-// 	//update the points indexes (not done by Neighbourhood::projectPointsOn2DPlane)
-// 	{
-// 		for (unsigned i = 0; i < hullPtsCount; ++i)	{
-// 			points2D[i].index = i;
-// 		}
-// 	}
-
-	//try to get the points on the convex/concave hull to build the contour and the polygon
-	{
-		//we create the corresponding (3D) polyline
-		{
-			if (m_contourPolyline) {
-				m_contourPolyline->clear();
-				m_contourPolyline->detatchAllChildren();
-			}
-			else
-				m_contourPolyline = new ccPolyline(m_contourVertices);
-			if (m_contourPolyline->reserve(hullPtsCount))
-			{
-				m_contourPolyline->addPointIndex(0, hullPtsCount);
-				m_contourPolyline->setClosed(true);
-				m_contourPolyline->setVisible(true);
-				m_contourPolyline->setLocked(true);
-				m_contourPolyline->setName(DEFAULT_CONTOUR_NAME);
-				m_contourVertices->addChild(m_contourPolyline);
-				m_contourVertices->setEnabled(true);
-				m_contourVertices->setVisible(false);
-			}
-			else
-			{
-				delete m_contourPolyline;
-				m_contourPolyline = nullptr;
-				ccLog::Warning("[ccFacet::createInternalRepresentation] Not enough memory to create the contour polyline!");
-			}
-		}
-
-		//we create the corresponding (2D) mesh
-		std::vector<CCVector2> hullPointsVector;
-		try
-		{
-			hullPointsVector.reserve(points2D.size());
-			for (auto & pt : points2D) {
-				hullPointsVector.push_back(pt);
-			}
-		}
-		catch (...)
-		{
-			ccLog::Warning("[ccFacet::createInternalRepresentation] Not enough memory to create the contour mesh!");
-		}
-
-		if (!hullPointsVector.empty() && CCLib::Delaunay2dMesh::Available())
-		{
-			//compute the facet surface
-
-			CCLib::Delaunay2dMesh* dm = CCLib::Delaunay2dMesh::TesselateContour(hullPointsVector);
-			if (dm)
-			{
-				unsigned triCount = dm->size();
-				assert(triCount != 0);
-
-				if (m_polygonMesh) {
-					m_polygonMesh->clearTriNormals();
-					m_polygonMesh->resize(0);
-				}
-				m_polygonMesh = new ccMesh(m_contourVertices);
-				if (m_polygonMesh->reserve(triCount))
-				{
-					//import faces
-					for (unsigned i = 0; i < triCount; ++i)
-					{
-						const CCLib::VerticesIndexes* tsi = dm->getTriangleVertIndexes(i);
-						m_polygonMesh->addTriangle(tsi->i1, tsi->i2, tsi->i3);
-					}
-					m_polygonMesh->setVisible(true);
-					m_polygonMesh->enableStippling(true);
-
-					//unique normal for facets
-					if (m_polygonMesh->reservePerTriangleNormalIndexes())
-					{
-						NormsIndexesTableType* normsTable = new NormsIndexesTableType();
-						normsTable->reserve(1);
-						CCVector3 N(m_planeEquation);
-						normsTable->addElement(ccNormalVectors::GetNormIndex(N.u));
-						m_polygonMesh->setTriNormsTable(normsTable);
-						for (unsigned i = 0; i < triCount; ++i)
-							m_polygonMesh->addTriangleNormalIndexes(0, 0, 0); //all triangles will have the same normal!
-						m_polygonMesh->showNormals(true);
-						m_polygonMesh->setLocked(true);
-						m_polygonMesh->setName(DEFAULT_POLYGON_MESH_NAME);
-						m_contourVertices->addChild(m_polygonMesh);
-						m_contourVertices->setEnabled(true);
-						m_contourVertices->setVisible(false);
-					}
-					else
-					{
-						ccLog::Warning("[ccFacet::createInternalRepresentation] Not enough memory to create the polygon mesh's normals!");
-					}
-
-					//update facet surface
-					m_surface = CCLib::MeshSamplingTools::computeMeshArea(m_polygonMesh);
-				}
-				else
-				{
-					delete m_polygonMesh;
-					m_polygonMesh = nullptr;
-					ccLog::Warning("[ccFacet::createInternalRepresentation] Not enough memory to create the polygon mesh!");
-				}
-				delete dm;
-				dm = nullptr;
-			}
-			else
-			{
-				ccLog::Warning(QString("[ccFacet::createInternalRepresentation] Failed to create the polygon mesh"));
-			}
-		}
-	}
-
-	emit planarEntityChanged();
-	return true;
-}
-
-void ccFacet::getEquation(CCVector3 & N, PointCoordinateType & constVal) const
-{
-	N = CCVector3(m_planeEquation[0], m_planeEquation[1], m_planeEquation[2]);
-	constVal = m_planeEquation[3];
-}
-
-void ccFacet::notifyPlanarEntityChanged(ccGLMatrix mat)
-{
-	//rotateGL(mat);
-	applyGLTransformation_recursive(&mat);
-	
-	//! notify the parent block to change this
-	StBlock* block = ccHObjectCaster::ToStBlock(getParent());
-	if (block) {
-		block->updateFacet(this);
 	}
 }

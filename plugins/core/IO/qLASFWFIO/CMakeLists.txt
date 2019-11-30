@@ -23,7 +23,7 @@ if (WIN32)
 		include( ../../../CMakePluginTpl.cmake )
 		
 		target_link_LASLib( ${PROJECT_NAME} )
-		set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
+
 	endif()
 
 endif()

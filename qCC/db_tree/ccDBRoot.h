@@ -35,10 +35,6 @@ class QStandardItemModel;
 class ccPropertiesTreeDelegate;
 class ccHObject;
 
-class StDBMainRoot;
-class StDBBuildingRoot;
-class StDBImageRoot;
-
 //! Precise statistics about current selection
 struct dbTreeSelectionInfo
 {
@@ -87,10 +83,6 @@ class ccDBRoot : public QAbstractItemModel
 	Q_OBJECT
 
 public:
-
-	friend class StDBMainRoot;
-	friend class StDBBuildingRoot;
-	friend class StDBImageRoot;
 
 	//! Default constructor
 	/** \param dbTreeWidget widget for DB tree display
@@ -188,9 +180,6 @@ public:
 	**/
 	void selectEntities(const ccHObject::Container& entities, bool incremental = false);
 
-	void gotoNextZoom();
-
-	void clickItem(const QModelIndex &index);
 private:
 	//! Entity property that can be toggled
 	enum TOGGLE_PROPERTY {	TG_ENABLE,
@@ -227,18 +216,12 @@ private:
 	void alignCameraWithEntityIndirect() { alignCameraWithEntity(true); }
 	void enableBubbleViewMode();
 	void editLabelScalarValue();
-	void deselectOtherChildren();
 
 signals:
 	void selectionChanged();
 	void dbIsEmpty();
 	void dbIsNotEmptyAnymore();
-	void itemClicked();
 
-public:
-	//! Entities sorting schemes
-	enum SortRules { SORT_A2Z, SORT_Z2A, SORT_BY_TYPE };
-	void sortItemChildren(ccHObject* item, SortRules sortRule);
 protected:
 
 	//! Aligns the camera with the currently selected entity
@@ -248,6 +231,9 @@ protected:
 
 	//! Shows properties view for a given element
 	void showPropertiesView(ccHObject* obj);
+
+	//! Entities sorting schemes
+	enum SortRules { SORT_A2Z, SORT_Z2A, SORT_BY_TYPE };
 
 	//! Sorts selected entities children
 	void sortSelectedEntitiesChildren(SortRules rule);
@@ -315,35 +301,9 @@ protected:
 	QAction* m_enableBubbleViewMode;
 	//! Context menu action: change current scalar value (via a 2D label)
 	QAction* m_editLabelScalarValue;
-	//! Context menu action: deselect other children
-	QAction* m_deselectOtherChildren;
 
 	//! Last context menu pos
 	QPoint m_contextMenuPos;
 };
-
-class StDBMainRoot : public ccDBRoot
-{
-public:
-	StDBMainRoot(ccCustomQTreeView* dbTreeWidget, QTreeView* propertiesTreeWidget, QObject* parent = nullptr);
-
-};
-
-class StDBBuildingRoot : public ccDBRoot
-{
-public:
-	StDBBuildingRoot(ccCustomQTreeView* dbTreeWidget, QTreeView* propertiesTreeWidget, QObject* parent = nullptr);
-
-};
-
-class StDBImageRoot : public ccDBRoot
-{
-public:
-	StDBImageRoot(ccCustomQTreeView* dbTreeWidget, QTreeView* propertiesTreeWidget, QObject* parent = nullptr);
-
-};
-
-
-
 
 #endif

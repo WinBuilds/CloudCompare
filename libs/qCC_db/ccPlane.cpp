@@ -78,39 +78,15 @@ ccGenericPrimitive* ccPlane::clone() const
 }
 
 void ccPlane::drawMeOnly(CC_DRAW_CONTEXT& context)
-{	
-	if (isVisible()) {
-		//call parent method
-		ccGenericPrimitive::drawMeOnly(context);
+{
+	//call parent method
+	ccGenericPrimitive::drawMeOnly(context);
 
-		//show normal vector
-		if (MACRO_Draw3D(context) && (normalVectorIsShown() || getNormalEditState()))
-		{
-			PointCoordinateType scale = sqrt(m_xWidth * m_yWidth) / 2; //DGM: highly empirical ;)
-			glDrawNormal(context, getUniqueIDForDisplay(), m_transformation.getTranslationAsVec3D(), scale, nullptr);
-		}
-	}	
-	
-	// draw selected profile
-	if (((getParent() && getParent()->isSelected()) || isSelected()) 
-		&& MACRO_Draw3D(context) && !MACRO_DRAW_BBOX(context) && m_profile.size() > 2) {
-		QOpenGLFunctions_2_1 *glFunc = context.glFunctions<QOpenGLFunctions_2_1>();
-		assert(glFunc != nullptr);
-
-		if (glFunc == nullptr)
-			return;
-
-		ccGL::Color3v(glFunc, ccColor::red.rgb);
-		glFunc->glPushAttrib(GL_LINE_BIT);
-		glFunc->glLineWidth(static_cast<GLfloat>(2));
-
-		glFunc->glBegin(GL_LINE_STRIP);
-		for (unsigned i = 0; i < m_profile.size(); ++i)	{
-			ccGL::Vertex3v(glFunc, m_profile[i].u);
-		}
-		ccGL::Vertex3v(glFunc, m_profile[0].u);
-		glFunc->glEnd();
-		glFunc->glPopAttrib();//GL_LINE_BIT
+	//show normal vector
+	if (MACRO_Draw3D(context) && normalVectorIsShown())
+	{
+		PointCoordinateType scale = sqrt(m_xWidth * m_yWidth) / 2; //DGM: highly empirical ;)
+		glDrawNormal(context, m_transformation.getTranslationAsVec3D(), scale);
 	}
 }
 
@@ -122,45 +98,7 @@ void ccPlane::getEquation(CCVector3& N, PointCoordinateType& constVal) const
 	constVal = m_transformation.getTranslationAsVec3D().dot(N);
 }
 
-bool ccPlane::isVerticalToDirection(CCVector3 dir, double angle_degree)
-{
-	double err_angle = angle_degree * CC_DEG_TO_RAD;
-	CCVector3 N; PointCoordinateType d;
-	getEquation(N, d);
-	double product = N.dot(dir);
-	if ((product > 0 && product < err_angle) || (product < 0 && product > -err_angle)) {
-		return true;
-	}
-	return false;
-}
-
-void ccPlane::setProfile(std::vector<CCVector3> profile, bool update)
-{
-	m_profile = profile;
-	
-	if (update) {
-		ccPlane* new_plane = ccPlane::Fit(profile);
-		if (new_plane) {
-			m_transformation = new_plane->getTransformation();
-			setXWidth(new_plane->getXWidth(), false);
-			setYWidth(new_plane->getYWidth(), true);
-			delete new_plane;
-			new_plane = nullptr;
-		}
-	}
-}
-
-CCVector3 ccPlane::getProfileCenter()
-{
-	CCVector3 center(0, 0, 0);
-	for (auto & pt : m_profile)	{
-		center += pt;
-	}
-	center /= m_profile.size();
-	return center;
-}
-
-ccPlane* ccPlane::Fit(CCLib::GenericIndexedCloudPersist *cloud, double* rms/*=0*/, std::vector<CCVector3> * profile /*= 0*/)
+ccPlane* ccPlane::Fit(CCLib::GenericIndexedCloudPersist *cloud, double* rms/*=0*/)
 {
 	//number of points
 	unsigned count = cloud->size();
@@ -231,34 +169,6 @@ ccPlane* ccPlane::Fit(CCLib::GenericIndexedCloudPersist *cloud, double* rms/*=0*
 		*rms = CCLib::DistanceComputationTools::computeCloud2PlaneDistanceRMS(cloud, theLSPlane);
 		plane->setMetaData(QString("RMS"), QVariant(*rms));
 	}
-	if (profile) {
-		//we project the input points on a plane
-		std::vector<CCLib::PointProjectionTools::IndexedCCVector2> points2D;
-		if (Yk.projectIndexedPointsOn2DPlane(points2D, theLSPlane))	{
-			std::list<CCLib::PointProjectionTools::IndexedCCVector2*> hullPoints;
-			CCLib::PointProjectionTools::extractConvexHull2D(points2D, hullPoints);
-			for (auto pt : hullPoints) {
-				(*profile).push_back(*(cloud->getPoint((*pt).index)));
-			}
-			plane->setProfile(*profile);
-		}
-	}
-
-	return plane;
-}
-
-ccPlane * ccPlane::Fit(const std::vector<CCVector3> profiles)
-{
-	if (profiles.size() < 3) {
-		return nullptr;
-	}
-	ccPointCloud* cloud = new ccPointCloud();
-	for (auto & pt : profiles) {
-		cloud->addPoint(pt);
-	}
-	double rms;
-	ccPlane* plane = ccPlane::Fit(cloud, &rms);
-	plane->setProfile(profiles);
 
 	return plane;
 }
@@ -273,16 +183,6 @@ bool ccPlane::toFile_MeOnly(QFile& out) const
 	outStream << m_xWidth;
 	outStream << m_yWidth;
 
-	//m_profile size
-	outStream << (qint32)m_profile.size();
-	//m_profile points (3D)
-	for (unsigned i = 0; i < m_profile.size(); ++i)
-	{
-		outStream << m_profile[i].x;
-		outStream << m_profile[i].y;
-		outStream << m_profile[i].z;
-	}
-
 	return true;
 }
 
@@ -295,17 +195,6 @@ bool ccPlane::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	QDataStream inStream(&in);
 	ccSerializationHelper::CoordsFromDataStream(inStream, flags, &m_xWidth, 1);
 	ccSerializationHelper::CoordsFromDataStream(inStream, flags, &m_yWidth, 1);
-
-	//m_bottom size
-	qint32 vertCount;
-	inStream >> vertCount;
-	if (vertCount > 0) {
-		m_profile.resize(vertCount);
-		//m_bottom points (2D)
-		for (unsigned i = 0; i < m_profile.size(); ++i) {
-			ccSerializationHelper::CoordsFromDataStream(inStream, flags, m_profile[i].u, 3);
-		}
-	}
 
 	return true;
 }
@@ -411,9 +300,4 @@ ccMaterial::Shared ccPlane::SetQuadTexture(ccMesh* quadMesh, QImage image, QStri
 	quadMesh->showMaterials(true);
 
 	return material;
-}
-
-void ccPlane::notifyPlanarEntityChanged(ccGLMatrix mat)
-{
-	applyGLTransformation_recursive(&mat);
 }

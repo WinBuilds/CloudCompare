@@ -19,11 +19,11 @@
 #define CC_HEIGHT_PROFILE_HEADER
 
 #include "FileIOFilter.h"
-
+#include  "qCoreIOExports.h"
 //! Polyline height profile I/O filter
 /** This file format contains a 2D series: (curvilinear absisca ; height)
 **/
-class HeightProfileFilter : public FileIOFilter
+class QCOREIODLL_EXPORT HeightProfileFilter : public FileIOFilter
 {
 public:
 	HeightProfileFilter();

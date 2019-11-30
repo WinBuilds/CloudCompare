@@ -80,9 +80,9 @@ void ccGui::ParamStruct::reset()
 	lightDoubleSided			= true;
 	drawBackgroundGradient		= true;
 	drawRoundedPoints			= false;
-	decimateMeshOnMove			= false;
+	decimateMeshOnMove			= true;
 	minLoDMeshSize				= 2500000;
-	decimateCloudOnMove			= false;
+	decimateCloudOnMove			= true;
 	minLoDCloudSize				= 10000000;
 	useVBOs						= true;
 	displayCross				= true;

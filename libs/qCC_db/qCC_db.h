@@ -21,10 +21,14 @@
 
 #include <QtCore/QtGlobal>
 
-#if defined( QCC_DB_LIBRARY_BUILD )
+#ifndef BUILD_STATIC
+# if defined(QCC_DB_LIBRARY_BUILD)
 #  define QCC_DB_LIB_API Q_DECL_EXPORT
+# else
+#  define QCC_DB_LIB_API
+# endif
 #else
-#  define QCC_DB_LIB_API Q_DECL_IMPORT
+# define QCC_DB_LIB_API
 #endif
 
 #endif //CC_DB_HEADER

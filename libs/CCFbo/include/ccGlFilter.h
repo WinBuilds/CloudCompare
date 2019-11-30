@@ -18,6 +18,8 @@
 #ifndef CC_GL_FILTER_HEADER
 #define CC_GL_FILTER_HEADER
 
+#include "CCFBOLibExports.h"
+
 //Qt
 #include <QString>
 
@@ -26,7 +28,7 @@
 	textures (typically the rendered scene), typically
 	through intensive use of Frame Buffer Objects.
 **/
-class ccGlFilter
+class CCFBODLL_EXPORT ccGlFilter
 {
 public:
 

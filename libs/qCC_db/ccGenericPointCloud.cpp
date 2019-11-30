@@ -298,7 +298,7 @@ bool ccGenericPointCloud::pointPicking(	const CCVector2d& clickPos,
 										bool autoComputeOctree/*=false*/)
 {
 	//can we use the octree to accelerate the point picking process?
-	if (pickWidth == pickHeight && nearestPointIndex < 0)
+	if (pickWidth == pickHeight)
 	{
 		ccOctree::Shared octree = getOctree();
 		if (!octree && autoComputeOctree)
@@ -360,8 +360,7 @@ bool ccGenericPointCloud::pointPicking(	const CCVector2d& clickPos,
 	}
 
 	//otherwise we go 'brute force' (works quite well in fact?!)
-	int exclude_index = nearestPointIndex >= 0 ? nearestPointIndex : -1;
-	nearestPointIndex = -1;	// XYLIU
+	nearestPointIndex = -1;
 	nearestSquareDist = -1.0;
 	{
 		//back project the clicked point in 3D
@@ -404,7 +403,6 @@ bool ccGenericPointCloud::pointPicking(	const CCVector2d& clickPos,
 			//we shouldn't test points that are actually hidden!
 			if (	(!visTable || visTable->at(i) == POINT_VISIBLE)
 				&&	(!activeSF || activeSF->getColor(activeSF->getValue(i)))
-				&& exclude_index != i						// XYLIU
 				)
 			{
 				const CCVector3* P = getPoint(i);
@@ -513,5 +511,3 @@ CCLib::ReferenceCloud* ccGenericPointCloud::getTheVisiblePoints(const Visibility
 
 	return rc;
 }
-
-

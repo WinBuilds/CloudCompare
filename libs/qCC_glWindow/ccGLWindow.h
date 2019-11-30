@@ -18,6 +18,8 @@
 #ifndef CC_GL_WINDOW_HEADER
 #define CC_GL_WINDOW_HEADER
 
+#include <qCC_gl.h>
+
 //qCC_db
 #include <ccDrawableObject.h>
 #include <ccGenericGLDisplay.h>
@@ -42,8 +44,6 @@
 #include <list>
 #include <unordered_set>
 
-class QCursor;
-
 class QOpenGLDebugMessage;
 
 class ccBBox;
@@ -66,7 +66,7 @@ using ccGLWindowParent = QOpenGLWidget;
 
 
 //! OpenGL 3D view
-class ccGLWindow : public ccGLWindowParent, public ccGenericGLDisplay
+class QCC_GL_LIB_API ccGLWindow : public ccGLWindowParent, public ccGenericGLDisplay
 {
 	Q_OBJECT
 
@@ -93,7 +93,7 @@ public:
 		//camera interactions
 		INTERACT_ROTATE          =  1,
 		INTERACT_PAN             =  2,
-		INTERACT_SHIFT_PAN        =  4,
+		INTERACT_CTRL_PAN        =  4,
 		INTERACT_ZOOM_CAMERA     =  8,
 		INTERACT_2D_ITEMS        = 16, //labels, etc.
 		INTERACT_CLICKABLE_ITEMS = 32, //hot zone
@@ -107,9 +107,6 @@ public:
 		INTERACT_SIG_MOUSE_MOVED = 512,      //mouse moved (only if a button is clicked)
 		INTERACT_SIG_BUTTON_RELEASED = 1024, //mouse button released
 		INTERACT_SEND_ALL_SIGNALS = INTERACT_SIG_RB_CLICKED | INTERACT_SIG_LB_CLICKED | INTERACT_SIG_MOUSE_MOVED | INTERACT_SIG_BUTTON_RELEASED,
-
-		INTERACT_IMAGE_VIEW = 2048,
-		INTERACT_POINT_VIEW = 4096,
 	};
 	Q_DECLARE_FLAGS(INTERACTION_FLAGS, INTERACTION_FLAG)
 
@@ -142,16 +139,6 @@ public:
 							PIVOT_ALWAYS_SHOW,
 	};
 
-	enum BBoxDisplayType {	BBOX_HIDE,
-							BBOX_SHOW_ON_SELECT,
-							BBOX_ALWAYS_SHOW,
-	};
-
-	enum WindowEditorType {	POINTS_EDITOR_3D,
-							IMAGE_EDITOR_25D,
-							IMAGE_DISPLAY_25D,
-	};
-
 	//! Default constructor
 	ccGLWindow(QSurfaceFormat* format = nullptr, ccGLWindowParent* parent = nullptr, bool silentInitialization = false);
 
@@ -174,12 +161,10 @@ public:
 #endif
 
 	//! Sets 'scene graph' root
-	void setSceneDB(std::vector<ccHObject*> root);
-
-	void addSceneDB(ccHObject* v);
+	void setSceneDB(ccHObject* root);
 
 	//! Returns current 'scene graph' root
-	std::vector<ccHObject*> getSceneDB();
+	ccHObject* getSceneDB();
 
 	//replacement for the missing methods of QGLWidget
 	void renderText(int x, int y, const QString & str, const QFont & font = QFont());
@@ -244,7 +229,7 @@ public:
 	virtual void updateZoom(float zoomFactor);
 
 	//! Sets pivot visibility
-	virtual void setPivotVisibility(PivotVisibility vis, bool save_setting = true);
+	virtual void setPivotVisibility(PivotVisibility vis);
 
 	//! Returns pivot visibility
 	virtual PivotVisibility getPivotVisibility() const;
@@ -255,8 +240,6 @@ public:
 		- only taken into account if pivot visibility is set to PIVOT_SHOW_ON_MOVE
 	**/
 	virtual void showPivotSymbol(bool state);
-
-	double getCenterRadius(double scale = 0.8);
 
 	//! Sets pixel size (i.e. zoom base)
 	/** Emits the 'pixelSizeChanged' signal.
@@ -555,19 +538,6 @@ public:
 	//! Returns the OpenGL context size
 	QSize glSize() const { return m_glViewport.size(); }
 
-	void toggleDrawBBox() { m_drawBBox = !m_drawBBox; };
-
-	//! TODO:
-	//! Sets bbox display type
-	virtual void setBBoxDisplayType(BBoxDisplayType box) { m_bboxDisplayType = box; }
-	//! Returns bbox display type
-	virtual BBoxDisplayType getBBoxDisplayType() const { return m_bboxDisplayType; }
-
-	//! Sets window editor type
-	virtual void setWindowEditorType(WindowEditorType win) { m_windowEditorType = win; }
-	//! Returns window editor type
-	virtual WindowEditorType getWindowEditorType() const { return m_windowEditorType; }
-
 public: //LOD
 
 	//! Returns whether LOD is enabled on this display or not
@@ -597,7 +567,7 @@ public: //debug traces on screen
 public: //stereo mode
 
 	//! Seterovision parameters
-	struct StereoParams
+	struct QCC_GL_LIB_API StereoParams
 	{
 		StereoParams();
 
@@ -607,17 +577,15 @@ public: //stereo mode
 							RED_CYAN = 3,
 							CYAN_RED = 4,
 							NVIDIA_VISION = 5,
-							OCULUS = 6,
-							GENERIC_STEREO_DISPLAY = 7
+							OCULUS = 6
 		};
 
 		//! Whether stereo-mode is 'analgyph' or real stereo mode
 		inline bool isAnaglyph() const { return glassType <= 4; }
-
-		int screenWidth_mm;
-		int screenDistance_mm;
-		int eyeSeparation_mm;
-		int stereoStrength;
+		
+		bool autoFocal;
+		double focalDist;
+		double eyeSepFactor;
 		GlassType glassType;
 	};
 
@@ -638,9 +606,6 @@ public: //stereo mode
 	//! Whether the coordinates of the point below the cursor position are displayed or not
 	bool cursorCoordinatesShown() const { return m_showCursorCoordinates; }
 
-	void setPointViewEditMode(bool state);
-	bool pointViewEditMode() { return m_interactionFlags & INTERACT_POINT_VIEW; }
-
 	//! Toggles the automatic setting of the pivot point at the center of the screen
 	void setAutoPickPivotAtCenter(bool state);
 	//! Whether the pivot point is automatically set at the center of the screen
@@ -651,14 +616,6 @@ public: //stereo mode
 
 	//! Returns whether the rotation axis is locaked or not
 	bool isRotationAxisLocked() const { return m_rotationAxisLocked; }
-
-	void resetCursor();
-
-	void setRemoveCursor();
-
-	void setCrossCursor();
-
-	void setMoveCursor();
 
 
 public slots:
@@ -797,12 +754,6 @@ signals:
 	**/
 	void mouseMoved(int x, int y, Qt::MouseButtons buttons);
 
-	void mouseMoved2D(int x, int y, double d);
-
-	void mouseMoved3D(const CCVector3d& P, bool b3d);
-
-	void pointSnapBufferChanged(int buffer);
-
 	//! Signal emitted when a mouse button is released (cursor on the window)
 	/** See INTERACT_SIG_BUTTON_RELEASED.
 	**/
@@ -841,8 +792,6 @@ protected: //rendering
 	//we need to automatically bind our own afterwards!
 	//(Sadly QOpenGLWidget::makeCurrentmakeCurrent is not virtual)
 	void makeCurrent();
-
-	void drawCursor();
 
 	//! Binds an FBO or releases the current one (if input is nullptr)
 	/** This method must be called instead of the FBO's own 'start' and 'stop' methods
@@ -1077,13 +1026,10 @@ protected: //other methods
 	//! Returns the (relative) depth value at a given pixel position
 	/** \return the (relative) depth or 1.0 if none is defined
 	**/
-	GLfloat getGLDepth(int x, int y, int extendToNeighbors = 0);
-	bool getClick3DPos(int x, int y, float depth, CCVector3d & P3D);
-public:
-	//! Returns the approximate 3D position of the clicked pixel
-	bool getClick3DPos(int x, int y, CCVector3d& P3D, int extend = 0);
+	GLfloat getGLDepth(int x, int y, bool extendToNeighbors = false);
 
-	void setPointPickBuffer(int buffer) { m_pointSnapBuffer = buffer; }
+	//! Returns the approximate 3D position of the clicked pixel
+	bool getClick3DPos(int x, int y, CCVector3d& P3D);
 
 protected: //members
 
@@ -1120,10 +1066,6 @@ protected: //members
 
     //! Last mouse position
 	QPoint m_lastMousePos;
-
-	//! current mouse position - mouse move
-	QPoint m_curMousePos;	//XYLIU
-	bool m_drawCursor;
 
 	//! Complete visualization matrix (GL style - double version)
 	ccGLMatrixd m_viewMatd;
@@ -1272,7 +1214,7 @@ protected: //members
 	ccHObject* m_winDBRoot;
 
 	//! CC main DB
-	std::vector<ccHObject*> m_globalDBRoot;
+	ccHObject* m_globalDBRoot;
 
 	//! Default font
 	QFont m_font;
@@ -1366,9 +1308,12 @@ protected: //members
 
 	//! Whether to display the coordinates of the point below the cursor position
 	bool m_showCursorCoordinates;
-	
+
 	//! Whether the pivot point is automatically picked at the center of the screen (when possible)
 	bool m_autoPickPivotAtCenter;
+
+	//! Candidate pivot point (will be used when the mouse is released)
+	CCVector3d m_autoPivotCandidate;
 
 	//! Deferred picking
 	QTimer m_deferredPickingTimer;
@@ -1380,18 +1325,6 @@ protected: //members
 	bool m_rotationAxisLocked;
 	//! Locked rotation axis
 	CCVector3d m_lockedRotationAxis;
-	bool m_drawBBox;
-
-	int m_pointSnapBuffer;
-
-	float m_glDepth;
-
-	WindowEditorType m_windowEditorType;
-	BBoxDisplayType	m_bboxDisplayType;
-
- 	QCursor *m_moveCursor;
-	QCursor *m_removeCursor;
- 	QCursor *m_boardCursor;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(ccGLWindow::INTERACTION_FLAGS);

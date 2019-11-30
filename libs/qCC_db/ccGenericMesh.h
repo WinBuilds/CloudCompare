@@ -24,7 +24,6 @@
 //Local
 #include "ccAdvancedTypes.h"
 #include "ccGenericGLDisplay.h"
-#include "ccPointCloud.h"
 
 namespace CCLib
 {
@@ -172,12 +171,6 @@ public:
 	//! Sets whether mesh should be displayed as a wire or with plain facets
 	virtual void showWired(bool state) { m_showWired = state; }
 
-	//! Returns whether the mesh is displayed as wired or with plain facets
-	virtual bool isShownAsFace() const { return m_showFaces; }
-
-	//! Sets whether mesh should be displayed as a wire or with plain facets
-	virtual void showFaces(bool state) { m_showFaces = state; }
-
 	//! Returns whether per-triangle normals are shown or not 
 	virtual bool triNormsShown() const { return m_triNormsShown; }
 
@@ -237,7 +230,6 @@ protected:
 	static CCVector3* GetVertexBuffer();
 	static CCVector3* GetNormalsBuffer();
 	static ccColor::Rgb* GetColorsBuffer();
-	static CCVector2* GetTextureBuffer();
 
 	//! Triangle picking (single triangle)
 	virtual bool trianglePicking(	unsigned triIndex,
@@ -263,40 +255,6 @@ protected:
 	//! Handles the color ramp display
 	void handleColorRamp(CC_DRAW_CONTEXT& context);
 
-public:
-
-	void notifyGeometryUpdate() override;
-
-	void removeFromDisplay(const ccGenericGLDisplay* win) override; //for proper VBO release
-
-	void setDisplay(ccGenericGLDisplay* win) override;
-
-	void notifyNormalUpdate();
-
-	void notifyColorUpdate();
-
-	void notifyTextureUpdate();
-
-protected:	// VBO
-
-	//! Init/updates VBOs
-	bool updateVBOs(const CC_DRAW_CONTEXT& context, const glDrawParams& glParams);
-
-	//! Release VBOs
-	void releaseVBOs();
-
-	//! Set of VBOs attached to this mesh
-	vboSet m_vboManager;
-
-	//per-block data transfer to the GPU (VBO or standard mode)
-	void glChunkVertexPointer(const CC_DRAW_CONTEXT& context, size_t chunkIndex, unsigned decimStep, bool useVBOs);
-	void glChunkColorPointer(const CC_DRAW_CONTEXT& context, size_t chunkIndex, unsigned decimStep, bool useVBOs);
-	void glChunkSFPointer(const CC_DRAW_CONTEXT& context, size_t chunkIndex, unsigned decimStep, bool useVBOs);
-	void glChunkNormalPointer(const CC_DRAW_CONTEXT& context, size_t chunkIndex, unsigned decimStep, bool useVBOs);
-	void glChunkTexturePointer(const CC_DRAW_CONTEXT& context, size_t chunkIndex, unsigned decimStep, bool useVBOs);
-
-protected:
-
 	//! Per-triangle normals display flag
 	bool m_triNormsShown;
 
@@ -305,10 +263,6 @@ protected:
 
 	//! Wireframe display mode
 	bool m_showWired;
-
-	//! face display mode
-	// show face - no normal / normal per face / normal per vert
-	bool m_showFaces;
 
 	//! Polygon stippling state
 	bool m_stippling;

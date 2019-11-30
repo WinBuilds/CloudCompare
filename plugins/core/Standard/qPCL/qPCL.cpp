@@ -73,7 +73,6 @@ QList<QAction *> qPCL::getActions()
 		addFilter( new NormalEstimation());
 		//addFilter( new StatisticalOutliersRemover() ); //Now integrated in CC ('Tools > Clean > SOR filter')
 		addFilter( new MLSSmoothingUpsampling() );
-		addFilter(new ExtractSIFT());
 	}
 
 	QList<QAction *> actions;

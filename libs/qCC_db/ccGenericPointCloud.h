@@ -178,7 +178,7 @@ public:
 		\param silent don't issue warnings if no visible point is present
 		\return the visible points as a ReferenceCloud
 	**/
-	virtual CCLib::ReferenceCloud* getTheVisiblePoints(const VisibilityTableType* visTable = nullptr, bool silent = false) const;	
+	virtual CCLib::ReferenceCloud* getTheVisiblePoints(const VisibilityTableType* visTable = nullptr, bool silent = false) const;
 	
 	//! Returns whether the visiblity array is allocated or not
 	virtual bool isVisibilityTableInstantiated() const;

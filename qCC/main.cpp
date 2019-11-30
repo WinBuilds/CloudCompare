@@ -212,7 +212,7 @@ int main(int argc, char **argv)
 				}
 			}
 
-			mainWindow->addToDB(filenames, mainWindow->getCurrentDB());
+			mainWindow->addToDB(filenames);
 		}
 		else if (splash)
 		{

@@ -34,10 +34,6 @@ class QMdiArea;
 class QMdiSubWindow;
 class QToolBar;
 class QToolButton;
-class QPushButton;
-class QProgressBar;
-class QLabel;
-class QSpinBox;
 
 class cc3DMouseManager;
 class ccCameraParamEditDlg;
@@ -62,25 +58,6 @@ class ccStdPluginInterface;
 class ccTracePolylineTool;
 
 struct dbTreeSelectionInfo;
-
-class bdrLine3DppDlg;
-class bdrDeductionDlg;
-class bdrPolyFitDlg;
-class bdrSettingLoD2Dlg;
-class bdrPlaneSegDlg;
-class bdrFacetFilterDlg;
-class bdr2Point5DimEditor;
-class bdrImageEditorPanel;
-class bdrPlaneEditorDlg;
-
-class bdrSettingBDSegDlg;
-class bdrSettingGrdFilterDlg;
-
-class PolyFitObj;
-
-class StDBMainRoot;
-class StDBBuildingRoot;
-class StDBImageRoot;
 
 namespace Ui {
 	class MainWindow;
@@ -136,63 +113,29 @@ public:
 	//! Returns the number of 3D views
 	int getGLWindowCount() const;
 
-	CC_TYPES::DB_SOURCE getCurrentDB() override;
-
 	//! Tries to load several files (and then pushes them into main DB)
 	/** \param filenames list of all filenames
 		\param fileFilter selected file filter (i.e. type)
 		\param destWin destination window (0 = active one)
-	**/	
-	virtual std::vector<ccHObject*> addToDB( const QStringList& filenames, 
-						  CC_TYPES::DB_SOURCE dest,
+	**/
+	virtual void addToDB( const QStringList& filenames,
 						  QString fileFilter = QString(),
-						  ccGLWindow* destWin = nullptr);
+						  ccGLWindow* destWin = nullptr );
 	
 	//inherited from ccMainAppInterface
 	void addToDB( ccHObject* obj,
-				  CC_TYPES::DB_SOURCE dest,
 				  bool updateZoom = false,
 				  bool autoExpandDBTree = true,
 				  bool checkDimensions = false,
 				  bool autoRedraw = true ) override;
-
-	void addToDB(ccHObject* obj,
-		bool updateZoom = false,
-		bool autoExpandDBTree = true,
-		bool checkDimensions = false,
-		bool autoRedraw = true) override;
-
-	virtual std::vector<ccHObject*> addToDB_Main(const QStringList& filenames, QString fileFilter = QString(), ccGLWindow* destWin = nullptr) {	
-		return addToDB(filenames, CC_TYPES::DB_MAINDB, fileFilter, destWin); 
-	}
-	virtual std::vector<ccHObject*> addToDB_Build(const QStringList& filenames, QString fileFilter = QString(), ccGLWindow* destWin = nullptr) {
-		return addToDB(filenames, CC_TYPES::DB_BUILDING, fileFilter, destWin);
-	}
-	virtual std::vector<ccHObject*> addToDB_Image(const QStringList& filenames, QString fileFilter = QString(), ccGLWindow* destWin = nullptr) {
-		return addToDB(filenames, CC_TYPES::DB_IMAGE, fileFilter, destWin);
-	}
-
-	void addToDB_Main(ccHObject* obj, bool updateZoom = false, bool autoExpandDBTree = true, bool checkDimensions = false, bool autoRedraw = true) { 
-		addToDB(obj, CC_TYPES::DB_MAINDB, updateZoom, autoExpandDBTree, checkDimensions, autoRedraw); 
-	}
-	void addToDB_Build(ccHObject* obj, bool updateZoom = false, bool autoExpandDBTree = true, bool checkDimensions = false, bool autoRedraw = true) {
-		addToDB(obj, CC_TYPES::DB_BUILDING, updateZoom, autoExpandDBTree, checkDimensions, autoRedraw);
-	}
-	void addToDB_Image(ccHObject* obj, bool updateZoom = false, bool autoExpandDBTree = true, bool checkDimensions = false, bool autoRedraw = true) {
-		addToDB(obj, CC_TYPES::DB_IMAGE, updateZoom, autoExpandDBTree, checkDimensions, autoRedraw);
-	}
-
-	void addToDatabase(QStringList files, ccHObject* import_pool, bool remove_exist = true, bool auto_sort = true);
-	ccHObject::Container addPointsToDatabase(QStringList files, ccHObject* import_pool, bool remove_exist = true, bool auto_sort = true, bool fastLoad = false);
 	
 	void registerOverlayDialog(ccOverlayDialog* dlg, Qt::Corner pos) override;
 	void unregisterOverlayDialog(ccOverlayDialog* dlg) override;
 	void updateOverlayDialogsPlacement() override;
 	void removeFromDB(ccHObject* obj, bool autoDelete = true) override;
-	void setSelectedInDB(ccHObject* obj, bool selected) override;	
+	void setSelectedInDB(ccHObject* obj, bool selected) override;
 	void dispToConsole(QString message, ConsoleMessageLevel level = STD_CONSOLE_MESSAGE) override;
 	void forceConsoleDisplay() override;
-	ccHObject* dbRootObject(CC_TYPES::DB_SOURCE rt) override;
 	ccHObject* dbRootObject() override;
 	inline  QMainWindow* getMainWindow() override { return this; }
 	inline  const ccHObject::Container& getSelectedEntities() const override { return m_selectedEntities; }
@@ -209,17 +152,9 @@ public:
 	
 	//! Inherited from ccPickingListener
 	void onItemPicked(const PickedItem& pi) override;
-
-	void unselectAllInDB();
-
-	void switchDatabase(CC_TYPES::DB_SOURCE src);
 	
 	//! Returns real 'dbRoot' object
-	virtual ccDBRoot* db(CC_TYPES::DB_SOURCE tp);
-	virtual ccDBRoot* db(ccHObject* obj) { return db(obj->getDBSourceType()); }
-	virtual StDBMainRoot* db_main() { return m_ccRoot; }
-	virtual StDBBuildingRoot* db_building() { return m_buildingRoot; }
-	virtual StDBImageRoot* db_image() { return m_imageRoot; }
+	virtual ccDBRoot* db();
 
 	//! Adds the "Edit Plane" action to the given menu.
 	/**
@@ -232,12 +167,7 @@ public:
 
 	//! Updates the 'Properties' view
 	void updatePropertiesView();
-
-	//! XYLIU images
-
-	ccHObject* getCameraGroup(QString name);
-	void setStatusImageCoord(const CCVector3d & P, bool b3d);
-
+	
 private slots:
 	//! Creates a new 3D GL sub-window
 	ccGLWindow* new3DView( bool allowEntitySelection );
@@ -257,6 +187,9 @@ private slots:
 	void doActionGlobalShiftSeetings();
 	//! Toggles the 'show Qt warnings in Console' option
 	void doEnableQtWarnings(bool);
+
+	//! Clones currently selected entities
+	void doActionClone();
 
 	//! Updates entities display target when a gl sub-window is deleted
 	/** \param glWindow the window that is going to be delete
@@ -293,7 +226,6 @@ private slots:
 	void setPivotOff();
 	void toggleActiveWindowAutoPickRotCenter(bool);
 	void toggleActiveWindowShowCursorCoords(bool);
-	void toggleActiveWindowPointViewEditMode(bool);
 
 	//! Handles new label
 	void handleNewLabel(ccHObject*);
@@ -309,7 +241,6 @@ private slots:
 	void updateMenus();
 	void on3DViewActivated(QMdiSubWindow*);
 	void updateUIWithSelection();
-	void updateViewStateWithSelection();
 	void addToDBAuto(const QStringList& filenames);
 
 	void echoMouseWheelRotate(float);
@@ -318,12 +249,6 @@ private slots:
 	void echoCameraPosChanged(const CCVector3d&);
 	void echoPivotPointChanged(const CCVector3d&);
 	void echoPixelSizeChanged(float);
-	void echoMouseMoved3D(const CCVector3d & P, bool b3d);
-	void echoMouseMoved2D(int x, int y, double depth);
-	void echopointSnapBufferChanged(int buffer);
-	void echoImageCursorPos(const CCVector3d & P, bool b3d);
-
-	void pointSnapBufferChanged(int buffer);
 
 	void doActionRenderToFile();
 
@@ -336,8 +261,6 @@ private slots:
 	void doActionInterpolateColors();
 	void doActionChangeColorLevels();
 	void doActionEnhanceRGBWithIntensities();
-
-	void doActionDisplayGlobalCoord();
 
 	void doActionSFGaussianFilter();
 	void doActionSFBilateralFilter();
@@ -441,9 +364,6 @@ private slots:
 	void doComputeBestFitBB();
 	void doActionCrop();
 
-	//! Clones currently selected entities
-	void doActionClone();
-
 	void doActionEditCamera();
 	void doActionAdjustZoom();
 	void doActionSaveViewportAsCamera();
@@ -479,7 +399,6 @@ private slots:
 	void doActionCloudCloudDist();
 	void doActionCloudMeshDist();
 	void deactivateComparisonMode(int);
-	void doActionCloudModelDist();
 
 	//Point picking mechanism
 	void activatePointPickingMode();
@@ -512,140 +431,6 @@ private slots:
 	//! Creates a cloud with the (bounding-box) centers of all selected entities
 	void doActionCreateCloudFromEntCenters();
 
-	inline void doActionMoveBBCenterToOrigin()    { doActionFastRegistration(MoveBBCenterToOrigin); }
-	inline void doActionMoveBBMinCornerToOrigin() { doActionFastRegistration(MoveBBMinCornerToOrigin); }
-	inline void doActionMoveBBMaxCornerToOrigin() { doActionFastRegistration(MoveBBMaxCornerToOrigin); }
-
-	ccHObject * LoadBDReconProject(QString Filename);
-
-	//////////////////////////////////////////////////////////////////////////
-	//! Building Reconstruction
-	/// Load Project
-	void doActionBDProjectLoad();
-	void doActionBDProjectSave();
-	void doActionBDImagesLoad();
-	/// Plane Segmentation
-	void doActionBDPlaneSegmentation();
-	void doActionBDRetrieve();
-	void doActionBDRetrievePlanePoints();
-	/// Create Image Lines
-	void doActionBDImageLines();
-
-	//! Planar Primitives
-	/// Intersections - get intersection lines from planes
-	void doActionBDPrimIntersections();
-	/// Assign Sharp Lines - assign sharp lines for each plane
-	void doActionBDPrimAssignSharpLines();
-	/// plane segmentation from sharp lines
-	void doActionBDPrimPlaneFromSharp();
-	/// Boundary - generate plane boundary
-	void doActionBDPrimBoundary();
-	/// Outline - generate plane outlines
-	void doActionBDPrimOutline();
-	/// Plane Frame - generate plane frames by optimization
-	void doActionBDPrimPlaneFrame();
-	/// Merge Selected Planes
-	void doActionBDPrimMergePlane();
-	/// split selected plane
-	void doActionBDPrimSplitPlane();			///< ccGraphicalSegmentationTool
-	/// Create Ground Plane
-	void doActionBDPrimCreateGround();
-	/// Shrink plane to outline - remove points outside the alpha shape
-	void doActionBDPrimShrinkPlane();
-
-	void doActionBDPrimPointProjection();
-
-	void doActionBDPlaneFromPoints();			///< ccGraphicalSegmentationTool
-	void doActionBDPlaneFromPolygon();			///< ccTracePolylineTool
-	/// Plane Deduction
-	void doActionBDPlaneDeduction();
-	/// Make plane from line(s)
-	void doActionBDPlaneCreate();
-	/// PolyFit
-	void doActionBDPolyFit();
-
-	void doActionBDPolyFitHypothesis();
-
-	void doActionBDPolyFitConfidence();
-
-	void doActionBDPolyFitSelection();
-
-	void doActionBDPolyFitFacetFilter();
-
-	void doActionBDPolyFitSettings();
-
-	void doActionBDFootPrintAuto();
-	void doActionBDFootPrintManual();			///< ccSectionExtractionTool
-	void doActionBDFootPrintPack();
-	void doActionBDFootPrintGetPlane();
-	void doActionBDMeshToBlock();
-
-	void doActionBDLoD1Generation();
-
-	/// 3d4em
-	void doActionBDLoD2Generation();
-
-	void doActionSettingsLoD2();
-
-	void doActionBDTextureMapping();
-
-	void doActionBDConstrainedMesh();
-	/// display
-	void doActionBDDisplayPlaneOn();
-	void doActionBDDisplayPlaneOff();
-	void doActionBDDisplayPointOn();
-	void doActionBDDisplayPointOff();
-	void doActionDisplayWireframe();
-	void doActionDisplayFace();
-	void doActionDisplayNormalPerFace();
-	void doActionDisplayNormalPerVertex();
-
-	/// image
-	void doActionShowBestImage();
-	void doActionShowSelectedImage();
-
-	void doActionChangeTabTree(int index);
-
-	void updateDBSelection(CC_TYPES::DB_SOURCE type);
-
-	void toggleImageOverlay();
-
-	void clearImagePanel();
-
-	void doActionProjectToImage();
-
-	void doActionSelectWorkingPlane();
-
-	void doActionTogglePlaneEditState();
-
-	void doActionEditSelectedItem();
-
-	void doActionCreateDatabase();
-	void doActionOpenDatabase();
-	void doActionSaveDatabase();
-	void doActionImportData();
-	void doActionImportFolder();
-	void doActionEditDatabase();
-	void doActionCreateBuildingProject();
-	void doActionLoadSubstance();
-
-	void doActionGroundFilteringBatch();
-	void doActionClassificationBatch();
-	void doActionBuildingSegmentationBatch();
-
-	void doActionPointClassEditor();
-	void deactivatePointClassEditor(bool);
-	void doActionBuildingSegmentEditor();	
-	void deactivateBuildingSegmentEditor(bool);
-
-	void doAactionSettingsGroundFiltering();
-	void doActionSettingsClassification();
-	void doActionSettingsBuildingSeg();
-	
-	void doActionScheduleProjectID();
-
-	void doActionClearEmptyItems();
-
 private:
 	//! Shortcut: asks the user to select one cloud
 	/** \param defaultCloudEntity a cloud to select by default (optional)
@@ -654,17 +439,8 @@ private:
 	**/
 	ccPointCloud* askUserToSelectACloud(ccHObject* defaultCloudEntity = nullptr, QString inviteMessage = QString());
 
-	enum FastRegistrationMode
-	{
-		MoveBBCenterToOrigin,
-		MoveBBMinCornerToOrigin,
-		MoveBBMaxCornerToOrigin
-	};
-
-	void doActionFastRegistration(FastRegistrationMode mode);
-
-	void toggleSelectedEntitiesProperty( ccEntityAction::TOGGLE_PROPERTY property );
-	void clearSelectedEntitiesProperty( ccEntityAction::CLEAR_PROPERTY property );
+	void	toggleSelectedEntitiesProperty( ccEntityAction::TOGGLE_PROPERTY property );
+	void	clearSelectedEntitiesProperty( ccEntityAction::CLEAR_PROPERTY property );
 	
 	void setView( CC_VIEW_ORIENTATION view ) override;
 	
@@ -737,11 +513,7 @@ private:
 	Ui::MainWindow	*m_UI;
 	
 	//DB & DB Tree
-	StDBMainRoot* m_ccRoot;
-	//Building DB Tree
-	StDBBuildingRoot* m_buildingRoot;
-	//Image DB Tree
-	StDBImageRoot* m_imageRoot;
+	ccDBRoot* m_ccRoot;
 
 	//! Currently selected entities;
 	ccHObject::Container m_selectedEntities;
@@ -769,21 +541,6 @@ private:
 
 	//! Point picking hub
 	ccPickingHub* m_pickingHub;
-
-	/******************************/
-	/***      STATUS BAR        ***/
-	/******************************/
-	QLabel* m_progressLabel;
-	QProgressBar* m_progressBar;
-	QPushButton* m_progressButton;
-
-	QSpinBox* m_status_pointSnapBufferSpinBox;
-	QLabel* m_status_depth;
-	QToolButton* m_status_show_coord3D;
-	QToolButton* m_status_show_global;
-	QLabel* m_status_coord3D;
-	QLabel* m_status_coord2D;
-	
 
 	/******************************/
 	/***        MDI AREA        ***/
@@ -837,65 +594,6 @@ private:
 	/*** plugins ***/
 	//! Manages plugins - menus, toolbars, and the about dialog
 	ccPluginUIManager	*m_pluginUIManager;
-
-	//////////////////////////////////////////////////////////////////////////
-	// XYLIU
-	ccHObject* askUserToSelect(CC_CLASS_ENUM type, ccHObject* defaultCloudEntity = 0, QString inviteMessage = QString());
-
-	void doActionToggleDrawBBox();
-
-	void CreateImageEditor();
-
-	void CreateEditorPanel();
-
-	void Link3DAnd2DWindow();
-
-	//! Building Reconstruction dialogs
-	bdrPlaneSegDlg* m_pbdrPSDlg;
-	bdrLine3DppDlg* m_pbdrl3dDlg;
-	bdrDeductionDlg* m_pbdrddtDlg;
-	bdrPolyFitDlg* m_pbdrpfDlg;
-	bdrFacetFilterDlg* m_pbdrffDlg;
-	bdrSettingLoD2Dlg* m_pbdrSettingLoD2Dlg;
-	bdr2Point5DimEditor* m_pbdrImshow;
-	bdrImageEditorPanel* m_pbdrImagePanel;
-	bdrPlaneEditorDlg* m_pbdrPlaneEditDlg;
-
-	bdrSettingBDSegDlg* m_pbdrSettingBDSegDlg;
-	bdrSettingGrdFilterDlg* m_pbdrSettingGrdFilterDlg;
-
-	PolyFitObj* polyfit_obj;
-	int m_GCSvr_prj_id;
 };
-
-#include "ccProgressDialog.h"
-#define ProgStart(title) \
-		ccProgressDialog progDlg(false, this);\
-		progDlg.setAutoClose(false);\
-		if (progDlg.textCanBeEdited()) {\
-			progDlg.setMethodTitle(title);\
-			progDlg.setInfo("Processing, please wait...");}\
-			progDlg.start();
-
-#define ProgStartNorm(title, number) \
-		ccProgressDialog progDlg(true, this);\
-		progDlg.setAutoClose(false);\
-		if (progDlg.textCanBeEdited()) {\
-			progDlg.setMethodTitle(title);\
-			char infos[256]; sprintf(infos, "Processing %d items...", number);\
-			progDlg.setInfo(infos);}\
-		CCLib::NormalizedProgress nprogress(&progDlg, number);\
-		progDlg.start();
-#define ProgStartNorm_(title, number) \
-		ccProgressDialog progDlg(true, MainWindow::TheInstance());\
-		progDlg.setAutoClose(false);\
-		if (progDlg.textCanBeEdited()) {\
-			progDlg.setMethodTitle(title);\
-			char infos[256]; sprintf(infos, "Processing %d items...", number);\
-			progDlg.setInfo(infos);}\
-		CCLib::NormalizedProgress nprogress(&progDlg, number);\
-		progDlg.start();
-#define ProgStep(x) if (!nprogress.oneStep()) {progDlg.stop(); return x;}
-#define ProgEnd progDlg.update(100.0f); progDlg.stop();
 
 #endif

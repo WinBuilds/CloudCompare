@@ -27,8 +27,6 @@
 #include <QFileInfo>
 #include <QImageReader>
 #include <QOpenGLTexture>
-#include <QGLBuffer>
-#include <QGL>
 
 ccImage::ccImage()
 	: ccHObject("Not loaded")
@@ -37,10 +35,6 @@ ccImage::ccImage()
 	, m_aspectRatio(1.0f)
 	, m_texAlpha(1.0f)
 	, m_associatedSensor(0)
-	, m_display_type(IMAGE_DISPLAY_2D)
-	, m_vbo(nullptr)
-	, m_vbo_state(0)
-	, m_texture_id(0)
 {
 	setVisible(true);
 	lockVisibility(false);
@@ -56,10 +50,6 @@ ccImage::ccImage(const QImage& image, const QString& name)
 	, m_texAlpha(1.0f)
 	, m_image(image)
 	, m_associatedSensor(0)
-	, m_display_type(IMAGE_DISPLAY_2D)
-	, m_vbo(nullptr)
-	, m_vbo_state(0)
-	, m_texture_id(0)
 {
 	updateAspectRatio();
 	setVisible(true);
@@ -67,12 +57,7 @@ ccImage::ccImage(const QImage& image, const QString& name)
 	setEnabled(true);
 }
 
-ccImage::~ccImage()
-{
-	releaseVBO();
-}
-
-bool ccImage::load(const QString& filename, QString& error, bool fake)
+bool ccImage::load(const QString& filename, QString& error)
 {
 	QImageReader reader(filename);
 	//m_image = QImage(filename);
@@ -83,8 +68,7 @@ bool ccImage::load(const QString& filename, QString& error, bool fake)
 		return false;
 	}
 
-	setData(image, fake);
-	m_file_name = filename;
+	setData(image);
 
 	setName(QFileInfo(filename).fileName());
 	setEnabled(true);
@@ -92,47 +76,11 @@ bool ccImage::load(const QString& filename, QString& error, bool fake)
 	return true;
 }
 
-bool ccImage::loadWithWidthHeight(const QString & filename, int width, int height, QString & error)
+void ccImage::setData(const QImage& image)
 {
-	m_file_name = filename;
-	setName(QFileInfo(filename).fileName());
-	setEnabled(true);
-
-	m_width = width;
-	m_height = height;
-	updateAspectRatio();
-	return true;
-}
-
-// inline QImage & ccImage::data()
-// {
-// 	if (m_image.isNull()) {
-// 		QImageReader reader(m_file_name);
-// 		return reader.read();
-// 	}
-// 	else {
-// 		return m_image;
-// 	}
-// }
-QImage ccImage::data() const
-//inline const QImage & ccImage::data() const
-{
-	if (m_image.isNull()) {
-		QImageReader reader(m_file_name);
-		return reader.read();
-	}
-	else {
-		return m_image;
-	}
-}
-
-void ccImage::setData(const QImage& image, bool fake)
-{
-	if (!fake) {
-		m_image = image;
-	}	
-	m_width = image.width();
-	m_height = image.height();
+	m_image = image;
+	m_width = m_image.width();
+	m_height = m_image.height();
 	updateAspectRatio();
 }
 
@@ -141,287 +89,51 @@ void ccImage::updateAspectRatio()
 	setAspectRatio(m_height != 0 ? static_cast<float>(m_width) / m_height : 1.0f);
 }
 
-int ccImage::vboInit(int count)
-{
-	if (!m_vbo->isCreated()) {
-		if (!m_vbo->create()) {
-			return false;
-		}
-		m_vbo->setUsagePattern(QGLBuffer::DynamicDraw);
-	}
-	if (!m_vbo->bind()) {
-		m_vbo->destroy();
-		return false;
-	}
-	int totalSizeBytes = count * sizeof(CCVector3);
-	totalSizeBytes += count * sizeof(CCVector2);
-	if (totalSizeBytes != m_vbo->size()) {
-		m_vbo->allocate(totalSizeBytes);
-		if (m_vbo->size() != totalSizeBytes) {
-			m_vbo->release();
-			m_vbo->destroy();
-			return false;
-		}
-	}
-	m_vbo->release();
-	return totalSizeBytes;
-}
-
-static CCVector3 s_points[6];
-static CCVector2 s_uvs[6];
-
-bool ccImage::updateVBO(const CC_DRAW_CONTEXT & context)
-{
-	if (m_vbo_state == 2) {return false;}
-	if (m_vbo_state == 1) {return true;} // if no update
-	
-	if (!m_vbo)	{
-		m_vbo = new QGLBuffer;
-	}
-	int vboSizeBytes = vboInit(6); // 2 triangles
-	QOpenGLFunctions_2_1* glFunc = context.glFunctions<QOpenGLFunctions_2_1>();
-	if (glFunc) {
-		if (glFunc->glGetError() != 0) {
-			return false;
-		}
-	}
-
-	if (vboSizeBytes > 0) {
-		m_vbo->bind();
-		// write vertices
-		{
-			CCVector3* v = s_points;
-			*v++ = CCVector3(0, 0, 0);
-			*v++ = CCVector3(m_width, 0, 0);
-			*v++ = CCVector3(m_width, m_height, 0);
-
-			*v++ = CCVector3(m_width, m_height, 0);
-			*v++ = CCVector3(0, m_height, 0);
-			*v++ = CCVector3(0, 0, 0);
-		}
-		m_vbo->write(0, s_points, sizeof(CCVector3) * 2 * 3);
-
-		// write texture index
-		{
-			CCVector2* v = s_uvs;
-			*v++ = CCVector2(0, 0);
-			*v++ = CCVector2(1, 0);
-			*v++ = CCVector2(1, 1);
-
-			*v++ = CCVector2(1, 1);
-			*v++ = CCVector2(0, 1);
-			*v++ = CCVector2(0, 0);
-		}
-		m_vbo->write(sizeof(CCVector3) * 2 * 3, s_uvs, sizeof(CCVector2) * 2 * 3);
-		m_vbo->release();
-	}
-
-	if (vboSizeBytes < 0) {
-		m_vbo->destroy();
-		delete m_vbo;
-		m_vbo = nullptr;
-
-		m_vbo_state = 2;
-		return false;
-	}
-	if (glFunc) {
-		GLenum er = glFunc->glGetError();
-		if (glFunc->glGetError() != 0) {
-			m_vbo_state = 2;
-			return false;
-		}
-	}
-	
-	if (!updateTexBuffer()) {
-		m_vbo_state = 2;
-		return false;
-	}
-
-	m_vbo_state = 1;
-
-	return true;
-}
-
-bool ccImage::updateTexBuffer()
-{
-	if (m_texture_id) {
-		glDeleteTextures(1, &m_texture_id);
-	}
-	if (m_image.isNull()) {
-		return false;
-	}
-	glGenTextures(1, /*(GLuint*)*/&m_texture_id);
-	glBindTexture(GL_TEXTURE_2D, m_texture_id);
-	QImage img = QGLWidget::convertToGLFormat(m_image);
-	glTexImage2D(GL_TEXTURE_2D, 0, 3, img.width(), img.height(), 0, GL_RGBA, GL_UNSIGNED_BYTE, img.bits());
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glBindTexture(GL_TEXTURE_2D, 0);
-	return true;
-}
-
-void ccImage::releaseVBO()
-{
-	if (m_texture_id) {
-		glDeleteTextures(1, &m_texture_id);
-	}
-
-	if (m_vbo_state == 0) {
-		return;
-	}
-
-	if (m_vbo) {
-		m_vbo->destroy();
-		delete m_vbo;
-		m_vbo = nullptr;
-	}
-
-	return;
-}
-
 void ccImage::drawMeOnly(CC_DRAW_CONTEXT& context)
-{	
-	switch (m_display_type)
-	{
-	case ccImage::IMAGE_DISPLAY_2D:
-	{
-		if (!MACRO_Draw2D(context) || !MACRO_Foreground(context))
-			return;
+{
+	if (m_image.isNull())
+		return;
 
-		if (m_image.isNull()) return;
-
-		//get the set of OpenGL functions (version 2.1)
-		QOpenGLFunctions_2_1 *glFunc = context.glFunctions<QOpenGLFunctions_2_1>();
-		assert(glFunc != nullptr);
-
-		if (glFunc == nullptr)
-			return;
-
-		glFunc->glPushAttrib(GL_COLOR_BUFFER_BIT);
-		glFunc->glEnable(GL_BLEND);
-		glFunc->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		glFunc->glPushAttrib(GL_ENABLE_BIT);
-		glFunc->glEnable(GL_TEXTURE_2D);
+	if (!MACRO_Draw2D(context) || !MACRO_Foreground(context))
+		return;
 		
-		QOpenGLTexture texture(m_image);
-		texture.bind();
-		{
-			//we make the texture fit inside viewport
-			int realWidth = static_cast<int>(m_height * m_aspectRatio); //take aspect ratio into account!
-			GLfloat cw = static_cast<GLfloat>(context.glW) / realWidth;
-			GLfloat ch = static_cast<GLfloat>(context.glH) / m_height;
-			GLfloat zoomFactor = (cw > ch ? ch : cw) / 2;
-			GLfloat dX = realWidth * zoomFactor;
-			GLfloat dY = m_height * zoomFactor;
-
-			glFunc->glColor4f(1, 1, 1, m_texAlpha);
-			glFunc->glBegin(GL_QUADS);
-			glFunc->glTexCoord2f(0, 1); glFunc->glVertex2f(-dX, -dY);
-			glFunc->glTexCoord2f(1, 1); glFunc->glVertex2f(dX, -dY);
-			glFunc->glTexCoord2f(1, 0); glFunc->glVertex2f(dX, dY);
-			glFunc->glTexCoord2f(0, 0); glFunc->glVertex2f(-dX, dY);
-			glFunc->glEnd();
-		}
-		texture.release();
-
-		glFunc->glPopAttrib();
-		glFunc->glPopAttrib();
-
-		break;
-	}		
-	case ccImage::IMAGE_DISPLAY_2P5D:
-	{
-		if (!MACRO_Draw3D(context))
-			return;
-
-		//get the set of OpenGL functions (version 2.1)
-		QOpenGLFunctions_2_1 *glFunc = context.glFunctions<QOpenGLFunctions_2_1>();
-		assert(glFunc != nullptr);
-
-		if (glFunc == nullptr)
-			return;
-
-		glFunc->glMatrixMode(GL_MODELVIEW);
-		glFunc->glPushMatrix();
-
-		glFunc->glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-
-		glFunc->glBegin(GL_LINE_LOOP);
-		ccGL::Vertex3(glFunc, 0.f, 0.f, 0.f);
-		ccGL::Vertex3(glFunc, m_width, 0.f, 0.f);
-		ccGL::Vertex3(glFunc, m_width, m_height, 0.f);
-		ccGL::Vertex3(glFunc, 0.f, m_height, 0.f);
-		glFunc->glEnd();
-
-		glFunc->glPushAttrib(GL_COLOR_BUFFER_BIT);
-		glFunc->glEnable(GL_BLEND);
-		glFunc->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		glFunc->glPushAttrib(GL_ENABLE_BIT);
-		glFunc->glEnable(GL_TEXTURE_2D);
-
-		bool useVBO = false;
-		if (context.useVBOs) {
-			useVBO = updateVBO(context);
-		}
-
-		if (useVBO) {
-			glFunc->glColor4f(1, 1, 1, m_texAlpha);
-			glFunc->glEnableClientState(GL_VERTEX_ARRAY);
-			glFunc->glEnableClientState(GL_TEXTURE_COORD_ARRAY);
- 			if (m_vbo->bind()) {
- 				glFunc->glVertexPointer(3, GL_FLOAT, 0, nullptr);
-
-				const GLbyte* start = nullptr;
-				int Shift = sizeof(CCVector3) * 2 * 3;
- 				glFunc->glTexCoordPointer(2, GL_FLOAT, 0, static_cast<const GLvoid*>(start + Shift));
- 				m_vbo->release(); 				
- 			}
-
-			glBindTexture(GL_TEXTURE_2D, m_texture_id);
-			glDrawArrays(GL_TRIANGLES, 0, 6);
-			glBindTexture(GL_TEXTURE_2D, 0);
-
-			glFunc->glDisableClientState(GL_VERTEX_ARRAY);
-			glFunc->glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-		}
-		else if (!m_image.isNull()) {			 
-			QOpenGLTexture texture(m_image); // did not transfer to gl format, so the vertex tex coord is upside down
-			texture.bind();
-			{
-				// glBindTexture(GL_TEXTURE_2D, m_texture_id);
-				glFunc->glColor4f(1, 1, 1, m_texAlpha);
-				glFunc->glBegin(GL_QUADS);
-				glFunc->glTexCoord2f(0, 1); glFunc->glVertex3f(0, 0, 0);
-				glFunc->glTexCoord2f(1, 1); glFunc->glVertex3f(m_width, 0, 0);
-				glFunc->glTexCoord2f(1, 0); glFunc->glVertex3f(m_width, m_height, 0);
-				glFunc->glTexCoord2f(0, 0); glFunc->glVertex3f(0, m_height, 0);
-				glFunc->glEnd();
-				// glBindTexture(GL_TEXTURE_2D, 0);
-			}
-			texture.release();			
-		}
-
-		glFunc->glPopAttrib();
-		glFunc->glPopAttrib();
-
-		glFunc->glPopMatrix();
-
-		break;
-	}
-	case ccImage::IMAGE_DISPLAY_3D:
-	{
-		if (!m_associatedSensor) {
-			return;
-		}
-		//! now it is displayed in camera sensor
-		break;
-	}
-	default:
-		break;
-	}
+	//get the set of OpenGL functions (version 2.1)
+	QOpenGLFunctions_2_1 *glFunc = context.glFunctions<QOpenGLFunctions_2_1>();
+	assert( glFunc != nullptr );
 	
+	if ( glFunc == nullptr )
+		return;
+
+	glFunc->glPushAttrib(GL_COLOR_BUFFER_BIT);
+	glFunc->glEnable(GL_BLEND);
+	glFunc->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glFunc->glPushAttrib(GL_ENABLE_BIT);
+	glFunc->glEnable(GL_TEXTURE_2D);
+
+	QOpenGLTexture texture(m_image);
+	texture.bind();
+	{
+		//we make the texture fit inside viewport
+		int realWidth = static_cast<int>(m_height * m_aspectRatio); //take aspect ratio into account!
+		GLfloat cw = static_cast<GLfloat>(context.glW) /realWidth;
+		GLfloat ch = static_cast<GLfloat>(context.glH) /m_height;
+		GLfloat zoomFactor = (cw > ch ? ch : cw) / 2;
+		GLfloat dX = realWidth*zoomFactor;
+		GLfloat dY = m_height*zoomFactor;
+
+		glFunc->glColor4f(1, 1, 1, m_texAlpha);
+		glFunc->glBegin(GL_QUADS);
+		glFunc->glTexCoord2f(0, 1); glFunc->glVertex2f(-dX, -dY);
+		glFunc->glTexCoord2f(1, 1); glFunc->glVertex2f( dX, -dY);
+		glFunc->glTexCoord2f(1, 0); glFunc->glVertex2f( dX,  dY);
+		glFunc->glTexCoord2f(0, 0); glFunc->glVertex2f(-dX,  dY);
+		glFunc->glEnd();
+	}
+	texture.release();
+
+	glFunc->glPopAttrib();
+	glFunc->glPopAttrib();	
 }
 
 void ccImage::setAlpha(float value)
@@ -444,9 +156,9 @@ void ccImage::setAssociatedSensor(ccCameraSensor* sensor)
 
 void ccImage::onDeletionOf(const ccHObject* obj)
 {
-	if (obj == m_associatedSensor) {
+	if (obj == m_associatedSensor)
 		setAssociatedSensor(0);
-	}
+
 	ccHObject::onDeletionOf(obj);
 }
 
@@ -473,7 +185,8 @@ bool ccImage::toFile_MeOnly(QFile& out) const
 	outStream << texV;
 	outStream << m_texAlpha;
 	outStream << m_image;
-	outStream << m_file_name; //formerly: 'complete filename'
+	QString fakeString;
+	outStream << fakeString; //formerly: 'complete filename'
 
 	return true;
 }
@@ -502,28 +215,10 @@ bool ccImage::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	inStream >> texV;
 	inStream >> m_texAlpha;
 	inStream >> m_image;
-	inStream >> m_file_name; //formerly: 'complete filename'
+	QString fakeString;
+	inStream >> fakeString; //formerly: 'complete filename'
 
 	return true;
-}
-
-void ccImage::removeFromDisplay(const ccGenericGLDisplay * win)
-{
-	if (win == m_currentDisplay)
-	{
-		releaseVBO();
-	}
-
-	//call parent's method
-	ccHObject::removeFromDisplay(win);
-}
-
-void ccImage::setDisplay(ccGenericGLDisplay * win)
-{
-	if (m_currentDisplay && win != m_currentDisplay) {
-		releaseVBO();
-	}
-	ccHObject::setDisplay(win);
 }
 
 ccBBox ccImage::getOwnFitBB(ccGLMatrix& trans)

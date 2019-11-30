@@ -28,9 +28,9 @@
 #include "mainwindow.h"
 
 ccApplication::ccApplication( int &argc, char **argv, bool isCommandLine )
-	: ccApplicationBase( argc, argv, isCommandLine, QStringLiteral( "1.0-beta" ) )
+	: ccApplicationBase( argc, argv, isCommandLine, QStringLiteral( "2.11 alpha (Anoia)" ) )
 {
-	setApplicationName( "BlockBuilder" );
+	setApplicationName( "CloudCompare" );
 	
 	FileIO::setWriterInfo( applicationName(), versionStr() );
 }

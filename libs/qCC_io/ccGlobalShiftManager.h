@@ -93,14 +93,12 @@ public: //Shift and scale info
 
 	static bool GetLast(ShiftInfo& info);
 	static bool GetLast(std::vector<ShiftInfo>& infos);
-
-protected:
 	
 	// Max acceptable coordinate value
 	static double MAX_COORDINATE_ABS_VALUE;
 
 	// Max acceptable diagonal length
-	static double MAX_DIAGONAL_LENGTH;
+   static double MAX_DIAGONAL_LENGTH;
 };
 
 #endif

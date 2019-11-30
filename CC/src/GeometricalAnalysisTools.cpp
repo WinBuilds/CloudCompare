@@ -741,7 +741,7 @@ CCLib::SquareMatrixd GeometricalAnalysisTools::ComputeWeightedCrossCovarianceMat
 bool GeometricalAnalysisTools::RefineSphereLS(	GenericIndexedCloudPersist* cloud,
 												CCVector3& center,
 												PointCoordinateType& radius,
-												double minRelativeCenterShift/*=1.0e-3*/)
+												double minReltaiveCenterShift/*=1.0e-3*/)
 {
 	if (!cloud || cloud->size() < 5)
 	{
@@ -791,11 +791,11 @@ bool GeometricalAnalysisTools::RefineSphereLS(	GenericIndexedCloudPersist* cloud
 		CCVector3d c0 = c;
 		//deduce new center
 		c = G - derivatives * meanNorm;
-		radius = static_cast<PointCoordinateType>(meanNorm);
+		double r = meanNorm;
 
 		double shift = (c-c0).norm();
-		double relativeShift = shift / radius;
-		if (relativeShift < minRelativeCenterShift)
+		double relativeShift = shift / r;
+		if (relativeShift < minReltaiveCenterShift)
 			break;
 	}
 

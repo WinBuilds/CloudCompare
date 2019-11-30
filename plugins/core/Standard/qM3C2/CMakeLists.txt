@@ -12,5 +12,5 @@ if (PLUGIN_STANDARD_QM3C2)
 	add_subdirectory( ui )
 
 	include( ../../../CMakePluginTpl.cmake )
-	set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "plugins") 
+
 endif()

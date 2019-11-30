@@ -19,6 +19,7 @@
 #define PDMS_PARSER_HEADER
 
 #include "PdmsTools.h"
+#include  "../qCoreIOExports.h"
 
 //system
 #include <map>

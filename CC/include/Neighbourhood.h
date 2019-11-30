@@ -23,7 +23,7 @@
 #include "CCMiscTools.h"
 #include "GenericIndexedCloudPersist.h"
 #include "SquareMatrix.h"
-#include "PointProjectionTools.h"
+
 
 namespace CCLib
 {
@@ -77,8 +77,6 @@ class CC_CORE_LIB_API Neighbourhood
 		//! Fit a quadric on point set (see getQuadric) then triangulates it inside bounding box
 		GenericIndexedMesh* triangulateFromQuadric(unsigned stepsX, unsigned stepsY);
 
-		enum InputVectorsUsage { UseOXYasBase, UseYAsUpDir, None };
-
 		//! Projects points on the best fitting LS plane
 		/** Projected points are stored in the points2D vector.
 			\param points2D output set
@@ -94,93 +92,10 @@ class CC_CORE_LIB_API Neighbourhood
 															CCVector3* O = nullptr,
 															CCVector3* X = nullptr,
 															CCVector3* Y = nullptr,
-															InputVectorsUsage vectorsUsage = None)
+															bool useOXYasBase = false)
 		{
 			//need at least one point ;)
 			unsigned count = (m_associatedCloud ? m_associatedCloud->size() : 0);
-			if (!count)
-				return false;
-
-			//if no custom plane equation is provided, get the default best LS one
-			if (!planeEquation)
-			{
-				planeEquation = getLSPlane();
-				if (!planeEquation)
-					return false;
-			}
-
-			//reserve memory for output set
-			try
-			{
-				points2D.resize(count);
-			}
-			catch (const std::bad_alloc&)
-			{
-				//out of memory
-				return false;
-			}
-
-			//we construct the plane local base
-			CCVector3 G(0, 0, 0), u(1, 0, 0), v(0, 1, 0);
-			if ((vectorsUsage == UseOXYasBase) && O && X && Y)
-			{
-				G = *O;
-				u = *X;
-				v = *Y;
-			}
-			else
-			{
-				CCVector3 N(planeEquation);
-				if ((vectorsUsage == UseYAsUpDir) && Y)
-				{
-					v = (*Y - Y->dot(N) * N);
-					v.normalize();
-					u = v.cross(N);
-				}
-				else
-				{
-					CCMiscTools::ComputeBaseVectors(N, u, v);
-				}
-				//get the barycenter
-				const CCVector3* _G = getGravityCenter();
-				assert(_G);
-				G = *_G;
-			}
-
-			//project the points
-			for (unsigned i = 0; i < count; ++i)
-			{
-				//we recenter current point
-				const CCVector3 P = *m_associatedCloud->getPoint(i) - G;
-
-				//then we project it on plane (with scalar prods)
-				points2D[i] = Vec2D(P.dot(u), P.dot(v));
-			}
-
-			//output the local base if necessary
-			if (vectorsUsage != UseOXYasBase)
-			{
-				if (O)
-					*O = G;
-				if (X)
-					*X = u;
-				if (Y)
-					*Y = v;
-			}
-
-			return true;
-		}
-
-		template<class Vec2D, class Vec3D> bool projectPointsOn2DPlane(std::vector<Vec2D>& points2D,
-			std::vector<Vec3D>& points3D,
-			const PointCoordinateType* planeEquation = nullptr,
-			CCVector3* O = nullptr,
-			CCVector3* X = nullptr,
-			CCVector3* Y = nullptr,
-			bool useOXYasBase = false)
-		{
-			//need at least one point ;)
-			unsigned count = points3D.size();
 			if (!count)
 				return false;
 
@@ -225,8 +140,8 @@ class CC_CORE_LIB_API Neighbourhood
 			for (unsigned i = 0; i < count; ++i)
 			{
 				//we recenter current point
-				const CCVector3 P = CCVector3(points3D[i].x, points3D[i].y, points3D[i].z) - G;
-				
+				const CCVector3 P = *m_associatedCloud->getPoint(i) - G;
+
 				//then we project it on plane (with scalar prods)
 				points2D[i] = Vec2D(P.dot(u), P.dot(v));
 			}
@@ -244,13 +159,6 @@ class CC_CORE_LIB_API Neighbourhood
 
 			return true;
 		}
-
-		bool projectIndexedPointsOn2DPlane(std::vector<CCLib::PointProjectionTools::IndexedCCVector2>& points2D,
-			const PointCoordinateType* planeEquation = nullptr,
-			CCVector3* O = nullptr,
-			CCVector3* X = nullptr,
-			CCVector3* Y = nullptr,
-			bool useOXYasBase = false);
 
 		//! Geometric feature computed from eigen values/vectors
 		/** Most of them are defined in "Contour detection in unstructured 3D point clouds", Hackel et al, 2016
@@ -277,9 +185,7 @@ class CC_CORE_LIB_API Neighbourhood
 		double computeFeature(GeomFeature feature);
 
 		//! Computes the 1st order moment of a set of point (based on the eigenvalues)
-		/** \return 1st order moment at a given position P
-			DGM: The article states that the result should be between 0 and 1,
-			but this is actually wrong (as (a + b)^2 can be > a^2 + b^2)
+		/** \return 1st order moment at a given position P (between 0 and 1)
 		**/
 		ScalarType computeMomentOrder1(const CCVector3& P);
 

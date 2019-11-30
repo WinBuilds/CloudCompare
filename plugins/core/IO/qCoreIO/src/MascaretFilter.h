@@ -19,11 +19,12 @@
 #define CC_MASCARET_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! Mascaret profile I/O filter
 /** See http://www.opentelemac.org/
 **/
-class MascaretFilter : public FileIOFilter
+class QCOREIODLL_EXPORT MascaretFilter : public FileIOFilter
 {
 public:
 	MascaretFilter();

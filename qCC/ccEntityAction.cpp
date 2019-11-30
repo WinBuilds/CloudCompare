@@ -99,24 +99,13 @@ namespace ccEntityAction
 	// Colours
 	bool setColor(ccHObject::Container selectedEntities, bool colorize, QWidget *parent)
 	{
-		ccColor::Rgb col;
-		bool random = false;
-		if (colorize) {
-			random = QMessageBox::question(parent, "random?", "randomly set color?",
-				QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes;
-		}
-		if (!random) {
-			QColor colour = QColorDialog::getColor(Qt::white, parent);
-			if (!colour.isValid())
-				return false;
-			col = ccColor::FromQColor(colour);
-		}
-
+		QColor colour = QColorDialog::getColor(Qt::white, parent);
+		
+		if (!colour.isValid())
+			return false;
+		
 		while (!selectedEntities.empty())
 		{
-			if (random) {
-				col = ccColor::Generator::Random();
-			}
 			ccHObject* ent = selectedEntities.back();
 			selectedEntities.pop_back();
 			if (ent->isA(CC_TYPES::HIERARCHY_OBJECT))
@@ -147,13 +136,15 @@ namespace ccEntityAction
 					cloud = static_cast<ccPointCloud*>(vertices);
 				}
 				
-				if (colorize && !random)
+				if (colorize)
 				{
-					cloud->colorize(col.r / ccColor::MAX, col.g / ccColor::MAX, col.b / ccColor::MAX);
+					cloud->colorize(static_cast<float>(colour.redF()),
+									static_cast<float>(colour.greenF()),
+									static_cast<float>(colour.blueF()) );
 				}
 				else
 				{
-					cloud->setRGBColor(col);
+					cloud->setRGBColor(	ccColor::FromQColor(colour) );
 				}
 				cloud->showColors(true);
 				cloud->showSF(false); //just in case
@@ -172,7 +163,9 @@ namespace ccEntityAction
 			else if (ent->isKindOf(CC_TYPES::PRIMITIVE))
 			{
 				ccGenericPrimitive* prim = ccHObjectCaster::ToPrimitive(ent);
-				
+				ccColor::Rgb col(	static_cast<ColorCompType>(colour.red()),
+									static_cast<ColorCompType>(colour.green()),
+									static_cast<ColorCompType>(colour.blue()) );
 				prim->setColor(col);
 				ent->showColors(true);
 				ent->showSF(false); //just in case
@@ -181,7 +174,7 @@ namespace ccEntityAction
 			else if (ent->isA(CC_TYPES::POLY_LINE))
 			{
 				ccPolyline* poly = ccHObjectCaster::ToPolyline(ent);
-				poly->setColor(col);
+				poly->setColor(ccColor::FromQColor(colour));
 				ent->showColors(true);
 				ent->showSF(false); //just in case
 				ent->prepareDisplayForRefresh();
@@ -189,7 +182,7 @@ namespace ccEntityAction
 			else if (ent->isA(CC_TYPES::FACET))
 			{
 				ccFacet* facet = ccHObjectCaster::ToFacet(ent);
-				facet->setColor(col);
+				facet->setColor(ccColor::FromQColor(colour));
 				ent->showColors(true);
 				ent->showSF(false); //just in case
 				ent->prepareDisplayForRefresh();
@@ -1647,18 +1640,16 @@ namespace ccEntityAction
 			{
 				Q_ASSERT(mesh != nullptr);
 				
-				// XYLIU // TODO: The compressed normals are not updated in the database
 				//we remove temporarily the mesh as its normals may be removed (and they can be a child object)
-				//MainWindow* instance = dynamic_cast<MainWindow*>(parent);
-				//MainWindow::ccHObjectContext objContext;
-				//if (instance)
-					//objContext = instance->removeObjectTemporarilyFromDBTree(mesh);
-				//mesh->clearTriNormals();
+				MainWindow* instance = dynamic_cast<MainWindow*>(parent);
+				MainWindow::ccHObjectContext objContext;
+				if (instance)
+					objContext = instance->removeObjectTemporarilyFromDBTree(mesh);
+				mesh->clearTriNormals();
 				mesh->showNormals(false);
 				bool result = mesh->computeNormals(computePerVertexNormals);
-				mesh->showTriNorms(!computePerVertexNormals);
-				//if (instance)
-					//instance->putObjectBackIntoDBTree(mesh,objContext);
+				if (instance)
+					instance->putObjectBackIntoDBTree(mesh,objContext);
 				
 				if (!result)
 				{
@@ -1690,7 +1681,6 @@ namespace ccEntityAction
 				if (ccCloud->hasNormals())
 				{
 					ccCloud->invertNormals();
-					if (ent->isKindOf(CC_TYPES::MESH)) { static_cast<ccGenericMesh*>(ent)->notifyNormalUpdate(); }
 					ccCloud->showNormals(true);
 					ccCloud->prepareDisplayForRefresh_recursive();
 				}
@@ -1942,7 +1932,7 @@ namespace ccEntityAction
 	//////////
 	// Octree
 
-	bool computeOctree(const ccHObject::Container &selectedEntities, QWidget *parent, bool defaultNoWindow)
+	bool computeOctree(const ccHObject::Container &selectedEntities, QWidget *parent)
 	{
 		ccBBox bbox;
 		std::unordered_set<ccGenericPointCloud*> clouds;
@@ -1987,10 +1977,8 @@ namespace ccEntityAction
 		const double minCellSize = static_cast<double>(maxBoxSize) / (1 << ccOctree::MAX_OCTREE_LEVEL);
 
 		ccComputeOctreeDlg coDlg(bbox, minCellSize, parent);
-		if (!defaultNoWindow) {
-			if (!coDlg.exec())
-				return false;
-		}
+		if (!coDlg.exec())
+			return false;
 
 		ccProgressDialog pDlg(true, parent);
 		pDlg.setAutoClose(false);
@@ -2059,7 +2047,6 @@ namespace ccEntityAction
 				cloud->setEnabled(true); //for mesh vertices!
 				ccOctreeProxy* proxy = cloud->getOctreeProxy();
 				assert(proxy);
-				proxy->setEnabled(false);
 				proxy->setVisible(true);
 				proxy->prepareDisplayForRefresh();
 			}

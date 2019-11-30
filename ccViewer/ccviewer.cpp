@@ -740,8 +740,7 @@ void ccViewer::toggleStereoMode(bool state)
 	if (isActive)
 	{
 		m_glWindow->disableStereoMode();
-		if (	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION
-			||	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::GENERIC_STEREO_DISPLAY)
+		if (m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION)
 		{
 			//disable full screen
 			ui.actionFullScreen->setChecked(false);
@@ -781,8 +780,7 @@ void ccViewer::toggleStereoMode(bool state)
 			reflectPerspectiveState();
 		}
 
-		if (	params.glassType == ccGLWindow::StereoParams::NVIDIA_VISION
-			||	params.glassType == ccGLWindow::StereoParams::GENERIC_STEREO_DISPLAY)
+		if (params.glassType == ccGLWindow::StereoParams::NVIDIA_VISION)
 		{
 			//force full screen
 			ui.actionFullScreen->setChecked(true);
@@ -804,10 +802,7 @@ void ccViewer::toggleFullScreen(bool state)
 {
 	if (m_glWindow)
 	{
-		if (	m_glWindow->stereoModeIsEnabled()
-			&&	(	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION
-				||	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::GENERIC_STEREO_DISPLAY)
-			)
+		if (m_glWindow->stereoModeIsEnabled() && m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION)
 		{
 			//auto disable stereo mode as NVidia Vision only works in full screen mode!
 			ui.actionEnableStereo->setChecked(false);
@@ -823,12 +818,7 @@ void ccViewer::onExclusiveFullScreenToggled(bool state)
 	ui.actionFullScreen->setChecked(m_glWindow ? m_glWindow->exclusiveFullScreen() : false);
 	ui.actionFullScreen->blockSignals(false);
 
-	if (	!state
-		&&	m_glWindow
-		&&	m_glWindow->stereoModeIsEnabled()
-		&&	(	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION
-			||	m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::GENERIC_STEREO_DISPLAY)
-		)
+	if (!state && m_glWindow && m_glWindow->stereoModeIsEnabled() && m_glWindow->getStereoParams().glassType == ccGLWindow::StereoParams::NVIDIA_VISION)
 	{
 		//auto disable stereo mode as NVidia Vision only works in full screen mode!
 		ui.actionEnableStereo->setChecked(false);

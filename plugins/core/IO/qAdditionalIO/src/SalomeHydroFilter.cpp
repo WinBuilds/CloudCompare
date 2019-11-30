@@ -63,14 +63,14 @@ CC_FILE_ERROR SalomeHydroFilter::saveToFile(ccHObject* entity, const QString& fi
 	std::vector<ccPolyline*> candidates;
 	try
 	{
-		if (entity->isA(CC_TYPES::POLY_LINE) || entity->isA(CC_TYPES::ST_FOOTPRINT))
+		if (entity->isA(CC_TYPES::POLY_LINE))
 		{
 			candidates.push_back(static_cast<ccPolyline*>(entity));
 		}
 		else if (entity->isA(CC_TYPES::HIERARCHY_OBJECT))
 		{
 			for (unsigned i=0; i<entity->getChildrenNumber(); ++i)
-				if (entity->getChild(i) && (entity->getChild(i)->isA(CC_TYPES::POLY_LINE) || entity->isA(CC_TYPES::ST_FOOTPRINT)))
+				if (entity->getChild(i) && entity->getChild(i)->isA(CC_TYPES::POLY_LINE))
 					candidates.push_back(static_cast<ccPolyline*>(entity->getChild(i)));
 		}
 	}
@@ -199,7 +199,7 @@ CC_FILE_ERROR SalomeHydroFilter::loadFile(const QString& filename, ccHObject& co
 				}
 			}
 
-			QStringList parts = currentLine.simplified().split(QChar(' '), QString::SkipEmptyParts);
+			QStringList parts = currentLine.split(QRegExp("\\s+"),QString::SkipEmptyParts);
 			if (parts.size() == 3)
 			{
 				//(X,Y,Z)

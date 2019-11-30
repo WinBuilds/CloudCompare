@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ccViewer\ccviewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ccViewer\ccViewerApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ccViewer\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccApplicationBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccCameraParamEditDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccDisplayOptionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccOverlayDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPickingHub.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPickOneElementDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccPluginManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccStereoModeDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\common\ccTranslationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\..\..\ccViewer\ccviewer.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\ccViewer\ccViewerApplication.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccCameraParamEditDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccDisplayOptionsDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccOverlayDialog.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPickingHub.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPickOneElementDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccPluginManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccStereoModeDlg.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\..\common\ccTranslationManager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\ccViewer\ccviewerlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccApplicationBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccPickingListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\ccQtHelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\..\..\ccViewer\ui_templates\ccviewer.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\ccViewer\ui_templates\ccviewerAbout.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\cameraParamDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\displayOptionsDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\pickOneElementDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\..\common\ui_templates\stereoModeDlg.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

@@ -31,8 +31,6 @@
 //Qt
 #include <QDir>
 #include <QTextStream>
-#include <QImageReader>
-#include <QOpenGLTexture>
 
 ccCameraSensor::IntrinsicParameters::IntrinsicParameters()
 	: vertFocal_pix(1.0f)
@@ -102,13 +100,10 @@ void ccCameraSensor::BrownDistortionParameters::GetKinectDefaults(BrownDistortio
 
 ccCameraSensor::FrustumInformation::FrustumInformation()
 	: isComputed(false)
-	, drawFrustum(true)
+	, drawFrustum(false)
 	, drawSidePlanes(false)
 	, frustumCorners(nullptr)
 	, frustumHull(nullptr)
-	, drawImage(false)
-	, drawBaseAxis(false)
-	, drawNearPlane(true)
 {}
 
 ccCameraSensor::FrustumInformation::~FrustumInformation()
@@ -194,7 +189,6 @@ bool ccCameraSensor::FrustumInformation::initFrustumHull()
 ccCameraSensor::ccCameraSensor()
 	: ccSensor("Camera Sensor")
 	, m_projectionMatrixIsValid(false)
-	, m_display_order(-1)
 {
 	//graphic representation
 	lockVisibility(false);
@@ -204,7 +198,6 @@ ccCameraSensor::ccCameraSensor()
 ccCameraSensor::ccCameraSensor(const IntrinsicParameters& iParams)
 	: ccSensor("Camera Sensor")
 	, m_projectionMatrixIsValid(false)
-	, m_display_order(-1)
 {
 	//graphic representation
 	lockVisibility(false);
@@ -218,7 +211,6 @@ ccCameraSensor::ccCameraSensor(const ccCameraSensor& sensor)
 	: ccSensor(sensor)
 	, m_projectionMatrix(sensor.m_projectionMatrix)
 	, m_projectionMatrixIsValid(false)
-	, m_display_order(-1)
 {
 	setIntrinsicParameters(sensor.m_intrinsicParams);
 
@@ -493,7 +485,6 @@ bool ccCameraSensor::toFile_MeOnly(QFile& out) const
 	outStream << m_frustumInfos.center.x;
 	outStream << m_frustumInfos.center.y;
 	outStream << m_frustumInfos.center.z;
-	outStream << m_frustumInfos.drawImage;
 
 	return true;
 }
@@ -613,7 +604,6 @@ bool ccCameraSensor::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	inStream >> m_frustumInfos.drawFrustum;
 	inStream >> m_frustumInfos.drawSidePlanes;
 	ccSerializationHelper::CoordsFromDataStream(inStream, flags, m_frustumInfos.center.u, 3);
-	inStream >> m_frustumInfos.drawImage;
 
 	if (dataVersion < 38)
 	{
@@ -626,34 +616,6 @@ bool ccCameraSensor::fromFile_MeOnly(QFile& in, short dataVersion, int flags)
 	}
 
 	return true;
-}
-
-inline QImage ccCameraSensor::getImage(bool forceLoad, bool save)
-{
-	if (m_image_thumb.isNull()) {
-		//! load thumb first
-		QFileInfo imgpath(m_image_path);
-		QString thumb = imgpath.path() + "/" + imgpath.completeBaseName() + "_thumb";
-// 		if (QFileInfo(thumb + "_thumb.jpg").exists()) { thumb = thumb + "_thumb.jpg"; }
-// 		else if (QFileInfo(thumb + "_thumb.tif").exists()) { thumb = thumb + "_thumb.tif"; }
-// 		else if (forceLoad) { thumb = m_image_path; }
-// 		else return m_image_thumb;
-		
-		QImage image_tmp = QImageReader(thumb).read();
-		if (image_tmp.isNull() && forceLoad) {
-			image_tmp = QImageReader(m_image_path).read();
-		}
-		if (!image_tmp.isNull()) {
-			m_image_thumb = image_tmp.width() <= 400 ? image_tmp :
-				image_tmp.scaled(400, 400 * image_tmp.height() / image_tmp.width(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-			if (save) {
-				if (!m_image_thumb.save(thumb + ".jpg", "JPG", 100)) {
-					throw std::runtime_error(("failed to save image in: " + thumb.toStdString() + ".jpg").c_str());
-				}
-			}
-		}
-	}
-	return m_image_thumb;
 }
 
 bool ccCameraSensor::fromLocalCoordToGlobalCoord(const CCVector3& localCoord, CCVector3& globalCoord) const
@@ -761,11 +723,7 @@ bool ccCameraSensor::fromLocalCoordToImageCoord(const CCVector3& localCoord, CCV
 	imageCoord.y = static_cast<PointCoordinateType>(p2.y);
 
 #endif
-	if (imageCoord.x < 0 || imageCoord.x >= m_intrinsicParams.arrayWidth
-		|| imageCoord.y < 0 || imageCoord.y >= m_intrinsicParams.arrayHeight)
-	{
-		return false;
-	}
+
 	return true;
 }
 
@@ -1412,61 +1370,51 @@ void ccCameraSensor::drawMeOnly(CC_DRAW_CONTEXT& context)
 	const PointCoordinateType baseHalfWidth		= 1 * upperLeftPoint.x / 5;
 
 	glFunc->glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-	ccGL::Color3v(glFunc, ccColor::FromRgbf(ccColor::defaultMeshBackDiff).rgb/*m_color.rgb*/);
-	
-	if (m_frustumInfos.drawNearPlane)
-	{
-		//near plane
-		glFunc->glBegin(GL_LINE_LOOP);
-		ccGL::Vertex3(glFunc, upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, -upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, -upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-		glFunc->glEnd();
-	}
+	ccGL::Color3v(glFunc, m_color.rgb);
 
-	if (m_frustumInfos.drawFrustum)
-	{
-		//force line size
-		glFunc->glPushAttrib(GL_LINE_BIT);
-		glFunc->glLineWidth(1.0f);
+	//near plane
+	glFunc->glBegin(GL_LINE_LOOP);
+	ccGL::Vertex3(glFunc,  upperLeftPoint.x,  upperLeftPoint.y, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc, -upperLeftPoint.x,  upperLeftPoint.y, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc, -upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc,  upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
+	glFunc->glEnd();
 
-		//side lines
-		glFunc->glBegin(GL_LINES);
-		glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
-		ccGL::Vertex3(glFunc, upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-		glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
-		ccGL::Vertex3(glFunc, -upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-		glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
-		ccGL::Vertex3(glFunc, -upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-		glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
-		ccGL::Vertex3(glFunc, upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-		glFunc->glEnd();
+	//force line size
+	glFunc->glPushAttrib(GL_LINE_BIT);
+	glFunc->glLineWidth(1.0f);
 
-		glFunc->glPopAttrib(); //GL_LINE_BIT
-	}
+	//side lines
+	glFunc->glBegin(GL_LINES);
+	glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
+	ccGL::Vertex3(glFunc,  upperLeftPoint.x,  upperLeftPoint.y, -upperLeftPoint.z);
+	glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
+	ccGL::Vertex3(glFunc, -upperLeftPoint.x,  upperLeftPoint.y, -upperLeftPoint.z);
+	glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
+	ccGL::Vertex3(glFunc, -upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
+	glFunc->glVertex3f(0.0f, 0.0f, 0.0f);
+	ccGL::Vertex3(glFunc,  upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
+	glFunc->glEnd();
 
-	if (m_frustumInfos.drawBaseAxis)
-	{
-		//base
-		glFunc->glBegin(GL_QUADS);
-		ccGL::Vertex3(glFunc, -baseHalfWidth, upperLeftPoint.y, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, baseHalfWidth, upperLeftPoint.y, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, baseHalfWidth, baseHeight, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, -baseHalfWidth, baseHeight, -upperLeftPoint.z);
-		glFunc->glEnd();
+	glFunc->glPopAttrib(); //GL_LINE_BIT
 
-		//arrow
-		glFunc->glBegin(GL_TRIANGLES);
-		ccGL::Vertex3(glFunc, 0, arrowHeight, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, -arrowHalfWidth, baseHeight, -upperLeftPoint.z);
-		ccGL::Vertex3(glFunc, arrowHalfWidth, baseHeight, -upperLeftPoint.z);
-		glFunc->glEnd();
+	//base
+	glFunc->glBegin(GL_QUADS);
+	ccGL::Vertex3(glFunc, -baseHalfWidth, upperLeftPoint.y, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc,  baseHalfWidth, upperLeftPoint.y, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc,  baseHalfWidth, baseHeight,       -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc, -baseHalfWidth, baseHeight,       -upperLeftPoint.z);
+	glFunc->glEnd();
 
-	}
-		
+	//arrow
+	glFunc->glBegin(GL_TRIANGLES);
+	ccGL::Vertex3(glFunc,  0,              arrowHeight, -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc, -arrowHalfWidth, baseHeight,  -upperLeftPoint.z);
+	ccGL::Vertex3(glFunc,  arrowHalfWidth, baseHeight,  -upperLeftPoint.z);
+	glFunc->glEnd();
+
 	//frustum
-	if (/*m_frustumInfos.drawFrustum ||*/ m_frustumInfos.drawSidePlanes)
+	if (m_frustumInfos.drawFrustum || m_frustumInfos.drawSidePlanes)
 	{
 		if (!m_frustumInfos.isComputed)
 			computeFrustumCorners();
@@ -1474,7 +1422,7 @@ void ccCameraSensor::drawMeOnly(CC_DRAW_CONTEXT& context)
 		if (m_frustumInfos.frustumCorners && m_frustumInfos.frustumCorners->size() >= 8)
 		{
 			//frustum area (lines)
-			if (m_frustumInfos.drawSidePlanes/*drawFrustum*/)
+			if (m_frustumInfos.drawFrustum)
 			{
 				const CCVector3* P0 = m_frustumInfos.frustumCorners->getPoint(0);
 				const CCVector3* P1 = m_frustumInfos.frustumCorners->getPoint(1);
@@ -1550,7 +1498,7 @@ void ccCameraSensor::drawMeOnly(CC_DRAW_CONTEXT& context)
 	}
 
 	//axis (for test)
-	if (!pushName && m_frustumInfos.drawBaseAxis)
+	if (!pushName)
 	{
 		glFunc->glPushAttrib(GL_LINE_BIT);
 		glFunc->glLineWidth(2.0f);
@@ -1579,34 +1527,6 @@ void ccCameraSensor::drawMeOnly(CC_DRAW_CONTEXT& context)
 		glFunc->glEnd();
 
 		glFunc->glPopAttrib(); //GL_LINE_BIT
-	}
-
-	if (m_frustumInfos.drawImage) {
-		QImage image = getImage();
-		if (!image.isNull()) {
-			glFunc->glPushAttrib(GL_COLOR_BUFFER_BIT);
-			glFunc->glEnable(GL_BLEND);
-			glFunc->glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-			glFunc->glPushAttrib(GL_ENABLE_BIT);
-			glFunc->glEnable(GL_TEXTURE_2D);
-
-			QOpenGLTexture texture(image);
-			texture.bind();
-			{
-				glFunc->glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
-				glFunc->glBegin(GL_QUADS);
-				glFunc->glTexCoord2f(1.0f, 0.0f); glFunc->glVertex3f(upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-				glFunc->glTexCoord2f(0.0f, 0.0f); glFunc->glVertex3f(-upperLeftPoint.x, upperLeftPoint.y, -upperLeftPoint.z);
-				glFunc->glTexCoord2f(0.0f, 1.0f); glFunc->glVertex3f(-upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-				glFunc->glTexCoord2f(1.0f, 1.0f); glFunc->glVertex3f(upperLeftPoint.x, -upperLeftPoint.y, -upperLeftPoint.z);
-				glFunc->glEnd();
-			}
-			texture.release();
-
-			glFunc->glPopAttrib();
-			glFunc->glPopAttrib();
-		}
 	}
 
 	if (pushName)
@@ -1936,7 +1856,6 @@ ccImage* ccCameraSensor::orthoRectifyAsImageDirect(	const ccImage* image,
 	const QRgb blackValue = qRgb(0, 0, 0);
 	const QRgb blackAlphaZero = qRgba(0, 0, 0, 0);
 
-	QImage image_data = image->data();
 	for (unsigned i = 0; i < w; ++i)
 	{
 		PointCoordinateType xip = static_cast<PointCoordinateType>(minC[0] + i*_pixelSize);
@@ -1954,7 +1873,7 @@ ccImage* ccCameraSensor::orthoRectifyAsImageDirect(	const ccImage* image,
 				int y = static_cast<int>(imageCoord.y);
 				if (x >= 0 && x < width && y >= 0 && y < height)
 				{
-					rgb = image_data.pixel(x,y);
+					rgb = image->data().pixel(x,y);
 				}
 			}
 

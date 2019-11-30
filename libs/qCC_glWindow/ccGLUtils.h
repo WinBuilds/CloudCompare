@@ -18,14 +18,16 @@
 #ifndef CC_GL_UTILS_HEADER
 #define CC_GL_UTILS_HEADER
 
+#include <qCC_gl.h>
+
 //qCC_db
-#include <ccIncludeGL.h> //Always first!
+#include <ccIncludeGL.h>
 
 //Qt
 #include <QImage>
 
 //! View orientation
-enum CC_VIEW_ORIENTATION {	CC_TOP_VIEW,	/**< Top view (eye: +Z) **/
+enum QCC_GL_LIB_API CC_VIEW_ORIENTATION {	CC_TOP_VIEW,	/**< Top view (eye: +Z) **/
 							CC_BOTTOM_VIEW,	/**< Bottom view **/
 							CC_FRONT_VIEW,	/**< Front view **/
 							CC_BACK_VIEW,	/**< Back view **/
@@ -35,7 +37,7 @@ enum CC_VIEW_ORIENTATION {	CC_TOP_VIEW,	/**< Top view (eye: +Z) **/
 							CC_ISO_VIEW_2,	/**< Isometric view 2: back, left and top **/
 };
 
-class ccGLUtils
+class QCC_GL_LIB_API ccGLUtils
 {
 public:
 

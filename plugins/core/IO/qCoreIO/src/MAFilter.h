@@ -19,9 +19,10 @@
 #define CC_MA_FILTER_HEADER
 
 #include "FileIOFilter.h"
+#include  "qCoreIOExports.h"
 
 //! Maya ASCII meshes file I/O filter
-class MAFilter : public FileIOFilter
+class QCOREIODLL_EXPORT MAFilter : public FileIOFilter
 {
 public:
 	MAFilter();

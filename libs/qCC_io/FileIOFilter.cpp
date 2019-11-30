@@ -353,9 +353,7 @@ ccHObject* FileIOFilter::LoadFromFile(	const QString& filename,
 	if (childCount != 0)
 	{
 		//we set the main container name as the full filename (with path)
-		//container->setName(QString("%1 (%2)").arg(fi.fileName(),fi.absolutePath()));
-		container->setName(fi.fileName());
-		container->setPath(fi.absoluteFilePath());
+		container->setName(QString("%1 (%2)").arg(fi.fileName(),fi.absolutePath()));
 		for (unsigned i = 0; i < childCount; ++i)
 		{
 			ccHObject* child = container->getChild(i);
@@ -365,11 +363,6 @@ ccHObject* FileIOFilter::LoadFromFile(	const QString& filename,
 				//we automatically replace occurrences of 'unnamed' in entities names by the base filename (no path, no extension)
 				newName.replace(QString("unnamed"), fi.baseName());
 				child->setName(newName);
-			}
-			else if (newName.isEmpty())
-			{
-				//just in case
-				child->setName(fi.baseName());
 			}
 		}
 	}

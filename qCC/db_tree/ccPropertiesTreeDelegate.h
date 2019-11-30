@@ -48,13 +48,6 @@ class QAbstractItemView;
 class QStandardItem;
 class QStandardItemModel;
 
-class StBlock;
-class StBlockGroup;
-class StBuilding;
-class StFootPrint;
-class StModel;
-class StPrimGroup;
-
 //! GUI properties list dialog element
 class ccPropertiesTreeDelegate : public QStyledItemDelegate
 {
@@ -109,16 +102,6 @@ public:
 							OBJECT_HISTORY_MATRIX_EDITOR			,
 							OBJECT_GLTRANS_MATRIX_EDITOR			,
 							TREE_VIEW_HEADER						,
-							OBJECT_FACET_CONFIDENCE					,
-							OBJECT_FOOTPRINT_TOP					,
-							OBJECT_FOOTPRINT_BOTTOM					,
-							OBJECT_APPLY_FOOTPRINT_PLANES			,
-							OBJECT_UPDATE_FOOTPRINT_PLANES			,
-							OBJECT_BLOCK_TOP						,
-							OBJECT_BLOCK_BOTTOM						,
-							OBJECT_SENSOR_DRAW_IMAGE				,
-							OBJECT_SENSOR_DRAW_BASEAXIS				,
-							OBJECT_SENSOR_DRAW_FRUSTUM_FRAME		,
 	};
 
 	//! Default constructor
@@ -172,7 +155,7 @@ private:
 	void updateLabelViewport();
 	void updateDisplay();
 	void objectDisplayChanged(const QString &);
-	void colorSourceChanged(const QString &);	
+	void colorSourceChanged(const QString &);
 	void sensorScaleChanged(double);
 	void sensorUncertaintyChanged();
 	void sensorIndexChanged(double);
@@ -184,7 +167,6 @@ private:
 	void appendRow(QStandardItem* leftItem, QStandardItem* rightItem, bool openPersistentEditor = false);
 	void appendWideRow(QStandardItem* item, bool openPersistentEditor = true);
 
-	void fillWithDatabase(ccHObject*);
 	void fillWithHObject(ccHObject*);
 	void fillWithPointCloud(ccGenericPointCloud*);
 	void fillSFWithPointCloud(ccGenericPointCloud*);
@@ -219,21 +201,6 @@ private:
 	ccHObject* m_currentObject;
 	QStandardItemModel* m_model;
 	QAbstractItemView* m_view;
-
-	void footprintBottomChanged(double pos);
-	void footprintTopChanged(double pos);
-	void applyFootprintPlanes();
-	void updateFootprintPlanes();
-	void BlockTopChanged(double pos);
-	void BlockBottomChanged(double pos);
-	void facetConfidenceChanged(double pos);
-	void fillWithStBlock(const StBlock*);
-	void fillWithStBlockGroup(const StBlockGroup*);
-	void fillWithStBuilding(const StBuilding*);
-	void fillWithStFootPrint(const StFootPrint*);
-	void fillWithStModel(const StModel*);
-	void fillWithStPrimGroup(const StPrimGroup*);
-	void fiilWithCameraGroup(const ccHObject*);
 };
 
 #endif

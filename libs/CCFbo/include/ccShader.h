@@ -18,6 +18,8 @@
 #ifndef CC_SHADER_HEADER
 #define CC_SHADER_HEADER
 
+#include "CCFBOLibExports.h"
+
 //Qt
 #include <QString>
 #include <QOpenGLShaderProgram>
@@ -27,7 +29,7 @@ class QObject;
 //! Shader program
 /** Now a simple encapsulation of QOpenGLShaderProgram providing two helper functions.
 **/
-class ccShader : public QOpenGLShaderProgram
+class CCFBODLL_EXPORT ccShader : public QOpenGLShaderProgram
 {
 	Q_OBJECT
 	

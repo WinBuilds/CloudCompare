@@ -111,8 +111,6 @@ public:
 		assert(i >= 0 && i <= iMax);
 		return iMax - i;
 	}
-
-	CCVector3d getViewPoint();
 };
 
 //! OpenGL camera parameters

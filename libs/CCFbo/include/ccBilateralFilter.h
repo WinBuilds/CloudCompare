@@ -41,7 +41,7 @@
 //! Bilateral filer (shader)
 /** See http://en.wikipedia.org/wiki/Bilateral_filter
 **/
-class ccBilateralFilter : public ccGlFilter
+class CCFBODLL_EXPORT ccBilateralFilter : public ccGlFilter
 {
 public:
 

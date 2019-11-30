@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{147A856B-9D5F-4FCA-B613-9638611F854C}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/plugins/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/plugins/$(TargetName)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/bin/plugins/</OutDir>
+    <IntDir>$(WINBUILDS_ROOT)build_msvc15_$(Platform)/$(Configuration)/obj/plugins/$(TargetName)/</IntDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CONCURRENT_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;EDLSHADER_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_io;..\..\..\plugins;..\..\..\plugins\core\GL\qEDL\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;Qt5Concurrentd.lib;Qt5Cored.lib;Qt5Widgetsd.lib;Qt5Guid.lib;Qt5OpenGLd.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensionsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_CONCURRENT_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;EDLSHADER_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_io;..\..\..\plugins;..\..\..\plugins\core\GL\qEDL\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CONCURRENT_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;EDLSHADER_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_io;..\..\..\plugins;..\..\..\plugins\core\GL\qEDL\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;Qt5Concurrent.lib;Qt5Core.lib;Qt5Widgets.lib;Qt5Gui.lib;Qt5OpenGL.lib;opengl32.lib;glu32.lib;Qt5OpenGLExtensions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CONCURRENT_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;EDLSHADER_LIB;QT_GUI_LIB;QT_OPENGL_LIB;QT_OPENGLEXTENSIONS_LIB;%(PreprocessorDefinitions)</Define>
+      <IncludePath>.;..;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);..\..\..\CC\include;..\..\..\libs\qCC_glWindow;..\..\..\libs\qCC_db;..\..\..\libs\CCFbo\include;..\..\..\libs\qCC_io;..\..\..\plugins;..\..\..\plugins\core\GL\qEDL\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtOpenGL;$(QTDIR)\include\QtOpenGLExtensions;%(AdditionalIncludeDirectories)</IncludePath>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+    </QtMoc>
+    <QtRcc>
+      <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
+      <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+    </QtRcc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\plugins\ccDefaultPluginInterface.cpp" />
+    <ClCompile Include="..\..\..\plugins\core\GL\qEDL\qEDL.cpp" />
+    <ClCompile Include="..\..\..\plugins\core\GL\qEDL\src\ccEDLFilter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\plugins\ccCommandLineInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccDefaultPluginInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccGLPluginInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccIOPluginInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccMainAppInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccPluginInterface.h" />
+    <ClInclude Include="..\..\..\plugins\ccStdPluginInterface.h" />
+    <QtMoc Include="..\..\..\plugins\core\GL\qEDL\qEDL.h" />
+    <ClInclude Include="..\..\..\plugins\core\GL\qEDL\src\ccEDLFilter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="..\..\..\plugins\core\GL\qEDL\qEDL.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\plugins\core\GL\qEDL\images\cc_edl.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\plugins\core\GL\qEDL\info.json">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ccCoreDll\ccCoreDll.vcxproj">
+      <Project>{ec793248-056c-48f2-99aa-571aeca5fb24}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ccFBODll\ccFBODll.vcxproj">
+      <Project>{9dc62cf4-684f-4a6d-ac3e-e4a57e8ba346}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccDBDll\qccDBDll.vcxproj">
+      <Project>{23699103-a948-4704-a324-585e905e38d5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccGLDll\qccGLDll.vcxproj">
+      <Project>{d74e2387-682e-4ac4-94eb-ab3cb66e201d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\qccIODll\qccIODll.vcxproj">
+      <Project>{b0b66ed8-d1d3-4e72-a91e-542228c5ddcb}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="msvc2017_64" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

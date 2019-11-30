@@ -18,6 +18,8 @@
 #ifndef CC_RENDERING_TOOLS_HEADER
 #define CC_RENDERING_TOOLS_HEADER
 
+#include <qCC_gl.h>
+
 //qCC_db
 #include <ccDrawableObject.h>
 
@@ -27,7 +29,7 @@ class ccScalarField;
 class ccGLWindow;
 
 //! Misc. tools for rendering of advanced structures
-class ccRenderingTools
+class QCC_GL_LIB_API ccRenderingTools
 {
 public:
 

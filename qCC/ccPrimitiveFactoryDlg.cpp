@@ -122,7 +122,7 @@ void ccPrimitiveFactoryDlg::createPrimitive()
 
 	if (primitive)
 	{
-		m_win->addToDB(primitive, m_win->getCurrentDB(), true, true, true);
+		m_win->addToDB(primitive, true, true, true);
 	}
 }
 
@@ -131,7 +131,7 @@ void ccPrimitiveFactoryDlg::setSpherePositionFromClipboard()
 	QClipboard *clipboard = QApplication::clipboard();
 	if (clipboard != nullptr)
 	{
-		QStringList valuesStr = clipboard->text().simplified().split(QChar(' '), QString::SkipEmptyParts);
+		QStringList valuesStr = clipboard->text().split(QRegExp("\\s+"), QString::SkipEmptyParts);
 		if (valuesStr.size() == 3)
 		{
 			CCVector3d vec;

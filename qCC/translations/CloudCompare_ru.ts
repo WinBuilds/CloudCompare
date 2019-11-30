@@ -210,97 +210,78 @@
 <context>
     <name>AnimationDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="14"/>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="51"/>
         <source>Animation</source>
-        <translation>Анимация</translation>
+        <translation type="vanished">Анимация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="26"/>
         <source>Animation steps</source>
-        <translation>Шаги анимации</translation>
+        <translation type="vanished">Шаги анимации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="39"/>
         <source>Loop</source>
-        <translation>Режим повтора</translation>
+        <translation type="vanished">Режим повтора</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="60"/>
         <source>Total duration</source>
-        <translation>Общ. время</translation>
+        <translation type="vanished">Общ. время</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="67"/>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="119"/>
         <source> sec.</source>
-        <translation> сек.</translation>
+        <translation type="vanished"> сек.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="86"/>
         <source>Current step</source>
-        <translation>Текущий шаг</translation>
+        <translation type="vanished">Текущий шаг</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="95"/>
         <source>Index</source>
-        <translation>Индекс</translation>
+        <translation type="vanished">Индекс</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="109"/>
         <source>Duration</source>
-        <translation>Время</translation>
+        <translation type="vanished">Время</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="116"/>
         <source>Speed modifier for the current step</source>
-        <translation>Коэффициент скорости видео для текущего шага</translation>
+        <translation type="vanished">Коэффициент скорости видео для текущего шага</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="161"/>
         <source>Video output</source>
-        <translation>Видео вывод</translation>
+        <translation type="vanished">Видео вывод</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="188"/>
         <source>Frame rate</source>
-        <translation>Частота кадров</translation>
+        <translation type="vanished">Частота кадров</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="195"/>
         <source>Number of frames per second</source>
-        <translation>Кол-во кадров в секунду</translation>
+        <translation type="vanished">Кол-во кадров в секунду</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="198"/>
         <source> fps</source>
-        <translation> fps</translation>
+        <translation type="vanished"> fps</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="227"/>
         <source>Bitrate</source>
-        <translation>Битрейт</translation>
+        <translation type="vanished">Битрейт</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="234"/>
         <source>Bitrate (in kbit/s)
 The higher the better the quality (but the bigger the file)</source>
-        <translation>Частота звука (кбит/с) Чем выше, тем лучше качество (и больше размер файла)</translation>
+        <translation type="vanished">Частота звука (кбит/с) Чем выше, тем лучше качество (и больше размер файла)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="238"/>
         <source> kbps</source>
-        <translation> кбит/с</translation>
+        <translation type="vanished"> кбит/с</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="273"/>
         <source>- Super resolution: render the frame at a higher resolution (2, 3 or 4 times larger)
 and then shrink it back down to size (this makes some noisy pixels drop off and
 reduce the flicker that is often present in animations). Super resolution is only
 applied on the output video (= not visible in Preview mode)
 - Zoom: render the frame and the animation at a higher resolution (2, 3 or 4 times
 larger). You may have to increase the points size beforehand.</source>
-        <translation>- Супер разрешение: записывает кадр с большим разрешением (в 2, 3 или 4 раза
+        <translation type="vanished">- Супер разрешение: записывает кадр с большим разрешением (в 2, 3 или 4 раза
 больше) а затем уменьшает обратно до исходного размера (это может уменьшить
 шум и снизить мерцание, случающееся в анимации). Супер разрешение относится
 только к видео выводу (= не видно в режиме предпросмотра)
@@ -308,59 +289,48 @@ larger). You may have to increase the points size beforehand.</source>
 больше). Возможно вам потребуется увеличить размер точек на экране.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="285"/>
         <source>super resolution</source>
-        <translation>супер разрешение</translation>
+        <translation type="vanished">супер разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="290"/>
         <source>zoom</source>
-        <translation>масштаб</translation>
+        <translation type="vanished">масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="298"/>
         <source>See combo-box tooltip</source>
-        <translation>Всплывающие подсказки</translation>
+        <translation type="vanished">Всплывающие подсказки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="329"/>
         <source>Output file</source>
-        <translation>Вых. файл</translation>
+        <translation type="vanished">Вых. файл</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="350"/>
         <source>Preview the animation</source>
-        <translation>Предпросмотр анимации</translation>
+        <translation type="vanished">Предпросмотр анимации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="353"/>
         <source>Preview</source>
-        <translation>Предпросмотр</translation>
+        <translation type="vanished">Предпросмотр</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="360"/>
         <source>Creates the animation file</source>
-        <translation>Записать файл анимации</translation>
+        <translation type="vanished">Записать файл анимации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="363"/>
         <source>Render</source>
-        <translation>Запись</translation>
+        <translation type="vanished">Запись</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="370"/>
         <source>Export frames as individual images</source>
-        <translation>Экспорт кадров как отдельных изображений</translation>
+        <translation type="vanished">Экспорт кадров как отдельных изображений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="373"/>
         <source>Export frames</source>
-        <translation>Экспорт кадров</translation>
+        <translation type="vanished">Экспорт кадров</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/ui/animationDlg.ui" line="382"/>
         <source>Start preview from selected step</source>
-        <translation>Начать предпросмотр с выбранного кадра</translation>
+        <translation type="vanished">Начать предпросмотр с выбранного кадра</translation>
     </message>
 </context>
 <context>
@@ -483,178 +453,144 @@ R31   R32   R33   Tz
 <context>
     <name>AsciiOpenDialog</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="20"/>
         <source>Open Ascii File</source>
-        <translation>Открыть файл формата ASCII</translation>
+        <translation type="vanished">Открыть файл формата ASCII</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="28"/>
         <source>Filename:</source>
-        <translation>Имя файла:</translation>
+        <translation type="vanished">Имя файла:</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="50"/>
         <source>Here are the first lines of this file. Choose an attribute for each column (one cloud at a time):</source>
-        <translation>Здесь показаны первые строки файла. Задайте атрибут для каждой колонки (одно облако за раз):</translation>
+        <translation type="vanished">Здесь показаны первые строки файла. Задайте атрибут для каждой колонки (одно облако за раз):</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="60"/>
         <source>Header:</source>
-        <translation>Заголовок:</translation>
+        <translation type="vanished">Заголовок:</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="122"/>
         <source>Separator</source>
-        <translation>Разделитель</translation>
+        <translation type="vanished">Разделитель</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="148"/>
         <source>(ASCII code:%i)</source>
-        <translation>(код ASCII: %i)</translation>
+        <translation type="vanished">(код ASCII: %i)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="157"/>
         <source>ESP</source>
-        <translation>пробел</translation>
+        <translation type="vanished">пробел</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="164"/>
         <source>TAB</source>
-        <translation>Таб</translation>
+        <translation type="vanished">Таб</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="198"/>
         <source>Show labels in 2D (not recommended over 50).
 Otherwise labels are shown in 3D.</source>
-        <translation>Показать метки в 2D (не рекомендуется, когда объектов более 50). Иначе метки показываются в 3D.</translation>
+        <translation type="vanished">Показать метки в 2D (не рекомендуется, когда объектов более 50). Иначе метки показываются в 3D.</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="202"/>
         <source>Show labels in 2D</source>
-        <translation>Показать метки в 2D</translation>
+        <translation type="vanished">Показать метки в 2D</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="215"/>
         <source>Skip lines</source>
-        <translation>Пропустить</translation>
+        <translation type="vanished">Пропустить</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="229"/>
         <source>+ comment/header lines skipped: 0</source>
-        <translation>+ пропуск строк комментариев/заголовков: 0</translation>
+        <translation type="vanished">+ пропуск строк комментариев/заголовков: 0</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="255"/>
         <source>extract scalar field names from first line</source>
-        <translation>взять имена скаляр. полей из первой строки</translation>
+        <translation type="vanished">взять имена скаляр. полей из первой строки</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="292"/>
         <source>Max number of points per cloud</source>
-        <translation>Макс. число кол-во точек на облако</translation>
+        <translation type="vanished">Макс. число кол-во точек на облако</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="299"/>
         <source> Million</source>
-        <translation> млн.</translation>
+        <translation type="vanished"> млн.</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="331"/>
         <source>Apply</source>
-        <translation>Применить</translation>
+        <translation type="vanished">Применить</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="338"/>
         <source>Apply all</source>
-        <translation>Применить все</translation>
+        <translation type="vanished">Применить все</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openAsciiFileDlg.ui" line="345"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
 </context>
 <context>
     <name>AsciiSaveDialog</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="14"/>
         <source>Save ASCII file</source>
-        <translation>Сохранить файл ASCII</translation>
+        <translation type="vanished">Сохранить файл ASCII</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="22"/>
         <source>coordinates precision</source>
-        <translation>точность координат</translation>
+        <translation type="vanished">точность координат</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="39"/>
         <source>scalar precision</source>
-        <translation>точность скаляров</translation>
+        <translation type="vanished">точность скаляров</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="56"/>
         <source>separator</source>
-        <translation>разделитель</translation>
+        <translation type="vanished">разделитель</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="64"/>
         <source>space</source>
-        <translation>пробел</translation>
+        <translation type="vanished">пробел</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="69"/>
         <source>semicolon</source>
-        <translation>точка с запятой</translation>
+        <translation type="vanished">точка с запятой</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="74"/>
         <source>comma</source>
-        <translation>запятая</translation>
+        <translation type="vanished">запятая</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="79"/>
         <source>tabulation</source>
-        <translation>табуляция</translation>
+        <translation type="vanished">табуляция</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="87"/>
         <source>order</source>
-        <translation>порядок</translation>
+        <translation type="vanished">порядок</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="95"/>
         <source>[ASC] point, color, SF(s), normal</source>
-        <translation>[ASC] точка, цвет, скаляр(ы), нормаль</translation>
+        <translation type="vanished">[ASC] точка, цвет, скаляр(ы), нормаль</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="100"/>
         <source>[PTS] point, SF(s), color, normal</source>
-        <translation>[PTS] точка, скаляр(ы), цвет, нормаль</translation>
+        <translation type="vanished">[PTS] точка, скаляр(ы), цвет, нормаль</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="110"/>
         <source>Header</source>
-        <translation>Заголовок</translation>
+        <translation type="vanished">Заголовок</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="116"/>
         <source>columns title</source>
-        <translation>имена столбцов</translation>
+        <translation type="vanished">имена столбцов</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="123"/>
         <source>number of points (separate line)</source>
-        <translation>кол-во точек (отдельных строк)</translation>
+        <translation type="vanished">кол-во точек (отдельных строк)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="133"/>
         <source>Save RGB color components as floats values between 0 and 1</source>
-        <translation>Сохр. цвет RGB как число от 0 до 1</translation>
+        <translation type="vanished">Сохр. цвет RGB как число от 0 до 1</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveAsciiFileDlg.ui" line="136"/>
         <source>Save colors as float values (0-1)</source>
-        <translation>Сохр .значения цветов в диапазоне (0-1)</translation>
+        <translation type="vanished">Сохр .значения цветов в диапазоне (0-1)</translation>
     </message>
 </context>
 <context>
@@ -818,215 +754,169 @@ Otherwise labels are shown in 3D.</source>
 <context>
     <name>BroomDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="14"/>
         <source>CEA Broom Tool</source>
-        <translation>CEA инструмент метла</translation>
+        <translation type="vanished">CEA инструмент метла</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="70"/>
         <source>Broom</source>
-        <translation>Метла</translation>
+        <translation type="vanished">Метла</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="79"/>
         <source>Reposition</source>
-        <translation>Переставить</translation>
+        <translation type="vanished">Переставить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="89"/>
         <source>Automate</source>
-        <translation>Автомат</translation>
+        <translation type="vanished">Автомат</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="96"/>
         <source>stick to the cloud</source>
-        <translation>прилипать к облаку</translation>
+        <translation type="vanished">прилипать к облаку</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="106"/>
         <source>For a visual feedback of the ongoing automation process (slower)</source>
-        <translation>Визуально сопровождать процесс анимации (медленнее)</translation>
+        <translation type="vanished">Визуально сопровождать процесс анимации (медленнее)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="109"/>
         <source>animated automation</source>
-        <translation>автоматизация с анимацией</translation>
+        <translation type="vanished">автоматизация с анимацией</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="125"/>
         <source>Broom dimensions</source>
-        <translation>Размеры метлы</translation>
+        <translation type="vanished">Размеры метлы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="134"/>
         <source>length</source>
-        <translation>длина</translation>
+        <translation type="vanished">длина</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="157"/>
         <source>width</source>
-        <translation>ширина</translation>
+        <translation type="vanished">ширина</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="183"/>
-        <source>thickness</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="218"/>
         <source>Selection</source>
-        <translation>Выделение</translation>
+        <translation type="vanished">Выделение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="227"/>
         <source>mode</source>
-        <translation>режим</translation>
+        <translation type="vanished">режим</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="234"/>
         <source>height</source>
-        <translation>высота</translation>
+        <translation type="vanished">высота</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="261"/>
         <source>inside</source>
-        <translation>внутри</translation>
+        <translation type="vanished">внутри</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="266"/>
         <source>above</source>
-        <translation>сверху</translation>
+        <translation type="vanished">сверху</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="271"/>
         <source>below</source>
-        <translation>снизу</translation>
+        <translation type="vanished">снизу</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="276"/>
         <source>above and below</source>
-        <translation>сверху и снизу</translation>
+        <translation type="vanished">сверху и снизу</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="287"/>
         <source>Undo</source>
-        <translation>Отменить</translation>
+        <translation type="vanished">Отменить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="297"/>
         <source>Undo 10 steps</source>
-        <translation>Отменить 10 шагов</translation>
+        <translation type="vanished">Отменить 10 шагов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="307"/>
         <source>View</source>
-        <translation>Вид</translation>
+        <translation type="vanished">Вид</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="433"/>
         <source>Lost track: failed to stick to the cloud!</source>
-        <translation>Потеря отслеживания: не получилось прилипнуть к облаку!</translation>
+        <translation type="vanished">Потеря отслеживания: не получилось прилипнуть к облаку!</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="459"/>
         <source>remove the selected points</source>
-        <translation>удалить выделенные точки</translation>
+        <translation type="vanished">удалить выделенные точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="481"/>
         <source>Apply</source>
-        <translation>Применить</translation>
+        <translation type="vanished">Применить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="491"/>
         <source>Validate</source>
-        <translation>Закончить</translation>
+        <translation type="vanished">Закончить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/broomDlg.ui" line="498"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
 </context>
 <context>
     <name>BundlerImportDlg</name>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="14"/>
         <source>Snavely&apos;s Bundler Import</source>
-        <translation>Пакетный импорт Snavely&apos;s Bundler</translation>
+        <translation type="vanished">Пакетный импорт Snavely&apos;s Bundler</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="26"/>
         <source>Information</source>
-        <translation>Информация</translation>
+        <translation type="vanished">Информация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="32"/>
         <source>File version:</source>
-        <translation>Версия файла:</translation>
+        <translation type="vanished">Версия файла:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="62"/>
         <source>keypoints:</source>
-        <translation>ключ. точки:</translation>
+        <translation type="vanished">ключ. точки:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="89"/>
         <source>Cameras:</source>
-        <translation>Камеры:</translation>
+        <translation type="vanished">Камеры:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="125"/>
         <source>Import images</source>
-        <translation>Импорт изображений</translation>
+        <translation type="vanished">Импорт изображений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="136"/>
         <source>Image list</source>
-        <translation>Список</translation>
+        <translation type="vanished">Список</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="143"/>
         <source>List of the images corresponding to each camera</source>
-        <translation>Список изображений, соответствующих каждой камере</translation>
+        <translation type="vanished">Список изображений, соответствующих каждой камере</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="153"/>
         <source>Browse</source>
-        <translation>Обзор</translation>
+        <translation type="vanished">Обзор</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="180"/>
         <source>Image scale factor</source>
-        <translation>Масштаб снимка</translation>
+        <translation type="vanished">Масштаб снимка</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="187"/>
         <source>Image scale factor (relatively to the keypoints). Useful if you want to use images bigger than the ones you used to generate the Bundler .out file and the keypoints.</source>
-        <translation>Масштабный коэффициент изображения (относительно ключевых точек). Удобно, если вы хотите использовать изображения больше тех, что использовались при создании файла .out и ключевых точек.</translation>
+        <translation type="vanished">Масштабный коэффициент изображения (относительно ключевых точек). Удобно, если вы хотите использовать изображения больше тех, что использовались при создании файла .out и ключевых точек.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="190"/>
         <source>Image scale factor relatively to keypoints</source>
-        <translation>Масштабный коэффициент изображения относительно ключевых точек</translation>
+        <translation type="vanished">Масштабный коэффициент изображения относительно ключевых точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="205"/>
         <source>Orthorectification</source>
-        <translation>Ортокоррекция</translation>
+        <translation type="vanished">Ортокоррекция</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="213"/>
         <source>To orthorectify images (as new images saved next to the original ones)</source>
-        <translation>Для ортокоррекции изображений (новые изображения сохраняются рядом с исходными)</translation>
+        <translation type="vanished">Для ортокоррекции изображений (новые изображения сохраняются рядом с исходными)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="216"/>
         <source>generate 2D orthophotos</source>
-        <translation>создавать 2D ортофото</translation>
+        <translation type="vanished">создавать 2D ортофото</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="226"/>
         <source>Ortho-rectification method:
 - Optimized = CC will use the keypoints to optimize the parameters of the &apos;collinearity equation&apos;
   that make the image and the keypoints match as best as possible. The equation parameters are then
@@ -1035,7 +925,7 @@ Otherwise labels are shown in 3D.</source>
 - Direct = CC will only use Bundler&apos;s output information (camera extrinsic and intrinsic parameters).
   The camera distortion parameters can be applied or not. Pay attention that those parameters are
   sometimes very poorly estimated by Bundler.</source>
-        <translation>Метод ортокоррекции:
+        <translation type="vanished">Метод ортокоррекции:
 - Оптимизированный = CC будет использовать ключевые точки для оптимизации параметров
 «уравнения коллинеарности» чтобы сделать изображение и ключевые точки максимально
 совпадающими. Параметры уравнения тогда используется для проецирования изображения
@@ -1046,64 +936,52 @@ Otherwise labels are shown in 3D.</source>
 Обратите внимание, что эти параметры иногда очень плохо оценивается Bundler.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="237"/>
         <source>Optimized</source>
-        <translation>Оптимизированные</translation>
+        <translation type="vanished">Оптимизированные</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="242"/>
         <source>Direct with undistortion</source>
-        <translation>Прямой с коррекциями</translation>
+        <translation type="vanished">Прямой с коррекциями</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="247"/>
         <source>Direct</source>
-        <translation>Прямой</translation>
+        <translation type="vanished">Прямой</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="257"/>
         <source>To generate orthorectified versions of the images as clouds (warning: result mught be huge!).
 Warning: the &apos;Optimized&apos; method is used by default.</source>
-        <translation>Для создания ортотрансформированных версий изображений как облаков (предупреждение: результат может быть огромным!).
+        <translation type="vanished">Для создания ортотрансформированных версий изображений как облаков (предупреждение: результат может быть огромным!).
 Предупреждение: метод «Оптимизированные» используется по умолчанию.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="261"/>
         <source>generate 2D &quot;orthoclouds&quot;</source>
-        <translation>создавать &quot;ортооблака&quot; 2D</translation>
+        <translation type="vanished">создавать &quot;ортооблака&quot; 2D</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="270"/>
         <source>Vertical dimension:</source>
-        <translation>Вертик. размер:</translation>
+        <translation type="vanished">Вертик. размер:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="277"/>
         <source>Keypoints vertical axis is X (1,0,0)</source>
-        <translation>Верт. ось X ключевых точек (1,0,0)</translation>
+        <translation type="vanished">Верт. ось X ключевых точек (1,0,0)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="287"/>
         <source>Keypoints vertical axis is Y (0,1,0)</source>
-        <translation>Верт. ось Y ключевых точек (0,1,0)</translation>
+        <translation type="vanished">Верт. ось Y ключевых точек (0,1,0)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="297"/>
         <source>Keypoints vertical axis is Z (0,0,1)</source>
-        <translation>Верт. ось Z ключевых точек (0,0,1)</translation>
+        <translation type="vanished">Верт. ось Z ключевых точек (0,0,1)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="310"/>
         <source>Input a 4x4 transformation matrix that transforms the keypoint vertical axis into (0,0,1)</source>
-        <translation>Ввод матрицы трансформации 4x4, которая преобразовывает верт. ось ключевых точек в (0,0,1)</translation>
+        <translation type="vanished">Ввод матрицы трансформации 4x4, которая преобразовывает верт. ось ключевых точек в (0,0,1)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="313"/>
         <source>Custom</source>
-        <translation>Задать собственную</translation>
+        <translation type="vanished">Задать собственную</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="322"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1113,7 +991,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;0 0 1 0&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;0 0 0 1&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -1124,81 +1002,67 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="340"/>
         <source>To generate a 3D model (mesh) colored with the input images.
 By default the keypoints are meshed, and points are sampled on this first mesh.
 The sampled points are then colored with the images and a final mesh is built on top of those points.</source>
-        <translation>Чтобы создать 3D-модель (ЦМР) расцвеченную по входным изображениям.
+        <translation type="vanished">Чтобы создать 3D-модель (ЦМР) расцвеченную по входным изображениям.
 По умолчанию ключевые точки объединены в сеть, а точки отбираются на
 этой первой сетке.
 Затем выбранные точки раскрашиваются по изображениями, и поверх этих
 точек строится финальная сетка ЦМР.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="345"/>
         <source>Colored model generation</source>
-        <translation>Создание модели в цвете</translation>
+        <translation type="vanished">Создание модели в цвете</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="398"/>
         <source>vertices: </source>
-        <translation>вершин: </translation>
+        <translation type="vanished">вершин: </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="411"/>
         <source>Approximate number of vertices for the final mesh</source>
-        <translation>Примерное количество вершин для конечной сетки</translation>
+        <translation type="vanished">Примерное количество вершин для конечной сетки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="447"/>
         <source>To use a cloud (or mesh) instead of the keypoints as base for the model generation</source>
-        <translation>Использовать облако (или ЦМР) вместо ключевых точек в качестве основы при создании модели</translation>
+        <translation type="vanished">Использовать облако (или ЦМР) вместо ключевых точек в качестве основы при создании модели</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="450"/>
         <source>Use alternative keypoints</source>
-        <translation>Альтернативные ключ. точки</translation>
+        <translation type="vanished">Альтернативные ключ. точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="479"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="496"/>
         <source>To keep images and their corresponding sensors in memory (i.e. as entities in the DB tree)</source>
-        <translation>Держать изображения и соответствующие датчики в памяти (т.е. элементы в древе БД проекта)</translation>
+        <translation type="vanished">Держать изображения и соответствующие датчики в памяти (т.е. элементы в древе БД проекта)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="499"/>
         <source>keep images (and sensors) loaded</source>
-        <translation>держать изображения (и датчики) в памяти</translation>
+        <translation type="vanished">держать изображения (и датчики) в памяти</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="522"/>
         <source>To undistort loaded images</source>
-        <translation>коррекция загруженных изображений</translation>
+        <translation type="vanished">коррекция загруженных изображений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="525"/>
         <source>undistort images</source>
-        <translation>коррекция снимков</translation>
+        <translation type="vanished">коррекция снимков</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/ui/openBundlerFileDlg.ui" line="550"/>
         <source>Import keypoints</source>
-        <translation>Импорт ключевых точек</translation>
+        <translation type="vanished">Импорт ключевых точек</translation>
     </message>
 </context>
 <context>
     <name>CSFDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="14"/>
         <source>Cloth Simulation Filter</source>
-        <translation>Фильтр Cloth Simulation</translation>
+        <translation type="vanished">Фильтр Cloth Simulation</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="27"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1215,7 +1079,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; background-color:#cce8cf;&quot;&gt;(&lt;/span&gt;&lt;a href=&quot;http://ramm.bnu.edu.cn/&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://ramm.bnu.edu.cn/&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; background-color:#cce8cf;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt;&quot;&gt;Wuming Zhang; Jianbo Qi; Peng Wan; Hongtao Wang&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt;&quot;&gt;contact us: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; background-color:#cce8cf;&quot;&gt;2009zwm@gmail.com; wpqjbzwm@126.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -1233,69 +1097,56 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt;&quot;&gt;contact us: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; background-color:#cce8cf;&quot;&gt;2009zwm@gmail.com; wpqjbzwm@126.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="62"/>
         <source>General parameter setting</source>
-        <translation>Основные настройки</translation>
+        <translation type="vanished">Основные настройки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="68"/>
         <source>Scenes</source>
-        <translation>Характер</translation>
+        <translation type="vanished">Характер</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="93"/>
         <source>Steep slope</source>
-        <translation>Крутой склон</translation>
+        <translation type="vanished">Крутой склон</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="119"/>
         <source>Relief</source>
-        <translation>Рельеф</translation>
+        <translation type="vanished">Рельеф</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="145"/>
         <source>Flat</source>
-        <translation>Равнина</translation>
+        <translation type="vanished">Равнина</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="176"/>
         <source> Slope processing</source>
-        <translation> Обработка откосов</translation>
+        <translation type="vanished"> Обработка откосов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="212"/>
         <source>Advanced parameter setting</source>
-        <translation>Дополнительные параметры</translation>
+        <translation type="vanished">Дополнительные параметры</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="220"/>
         <source>Cloth resolution </source>
-        <translation>Шаг сетки </translation>
+        <translation type="vanished">Шаг сетки </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="268"/>
         <source>Max iterations </source>
-        <translation>Кол-во итераций </translation>
+        <translation type="vanished">Кол-во итераций </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="304"/>
         <source>Classification threshold</source>
-        <translation>Допуск классификации</translation>
+        <translation type="vanished">Допуск классификации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="343"/>
         <source>Exports the cloth in its final state as a mesh
 (WARNING: ONLY FOR DEBUG PURPOSE - THIS IS NOT A DTM)</source>
-        <translation>Экспорт результирующей сетки как модели рельефа
+        <translation type="vanished">Экспорт результирующей сетки как модели рельефа
 (ВНИМАНИЕ: ТОЛЬКО ДЛЯ ОТЛАДКИ - ЭТО НЕ ЦМР)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="347"/>
         <source>Export cloth mesh</source>
-        <translation>Экспорт модели сетки</translation>
+        <translation type="vanished">Экспорт модели сетки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCSF/ui/CSFDlg.ui" line="359"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1306,7 +1157,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:600;&quot;&gt;2.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt; Max iterations refers to the maximum iteration times of terrain simulation. 500 is enough for most of scenes.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt; font-weight:600;&quot;&gt;3.&lt;/span&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt; Classification threshold refers to a threshold (the unit is same as the unit of pointclouds) to classify the pointclouds into ground and non-ground parts based on the distances between points and the simulated terrain. 0.5 is adapted to most of scenes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.SF NS Text&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -1321,44 +1172,36 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>CSVMatrixOpenDlg</name>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="14"/>
         <source>Open CSV Matrix</source>
-        <translation>Открыть матрицу CSV</translation>
+        <translation type="vanished">Открыть матрицу CSV</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="20"/>
         <source>Grid</source>
-        <translation>Сетка</translation>
+        <translation type="vanished">Сетка</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="29"/>
         <source>Separator</source>
-        <translation>Разделитель</translation>
+        <translation type="vanished">Разделитель</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="72"/>
         <source>X spacing</source>
-        <translation>Разрешение X</translation>
+        <translation type="vanished">Разрешение X</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="92"/>
         <source>Y spacing</source>
-        <translation>Разрешение Y</translation>
+        <translation type="vanished">Разрешение Y</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="115"/>
         <source>Invert row order</source>
-        <translation>инвертировать порядок рядов</translation>
+        <translation type="vanished">инвертировать порядок рядов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="122"/>
         <source>Load as mesh</source>
-        <translation>Загрузить как ЦМР</translation>
+        <translation type="vanished">Загрузить как ЦМР</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCSVMatrixIO/ui/openCSVMatrixDlg.ui" line="131"/>
         <source>Use texture file</source>
-        <translation>Использ. файл текстуры</translation>
+        <translation type="vanished">Использ. файл текстуры</translation>
     </message>
 </context>
 <context>
@@ -1691,511 +1534,414 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Canupo2DViewDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="14"/>
         <source>CANUPO training (result)</source>
-        <translation>Обучение CANUPO (результат)</translation>
+        <translation type="vanished">Обучение CANUPO (результат)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="24"/>
         <source>You can manually edit the boundary ( left click: select or add vertex / long press: move / right click: remove vertex)</source>
-        <translation>Вы можете отредактировать границу (левый щелчок: выбрать или добавить узел / длительное нажатие: перемещение / правый щелчок: удалить узел)</translation>
+        <translation type="vanished">Вы можете отредактировать границу (левый щелчок: выбрать или добавить узел / длительное нажатие: перемещение / правый щелчок: удалить узел)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="50"/>
         <source>Legend</source>
-        <translation>Легенда</translation>
+        <translation type="vanished">Легенда</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="78"/>
         <source>Cloud1 name</source>
-        <translation>Имя облака 1</translation>
+        <translation type="vanished">Имя облака 1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="107"/>
         <source>Cloud2 name</source>
-        <translation>Имя облака 2</translation>
+        <translation type="vanished">Имя облака 2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="117"/>
         <source>Scales</source>
-        <translation>Масштабы</translation>
+        <translation type="vanished">Масштабы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="126"/>
         <source>In order to get a faster classifier, you can decrease the number of scales used (keeping only the smallest)</source>
-        <translation>Для быстрой классификации, Вы можете сократить количество масштабов (оставляя малые)</translation>
+        <translation type="vanished">Для быстрой классификации, Вы можете сократить количество масштабов (оставляя малые)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="140"/>
         <source>reset boundary</source>
-        <translation>сброс границы</translation>
+        <translation type="vanished">сброс границы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="150"/>
         <source>statistics</source>
-        <translation>статистика</translation>
+        <translation type="vanished">статистика</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="157"/>
         <source>points size</source>
-        <translation>размер точек</translation>
+        <translation type="vanished">размер точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="189"/>
         <source>Save</source>
-        <translation>Сохранить</translation>
+        <translation type="vanished">Сохранить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupo2DViewDialog.ui" line="196"/>
         <source>Done</source>
-        <translation>Завершить</translation>
+        <translation type="vanished">Завершить</translation>
     </message>
 </context>
 <context>
     <name>CanupoClassifDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="14"/>
         <source>CANUPO Classification</source>
-        <translation>Классификация CANUPO</translation>
+        <translation type="vanished">Классификация CANUPO</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="24"/>
         <source>Classifier(s)</source>
-        <translation>Классификатор(ы)</translation>
+        <translation type="vanished">Классификатор(ы)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="30"/>
         <source>file</source>
-        <translation>файл</translation>
+        <translation type="vanished">файл</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="42"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="51"/>
         <source>info</source>
-        <translation>инфо</translation>
+        <translation type="vanished">инфо</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="58"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#ff0000;&quot;&gt;No classifier loaded!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#ff0000;&quot;&gt;Нет загруженного классификатора!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="72"/>
         <source>Core points are points on which the computation is actually performed (result is then propagated to the neighboring points).</source>
-        <translation>Ключевые точки - точки по которым выполняется этот расчет (затем результат распространяется на соседние точки).</translation>
+        <translation type="vanished">Ключевые точки - точки по которым выполняется этот расчет (затем результат распространяется на соседние точки).</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="75"/>
         <source>Core points</source>
-        <translation>Ключевые точки</translation>
+        <translation type="vanished">Ключевые точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="81"/>
         <source>Warning, might be quite long on more than 100 000 points...</source>
-        <translation>Внимание, может занять много времени, если точек больше 100 000...</translation>
+        <translation type="vanished">Внимание, может занять много времени, если точек больше 100 000...</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="84"/>
         <source>use selected cloud</source>
-        <translation>по выделенному облаку</translation>
+        <translation type="vanished">по выделенному облаку</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="94"/>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="107"/>
         <source>Alternative core points cloud</source>
-        <translation>Другое облако ключевых точек</translation>
+        <translation type="vanished">Другое облако ключевых точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="97"/>
         <source>use other cloud</source>
-        <translation>другое облако</translation>
+        <translation type="vanished">другое облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="114"/>
         <source>Subsampled version of the selected cloud</source>
-        <translation>Прореженная копия выделенного облака</translation>
+        <translation type="vanished">Прореженная копия выделенного облака</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="117"/>
         <source>subsample cloud</source>
-        <translation>прореженное облако</translation>
+        <translation type="vanished">прореженное облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="127"/>
         <source>Min. distance between points</source>
-        <translation>Интервал точек</translation>
+        <translation type="vanished">Интервал точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="140"/>
         <source>MSC files are generated by the original CANUPO tool (by N. Brodu)</source>
-        <translation>Файлы MSC, подготовленные инструментом CANUPO (N. Brodu)</translation>
+        <translation type="vanished">Файлы MSC, подготовленные инструментом CANUPO (N. Brodu)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="143"/>
         <source>from MSC file</source>
-        <translation>из файла MSC</translation>
+        <translation type="vanished">из файла MSC</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="184"/>
         <source>Advanced</source>
-        <translation>Дополнительно</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="193"/>
         <source>Use confidence threshold for classification</source>
-        <translation>Доверительный порог для классификации</translation>
+        <translation type="vanished">Доверительный порог для классификации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="207"/>
         <source>threshold</source>
-        <translation>порог</translation>
+        <translation type="vanished">порог</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="214"/>
         <source>Points having a confidence under this threshold won&apos;t be classified (or a SF will be used)</source>
-        <translation>Точки, ниже доверительного порога не берутся в классификацию (или используется скаляр. поле)</translation>
+        <translation type="vanished">Точки, ниже доверительного порога не берутся в классификацию (или используется скаляр. поле)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="248"/>
         <source>Try to classify points with a low confidence based on the local SF values</source>
-        <translation>Попробуйте классифицировать точки с меньшим порогом по скалярным значениям</translation>
+        <translation type="vanished">Попробуйте классифицировать точки с меньшим порогом по скалярным значениям</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="251"/>
         <source>use active SF to locally refine the classification</source>
-        <translation>использ. скал. поле для классификации</translation>
+        <translation type="vanished">использ. скал. поле для классификации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="261"/>
         <source>For test purpose!</source>
-        <translation>Для тестирования!</translation>
+        <translation type="vanished">Для тестирования!</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="264"/>
         <source>generate one SF per scale with &apos;x-y&apos;</source>
-        <translation>одно скал. поле на масштаб с &apos;x-y&apos;</translation>
+        <translation type="vanished">одно скал. поле на масштаб с &apos;x-y&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="271"/>
         <source>generate one SF per scale with roughness</source>
-        <translation>одно скал. поле на масштаб с неровностью</translation>
+        <translation type="vanished">одно скал. поле на масштаб с неровностью</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoClassifDialog.ui" line="299"/>
         <source>Max thread count</source>
-        <translation>Макс. потоков</translation>
+        <translation type="vanished">Макс. потоков</translation>
     </message>
 </context>
 <context>
     <name>CanupoTrainingDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="14"/>
         <source>CANUPO Training</source>
-        <translation>Обучение CANUPO</translation>
+        <translation type="vanished">Обучение CANUPO</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="24"/>
         <source>Data</source>
-        <translation>Данные</translation>
+        <translation type="vanished">Данные</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="30"/>
         <source>Role</source>
-        <translation>Роль</translation>
+        <translation type="vanished">Роль</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="37"/>
         <source>Cloud</source>
-        <translation>Облако</translation>
+        <translation type="vanished">Облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="44"/>
         <source>Class label</source>
-        <translation>Класс</translation>
+        <translation type="vanished">Класс</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="51"/>
         <source>class #1</source>
-        <translation>класс #1</translation>
+        <translation type="vanished">класс #1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="65"/>
         <source>class #2</source>
-        <translation>класс #2</translation>
+        <translation type="vanished">класс #2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="88"/>
         <source>Points belonging to class #1 </source>
-        <translation>Точки, относящиеся к классу #1 </translation>
+        <translation type="vanished">Точки, относящиеся к классу #1 </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="101"/>
         <source>Points belonging to class #2</source>
-        <translation>Точки, относящиеся к классу #2</translation>
+        <translation type="vanished">Точки, относящиеся к классу #2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="111"/>
         <source>Scales</source>
-        <translation>Масштабы</translation>
+        <translation type="vanished">Масштабы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="117"/>
         <source>ramp</source>
-        <translation>ряд</translation>
+        <translation type="vanished">ряд</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="142"/>
         <source>Mininum scale</source>
-        <translation>Мин. масштаб</translation>
+        <translation type="vanished">Мин. масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="145"/>
         <source>Min = </source>
-        <translation>Мин = </translation>
+        <translation type="vanished">Мин = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="167"/>
         <source>Step</source>
-        <translation>с шагом</translation>
+        <translation type="vanished">с шагом</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="170"/>
         <source>Step = </source>
-        <translation>Шаг = </translation>
+        <translation type="vanished">Шаг = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="192"/>
         <source>Max scale</source>
-        <translation>Макс. масштаб</translation>
+        <translation type="vanished">Макс. масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="195"/>
         <source>Max = </source>
-        <translation>Макс = </translation>
+        <translation type="vanished">Макс = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="217"/>
         <source>Inp</source>
-        <translation>Ряд масштабов</translation>
+        <translation type="vanished">Ряд масштабов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="220"/>
         <source>list</source>
-        <translation>список</translation>
+        <translation type="vanished">список</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="230"/>
         <source>Input scales as a list of values (separated by a space character)</source>
-        <translation>Список масштабов (разделенных пробелами)</translation>
+        <translation type="vanished">Список масштабов (разделенных пробелами)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="240"/>
         <source>Advanced</source>
-        <translation>Дополнительно</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="246"/>
         <source>Classification parameter</source>
-        <translation>Параметр классификации</translation>
+        <translation type="vanished">Параметр классификации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="254"/>
         <source>Dimensionality</source>
-        <translation>Размерность</translation>
+        <translation type="vanished">Размерность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="262"/>
         <source>Max core points</source>
-        <translation>Макс. ключевых точек</translation>
+        <translation type="vanished">Макс. ключевых точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="269"/>
         <source>Maximum number of core points computed on each class</source>
-        <translation>Макс. кол-во ключевых точек, вычисленных для каждого класса</translation>
+        <translation type="vanished">Макс. кол-во ключевых точек, вычисленных для каждого класса</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="288"/>
         <source>Check this to add more points to the 2D classifier behavior representation</source>
-        <translation>Больше точек для представления 2D-классификатора</translation>
+        <translation type="vanished">Больше точек для представления 2D-классификатора</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="291"/>
         <source>Show classifier behavior on </source>
-        <translation>Показать поведение классификатора на </translation>
+        <translation type="vanished">Показать поведение классификатора на </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="307"/>
         <source>Additional points that will be added to the 2D classifier behavior representation</source>
-        <translation>Дополнительные точки, которые будут добавлены при отображении 2D-классификатора</translation>
+        <translation type="vanished">Дополнительные точки, которые будут добавлены при отображении 2D-классификатора</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="314"/>
         <source>If checked the original cloud will be used for descriptors computation (i.e. class clouds will be considered as core points of this cloud)</source>
-        <translation>Если отмечено, исходное облако используется для расчета дескрипторов (то есть облака классов будут рассматриваться как ключевые точки этого облака)</translation>
+        <translation type="vanished">Если отмечено, исходное облако используется для расчета дескрипторов (то есть облака классов будут рассматриваться как ключевые точки этого облака)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="317"/>
         <source>Use original cloud for descriptors</source>
-        <translation>Исходные облака для дескрипторов</translation>
+        <translation type="vanished">Исходные облака для дескрипторов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="333"/>
         <source>If set this cloud will be used for descriptors computation (i.e. class clouds will be considered as core points of this cloud)</source>
-        <translation>Если отмечено, это облако будет использоваться для вычисления дескрипторов (то есть облака классов будут рассматриваться как ключевые точки этого облака)</translation>
+        <translation type="vanished">Если отмечено, это облако будет использоваться для вычисления дескрипторов (то есть облака классов будут рассматриваться как ключевые точки этого облака)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoTrainingDialog.ui" line="384"/>
         <source>Max thread count</source>
-        <translation>Кол-во потоков</translation>
+        <translation type="vanished">Кол-во потоков</translation>
     </message>
 </context>
 <context>
     <name>CellsFusionDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="14"/>
         <source>Cell Fusion Parameters</source>
-        <translation>Параметры слияния ячеек</translation>
+        <translation type="vanished">Параметры слияния ячеек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="20"/>
         <source>Fusion algorithm</source>
-        <translation>Алгоритм слияния</translation>
+        <translation type="vanished">Алгоритм слияния</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="30"/>
         <source>Kd-tree</source>
-        <translation>K-мерное дерево</translation>
+        <translation type="vanished">K-мерное дерево</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="35"/>
         <source>Fast Marching</source>
-        <translation>Быстро сходящийся метод</translation>
+        <translation type="vanished">Быстро сходящийся метод</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="46"/>
         <source>Kd-tree cells fusion parameters</source>
-        <translation>Параметры слияния ячеек K-мерного дерева</translation>
+        <translation type="vanished">Параметры слияния ячеек K-мерного дерева</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="55"/>
         <source>Max angle between cells (in degrees).
 Kd-tree cells should be (roughly) planar.</source>
-        <translation>Макс. угол между эл-тами (в °).
+        <translation type="vanished">Макс. угол между эл-тами (в °).
 Элементы K-мерного дерева должны
 быть (примерно) плоскими.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="59"/>
         <source>Max angle</source>
-        <translation>Макс. угол</translation>
+        <translation type="vanished">Макс. угол</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="66"/>
         <source> deg.</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="82"/>
         <source>Max &apos;relative&apos; distance between cells (proportional to the cell size).
 The bigger the farther the merged cells can be.</source>
-        <translation>Макс. относительный интервал между элементами
+        <translation type="vanished">Макс. относительный интервал между элементами
 (пропорционально размеру элементов).
 Чем больше, тем более далекие элементы
 будут объединяться.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="86"/>
         <source>Max relative distance</source>
-        <translation>Макс. относит. расстояние</translation>
+        <translation type="vanished">Макс. относит. расстояние</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="115"/>
         <source>FM cells fusion parameters</source>
-        <translation>Параметры слияния эл-тов для БС</translation>
+        <translation type="vanished">Параметры слияния эл-тов для БС</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="123"/>
         <source>Octree level</source>
-        <translation>Уровень октодерева</translation>
+        <translation type="vanished">Уровень октодерева</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="130"/>
         <source>Octree Level (Fast Marching propagation process).</source>
-        <translation>Уровень октодерева (ход быстро сходящейся обработки).</translation>
+        <translation type="vanished">Уровень октодерева (ход быстро сходящейся обработки).</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="151"/>
         <source>use retro-projection error for propagation (slower)</source>
-        <translation>анализ ретроспективной ошибки (медленнее)</translation>
+        <translation type="vanished">анализ ретроспективной ошибки (медленнее)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="161"/>
         <source>Facets</source>
-        <translation>Грани</translation>
+        <translation type="vanished">Грани</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="167"/>
         <source>Min points per facet</source>
-        <translation>Мин. точек на грань</translation>
+        <translation type="vanished">Мин. точек на грань</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="174"/>
         <source>Octree Level (for point cloud shape approx.)</source>
-        <translation>Уровень октодерева (для примерной формы облака)</translation>
+        <translation type="vanished">Уровень октодерева (для примерной формы облака)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="193"/>
         <source>Max edge length</source>
-        <translation>Макс. длина стороны</translation>
+        <translation type="vanished">Макс. длина стороны</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="207"/>
         <source>Criterion for grouping several points in a single &apos;facet&apos;</source>
-        <translation>Критерий для группировки нескольких точек в одну &apos;грань&apos;</translation>
+        <translation type="vanished">Критерий для группировки нескольких точек в одну &apos;грань&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="214"/>
         <source>Max RMS</source>
-        <translation>Макс. СКО</translation>
+        <translation type="vanished">Макс. СКО</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="219"/>
         <source>Max distance @ 68%</source>
-        <translation>Макс. дистанция при 68%</translation>
+        <translation type="vanished">Макс. дистанция при 68%</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="224"/>
         <source>Max distance @ 95%</source>
-        <translation>Макс. дистанция при 95%</translation>
+        <translation type="vanished">Макс. дистанция при 95%</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="229"/>
         <source>Max distance @ 99%</source>
-        <translation>Макс. дистанция при 99%</translation>
+        <translation type="vanished">Макс. дистанция при 99%</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="234"/>
         <source>Max distance</source>
-        <translation>Макс. дистанция</translation>
+        <translation type="vanished">Макс. дистанция</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/cellsFusionDlg.ui" line="267"/>
         <source>Warning: cloud has no normals!
 Output facet normals may be randomly oriented
 (e.g. colors and classification may be jeopardized)</source>
-        <translation>Внимание: у облака нет нормалей!
+        <translation type="vanished">Внимание: у облака нет нормалей!
 Нормали выходных граней могут быть ориентированы
 случайно (например, цвета и классификация могут
 неправильными)</translation>
@@ -2204,30 +1950,25 @@ Output facet normals may be randomly oriented
 <context>
     <name>ClassificationParamsDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/classificationParamsDlg.ui" line="14"/>
         <source>Classification</source>
-        <translation>Классификация</translation>
+        <translation type="vanished">Классификация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/classificationParamsDlg.ui" line="54"/>
         <source>angular step</source>
-        <translation>угловой шаг</translation>
+        <translation type="vanished">угловой шаг</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/classificationParamsDlg.ui" line="61"/>
         <source>max distance</source>
-        <translation>дистанция</translation>
+        <translation type="vanished">дистанция</translation>
     </message>
 </context>
 <context>
     <name>ClassifyDisclaimerDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/classifyDisclaimerDlg.ui" line="14"/>
         <source>qCANUPO (disclaimer)</source>
-        <translation>qCANUPO (предупреждение)</translation>
+        <translation type="vanished">qCANUPO (предупреждение)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/classifyDisclaimerDlg.ui" line="48"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2238,7 +1979,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d; background-color:#ffffff;&quot;&gt;Funded by Université Européenne de Bretagne, Centre National de la Recherche Scientifique and EEC Marie-Curie actions&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d; background-color:#ffffff;&quot;&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d;&quot;&gt;Enjoy!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2692,156 +2433,164 @@ p, li { white-space: pre-wrap; }
         <translation>Расчет отклонений между облаками</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="26"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="22"/>
         <source>Compared</source>
         <translation>Сравниваемое</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="44"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="36"/>
         <source>Reference</source>
         <translation>Опорное</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="60"/>
         <source>Precise results</source>
-        <translation>Точность результатов</translation>
+        <translation type="vanished">Точность результатов</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="70"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="56"/>
         <source>General parameters</source>
         <translation>Основные параметры</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="78"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="64"/>
         <source>Level of subdivision used for computing the distances</source>
         <translation>Уровень подразделения узлов, используемый для расчета отклонений</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="81"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="67"/>
         <source>Octree level</source>
         <translation>Уровень октодерева</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="91"/>
-        <location filename="../ui_templates/comparisonDlg.ui" line="104"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="77"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="90"/>
         <source>Acceleration: distances above this limit won&apos;t be computed accurately</source>
         <translation>Ускорение: отклонения, превышающие данный допуск, не вычисляются точно</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="94"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="80"/>
         <source>max. distance</source>
         <translation>макс. отклонение</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="120"/>
-        <location filename="../ui_templates/comparisonDlg.ui" line="123"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="106"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="109"/>
         <source>compute signed distances (slower)</source>
         <translation>вычислять отклонения со знаком (медленнее)</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="126"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="112"/>
         <source>signed distances</source>
         <translation>отклон. со знаком</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="136"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="122"/>
         <source>flip normals</source>
         <translation>обратить нормали</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="145"/>
-        <location filename="../ui_templates/comparisonDlg.ui" line="148"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="131"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="134"/>
         <source>Generate 3 supplementary scalar fields with distances along each dimension</source>
         <translation>Создать три отдельных скалярных поля с отклонениями по каждой оси соответственно</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="151"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="137"/>
         <source>split X,Y and Z components</source>
         <translation>разделить компоненты X,Y и Z</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="158"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="144"/>
         <source>Use the sensor associated to the reference cloud to ignore the points in the compared cloud
 that could not have been seen (hidden/out of range/out of field of view).</source>
         <translation>Использовать датчик, относящийся к опорному облаку, чтобы игнорировать точки сравниваемого облака,
 которые не могут быть видны (скрытые, вне диапазона, вне поля зрения).</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="162"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="148"/>
         <source>use reference sensor to filter hidden points</source>
         <translation>исполь. опорный датчик для фильтра невидимых точек</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="171"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="157"/>
         <source>multi-threaded</source>
         <translation>многопоточная обработка</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="215"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="201"/>
         <source>max thread count</source>
         <translation>кол-во потоков</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="222"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="208"/>
         <source>Maximum number of threads/cores to be used
 (CC or your computer might not respond for a while if you use all available cores)</source>
         <translation>Максимальное число используемых потоков/ядер процессора
 (При использовании CC всех ядер ПК может не отвечать на действия пользователя)</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="252"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="238"/>
         <source>Local modeling</source>
         <translation>Локаль. моделирование</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="260"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="246"/>
         <source>Local model</source>
         <translation>Локальная модель</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="294"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="280"/>
         <source>Points (kNN)</source>
         <translation>Точек (kNN)</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="318"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="304"/>
         <source>Radius (Sphere)</source>
         <translation>Радиус (Сфера)</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="342"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="328"/>
         <source>faster but more ... approximate</source>
         <translation>быстрее, но менее точно</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="345"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="331"/>
         <source>use the same model for nearby points</source>
         <translation>Исполь. ту же модель для ближайших точек</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="369"/>
-        <source>Approx. results</source>
-        <translation>Предварит. рез-ты</translation>
+        <location filename="../ui_templates/comparisonDlg.ui" line="355"/>
+        <source>Approximate distances</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="405"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="391"/>
+        <source>Warning: approximate distances are only provided
+to help advanced users setting the general parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approx. results</source>
+        <translation type="vanished">Предварит. рез-ты</translation>
+    </message>
+    <message>
         <source>Warning: approximate results are only provided
 to help you set the general parameters</source>
-        <translation>Внимание: предварительные результаты только помогают
+        <translation type="vanished">Внимание: предварительные результаты только помогают
 оценить правильность установленных основных параметров</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="479"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="478"/>
         <source>Compute</source>
         <translation>Вычислить</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="509"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="488"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../ui_templates/comparisonDlg.ui" line="516"/>
+        <location filename="../ui_templates/comparisonDlg.ui" line="495"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -2849,34 +2598,28 @@ to help you set the general parameters</source>
 <context>
     <name>ComponentType</name>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="971"/>
         <source>Array</source>
-        <translation>Массив</translation>
+        <translation type="vanished">Массив</translation>
     </message>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="974"/>
         <source>Name</source>
-        <translation>Имя</translation>
+        <translation type="vanished">Имя</translation>
     </message>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="974"/>
         <source>undefined</source>
-        <translation>неопределенный</translation>
+        <translation type="vanished">неопределенный</translation>
     </message>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="977"/>
         <source>Elements</source>
-        <translation>Элементы</translation>
+        <translation type="vanished">Элементы</translation>
     </message>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="980"/>
         <source>Capacity</source>
-        <translation>Емкость</translation>
+        <translation type="vanished">Емкость</translation>
     </message>
     <message>
-        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="983"/>
         <source>Memory</source>
-        <translation>Память</translation>
+        <translation type="vanished">Память</translation>
     </message>
 </context>
 <context>
@@ -2953,70 +2696,58 @@ to help you set the general parameters</source>
 <context>
     <name>CorkDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="14"/>
         <source>Mesh Boolean Operations (CSG) with Cork</source>
-        <translation>Логические операции с ЦМР</translation>
+        <translation type="vanished">Логические операции с ЦМР</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="41"/>
         <source>A</source>
-        <translation>A</translation>
+        <translation type="vanished">A</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="59"/>
         <source>B</source>
-        <translation>B</translation>
+        <translation type="vanished">B</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="89"/>
         <source>Merge two objects into one</source>
-        <translation>Объединять два объекта в один</translation>
+        <translation type="vanished">Объединять два объекта в один</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="92"/>
         <source>Union
 A+B</source>
-        <translation>Объединять
+        <translation type="vanished">Объединять
 A+B</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="100"/>
         <source>Subtract one object from another</source>
-        <translation>Выделить один объект из другого</translation>
+        <translation type="vanished">Выделить один объект из другого</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="103"/>
         <source>Difference
 A-B</source>
-        <translation>Разность
+        <translation type="vanished">Разность
 A-B</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="111"/>
         <source>Return the portion common to both objects</source>
-        <translation>Вернуть часть, общую для обоих объектов</translation>
+        <translation type="vanished">Вернуть часть, общую для обоих объектов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="114"/>
         <source>Intersection
 A n B</source>
-        <translation>Пересечение
+        <translation type="vanished">Пересечение
 A и B</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="135"/>
         <source>Subtract one object from another (inverse result)</source>
-        <translation>Выделить один объект из другого (обратный результат)</translation>
+        <translation type="vanished">Выделить один объект из другого (обратный результат)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="138"/>
         <source>Symmetric Difference</source>
-        <translation>Симметрич. разница</translation>
+        <translation type="vanished">Симметрич. разница</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCork/corkDlg.ui" line="161"/>
         <source>Image courtesy of Autodesk(r)</source>
-        <translation>Изображение предоставлено Autodesk(r)</translation>
+        <translation type="vanished">Изображение предоставлено Autodesk(r)</translation>
     </message>
 </context>
 <context>
@@ -3051,12 +2782,10 @@ A и B</translation>
 <context>
     <name>DisclaimerDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/disclaimerDlg.ui" line="14"/>
         <source>qBroom (disclaimer)</source>
-        <translation>qBroom (предупреждение)</translation>
+        <translation type="vanished">qBroom (предупреждение)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/ui/disclaimerDlg.ui" line="40"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -3078,7 +2807,7 @@ Collision Engineering Associates, Inc.
 &lt;br/&gt;but WITHOUT ANY WARRANTY; without even the implied warranty of &lt;br/&gt;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 &lt;br/&gt;See the GNU General Public License for more details.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3101,12 +2830,10 @@ Collision Engineering Associates, Inc.
 &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/disclaimerDlg.ui" line="20"/>
         <source>qFacets (disclaimer)</source>
-        <translation>qFacets (предупреждение)</translation>
+        <translation type="vanished">qFacets (предупреждение)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/disclaimerDlg.ui" line="58"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -3119,7 +2846,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt;copyright BRGM&lt;/span&gt;&lt;span style=&quot; font-family:&apos;sans-serif&apos;; font-size:8pt; color:#0000ff; background-color:#ffffff;&quot;&gt;©&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#0000ff;&quot;&gt; 2013&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.brgm.eu/&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.brgm.eu&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3133,12 +2860,10 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/disclaimerDlg.ui" line="14"/>
         <source>qM3C2 (disclaimer)</source>
-        <translation>qM3C2 (предупреждение)</translation>
+        <translation type="vanished">qM3C2 (предупреждение)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/disclaimerDlg.ui" line="48"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -3149,7 +2874,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;MS Shell Dlg 2,serif&apos;; font-size:8pt; color:#aa007f; background-color:#ffffff;&quot;&gt;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;arial,sans-serif&apos;; font-size:10pt; font-style:italic; color:#222222; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d; background-color:#ffffff;&quot;&gt;Funded by Université Européenne de Bretagne, Centre National de la Recherche Scientifique and EEC Marie-Curie actions&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -3503,525 +3228,411 @@ The bigger the more accurate the map will be
 <context>
     <name>DistanceMapGenerationDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="14"/>
         <source>2D distance map (Surface of Revolution)</source>
-        <translation>Карта отклонений 2D (поверхность вращения)</translation>
+        <translation type="vanished">Карта отклонений 2D (поверхность вращения)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="53"/>
         <source>Projection</source>
-        <translation>Проекция</translation>
+        <translation type="vanished">Проекция</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="63"/>
         <source>Cylindrical</source>
-        <translation>Цилиндрическая</translation>
+        <translation type="vanished">Цилиндрическая</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="68"/>
         <source>Conical (Lambert)</source>
-        <translation>Коническая (Ламберта)</translation>
+        <translation type="vanished">Коническая (Ламберта)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="91"/>
         <source>Spanning ratio</source>
-        <translation>Коэффициент охвата</translation>
+        <translation type="vanished">Коэффициент охвата</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="136"/>
         <source>Map</source>
-        <translation>Карта</translation>
+        <translation type="vanished">Карта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="148"/>
         <source>Resolution</source>
-        <translation>Разрешение</translation>
+        <translation type="vanished">Разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="175"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="517"/>
         <source>angle (X)</source>
-        <translation>угол (X)</translation>
+        <translation type="vanished">угол (X)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="188"/>
         <source>Map angular step (horizontal)</source>
-        <translation>Угловой шаг карты (горизонталь)</translation>
+        <translation type="vanished">Угловой шаг карты (горизонталь)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="191"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="232"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="350"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="777"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="806"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="879"/>
         <source>step = </source>
-        <translation>шаг = </translation>
+        <translation type="vanished">шаг = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="216"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="530"/>
         <source>height (Y)</source>
-        <translation>высота (Y)</translation>
+        <translation type="vanished">высота (Y)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="229"/>
         <source>Map height step (vertical)</source>
-        <translation>Шаг карты по высоте (вертикаль.)</translation>
+        <translation type="vanished">Шаг карты по высоте (вертикаль.)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="260"/>
         <source>size</source>
-        <translation>размер</translation>
+        <translation type="vanished">размер</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="280"/>
         <source>Map angles unit</source>
-        <translation>Единицы измерения углов на карте</translation>
+        <translation type="vanished">Единицы измерения углов на карте</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="287"/>
         <source>deg</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="292"/>
         <source>rad</source>
-        <translation>радианы</translation>
+        <translation type="vanished">радианы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="297"/>
         <source>grad</source>
-        <translation>грады</translation>
+        <translation type="vanished">грады</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="317"/>
         <source>Map heights unit (for display only)</source>
-        <translation>Единицы высот на карте (только на экране)</translation>
+        <translation type="vanished">Единицы высот на карте (только на экране)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="320"/>
         <source>m.</source>
-        <translation>м.</translation>
+        <translation type="vanished">м.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="330"/>
         <source>Counterclockwise unrolling</source>
-        <translation>Развертка против часовой стрелки</translation>
+        <translation type="vanished">Развертка против часовой стрелки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="333"/>
         <source>CCW</source>
-        <translation>ПЧС</translation>
+        <translation type="vanished">ПЧС</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="340"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="557"/>
         <source>latitude</source>
-        <translation>широта</translation>
+        <translation type="vanished">широта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="347"/>
         <source>Map latitude step</source>
-        <translation>Шаг широты по карте</translation>
+        <translation type="vanished">Шаг широты по карте</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="378"/>
         <source>Limits</source>
-        <translation>Ограничения</translation>
+        <translation type="vanished">Ограничения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="408"/>
         <source>Minimum map angle</source>
-        <translation>Мин. угол карты</translation>
+        <translation type="vanished">Мин. угол карты</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="433"/>
         <source>Minimum map height (relative to the generatrix origin)</source>
-        <translation>Мин. высота карты (относительно образующей)</translation>
+        <translation type="vanished">Мин. высота карты (относительно образующей)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="464"/>
         <source>Maximum map angle</source>
-        <translation>Макс. угол карты</translation>
+        <translation type="vanished">Макс. угол карты</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="489"/>
         <source>Maximum map height (relative to the generatrix origin)</source>
-        <translation>Макс. высота карты (относительно образующей)</translation>
+        <translation type="vanished">Макс. высота карты (относительно образующей)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="537"/>
         <source>Min</source>
-        <translation>Мин</translation>
+        <translation type="vanished">Мин</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="547"/>
         <source>Max</source>
-        <translation>Макс</translation>
+        <translation type="vanished">Макс</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="570"/>
         <source>Minimum map latitude (relative to the generatrix origin - always positive - in degrees)</source>
-        <translation>Минимальная широта карты (относительно образующей - всегда положительная - в градусах)</translation>
+        <translation type="vanished">Минимальная широта карты (относительно образующей - всегда положительная - в градусах)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="573"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="604"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="780"/>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="882"/>
         <source> grad</source>
-        <translation> град</translation>
+        <translation type="vanished"> град</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="601"/>
         <source>Maximum map latitude (relative to the generatrix origin - always positive - in degrees)</source>
-        <translation>Максимальная широта карты (относительно образующей - всегда положительная - в градусах)</translation>
+        <translation type="vanished">Максимальная широта карты (относительно образующей - всегда положительная - в градусах)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="629"/>
         <source>Filling</source>
-        <translation>Заполнение</translation>
+        <translation type="vanished">Заполнение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="650"/>
         <source>strategy</source>
-        <translation>стратегия</translation>
+        <translation type="vanished">стратегия</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="657"/>
         <source>What to do when multiple values fall in the same grid cell?</source>
-        <translation>Что делать, когда несколько значений в одной ячейке сетки?</translation>
+        <translation type="vanished">Что делать, когда несколько значений в одной ячейке сетки?</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="664"/>
         <source>minimum value</source>
-        <translation>минимальное значение</translation>
+        <translation type="vanished">минимальное значение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="669"/>
         <source>average value</source>
-        <translation>среднее значение</translation>
+        <translation type="vanished">среднее значение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="674"/>
         <source>maximum value</source>
-        <translation>максимальное значение</translation>
+        <translation type="vanished">максимальное значение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="682"/>
         <source>empty cells</source>
-        <translation>пустые ячейки</translation>
+        <translation type="vanished">пустые ячейки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="689"/>
         <source>What to do when a grid cell remains empty?</source>
-        <translation>Что делать, когда ячейки сетки остаются пустыми?</translation>
+        <translation type="vanished">Что делать, когда ячейки сетки остаются пустыми?</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="693"/>
         <source>leave empty</source>
-        <translation>оставить пустыми</translation>
+        <translation type="vanished">оставить пустыми</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="698"/>
         <source>fill with zero</source>
-        <translation>заполнить 0</translation>
+        <translation type="vanished">заполнить 0</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="703"/>
         <source>interpolate</source>
-        <translation>интерполировать</translation>
+        <translation type="vanished">интерполировать</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="734"/>
         <source>Display</source>
-        <translation>Экран</translation>
+        <translation type="vanished">Экран</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="746"/>
         <source>Overlay grid</source>
-        <translation>Оверлейная сетка</translation>
+        <translation type="vanished">Оверлейная сетка</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="770"/>
         <source>Angle (X)</source>
-        <translation>Угол (X)</translation>
+        <translation type="vanished">Угол (X)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="799"/>
         <source>Height (Y)</source>
-        <translation>Высота (Y)</translation>
+        <translation type="vanished">Высота (Y)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="809"/>
         <source> m.</source>
-        <translation> м.</translation>
+        <translation type="vanished"> м.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="831"/>
         <source>Show X labels</source>
-        <translation>Показать метки X</translation>
+        <translation type="vanished">Показать метки X</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="843"/>
         <source>Grid color</source>
-        <translation>Цвет сетки</translation>
+        <translation type="vanished">Цвет сетки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="862"/>
         <source>Show Y labels</source>
-        <translation>Показать метки Y</translation>
+        <translation type="vanished">Показать метки Y</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="872"/>
         <source>Latitude</source>
-        <translation>Широта</translation>
+        <translation type="vanished">Широта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="904"/>
         <source>2D symbols</source>
-        <translation>Символы 2D</translation>
+        <translation type="vanished">Символы 2D</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="927"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a set of symbols / labels from a text file.&lt;br/&gt;On each line: &apos;Label X Y Z&apos; (expressed relatively to the profile origin)&lt;br/&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(warning: the height values - along the revolution axis - must be expressed relative to the profile origin)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Загрузить символы / метки из текстового файла.&lt;br/&gt;В каждой строке: &apos;Метка X Y Z&apos; (выражено относительно начала профиля)&lt;br/&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(внимание: значения высот - вдоль оси вращения - должно быть выражено относительно начала профиля)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Загрузить символы / метки из текстового файла.&lt;br/&gt;В каждой строке: &apos;Метка X Y Z&apos; (выражено относительно начала профиля)&lt;br/&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;(внимание: значения высот - вдоль оси вращения - должно быть выражено относительно начала профиля)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="930"/>
         <source>Load</source>
-        <translation>Загрузить</translation>
+        <translation type="vanished">Загрузить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="940"/>
         <source>Clear</source>
-        <translation>Очистить</translation>
+        <translation type="vanished">Очистить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="951"/>
         <source>Symbol size</source>
-        <translation>Размер символа</translation>
+        <translation type="vanished">Размер символа</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="987"/>
         <source>Symbol color</source>
-        <translation>Цвет символа</translation>
+        <translation type="vanished">Цвет символа</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1006"/>
         <source>Color ramp</source>
-        <translation>Цветовая гамма</translation>
+        <translation type="vanished">Цветовая гамма</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1023"/>
         <source>Steps</source>
-        <translation>Дискретность</translation>
+        <translation type="vanished">Дискретность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1059"/>
         <source>Display color scale</source>
-        <translation>Цветовая гамма</translation>
+        <translation type="vanished">Цветовая гамма</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1083"/>
         <source>Font size</source>
-        <translation>Размер шрифта</translation>
+        <translation type="vanished">Размер шрифта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1125"/>
         <source>Displayed numbers precision (digits)</source>
-        <translation>Число десят. знаков (цифр)</translation>
+        <translation type="vanished">Число десят. знаков (цифр)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1128"/>
         <source>Precision</source>
-        <translation>Точность</translation>
+        <translation type="vanished">Точность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1167"/>
         <source>Generatrix</source>
-        <translation>Образующая</translation>
+        <translation type="vanished">Образующая</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1173"/>
         <source>Axis</source>
-        <translation>Ось</translation>
+        <translation type="vanished">Ось</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1180"/>
         <source>Generatrix direction (in the 3D world)</source>
-        <translation>Направление образующей (в 3D)</translation>
+        <translation type="vanished">Направление образующей (в 3D)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1205"/>
         <source>Origin (3D)</source>
-        <translation>Начало (3D)</translation>
+        <translation type="vanished">Начало (3D)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1260"/>
         <source>Base radius</source>
-        <translation>Радиус базы</translation>
+        <translation type="vanished">Радиус базы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1267"/>
         <source>Mean radius (for map display, export as a cloud, etc. )</source>
-        <translation>Означает радиус (для показа карты, экспорта облака, и т.д)</translation>
+        <translation type="vanished">Означает радиус (для показа карты, экспорта облака, и т.д)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1284"/>
         <source>Measures</source>
-        <translation>Измерения</translation>
+        <translation type="vanished">Измерения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1290"/>
         <source>Surface and volume (approximate)</source>
-        <translation>Площадь и объем (примерно)</translation>
+        <translation type="vanished">Площадь и объем (примерно)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1307"/>
         <source>Update</source>
-        <translation>Обновить</translation>
+        <translation type="vanished">Обновить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1321"/>
         <source>Export map</source>
-        <translation>Экспорт карты</translation>
+        <translation type="vanished">Экспорт карты</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1332"/>
         <source>ASCII grid</source>
-        <translation>сетка ASCII</translation>
+        <translation type="vanished">сетка ASCII</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1339"/>
         <source>Image</source>
-        <translation>Изображение</translation>
+        <translation type="vanished">Изображение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1346"/>
         <source>DXF</source>
-        <translation>DXF</translation>
+        <translation type="vanished">DXF</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1370"/>
         <source>Cloud</source>
-        <translation>Облако</translation>
+        <translation type="vanished">Облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationDlg.ui" line="1377"/>
         <source>Mesh</source>
-        <translation>Цифровая модель</translation>
+        <translation type="vanished">Цифровая модель</translation>
     </message>
 </context>
 <context>
     <name>DxfProfilesExportDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="14"/>
         <source>Export profiles to DXF</source>
-        <translation>Экспорт профилей в DXF</translation>
+        <translation type="vanished">Экспорт профилей в DXF</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="20"/>
         <source>Vertical profiles</source>
-        <translation>Вертикальные профили</translation>
+        <translation type="vanished">Вертикальные профили</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="31"/>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="126"/>
         <source>File name</source>
-        <translation>Имя файла</translation>
+        <translation type="vanished">Имя файла</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="52"/>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="147"/>
         <source>Title</source>
-        <translation>Заголовок</translation>
+        <translation type="vanished">Заголовок</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="59"/>
         <source>VERTICAL PROFILE: DEVIATIONS</source>
-        <translation>ВЕРТИКАЛЬНЫЙ ПРОФИЛЬ: ОТКЛОНЕНИЯ</translation>
+        <translation type="vanished">ВЕРТИКАЛЬНЫЙ ПРОФИЛЬ: ОТКЛОНЕНИЯ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="66"/>
         <source>(+ profile angle)</source>
-        <translation>(+ угол профиля)</translation>
+        <translation type="vanished">(+ угол профиля)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="77"/>
         <source>Angular steps</source>
-        <translation>Угловые интервалы</translation>
+        <translation type="vanished">Угловые интервалы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="115"/>
         <source>Horizontal profiles</source>
-        <translation>Плановые профили</translation>
+        <translation type="vanished">Плановые профили</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="154"/>
         <source>HORIZONTAL PROFILE: DEVIATIONS</source>
-        <translation>ГОРИЗОНТАЛЬНЫЙ ПРОФИЛЬ: ОТКЛОНЕНИЯ</translation>
+        <translation type="vanished">ГОРИЗОНТАЛЬНЫЙ ПРОФИЛЬ: ОТКЛОНЕНИЯ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="161"/>
         <source>(+ profile height)</source>
-        <translation>(+ высота профиля)</translation>
+        <translation type="vanished">(+ высота профиля)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="172"/>
         <source>Height steps</source>
-        <translation>Шаг по высоте</translation>
+        <translation type="vanished">Шаг по высоте</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="210"/>
         <source>Deviation</source>
-        <translation>Отклонения</translation>
+        <translation type="vanished">Отклонения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="218"/>
         <source>Values scaling (for labels only)</source>
-        <translation>Масштаб значений (для меток)</translation>
+        <translation type="vanished">Масштаб значений (для меток)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="241"/>
         <source>Units</source>
-        <translation>Ед.</translation>
+        <translation type="vanished">Ед.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="278"/>
         <source>Precision</source>
-        <translation>Точность</translation>
+        <translation type="vanished">Точность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="312"/>
         <source>Drawing magnification</source>
-        <translation>Увеличение чертежа</translation>
+        <translation type="vanished">Увеличение чертежа</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="350"/>
         <source>Legend</source>
-        <translation>Легенда</translation>
+        <translation type="vanished">Легенда</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="356"/>
         <source>Theoretical profile name</source>
-        <translation>Теоретич. имя профиля</translation>
+        <translation type="vanished">Теоретич. имя профиля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="363"/>
         <source>Theoretical</source>
-        <translation>Теоретическое</translation>
+        <translation type="vanished">Теоретическое</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="370"/>
         <source>Measured profile(s) name</source>
-        <translation>Имя измер. профиля(ей)</translation>
+        <translation type="vanished">Имя измер. профиля(ей)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/dxfProfilesExportDlg.ui" line="377"/>
         <source>Real</source>
-        <translation>Реальное</translation>
+        <translation type="vanished">Реальное</translation>
     </message>
 </context>
 <context>
@@ -4045,34 +3656,28 @@ The bigger the more accurate the map will be
 <context>
     <name>FacetsExportDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="14"/>
         <source>Export facets</source>
-        <translation>Экспорт граней</translation>
+        <translation type="vanished">Экспорт граней</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="20"/>
         <source>Destination</source>
-        <translation>Назначение</translation>
+        <translation type="vanished">Назначение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="39"/>
         <source>Vertical orientation (only for polygons)</source>
-        <translation>Вертикальная ориентация (только для полигонов)</translation>
+        <translation type="vanished">Вертикальная ориентация (только для полигонов)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="47"/>
         <source>Native</source>
-        <translation>Исходная</translation>
+        <translation type="vanished">Исходная</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="54"/>
         <source>Mean normal</source>
-        <translation>Ср. нормаль</translation>
+        <translation type="vanished">Ср. нормаль</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/facetsExportDlg.ui" line="64"/>
         <source>Custom</source>
-        <translation>Задать собственную</translation>
+        <translation type="vanished">Задать собственную</translation>
     </message>
 </context>
 <context>
@@ -4442,12 +4047,10 @@ the other with the points falling outside.</source>
 <context>
     <name>GlobalShiftAndScaleAboutDlg</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleAboutDlg.ui" line="14"/>
         <source>Issue with big coordinates</source>
-        <translation>Проблема с большими координатами</translation>
+        <translation type="vanished">Проблема с большими координатами</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleAboutDlg.ui" line="20"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -4475,7 +4078,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Once you input a shift vector (and/or a scale factor) you&apos;ll be able to use it again while importing other clouds (&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic;&quot;&gt;it will correspond to the &amp;quot;Last input&amp;quot; entry of the combo-box above the shift fields&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;).&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; color:#0055ff;&quot;&gt;However this information will only be stored during the active session of CloudCompare (it will be lost once you close the program). To keep the information persistent, you can edit the &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#0055ff;&quot;&gt;global_shift_list_template.txt&lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#0055ff;&quot;&gt; file next to CloudCompare&apos;s executable and follow the instructions inside. This is a good way to store persistent shift/scale information sets (kind of &amp;quot;bookmarks&amp;quot;).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -4507,98 +4110,80 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GlobalShiftAndScaleDlg</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="20"/>
         <source>Global shift/scale</source>
-        <translation>Глобальный сдвиг/масштаб</translation>
+        <translation type="vanished">Глобальный сдвиг/масштаб</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="76"/>
         <source>Coordinates are too big (original precision may be lost)!</source>
-        <translation>Координаты слишком большие (чревато снижением точности расчетов)!</translation>
+        <translation type="vanished">Координаты слишком большие (чревато снижением точности расчетов)!</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="86"/>
         <source>More information about this issue</source>
-        <translation>Больше информации по данному вопросу</translation>
+        <translation type="vanished">Больше информации по данному вопросу</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="132"/>
         <source>Do you wish to translate/rescale the entity?</source>
-        <translation>Хотите все сместить и отмасштабировать?</translation>
+        <translation type="vanished">Хотите все сместить и отмасштабировать?</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="168"/>
         <source>shift/scale information is stored and used to restore the original coordinates at export time</source>
-        <translation>сдвиг/масштаб хранится и применяется для восстановления исходных координат при экспорте</translation>
+        <translation type="vanished">сдвиг/масштаб хранится и применяется для восстановления исходных координат при экспорте</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="213"/>
         <source>This version corresponds to the input (or output) file</source>
-        <translation>Эта версия соответствует входному (или выходному) файлу</translation>
+        <translation type="vanished">Эта версия соответствует входному (или выходному) файлу</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="237"/>
         <source>Point in original
 coordinate system (on disk)</source>
-        <translation>Точка в исходной
+        <translation type="vanished">Точка в исходной
 системе координат (в файле)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="315"/>
         <source>diagonal = 3213132123.3215</source>
-        <translation>диагональ = 3213132123.3215</translation>
+        <translation type="vanished">диагональ = 3213132123.3215</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="423"/>
         <source>Shift</source>
-        <translation>Сдвиг</translation>
+        <translation type="vanished">Сдвиг</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="450"/>
         <source>Scale</source>
-        <translation>Масштаб</translation>
+        <translation type="vanished">Масштаб</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="563"/>
         <source>You can add default items to this list by placing a text file named &lt;span style=&quot; font-weight:600;&quot;&gt;global_shift_list.txt&lt;/span&gt; next to the application executable file. On each line you should define 5 items separated by semicolon characters: name ; ShiftX ; ShiftY ; ShiftZ ; scale</source>
-        <translation>Вы можете добавить значения по умолчанию в этот список, поместив текстовый файл с именем &lt;span style=&quot; font-weight:600;&quot;&gt;global_shift_list.txt&lt;/span&gt; в каталог, куда установлена программа. На каждую строку должны быть заданы 5 значений, разделенных запятыми : имя ; СдвигX ; СдвигY ; СдвигZ ; масштаб</translation>
+        <translation type="vanished">Вы можете добавить значения по умолчанию в этот список, поместив текстовый файл с именем &lt;span style=&quot; font-weight:600;&quot;&gt;global_shift_list.txt&lt;/span&gt; в каталог, куда установлена программа. На каждую строку должны быть заданы 5 значений, разделенных запятыми : имя ; СдвигX ; СдвигY ; СдвигZ ; масштаб</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="605"/>
         <source>This version is the one CloudCompare will work with. Mind the digits!</source>
-        <translation>Эта версия то, с чем будет работать CloudCompare. Помните о разнице в значениях координат!</translation>
+        <translation type="vanished">Эта версия то, с чем будет работать CloudCompare. Помните о разнице в значениях координат!</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="629"/>
         <source>Point in local
 coordinate system</source>
-        <translation>Точка в локальной
+        <translation type="vanished">Точка в локальной
 системе координат</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="707"/>
         <source>diagonal = 321313</source>
-        <translation>диагональ = 321313</translation>
+        <translation type="vanished">диагональ = 321313</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="730"/>
         <source>Warning: previously used shift and/or scale don&apos;t seem adapted to this entity</source>
-        <translation>Внимание: использованный ранее сдвиг или масштаб не совсем подходит для этих данных</translation>
+        <translation type="vanished">Внимание: использованный ранее сдвиг или масштаб не совсем подходит для этих данных</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="774"/>
         <source>Preserve global shift on save</source>
-        <translation>Учитывать глобальный сдвиг при сохранении</translation>
+        <translation type="vanished">Учитывать глобальный сдвиг при сохранении</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="784"/>
         <source>The local coordinates will be changed so as to keep the global coordinates the same</source>
-        <translation>локальные координаты изменяются так, чтобы сохранять глобальные координаты неизменными</translation>
+        <translation type="vanished">локальные координаты изменяются так, чтобы сохранять глобальные координаты неизменными</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/globalShiftAndScaleDlg.ui" line="787"/>
         <source>Keep original position fixed</source>
-        <translation>Фиксировать исходное положение</translation>
+        <translation type="vanished">Фиксировать исходное положение</translation>
     </message>
 </context>
 <context>
@@ -4834,19 +4419,16 @@ CloudCompare как и большинство графических адапт�
 <context>
     <name>HPRDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qHPR/ui/hprDlg.ui" line="13"/>
         <source>HPR</source>
-        <translation>УСТ</translation>
+        <translation type="vanished">УСТ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHPR/ui/hprDlg.ui" line="21"/>
         <source>Level</source>
-        <translation>Уровень</translation>
+        <translation type="vanished">Уровень</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHPR/ui/hprDlg.ui" line="28"/>
         <source>Octree Level (for point cloud shape approx.)</source>
-        <translation>Уровень октодерева (для примерной формы облака точек)</translation>
+        <translation type="vanished">Уровень октодерева (для примерной формы облака точек)</translation>
     </message>
 </context>
 <context>
@@ -5037,112 +4619,91 @@ CloudCompare как и большинство графических адапт�
 <context>
     <name>HoughNormalsDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="14"/>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="22"/>
         <source>Neighborhood size (K)</source>
-        <translation>Размер окрестности (K)</translation>
+        <translation type="vanished">Размер окрестности (K)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="29"/>
         <source>Size of the neighborhood</source>
-        <translation>Размер области окружения</translation>
+        <translation type="vanished">Размер области окружения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="48"/>
         <source>Number of planes (T)</source>
-        <translation>Число плоскостей (T)</translation>
+        <translation type="vanished">Число плоскостей (T)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="55"/>
         <source>Plane number to draw</source>
-        <translation>Число плоскостей для отрисовки</translation>
+        <translation type="vanished">Число плоскостей для отрисовки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="74"/>
         <source>Accumulator steps (nPhi)</source>
-        <translation>Счетчик шагов (nPhi)</translation>
+        <translation type="vanished">Счетчик шагов (nPhi)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="81"/>
         <source>Accumulator discretization parameter</source>
-        <translation>Параметр дискретизации счетчика</translation>
+        <translation type="vanished">Параметр дискретизации счетчика</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="100"/>
         <source>Number of rotations (nRot)</source>
-        <translation>Число вращений (nRot)</translation>
+        <translation type="vanished">Число вращений (nRot)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="107"/>
         <source>Rotation number</source>
-        <translation>Число вращений</translation>
+        <translation type="vanished">Число вращений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="126"/>
         <source>Tolerance angle</source>
-        <translation>Угловой допуск</translation>
+        <translation type="vanished">Угловой допуск</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="133"/>
         <source>Angle parameter for cluster normal selection</source>
-        <translation>Угловой параметр для отбора по нормалям</translation>
+        <translation type="vanished">Угловой параметр для отбора по нормалям</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="136"/>
         <source> deg.</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="155"/>
         <source>Neighborhood size for density estimation</source>
-        <translation>Размер области для оценки плотности</translation>
+        <translation type="vanished">Размер области для оценки плотности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="162"/>
         <source>Size of the neighborhood for density estimation</source>
-        <translation>Размер области окружения для оценки плотности</translation>
+        <translation type="vanished">Размер области окружения для оценки плотности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="178"/>
         <source>use a density estimation of triplets generation</source>
-        <translation>использовать оценку плотности по создаваемым триплетам</translation>
+        <translation type="vanished">использовать оценку плотности по создаваемым триплетам</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qHoughNormals/ui/qHoughNormalsDlg.ui" line="181"/>
         <source>Use density of triplets estimation</source>
-        <translation>Использовать оценку плотности триплетов</translation>
+        <translation type="vanished">Использовать оценку плотности триплетов</translation>
     </message>
 </context>
 <context>
     <name>ImportDBFFieldDlg</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/importDBFFieldDlg.ui" line="14"/>
         <source>Choose altitude field</source>
-        <translation>Выбрать поле высот</translation>
+        <translation type="vanished">Выбрать поле высот</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/importDBFFieldDlg.ui" line="20"/>
         <source>Do you wish to use one of the DBF field as altitude?</source>
-        <translation>Использовать одно из полей как высоту?</translation>
+        <translation type="vanished">Использовать одно из полей как высоту?</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/importDBFFieldDlg.ui" line="32"/>
         <source>Values scaling</source>
-        <translation>Масштаб значений</translation>
+        <translation type="vanished">Масштаб значений</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/importDBFFieldDlg.ui" line="72"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="vanished">OK</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/importDBFFieldDlg.ui" line="79"/>
         <source>Ignore</source>
-        <translation>Игнорировать</translation>
+        <translation type="vanished">Игнорировать</translation>
     </message>
 </context>
 <context>
@@ -5296,276 +4857,217 @@ CloudCompare как и большинство графических адапт�
 <context>
     <name>M3C2Dialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="14"/>
         <source>M3C2 distance</source>
-        <translation>Сравнение облаков M3C2</translation>
+        <translation type="vanished">Сравнение облаков M3C2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="28"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="787"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="910"/>
         <source>Cloud #1</source>
-        <translation>Облако #1</translation>
+        <translation type="vanished">Облако #1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="41"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="777"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="915"/>
         <source>Cloud #2</source>
-        <translation>Облако #2</translation>
+        <translation type="vanished">Облако #2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="70"/>
         <source>Main parameters</source>
-        <translation>Основные параметры</translation>
+        <translation type="vanished">Основные параметры</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="76"/>
         <source>Scales</source>
-        <translation>Масштабы</translation>
+        <translation type="vanished">Масштабы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="120"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="302"/>
         <source>Normals</source>
-        <translation>Нормали</translation>
+        <translation type="vanished">Нормали</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="107"/>
         <source>Projection</source>
-        <translation>Проекция</translation>
+        <translation type="vanished">Проекция</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="82"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="130"/>
         <source>diameter = </source>
-        <translation>диаметр = </translation>
+        <translation type="vanished">диаметр = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="149"/>
         <source>max depth = </source>
-        <translation>макс. глубина = </translation>
+        <translation type="vanished">макс. глубина = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="174"/>
         <source>Core points</source>
-        <translation>Ключевые точки</translation>
+        <translation type="vanished">Ключевые точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="180"/>
         <source>use cloud #1</source>
-        <translation>исполь. облако #1</translation>
+        <translation type="vanished">исполь. облако #1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="187"/>
         <source>use other cloud</source>
-        <translation>исполь. др. облако</translation>
+        <translation type="vanished">исполь. др. облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="197"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="553"/>
         <source>Alternative core points cloud</source>
-        <translation>Альтернативное облако ключевых точек</translation>
+        <translation type="vanished">Альтернативное облако ключевых точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="204"/>
         <source>subsample cloud #1</source>
-        <translation>проредить  облако #1</translation>
+        <translation type="vanished">проредить  облако #1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="214"/>
         <source>Min. distance between points</source>
-        <translation>Мин. интервал между точками</translation>
+        <translation type="vanished">Мин. интервал между точками</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="239"/>
         <source>Registration error</source>
-        <translation>Погрешность регистрации</translation>
+        <translation type="vanished">Погрешность регистрации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="249"/>
         <source>Registration error (RMS - to be input by the user)</source>
-        <translation>Ошибка регистрации (СКО - задается пользователем)</translation>
+        <translation type="vanished">Ошибка регистрации (СКО - задается пользователем)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="275"/>
         <source>Tries to guess some parameters automatically</source>
-        <translation>Попытаться подобрать некоторые параметры автоматически</translation>
+        <translation type="vanished">Попытаться подобрать некоторые параметры автоматически</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="278"/>
         <source>Guess params</source>
-        <translation>Предложить</translation>
+        <translation type="vanished">Предложить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="323"/>
         <source>Calculation mode</source>
-        <translation>Режим расчета</translation>
+        <translation type="vanished">Режим расчета</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="331"/>
         <source>Default fixed scale calculation</source>
-        <translation>Расчет с фиксированным масштабом по умолчанию</translation>
+        <translation type="vanished">Расчет с фиксированным масштабом по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="334"/>
         <source>Default</source>
-        <translation>По умолчанию</translation>
+        <translation type="vanished">По умолчанию</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="344"/>
         <source>Automatically use the scale at which the cloud is the more &apos;flat&apos;</source>
-        <translation>Автоматически использовать масштаб при котором облако наиболее &apos;плоское&apos;</translation>
+        <translation type="vanished">Автоматически использовать масштаб при котором облако наиболее &apos;плоское&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="347"/>
         <source>Multi-scale</source>
-        <translation>Многоуровневый</translation>
+        <translation type="vanished">Многоуровневый</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="354"/>
         <source>Make the resulting normals purely Vertical</source>
-        <translation>Сделать результирующие нормали вертикальными</translation>
+        <translation type="vanished">Сделать результирующие нормали вертикальными</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="357"/>
         <source>Vertical</source>
-        <translation>Вертикально</translation>
+        <translation type="vanished">Вертикально</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="364"/>
         <source>Make the resulting normals purely Horizontal</source>
-        <translation>Сделать результирующие нормали горизонтальными</translation>
+        <translation type="vanished">Сделать результирующие нормали горизонтальными</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="367"/>
         <source>Horizontal</source>
-        <translation>Горизонтально</translation>
+        <translation type="vanished">Горизонтально</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="382"/>
         <source>Mininum scale</source>
-        <translation>Мин. масштаб</translation>
+        <translation type="vanished">Мин. масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="385"/>
         <source>Min = </source>
-        <translation>Мин = </translation>
+        <translation type="vanished">Мин = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="404"/>
         <source>Step</source>
-        <translation>с шагом</translation>
+        <translation type="vanished">с шагом</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="407"/>
         <source>Step = </source>
-        <translation>Шаг = </translation>
+        <translation type="vanished">Шаг = </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="426"/>
         <source>Max scale</source>
-        <translation>Макс. масштаб</translation>
+        <translation type="vanished">Макс. масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="429"/>
         <source>Max = </source>
-        <translation>Макс.= </translation>
+        <translation type="vanished">Макс.= </translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="451"/>
         <source>Use core points for normal calculation (instead of cloud #1)</source>
-        <translation>Использовать ключевые точки для расчета нормалей (вместо облака #1)</translation>
+        <translation type="vanished">Использовать ключевые точки для расчета нормалей (вместо облака #1)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="454"/>
         <source>Use core points for normal calculation</source>
-        <translation>Использовать ключевые точки для расчета нормалей</translation>
+        <translation type="vanished">Использовать ключевые точки для расчета нормалей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="464"/>
         <source>Orientation</source>
-        <translation>Ориентация</translation>
+        <translation type="vanished">Ориентация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="470"/>
         <source>Preferred orientation</source>
-        <translation>Предпочтительная ориентация</translation>
+        <translation type="vanished">Предпочтительная ориентация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="517"/>
         <source>+Barycenter</source>
-        <translation>+Центр масс</translation>
+        <translation type="vanished">+Центр масс</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="522"/>
         <source>- Barycenter</source>
-        <translation>- Центр масс</translation>
+        <translation type="vanished">- Центр масс</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="540"/>
         <source>Sensor(s) position(s) as a cloud (one point per position)</source>
-        <translation>Положение(я) датчика(ов) как облака (одна точка на позицию)</translation>
+        <translation type="vanished">Положение(я) датчика(ов) как облака (одна точка на позицию)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="543"/>
         <source>Use sensor position(s)</source>
-        <translation>Исполь. положение датчика(ов)</translation>
+        <translation type="vanished">Исполь. положение датчика(ов)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="580"/>
         <source>Advanced</source>
-        <translation>Дополнительно</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="586"/>
         <source>Slower but it guarantees that all the cylinder will be explored</source>
-        <translation>Медленнее, но с гарантией, что весь цилиндр будет исследован</translation>
+        <translation type="vanished">Медленнее, но с гарантией, что весь цилиндр будет исследован</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="589"/>
         <source>Do not use multiple pass for depth</source>
-        <translation>Не используйте многократный проход для глубины</translation>
+        <translation type="vanished">Не используйте многократный проход для глубины</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="596"/>
         <source>Search the points only in the &apos;positive&apos; side of the cylinder (relatively to the point normal)</source>
-        <translation>Поиск точек только на «положительной» стороне цилиндра (относительно нормали точки)</translation>
+        <translation type="vanished">Поиск точек только на «положительной» стороне цилиндра (относительно нормали точки)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="599"/>
         <source>Only search points in the positive half-space (relatively to the normal)</source>
-        <translation>Поиск точек только в положительном полупространстве (относительно нормали)</translation>
+        <translation type="vanished">Поиск точек только в положительном полупространстве (относительно нормали)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="606"/>
         <source>Use median and interquatile range (instead of mean and std. dev.)</source>
-        <translation>Использ. медианный и межквартильный диапазон (вместо среднего и стандартного отклонения)</translation>
+        <translation type="vanished">Использ. медианный и межквартильный диапазон (вместо среднего и стандартного отклонения)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="628"/>
         <source>Specify minimum number of points for statistics computation</source>
-        <translation>Задать мин. кол-во точек для расчета статистики</translation>
+        <translation type="vanished">Задать мин. кол-во точек для расчета статистики</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="688"/>
         <source>Max thread count</source>
-        <translation>Кол-во потоков</translation>
+        <translation type="vanished">Кол-во потоков</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="732"/>
         <source>Precision maps</source>
-        <translation>Карты точностей</translation>
+        <translation type="vanished">Карты точностей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="744"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;3D uncertainty-based topographic change detection with SfM photogrammetry: precision maps for ground control and directly georeferenced surveys&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Mike R. James, Stuart Robson and Mark W. Smith (&lt;/span&gt;&lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1002/esp.4125/abstract&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;DOI: 10.1002/esp.4125&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -5574,167 +5076,135 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Mike R. James, Stuart Robson and Mark W. Smith (&lt;/span&gt;&lt;a href=&quot;http://onlinelibrary.wiley.com/doi/10.1002/esp.4125/abstract&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;DOI: 10.1002/esp.4125&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="765"/>
         <source>Use precision information in scalar fields instead of roughness-based uncertainty estimates</source>
-        <translation>Искать  информацию о точности в скалярных полях вместо оценок неопределенности на основе неровности</translation>
+        <translation type="vanished">Искать  информацию о точности в скалярных полях вместо оценок неопределенности на основе неровности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="797"/>
         <source>Sigma(y)</source>
-        <translation>Sigma(y)</translation>
+        <translation type="vanished">Sigma(y)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="813"/>
         <source>Sigma(x)</source>
-        <translation>Sigma(x)</translation>
+        <translation type="vanished">Sigma(x)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="826"/>
         <source>Sigma(z)</source>
-        <translation>Sigma(z)</translation>
+        <translation type="vanished">Sigma(z)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="836"/>
         <source>Scale</source>
-        <translation>Масштаб</translation>
+        <translation type="vanished">Масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="843"/>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="862"/>
         <source>From SF units to cloud units</source>
-        <translation>Из единиц СП в единицы облака</translation>
+        <translation type="vanished">Из единиц СП в единицы облака</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="885"/>
         <source>Output</source>
-        <translation>Вывод</translation>
+        <translation type="vanished">Вывод</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="893"/>
         <source>Project core points on</source>
-        <translation>Проецировать ключ. точки на</translation>
+        <translation type="vanished">Проецировать ключ. точки на</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="920"/>
         <source>Keep original positions</source>
-        <translation>Исполь. исх. позиции</translation>
+        <translation type="vanished">Исполь. исх. позиции</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="928"/>
         <source>use original cloud</source>
-        <translation>исполь. исходное облако</translation>
+        <translation type="vanished">исполь. исходное облако</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="950"/>
         <source>Adds two scalar fields (std_cloud#1 and std_cloud#2)</source>
-        <translation>Добавить два скалярных поля (ско_облако#1 и ско_облако#2)</translation>
+        <translation type="vanished">Добавить два скалярных поля (ско_облако#1 и ско_облако#2)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="953"/>
         <source>Export standard deviation information</source>
-        <translation>Экспорт стандартных отклонений</translation>
+        <translation type="vanished">Экспорт стандартных отклонений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="960"/>
         <source>Adds one scalar field (point count per core point)</source>
-        <translation>Добавить одно скалярное поле (кол-во точек на 1 ключевую точку)</translation>
+        <translation type="vanished">Добавить одно скалярное поле (кол-во точек на 1 ключевую точку)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="963"/>
         <source>Export point density at projection scale</source>
-        <translation>Экспорт плотности точек в масштабе проекции</translation>
+        <translation type="vanished">Экспорт плотности точек в масштабе проекции</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="989"/>
         <source>Load parameters from file</source>
-        <translation>Загрузить параметры из файла</translation>
+        <translation type="vanished">Загрузить параметры из файла</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/ui/qM3C2Dialog.ui" line="1000"/>
         <source>Save parameters to file</source>
-        <translation>Сохранить параметры в файл</translation>
+        <translation type="vanished">Сохранить параметры в файл</translation>
     </message>
 </context>
 <context>
     <name>MLSDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="14"/>
         <source>Moving Least Squares Smoothing and Reconstruction</source>
-        <translation>Сглаживание и реконструкция по методу движущихся наименьших квадратов</translation>
+        <translation type="vanished">Сглаживание и реконструкция по методу движущихся наименьших квадратов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="26"/>
         <source>Search Radius</source>
-        <translation>Радиус поиска</translation>
+        <translation type="vanished">Радиус поиска</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="49"/>
         <source>Compute Normals</source>
-        <translation>Вычислять нормали</translation>
+        <translation type="vanished">Вычислять нормали</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="62"/>
         <source>Use Polynomial 
 (instead of tangent)</source>
-        <translation>Исполь. полином
+        <translation type="vanished">Исполь. полином
 (вместо касательной)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="73"/>
         <source>Polynomial Order</source>
-        <translation>Степень полинома</translation>
+        <translation type="vanished">Степень полинома</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="90"/>
         <source>Squared Gaussian 
 Parameter</source>
-        <translation>Параметр Гауссовой
+        <translation type="vanished">Параметр Гауссовой
 квадратуры</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="114"/>
         <source>Upsampling Method</source>
-        <translation>Передискретизация</translation>
+        <translation type="vanished">Передискретизация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="134"/>
         <source>Sample Local Plane</source>
-        <translation>Образец локальной плоскости</translation>
+        <translation type="vanished">Образец локальной плоскости</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="143"/>
         <source>Upsampling Radius</source>
-        <translation>Радиус</translation>
+        <translation type="vanished">Радиус</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="172"/>
         <source>Upsampling Step Size</source>
-        <translation>Размер шага</translation>
+        <translation type="vanished">Размер шага</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="201"/>
         <source>Random Uniform Density</source>
-        <translation>Случайная равномерная плотность</translation>
+        <translation type="vanished">Случайная равномерная плотность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="210"/>
         <source>Step Point Density</source>
-        <translation>Шаг плотности точек</translation>
+        <translation type="vanished">Шаг плотности точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="233"/>
         <source>Voxel Grid Dilation</source>
-        <translation>Расширение сетки вокселов</translation>
+        <translation type="vanished">Расширение сетки вокселов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="242"/>
         <source>Dilation Voxel Size</source>
-        <translation>Размер воксела</translation>
+        <translation type="vanished">Размер воксела</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/MLSDialog.ui" line="268"/>
         <source>Dilation Iterations</source>
-        <translation>Кол-во итераций</translation>
+        <translation type="vanished">Кол-во итераций</translation>
     </message>
 </context>
 <context>
@@ -8250,214 +7720,173 @@ Should be used after one of the previous methods!</source>
 <context>
     <name>NormalEstimationDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/NormalEstimationDlg.ui" line="20"/>
         <source>Neighborhood Search Radius</source>
-        <translation>Радиус поиска соседей</translation>
+        <translation type="vanished">Радиус поиска соседей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/NormalEstimationDlg.ui" line="28"/>
         <source>Search Radius</source>
-        <translation>Радиус поиска</translation>
+        <translation type="vanished">Радиус поиска</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/NormalEstimationDlg.ui" line="58"/>
         <source>Use Knn Search</source>
-        <translation>Поиск Knn</translation>
+        <translation type="vanished">Поиск Knn</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/NormalEstimationDlg.ui" line="77"/>
         <source>Overwrite Curvature</source>
-        <translation>Перезаписать Кривизну</translation>
+        <translation type="vanished">Перезаписать Кривизну</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/NormalEstimationDlg.ui" line="89"/>
         <source>Search Surface</source>
-        <translation>Поиск по поверхности</translation>
+        <translation type="vanished">Поиск по поверхности</translation>
     </message>
 </context>
 <context>
     <name>OpenLASFileDialog</name>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="14"/>
         <source>Open LAS File</source>
-        <translation>Открыть файл LAS</translation>
+        <translation type="vanished">Открыть файл LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="24"/>
         <source>Standard fields</source>
-        <translation>Стандартные поля</translation>
+        <translation type="vanished">Стандартные поля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="93"/>
         <source>Classification</source>
-        <translation>Классификация</translation>
+        <translation type="vanished">Классификация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="103"/>
         <source>decompose</source>
-        <translation>составные части</translation>
+        <translation type="vanished">составные части</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="115"/>
         <source>Value</source>
-        <translation>Значение</translation>
+        <translation type="vanished">Значение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="125"/>
         <source>Synthetic flag</source>
-        <translation>Синтетич. флаг</translation>
+        <translation type="vanished">Синтетич. флаг</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="135"/>
         <source>Key-point</source>
-        <translation>Ключевая точка</translation>
+        <translation type="vanished">Ключевая точка</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="145"/>
         <source>Withheld</source>
-        <translation>Удерживать</translation>
+        <translation type="vanished">Удерживать</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="158"/>
         <source>Time</source>
-        <translation>Время</translation>
+        <translation type="vanished">Время</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="168"/>
         <source>Point source ID</source>
-        <translation>ID точки</translation>
+        <translation type="vanished">ID точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="178"/>
         <source>Number of returns</source>
-        <translation>Кол-во эхо</translation>
+        <translation type="vanished">Кол-во эхо</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="188"/>
         <source>Return number</source>
-        <translation>Номер эхо</translation>
+        <translation type="vanished">Номер эхо</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="198"/>
         <source>Scan direction flag</source>
-        <translation>Флаг направления скана</translation>
+        <translation type="vanished">Флаг направления скана</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="208"/>
         <source>Edge of flight line</source>
-        <translation>Край линии полета</translation>
+        <translation type="vanished">Край линии полета</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="218"/>
         <source>Scan angle rank</source>
-        <translation>Угол сканирования</translation>
+        <translation type="vanished">Угол сканирования</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="228"/>
         <source>User data</source>
-        <translation>Данные пользователя</translation>
+        <translation type="vanished">Данные пользователя</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="240"/>
         <source>Intensity</source>
-        <translation>Интенсивность</translation>
+        <translation type="vanished">Интенсивность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="251"/>
         <source>Extended fields</source>
-        <translation>Дополнительные поля</translation>
+        <translation type="vanished">Дополнительные поля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="257"/>
         <source>Load additional field(s)</source>
-        <translation>Загрузить дополнительное поле(я)</translation>
+        <translation type="vanished">Загрузить дополнительное поле(я)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="280"/>
         <source>Tiling</source>
-        <translation>Разбиение</translation>
+        <translation type="vanished">Разбиение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="286"/>
         <source>Tile input file</source>
-        <translation>Исходный файл разбиения</translation>
+        <translation type="vanished">Исходный файл разбиения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="300"/>
         <source>Dimension</source>
-        <translation>Размеры</translation>
+        <translation type="vanished">Размеры</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="332"/>
         <source>Tiles</source>
-        <translation>Частей</translation>
+        <translation type="vanished">Частей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="366"/>
         <source>x</source>
-        <translation>x</translation>
+        <translation type="vanished">x</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="409"/>
         <source>Output path</source>
-        <translation>Путь для сохранения</translation>
+        <translation type="vanished">Путь для сохранения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="421"/>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="433"/>
         <source>Warning: the cloud won&apos;t be loaded in memory.
 It will be saved as multiple tiles on the disk.</source>
-        <translation>Внимание: облако не может быть загружено в память.
+        <translation type="vanished">Внимание: облако не может быть загружено в память.
 Оно будет разбито на части и сохранено на диск.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="461"/>
         <source>Info</source>
-        <translation>Инфо</translation>
+        <translation type="vanished">Инфо</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="467"/>
         <source>Points</source>
-        <translation>Точки</translation>
+        <translation type="vanished">Точки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="481"/>
         <source>Bounding-box</source>
-        <translation>Рамки границ</translation>
+        <translation type="vanished">Рамки границ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="499"/>
         <source>Ignore fields with default values only</source>
-        <translation>Игнорировать поля со значениями только по умолчанию</translation>
+        <translation type="vanished">Игнорировать поля со значениями только по умолчанию</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="509"/>
         <source>Force reading colors as 8-bit values (even if the standard is 16-bit)</source>
-        <translation>Принудительно читать цвета как 8-битные значения (даже если стандартно 16-бит)</translation>
+        <translation type="vanished">Принудительно читать цвета как 8-битные значения (даже если стандартно 16-бит)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="512"/>
         <source>Force 8-bit colors</source>
-        <translation>Использовать 8-битные цвета</translation>
+        <translation type="vanished">Использовать 8-битные цвета</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="566"/>
         <source>Apply</source>
-        <translation>Применить</translation>
+        <translation type="vanished">Применить</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="573"/>
         <source>Apply all</source>
-        <translation>Применить все</translation>
+        <translation type="vanished">Применить все</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/openLASFileDlg.ui" line="580"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
 </context>
 <context>
@@ -8521,69 +7950,56 @@ It will be saved as multiple tiles on the disk.</source>
 <context>
     <name>PCVDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="14"/>
         <source>ShadeVis</source>
-        <translation>ShadeVis</translation>
+        <translation type="vanished">ShadeVis</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="30"/>
         <source>Light rays</source>
-        <translation>Лучи света</translation>
+        <translation type="vanished">Лучи света</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="36"/>
         <source>Samples rays on a sphere</source>
-        <translation>Набор лучей на сфере</translation>
+        <translation type="vanished">Набор лучей на сфере</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="49"/>
         <source>Count</source>
-        <translation>Кол-во</translation>
+        <translation type="vanished">Кол-во</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="56"/>
         <source>number of rays to cast</source>
-        <translation>кол-во лучей для освещения</translation>
+        <translation type="vanished">кол-во лучей для освещения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="88"/>
         <source>rays are cast from the whole sphere (instrad of the Z+ hemisphere)</source>
-        <translation>лучи излучаются из всей сферы (за исключением полусферы Z+)</translation>
+        <translation type="vanished">лучи излучаются из всей сферы (за исключением полусферы Z+)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="91"/>
         <source>Only northern hemisphere (+Z)</source>
-        <translation>Только северная полусфера (+Z)</translation>
+        <translation type="vanished">Только северная полусфера (+Z)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="104"/>
         <source>Use cloud normals as light rays</source>
-        <translation>Использовать нормали как лучи света</translation>
+        <translation type="vanished">Использовать нормали как лучи света</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="117"/>
         <source>cloud</source>
-        <translation>облака</translation>
+        <translation type="vanished">облака</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="142"/>
         <source>Render context resolution</source>
-        <translation>Визуальное разрешение</translation>
+        <translation type="vanished">Визуальное разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="149"/>
         <source>rendering buffer resolution</source>
-        <translation>разрешение буфера визуализации</translation>
+        <translation type="vanished">разрешение буфера визуализации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="185"/>
         <source>Accelerates computation if the mesh is closed (no holes)</source>
-        <translation>Ускоряет расчет, если модель замкнутая (без дыр)</translation>
+        <translation type="vanished">Ускоряет расчет, если модель замкнутая (без дыр)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/pcvDlg.ui" line="188"/>
         <source>closed mesh</source>
-        <translation>замкнутая модель</translation>
+        <translation type="vanished">замкнутая модель</translation>
     </message>
 </context>
 <context>
@@ -8675,104 +8091,84 @@ It will be saved as multiple tiles on the disk.</source>
 <context>
     <name>PlyOpenDlg</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="14"/>
         <source>Ply File Open</source>
-        <translation>Открыть файл PLY</translation>
+        <translation type="vanished">Открыть файл PLY</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="22"/>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation type="vanished">Тип</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="43"/>
         <source>Elements</source>
-        <translation>Элементы</translation>
+        <translation type="vanished">Элементы</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="69"/>
         <source>Properties</source>
-        <translation>Свойства</translation>
+        <translation type="vanished">Свойства</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="95"/>
         <source>Textures</source>
-        <translation>Текстуры</translation>
+        <translation type="vanished">Текстуры</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="131"/>
         <source>Point X</source>
-        <translation>Точка X</translation>
+        <translation type="vanished">Точка X</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="141"/>
         <source>Point Y</source>
-        <translation>Точка Y</translation>
+        <translation type="vanished">Точка Y</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="151"/>
         <source>Point Z</source>
-        <translation>Точка Z</translation>
+        <translation type="vanished">Точка Z</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="161"/>
         <source>Red</source>
-        <translation>Красный</translation>
+        <translation type="vanished">Красный</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="171"/>
         <source>Green</source>
-        <translation>Зеленый</translation>
+        <translation type="vanished">Зеленый</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="181"/>
         <source>Blue</source>
-        <translation>Синий</translation>
+        <translation type="vanished">Синий</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="191"/>
         <source>Intensity</source>
-        <translation>Интенсивность</translation>
+        <translation type="vanished">Интенсивность</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="231"/>
         <source>Faces</source>
-        <translation>Грани</translation>
+        <translation type="vanished">Грани</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="241"/>
         <source>Texture coordinates</source>
-        <translation>Координаты текстур</translation>
+        <translation type="vanished">Координаты текстур</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="254"/>
         <source>Scalar</source>
-        <translation>Скаляр</translation>
+        <translation type="vanished">Скаляр</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="261"/>
         <source>Texture index</source>
-        <translation>Индекс текстуры</translation>
+        <translation type="vanished">Индекс текстуры</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="273"/>
         <source>Add Scalar field</source>
-        <translation>Доб. скаляр. поле</translation>
+        <translation type="vanished">Доб. скаляр. поле</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="327"/>
         <source>Apply</source>
-        <translation>Применить</translation>
+        <translation type="vanished">Применить</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="334"/>
         <source>Apply all</source>
-        <translation>Применить все</translation>
+        <translation type="vanished">Применить все</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/openPlyFileDlg.ui" line="341"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="vanished">Отмена</translation>
     </message>
 </context>
 <context>
@@ -8950,48 +8346,38 @@ It will be saved as multiple tiles on the disk.</source>
 <context>
     <name>PoissonReconParamDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="14"/>
         <source>Poisson Surface Reconstruction</source>
-        <translation>Реконструкция пуассоновской поверхности</translation>
+        <translation type="vanished">Реконструкция пуассоновской поверхности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="22"/>
         <source>maximum reconstruction depth</source>
-        <translation>максимальная глубина реконструкции</translation>
+        <translation type="vanished">максимальная глубина реконструкции</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="25"/>
         <source>Octree depth</source>
-        <translation>Глубина октодерева</translation>
+        <translation type="vanished">Глубина октодерева</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="32"/>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="148"/>
         <source>The maximum depth of the tree that will be used for surface reconstruction</source>
-        <translation>максимальная глюбина древа, используемая при реконструкции поверхности</translation>
+        <translation type="vanished">максимальная глюбина древа, используемая при реконструкции поверхности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="53"/>
         <source>interpolate cloud colors</source>
-        <translation>интерполяция цветов облака</translation>
+        <translation type="vanished">интерполяция цветов облака</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="67"/>
         <source>Density</source>
-        <translation>Плотность</translation>
+        <translation type="vanished">Плотность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="73"/>
         <source>If this flag is enabled, the sampling density is output as a scalar field</source>
-        <translation>Если включено, плотность узлов записывается в скалярное поле</translation>
+        <translation type="vanished">Если включено, плотность узлов записывается в скалярное поле</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="76"/>
         <source>output density as SF</source>
-        <translation>вывод плотности как СП</translation>
+        <translation type="vanished">вывод плотности как СП</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="86"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -9001,7 +8387,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;On the output mesh:&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;- Change the SF &apos;&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;min displayed&apos;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&apos; value (in the mesh properties) until the visible part meets your expectations&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;- Eventually export this mesh as a new one with &apos;&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Edit &amp;gt; Scalar fields &amp;gt; Filter by Value&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&apos; (you can delete the &apos;density&apos; scalar field afterwards) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -9012,19 +8398,16 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;- В заключении экспортируйте эту модель как новую через &apos;&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic;&quot;&gt;Правка &amp;gt; Скалярные поля &amp;gt; Фильтр по значению&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&apos; (после всего вы можете удалить скалярное поле &apos;плотность&apos;) &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="102"/>
         <source>Advanced</source>
-        <translation>Дополнительно</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="108"/>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="122"/>
         <source>The minimum number of sample points that should fall within an octree node
 as the octree construction is adapted to sampling density. For noise-free
 samples, small values in the range [1.0 - 5.0] can be used. For more noisy
 samples, larger values in the range [15.0 - 20.0] may be needed to provide
 a smoother, noise-reduced, reconstruction.</source>
-        <translation>Минимальное количество точек выборки, которые должны попадать
+        <translation type="vanished">Минимальное количество точек выборки, которые должны попадать
 в узел октодерева, поскольку конструкция октодерева адаптирована
 к плотности выборки. Для образцов без шума можно использовать
 небольшие значения в диапазоне [1.0-5.0]. Для более шумных выборок
@@ -9032,50 +8415,40 @@ a smoother, noise-reduced, reconstruction.</source>
 обеспечить более плавную реконструкцию с небольшими искажениями.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="115"/>
         <source>samples per node</source>
-        <translation>образцов на узел</translation>
+        <translation type="vanished">образцов на узел</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="151"/>
         <source>full depth</source>
-        <translation>полная глубина</translation>
+        <translation type="vanished">полная глубина</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="158"/>
         <source>The depth beyond depth the octree will be adapted. At coarser depths, the octree will be complete.</source>
-        <translation>Глубина за пределами глубины октодерева будет адаптирована. Октодерево будет завершено на полной глубине.</translation>
+        <translation type="vanished">Глубина за пределами глубины октодерева будет адаптирована. Октодерево будет завершено на полной глубине.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="168"/>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="178"/>
         <source>The importance that interpolation of the point samples is given in the formulation of the screened Poisson equation</source>
-        <translation>Важность того, что интерполяция выборок точек дается в формулировке экранированного уравнения Пуассона</translation>
+        <translation type="vanished">Важность того, что интерполяция выборок точек дается в формулировке экранированного уравнения Пуассона</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="171"/>
         <source>point weight</source>
-        <translation>вес точек</translation>
+        <translation type="vanished">вес точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="191"/>
         <source>boundary</source>
-        <translation>граничные условия</translation>
+        <translation type="vanished">граничные условия</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="202"/>
         <source>Free</source>
-        <translation>Свободные</translation>
+        <translation type="vanished">Свободные</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="207"/>
         <source>Dirichlet</source>
-        <translation>по Дирихле</translation>
+        <translation type="vanished">по Дирихле</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPoissonRecon/poissonReconParamDlg.ui" line="212"/>
         <source>Neumann</source>
-        <translation>по Нейману</translation>
+        <translation type="vanished">по Нейману</translation>
     </message>
 </context>
 <context>
@@ -9246,17 +8619,14 @@ a smoother, noise-reduced, reconstruction.</source>
 <context>
     <name>ProfileImportDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/profileImportDlg.ui" line="14"/>
         <source>Import profile</source>
-        <translation>Импорт профиля</translation>
+        <translation type="vanished">Импорт профиля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/profileImportDlg.ui" line="20"/>
         <source>Profile file</source>
-        <translation>Файл профиля</translation>
+        <translation type="vanished">Файл профиля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/profileImportDlg.ui" line="43"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -9274,7 +8644,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; color:#787878;&quot;&gt;...&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; color:#787878;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ff0000;&quot;&gt;Note: accurate position of the profile origin on the rotation axis is only necessary for conical projection&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -9293,14 +8663,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ff0000;&quot;&gt;Примечание: точное положение начала профиля на оси вращения необходимо только для конической проекции&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/profileImportDlg.ui" line="71"/>
         <source>profile axis</source>
-        <translation>Ось профиля</translation>
+        <translation type="vanished">Ось профиля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/profileImportDlg.ui" line="100"/>
         <source>height values are absolute (i.e. not relative to profile origin)</source>
-        <translation>значения высот абсолютные (т.е. не привязаны к профилю)</translation>
+        <translation type="vanished">значения высот абсолютные (т.е. не привязаны к профилю)</translation>
     </message>
 </context>
 <context>
@@ -9366,1836 +8734,1697 @@ p, li { white-space: pre-wrap; }
         <translation>Ячеек: %1 x %2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="161"/>
+        <location filename="../ccCommandLineCommands.cpp" line="162"/>
         <source>Unhandled format specifier (%1)</source>
         <translation>Необработанный спецификатор формата (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="184"/>
+        <location filename="../ccCommandLineCommands.cpp" line="185"/>
         <source>Output export format (clouds) set to: %1</source>
         <translation>Назначен формат экспорта: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="209"/>
-        <location filename="../ccCommandLineCommands.cpp" line="333"/>
+        <location filename="../ccCommandLineCommands.cpp" line="210"/>
+        <location filename="../ccCommandLineCommands.cpp" line="334"/>
         <source>Missing parameter: extension after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: расширение после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="212"/>
+        <location filename="../ccCommandLineCommands.cpp" line="213"/>
         <source>New output extension for clouds: %1</source>
         <translation>Новое расширение для вывода облаков: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="220"/>
+        <location filename="../ccCommandLineCommands.cpp" line="221"/>
         <source>Missing parameter: precision value after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: значение точности после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="224"/>
+        <location filename="../ccCommandLineCommands.cpp" line="225"/>
         <source>Invalid value for precision! (%1)</source>
         <translation>Неверное значение точности! (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="227"/>
-        <location filename="../ccCommandLineCommands.cpp" line="246"/>
-        <location filename="../ccCommandLineCommands.cpp" line="275"/>
-        <location filename="../ccCommandLineCommands.cpp" line="290"/>
+        <location filename="../ccCommandLineCommands.cpp" line="228"/>
+        <location filename="../ccCommandLineCommands.cpp" line="247"/>
+        <location filename="../ccCommandLineCommands.cpp" line="276"/>
+        <location filename="../ccCommandLineCommands.cpp" line="291"/>
         <source>Argument &apos;%1&apos; is only applicable to ASCII format!</source>
         <translation>Аргумент &apos;%1&apos; применим только к формату ASCII!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="243"/>
+        <location filename="../ccCommandLineCommands.cpp" line="244"/>
         <source>Missing parameter: separator character after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: символ разделителя после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="260"/>
+        <location filename="../ccCommandLineCommands.cpp" line="261"/>
         <source>Invalid separator! (&apos;%1&apos;)</source>
         <translation>Неверный разделитель! (&apos;%1&apos;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="320"/>
+        <location filename="../ccCommandLineCommands.cpp" line="321"/>
         <source>Output export format (meshes) set to: %1</source>
         <translation>Формат экспорта (ЦМР) назначен: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="336"/>
+        <location filename="../ccCommandLineCommands.cpp" line="337"/>
         <source>New output extension for meshes: %1</source>
         <translation>Новое расширение для вывода ЦМР: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="355"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="37"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="59"/>
+        <location filename="../ccCommandLineCommands.cpp" line="356"/>
         <source>Missing parameter: filename after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: имя файла после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="369"/>
+        <location filename="../ccCommandLineCommands.cpp" line="379"/>
         <source>Missing parameter: number of lines after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: число строк после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="376"/>
+        <location filename="../ccCommandLineCommands.cpp" line="386"/>
         <source>Invalid parameter: number of lines after &apos;%1&apos;</source>
         <translation>Неверный параметр: число строк после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="379"/>
+        <location filename="../ccCommandLineCommands.cpp" line="389"/>
         <source>Will skip %1 lines</source>
         <translation>Будет пропущено строк %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="388"/>
         <source>Missing parameter: global shift vector or %1 after &apos;%2&apos;</source>
-        <translation>Отсутствует параметр: глобальный сдвиг или %1 после &apos;%2&apos;</translation>
+        <translation type="vanished">Отсутствует параметр: глобальный сдвиг или %1 после &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="405"/>
+        <location filename="../ccCommandLineCommands.cpp" line="398"/>
+        <source>Missing parameter: global shift vector or %1 or %2 after &apos;%3&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ccCommandLineCommands.cpp" line="422"/>
         <source>Missing parameter: global shift vector after &apos;%1&apos; (3 values expected)</source>
         <translation>Отсутствует параметр: вектор глобального сдвига после  &apos;%1&apos; (необходимо 3 значения)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="413"/>
+        <location filename="../ccCommandLineCommands.cpp" line="430"/>
         <source>Invalid parameter: X coordinate of the global shift vector after &apos;%1&apos;</source>
         <translation>Неверный параметр: Координата X вектора глобального сдвига после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="416"/>
+        <location filename="../ccCommandLineCommands.cpp" line="433"/>
         <source>Invalid parameter: Y coordinate of the global shift vector after &apos;%1&apos;</source>
         <translation>Неверный параметр: Координата Y вектора глобального сдвига после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="419"/>
+        <location filename="../ccCommandLineCommands.cpp" line="436"/>
         <source>Invalid parameter: Z coordinate of the global shift vector after &apos;%1&apos;</source>
         <translation>Неверный параметр: Координата Z вектора глобального сдвига после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="454"/>
+        <location filename="../ccCommandLineCommands.cpp" line="484"/>
         <source>No entity loaded (be sure to open at least one file with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет загруженных элементов (убедитесь, что открыт хотя бы один файл с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="505"/>
+        <location filename="../ccCommandLineCommands.cpp" line="535"/>
         <source>No point cloud to normal calculation (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета нормалей (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="510"/>
+        <location filename="../ccCommandLineCommands.cpp" line="540"/>
         <source>Missing parameter: radius after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: радиус после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="517"/>
+        <location filename="../ccCommandLineCommands.cpp" line="547"/>
         <source>Invalid radius</source>
         <translation>Неверный радиус</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="520"/>
+        <location filename="../ccCommandLineCommands.cpp" line="550"/>
         <source>	Radius: %1</source>
         <translation>	Радиус: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="557"/>
+        <location filename="../ccCommandLineCommands.cpp" line="587"/>
         <source>Invalid parameter: unknown orientation &apos;%1&apos;</source>
         <translation>Неверный параметр: неизвестная ориентация &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="561"/>
+        <location filename="../ccCommandLineCommands.cpp" line="591"/>
         <source>Missing orientation</source>
         <translation>Отсутствует ориентация</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="577"/>
+        <location filename="../ccCommandLineCommands.cpp" line="607"/>
         <source>Invalid parameter: unknown model &apos;%1&apos;</source>
         <translation>Неверный параметр: неизвестная модель &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="581"/>
+        <location filename="../ccCommandLineCommands.cpp" line="611"/>
         <source>Missing model</source>
         <translation>Отсутствует модель</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="598"/>
+        <location filename="../ccCommandLineCommands.cpp" line="628"/>
         <source>cloud-&gt;hasNormals: %1</source>
         <translation>облако-&gt;Нормали: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="605"/>
+        <location filename="../ccCommandLineCommands.cpp" line="635"/>
         <source>.OctreeNormal</source>
         <translation>.НормальОктодерево</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="629"/>
+        <location filename="../ccCommandLineCommands.cpp" line="659"/>
         <source>No point cloud to resample (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для прореживания (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="634"/>
+        <location filename="../ccCommandLineCommands.cpp" line="664"/>
         <source>Missing parameter: resampling method after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: метод прореживания после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="638"/>
+        <location filename="../ccCommandLineCommands.cpp" line="668"/>
         <source>	Method: </source>
         <translation>	Метод: </translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="643"/>
+        <location filename="../ccCommandLineCommands.cpp" line="673"/>
         <source>Missing parameter: number of points after &quot;-%1 RANDOM&quot;</source>
         <translation>Отсутствует параметр: кол-во точек после &quot;-%1 RANDOM&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="652"/>
+        <location filename="../ccCommandLineCommands.cpp" line="682"/>
         <source>	Output points: %1</source>
         <translation>	Вывод точек : %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="657"/>
-        <location filename="../ccCommandLineCommands.cpp" line="714"/>
-        <location filename="../ccCommandLineCommands.cpp" line="780"/>
-        <location filename="../ccCommandLineCommands.cpp" line="888"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3200"/>
+        <location filename="../ccCommandLineCommands.cpp" line="687"/>
+        <location filename="../ccCommandLineCommands.cpp" line="744"/>
+        <location filename="../ccCommandLineCommands.cpp" line="810"/>
+        <location filename="../ccCommandLineCommands.cpp" line="918"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3230"/>
         <source>	Processing cloud #%1 (%2)</source>
         <translation>	Обработка облака #%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="664"/>
-        <location filename="../ccCommandLineCommands.cpp" line="722"/>
-        <location filename="../ccCommandLineCommands.cpp" line="790"/>
+        <location filename="../ccCommandLineCommands.cpp" line="694"/>
+        <location filename="../ccCommandLineCommands.cpp" line="752"/>
+        <location filename="../ccCommandLineCommands.cpp" line="820"/>
         <source>	Result: %1 points</source>
         <translation>	Результат: %1 точек</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="673"/>
-        <location filename="../ccCommandLineCommands.cpp" line="731"/>
-        <location filename="../ccCommandLineCommands.cpp" line="799"/>
+        <location filename="../ccCommandLineCommands.cpp" line="703"/>
+        <location filename="../ccCommandLineCommands.cpp" line="761"/>
+        <location filename="../ccCommandLineCommands.cpp" line="829"/>
         <source>.subsampled</source>
         <translation>.прорежен</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="687"/>
-        <location filename="../ccCommandLineCommands.cpp" line="745"/>
-        <location filename="../ccCommandLineCommands.cpp" line="813"/>
+        <location filename="../ccCommandLineCommands.cpp" line="717"/>
+        <location filename="../ccCommandLineCommands.cpp" line="775"/>
+        <location filename="../ccCommandLineCommands.cpp" line="843"/>
         <source>_SUBSAMPLED</source>
         <translation>_ПРОРЕЖЕН</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="701"/>
+        <location filename="../ccCommandLineCommands.cpp" line="731"/>
         <source>Missing parameter: spatial step after &quot;-%1 SPATIAL&quot;</source>
         <translation>Отсутствует параметр: интервал после &quot;-%1 SPATIAL&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="709"/>
+        <location filename="../ccCommandLineCommands.cpp" line="739"/>
         <source>	Spatial step: %1</source>
         <translation>	Интервал: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="759"/>
+        <location filename="../ccCommandLineCommands.cpp" line="789"/>
         <source>Missing parameter: octree level after &quot;-%1 OCTREE&quot;</source>
         <translation>Отсутствует параметр: уровень октодерева после &quot;-%1 OCTREE&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="768"/>
-        <location filename="../ccCommandLineCommands.cpp" line="860"/>
+        <location filename="../ccCommandLineCommands.cpp" line="798"/>
+        <location filename="../ccCommandLineCommands.cpp" line="890"/>
         <source>	Octree level: %1</source>
         <translation>	Уровень октодерева: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="803"/>
+        <location filename="../ccCommandLineCommands.cpp" line="833"/>
         <source>OCTREE_LEVEL_%1_SUBSAMPLED</source>
         <translation>УРОВЕНЬ_ОКТОДЕРЕВА_%1_ПРОРЕЖЕН</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="846"/>
+        <location filename="../ccCommandLineCommands.cpp" line="876"/>
         <source>No point cloud loaded (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет загруженного облака (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="852"/>
+        <location filename="../ccCommandLineCommands.cpp" line="882"/>
         <source>Missing parameter: octree level after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: уровень октодерева после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="865"/>
+        <location filename="../ccCommandLineCommands.cpp" line="895"/>
         <source>Missing parameter: minimum number of points per component after &quot;-%1 [octree level]&quot;</source>
         <translation>Отсутствует параметр: минимальное кол-во точек на компонентпосле &quot;-%1 [уровень октодерева]&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="872"/>
+        <location filename="../ccCommandLineCommands.cpp" line="902"/>
         <source>	Min number of points per component: %1</source>
         <translation>	Мин. кол-во точек на компонент: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="945"/>
+        <location filename="../ccCommandLineCommands.cpp" line="975"/>
         <source>_COMPONENT_%1</source>
         <translation>_КОМПОНЕНТ_%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="959"/>
+        <location filename="../ccCommandLineCommands.cpp" line="989"/>
         <source>Failed to create component #%1! (not enough memory)</source>
         <translation>Не удалось создать компонент #%1! (недостаточно памяти)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="975"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1005"/>
         <source>%1 component(s) were created</source>
         <translation>%1 компонент(ов) создано</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1003"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1033"/>
         <source>Missing parameter: curvature type after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: тип кривизны после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1021"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1051"/>
         <source>Invalid curvature type after &quot;-%1&quot;. Got &apos;%2&apos; instead of MEAN or GAUSS.</source>
         <translation>Неверный тип кривизны после &quot;-%1&quot;. Получил &apos;%2&apos; вместо MEAN или GAUSS.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1031"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1061"/>
         <source>Failed to read a numerical parameter: kernel size (after curvature type). Got &apos;%1&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : размер ядра (после типа кривизны). Получил &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1032"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1253"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1062"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1283"/>
         <source>	Kernel size: %1</source>
         <translation>	Размер ядра: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1035"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1065"/>
         <source>No point cloud on which to compute curvature! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета кривизны! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1046"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1076"/>
         <source>%1_CURVATURE_KERNEL_%2</source>
         <translation>%1_КРИВИЗНА_ЯДРО_%2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1055"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1105"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1150"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1085"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1135"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1180"/>
         <source>Missing parameter: density type after &quot;-%1&quot; (KNN/SURFACE/VOLUME)</source>
         <translation>Отсутствует параметр: тип плотности после  &quot;-%1&quot; (KNN/ПЛОЩАДЬ/ОБЪЕМ)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1073"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1103"/>
         <source>Invalid parameter: density type is expected after &quot;-%1&quot; (KNN/SURFACE/VOLUME)</source>
         <translation>Неверный  параметр: необходим тип плотности после  &quot;-%1&quot; (KNN/ПЛОЩАДЬ/ОБЪЕМ)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1087"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1117"/>
         <source>No point cloud on which to compute approx. density! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета примерной плотности! (откройте его &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1131"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1161"/>
         <source>Missing parameter: sphere radius after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: радиус сферы после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1137"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1167"/>
         <source>Failed to read a numerical parameter: sphere radius (after &quot;-%1&quot;). Got &apos;%2&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : радиус сферы (после &quot;-%1&quot;). Вместо этого получил &apos;%2&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1138"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1168"/>
         <source>	Sphere radius: %1</source>
         <translation>	Радиус сферы: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1158"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1188"/>
         <source>No point cloud on which to compute density! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета плотности! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1185"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1215"/>
         <source>Missing parameter: boolean (whether SF is euclidean or not) after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: логический (является ли СП евклидовым или нет) после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1195"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1407"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1225"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1437"/>
         <source>Invalid boolean value after &quot;-%1&quot;. Got &apos;%2&apos; instead of TRUE or FALSE.</source>
         <translation>Неверное логическое значение после &quot;-%1&quot;. Получил &apos;%2&apos; вместо ИСТИНА или ЛОЖЬ.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1199"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1229"/>
         <source>No point cloud on which to compute SF gradient! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета СП градиента! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1210"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1421"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1240"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1451"/>
         <source>cmd.warning: cloud &apos;%1&apos; has no scalar field (it will be ignored)</source>
         <translation>cmd.warning: облако &apos;%1&apos; не имеет скалярного поля(будет игнорировано)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1215"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1245"/>
         <source>cmd.warning: cloud &apos;%1&apos; has several scalar fields (the active one will be used by default, or the first one if none is active)</source>
         <translation>cmd.warning: облако &apos;%1&apos; имеет несколько скалярных полей (активное будет использовано по умолчанию или первое, если ни одно не активно)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1246"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1276"/>
         <source>Missing parameter: kernel size after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: размер ядра после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1252"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1282"/>
         <source>Failed to read a numerical parameter: kernel size (after &quot;-%1&quot;). Got &apos;%2&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : размер ядра (после &quot;-%1&quot;). Вместо этого получил &apos;%2&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1256"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1286"/>
         <source>No point cloud on which to compute roughness! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для расчета неровности! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1267"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1297"/>
         <source>ROUGHNESS_KERNEL_%2</source>
         <translation>НЕРОВНОСТЬ_ЯДРО_%2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1283"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1313"/>
         <source>Missing parameter: transformation file after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: файл трансформации после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1288"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1318"/>
         <source>Failed to read transformation matrix file &apos;%1&apos;!</source>
         <translation>Не удалось причитать файл с матрицей трансформации &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1290"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1320"/>
         <source>Transformation:
 </source>
         <translation>Преобразование:
 </translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1293"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1323"/>
         <source>No entity on which to apply the transformation! (be sure to open one with &quot;-%1 [filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет элементов для применения трансформации! (откройте его с &quot;-%1 [имя файла]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1331"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1361"/>
         <source>No loaded entity! (be sure to open one with &quot;-%1 [filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет загруженного элемента (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1361"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1391"/>
         <source>Missing parameter: color scale file after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр:файл цветовой гаммы после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1368"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1398"/>
         <source>Failed to read color scale file &apos;%1&apos;!</source>
         <translation>Не удалось причитать файл с цветовой гаммой &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1371"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1401"/>
         <source>No point cloud on which to change the SF color scale! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для изменения цветовой гаммы СП! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1397"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1427"/>
         <source>Missing parameter: boolean (whether to mix with existing colors or not) after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: логический (смешивать ли с существующими цветами или нет) после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1411"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1441"/>
         <source>No point cloud on which to convert SF to RGB! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для конвертации СП в RGB! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1425"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1455"/>
         <source>cmd.warning: cloud &apos;%1&apos; has no active scalar field (it will be ignored)</source>
         <translation>cmd.warning: облако &apos;%1&apos; не имеет активного скалярного поля (и будет игнорировано)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1439"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1469"/>
         <source>cmd.warning: cloud &apos;%1&apos; failed to convert SF to RGB</source>
         <translation>cmd.warning: облако &apos;%1&apos; не удалось конвертировать СП в RGB</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1465"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1495"/>
         <source>Missing parameter: min value after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: мин. значение после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1485"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1515"/>
         <source>Failed to read a numerical parameter: min value (after &quot;-%1&quot;). Got &apos;%2&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : мин. значение (после &quot;-%1&quot;). Вместо этого получил &apos;%2&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1494"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1524"/>
         <source>Missing parameter: max value after &quot;-%1&quot; {min}</source>
         <translation>Отсутствует параметр: макс. значение после &quot;-%1&quot; {min}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1514"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1544"/>
         <source>Failed to read a numerical parameter: max value (after min value). Got &apos;%1&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : макс. значение (после минимального). Вместо этого получил &apos;%1&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1518"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1548"/>
         <source>	Interval: [%1 - %2]</source>
         <translation>	Интервал: [%1 - %2]</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1521"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1551"/>
         <source>No point cloud on which to filter SF! (be sure to open one or generate one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет облака для фильтрации СП! (откройте или создайте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1569"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1599"/>
         <source>		Cloud &apos;%1&apos; --&gt; %2/%3 points remaining</source>
         <translation>		Облако &apos;%1&apos; --&gt; %2/%3 точек осталось</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1575"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1605"/>
         <source>_FILTERED_[%1_%2]</source>
         <translation>_ОТФИЛЬТРОВАНО_[%1_%2]</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1624"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1654"/>
         <source>Missing argument: filename after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: имя файла после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1646"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1676"/>
         <source>Mesh &apos;%1&apos;</source>
         <translation>ЦМР &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1649"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1679"/>
         <source> (#%2)</source>
         <translation> (#%2)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1652"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1682"/>
         <source>V = %2</source>
         <translation>V = %2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1696"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1726"/>
         <source>Can&apos;t merge mesh &apos;%1&apos; (unhandled type)</source>
         <translation>Нельзя объединить ЦМР &apos;%1&apos; (необработанный тип)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1726"/>
-        <location filename="../ccCommandLineCommands.cpp" line="1778"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1756"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1808"/>
         <source>_MERGED</source>
         <translation>_ОБЪЕДИНЕНО</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1795"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1825"/>
         <source>Missing parameter: scalar field index after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр:индекс скалярного поля после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1801"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1831"/>
         <source>Failed to read a numerical parameter: S.F. index (after &quot;-%1&quot;). Got &apos;%2&apos; instead.</source>
         <translation>Не удалось причитать числовой параметр : индекс СП (после &quot;-%1&quot;). Вместо этого получил &apos;%2&apos;.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1802"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1832"/>
         <source>Set active S.F. index: %1</source>
         <translation>Установить индекс активного СП: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1805"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1835"/>
         <source>No point cloud loaded! (be sure to open one with &quot;-%1 [cloud filename]&quot; before &quot;-%2&quot;)</source>
         <translation>Нет загруженного облака! (откройте его с &quot;-%1 [имя файла облака]&quot; перед &quot;-%2&quot;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1814"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1844"/>
         <source>Cloud &apos;%1&apos; has less scalar fields than the index to select!</source>
         <translation>Облако &apos;%1&apos; имеет скалярных полей меньше, чем выбираемый индекс!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1920"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1950"/>
         <source>Entity &apos;%1&apos; has been translated: (%2,%3,%4)</source>
         <translation>Элемент &apos;%1&apos; был перемещен: (%2,%3,%4)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1968"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2080"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2150"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3069"/>
+        <location filename="../ccCommandLineCommands.cpp" line="1998"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2110"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2180"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3099"/>
         <source>No cloud available. Be sure to open one first!</source>
         <translation>Нет доступных облаков. Сначала откройте его!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1979"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2009"/>
         <source>Plane successfully fitted: rms = %1</source>
         <translation>Плоскость успешно вписана: ско = %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1996"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2026"/>
         <source>%1/%2_BEST_FIT_PLANE_INFO</source>
         <translation>%1/%2_ВПИСАННАЯ_ПЛОСКОСТЬ</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1998"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3709"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2028"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3739"/>
         <source>_%1</source>
         <translation>_%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="1999"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3710"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2029"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3740"/>
         <source>.txt</source>
         <translation>.txt</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2004"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2034"/>
         <source>Filename: %1</source>
         <translation>Имя файла: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2005"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2035"/>
         <source>Fitting RMS: %1</source>
         <translation>СКО вписывания: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2012"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2042"/>
         <source>Normal: (%1,%2,%3)</source>
         <translation>Нормаль: (%1,%2,%3)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2043"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2073"/>
         <source>Cloud &apos;%1&apos; has been transformed with the above matrix</source>
         <translation>Облако &apos;%1&apos; было преобразовано с матрицей выше</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2044"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2074"/>
         <source>_HORIZ</source>
         <translation>_ГОРИЗ</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2055"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2085"/>
         <source>Failed to compute best fit plane for cloud &apos;%1&apos;</source>
         <translation>Не удалось вычислить вписанную плоскость для облака &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2071"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2101"/>
         <source>Missing parameter: number of neighbors after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: число соседей после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2077"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2140"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2107"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2170"/>
         <source>Invalid parameter: number of neighbors (%1)</source>
         <translation>Неверный параметр: число соседей (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2102"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2132"/>
         <source>_NORMS_REORIENTED</source>
         <translation>_НОРМАЛ_ПЕРЕОРИЕНТИР</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2112"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2142"/>
         <source>Failed to orient the normals of cloud &apos;%1&apos;!</source>
         <translation>Не удалось сориентировать нормали облака &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2134"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2164"/>
         <source>Missing parameter: number of neighbors mode after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: режим числа соседей после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2143"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2173"/>
         <source>Missing parameter: sigma multiplier after number of neighbors (SOR)</source>
         <translation>Отсутствует параметр: множитель сигма после числа соседей (SOR)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2147"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2177"/>
         <source>Invalid parameter: sigma multiplier (%1)</source>
         <translation>Неверный параметр: множитель сигма (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2176"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2206"/>
         <source>.clean</source>
         <translation>.очищен</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2190"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2220"/>
         <source>_SOR</source>
         <translation>_SOR</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2196"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2226"/>
         <source>Not enough memory to create a clean version of cloud &apos;%1&apos;!</source>
         <translation>Недостаточно памяти для создания чистой версии облака &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2205"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2235"/>
         <source>Failed to apply SOR filter on cloud &apos;%1&apos;! (not enough memory?)</source>
         <translation>Не удалось применить фильтр SOR  к облаку &apos;%1&apos;! (недостаточно памяти?)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2228"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2299"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2749"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2258"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2329"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2779"/>
         <source>No mesh available. Be sure to open one first!</source>
         <translation>Нет доступных ЦМР. Сначала откройте одну!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2244"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2274"/>
         <source>.vertices</source>
         <translation>.вершины</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2278"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2308"/>
         <source>Missing parameter: sampling mode after &quot;-%1&quot; (POINTS/DENSITY)</source>
         <translation>Отсутствует параметр: режим прореживания после  &quot;-%1&quot; (ТОЧКИ/ПЛОТНОСТЬ)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2289"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2319"/>
         <source>Invalid parameter: unknown sampling mode &quot;%1&quot;</source>
         <translation>Неверный параметр: неизвестный режим прореживания &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2292"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2322"/>
         <source>Missing parameter: value after sampling mode</source>
         <translation>Отсутствует параметр: значение после режима прореживания</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2296"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2326"/>
         <source>Invalid parameter: value after sampling mode</source>
         <translation>Неверный параметр: значение после режима прореживания</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2314"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2344"/>
         <source>Cloud sampling failed!</source>
         <translation>Не удалось проредить облако!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2318"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2348"/>
         <source>Sampled cloud created: %1 points</source>
         <translation>Прореженное облако создано: %1 точек</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2319"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2349"/>
         <source>_SAMPLED_POINTS</source>
         <translation>_ПРОРЕЖ_ТОЧКИ</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2348"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2378"/>
         <source>Missing parameter: box extents after &quot;-%1&quot; (Xmin:Ymin:Zmin:Xmax:Ymax:Zmax)</source>
         <translation>Отсутствует параметр: границы объекта после &quot;-%1&quot; (Xmin:Ymin:Zmin:Xmax:Ymax:Zmax)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2350"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2380"/>
         <source>No point cloud or mesh available. Be sure to open or generate one first!</source>
         <translation>Нет доступного облака или ЦМР. Сначала откройте или создайте одну!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2358"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2388"/>
         <source>Invalid parameter: box extents (expected format is &apos;Xmin:Ymin:Zmin:Xmax:Ymax:Zmax&apos;)</source>
         <translation>Неверный параметр: границы объекта (требуемый формат: Xmin:Ymin:Zmin:Xmax:Ymax:Zmax)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2367"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2397"/>
         <source>Invalid parameter: box extents (component #%1 is not a valid number)</source>
         <translation>Неверный параметр: границы объекта (компонент #%1 не является правильным числом)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2446"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2476"/>
         <source>Missing parameter after &quot;-%1&quot; (DIMENSION)</source>
         <translation>Отсутствует параметр после &quot;-%1&quot; (РАЗМЕРЫ)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2448"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2498"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2722"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2478"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2528"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2752"/>
         <source>No point cloud available. Be sure to open or generate one first!</source>
         <translation>Нет доступного облака точек. Сначала откройте или создайте одно!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2461"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2648"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2491"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2678"/>
         <source>Invalid parameter: dimension after &quot;-%1&quot; (expected: X, Y or Z)</source>
         <translation>Неверный  параметр: размеры после &quot;-%1&quot; (требуется: X,Y или Z)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2470"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2500"/>
         <source>_%1_TO_SF</source>
         <translation>_%1_В_СП</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2480"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2510"/>
         <source>Failed to export coord. %1 to SF on cloud &apos;%2&apos;!</source>
         <translation>Не удалось экспортировать координаты. %1 в СП для облака &apos;%2&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2496"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2526"/>
         <source>Missing parameter(s) after &quot;-%1&quot; (ORTHO_DIM N X1 Y1 X2 Y2 ... XN YN)</source>
         <translation>Отсутствует параметр(ы) после  &quot;-%1&quot; (ORTHO_DIM N X1 Y1 X2 Y2 ... XN YN)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2515"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2545"/>
         <source>Invalid parameter: orthogonal dimension after &quot;-%1&quot; (expected: X, Y or Z)</source>
         <translation>Неверный  параметр: ортогональные размеры после &quot;-%1&quot; (требуется: X,Y или Z)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2525"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2555"/>
         <source>Invalid parameter: number of vertices for the 2D polyline after &quot;-%1&quot;</source>
         <translation>Неверный параметр: число узлов 2D-полилинии после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2540"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2570"/>
         <source>Missing parameter(s): vertex #%1 data and following</source>
         <translation>Отсутствует параметр(ы): данные о вершине #%1 и следующие</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2548"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2578"/>
         <source>Invalid parameter: X-coordinate of vertex #%1</source>
         <translation>Неверный параметр: координата X узла #%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2552"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2582"/>
         <source>Invalid parameter: Y-coordinate of vertex #%1</source>
         <translation>Неверный параметр: координата Y узла #%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2593"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2623"/>
         <source>.cropped</source>
         <translation>.обрезано</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2604"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2634"/>
         <source>Not enough memory to crop cloud &apos;%1&apos;!</source>
         <translation>Недостаточно памяти для обрезки облака  &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2611"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2641"/>
         <source>No point of cloud &apos;%1&apos; falls inside the input box!</source>
         <translation>Нет точек облака &apos;%1&apos;, попадающих внутрь указанных границ!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2616"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2646"/>
         <source>Crop process failed! (not enough memory)</source>
         <translation>Не удалось выполнить обрезку (недостаточно памяти)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2632"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2662"/>
         <source>Missing parameter(s) after &quot;-%1&quot; (DIM FREQUENCY)</source>
         <translation>Отсутствует параметр(ы) после &quot;-%1&quot; (DIM FREQUENCY)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2634"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2664"/>
         <source>No entity available. Be sure to open or generate one first!</source>
         <translation>Нет доступных объектов. Сначала откройте или создайте один!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2658"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2688"/>
         <source>Invalid parameter: frequency after &quot;-%1 DIM&quot; (in Hz, integer value)</source>
         <translation>Неверный  параметр: частота после &quot;-%1 DIM&quot; (в Гц, целое число)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2672"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2696"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2702"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2726"/>
         <source>COLOR_BANDING_%1_%2</source>
         <translation>ЦВЕТОВАЯ_ЗАЛИВКА_%1_%2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2691"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2721"/>
         <source>Vertices of mesh &apos;%1&apos; are locked (they may be shared by multiple entities for instance). Can&apos;t apply the current command on them.</source>
         <translation>Узлы ЦМР &apos;%1 &apos;заблокированы (они могут совместно использоваться несколькими объектами). Нельзя применить к ним текущую команду.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2726"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2756"/>
         <source>No point cloud available. Will use the first mesh vertices as compared cloud.</source>
         <translation>Нет доступного облака. Будут использоваться вершины первой модели как сравниваемое облако.</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2731"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2761"/>
         <source>Unhandled mesh vertices type</source>
         <translation>Необработанный тип вершин модели</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2757"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2787"/>
         <source>Only one point cloud available. Be sure to open or generate a second one before performing C2C distance!</source>
         <translation>Только одно облако доступно. Сначала откройте или создайте еще одно перед выполнением сравнения облаков!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2793"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2805"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="68"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2823"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2835"/>
         <source>Missing parameter: value after &quot;-%1&quot;</source>
         <translation>Отсутствует параметр: значение после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2797"/>
-        <location filename="../ccCommandLineCommands.cpp" line="2809"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="72"/>
-        <location filename="../../plugins/core/Standard/qPCV/PCVCommand.cpp" line="55"/>
-        <location filename="../../plugins/core/Standard/qPCV/PCVCommand.cpp" line="65"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2827"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2839"/>
         <source>Invalid parameter: value after &quot;-%1&quot;</source>
         <translation>Неверный параметр: значение после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2836"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2866"/>
         <source>Invalid parameter: unknown model type &quot;%1&quot;</source>
         <translation>Неверный параметр: неизвестный тип модели &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2840"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2870"/>
         <source>Missing parameter: model type after &quot;-%1&quot; (LS/TRI/HF)</source>
         <translation>Отсутствует параметр: тип модели после &quot;-%1&quot; (LS/TRI/HF)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2851"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2881"/>
         <source>Invalid parameter: unknown neighborhood type &quot;%1&quot;</source>
         <translation>Неверный параметр: неизвестный тип окружения &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2855"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2885"/>
         <source>Missing parameter: expected neighborhood type after model type (KNN/SPHERE)</source>
         <translation>Отсутствует параметр: требуется тип окружения после типа модели (KNN/СФЕРА)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2864"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2894"/>
         <source>Invalid parameter: neighborhood size</source>
         <translation>Неверный параметр: размер окружения</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2868"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2898"/>
         <source>Missing parameter: expected neighborhood size after neighborhood type (neighbor count/sphere radius)</source>
         <translation>Отсутствует параметр: требуется размер окружения после типа окружения (число соседей/радиус сферы)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2877"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3577"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2907"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3607"/>
         <source>Missing parameter: max thread count after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: макс. кол-во потоков после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2882"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3582"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2912"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3612"/>
         <source>Invalid thread count! (after %1)</source>
         <translation>Неверное количество потоков! (после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2954"/>
+        <location filename="../ccCommandLineCommands.cpp" line="2984"/>
         <source>_MAX_DIST_%1</source>
         <translation>_МАКС_ДИСТ_%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2988"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3018"/>
         <source>Missing parameter: distribution type after &quot;-%1&quot; (GAUSS/WEIBULL)</source>
         <translation>Отсутствует параметр: тип распределения после &quot;-%1&quot; (GAUSS/WEIBULL)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2995"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3025"/>
         <source>Missing parameter: mean value after &quot;GAUSS&quot;</source>
         <translation>Отсутствует параметр: ср. значение после &quot;GAUSS&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="2999"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3029"/>
         <source>Invalid parameter: mean value after &quot;GAUSS&quot;</source>
         <translation>Неверный параметр: ср. значение после &quot;GAUSS&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3002"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3032"/>
         <source>Missing parameter: sigma value after &quot;GAUSS&quot; {mu}</source>
         <translation>Отсутствует параметр: значение сигма после &quot;GAUSS&quot; {mu}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3006"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3036"/>
         <source>Invalid parameter: sigma value after &quot;GAUSS&quot; {mu}</source>
         <translation>Неверный параметр: значение сигма после &quot;GAUSS&quot; {mu}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3016"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3046"/>
         <source>Missing parameter: a value after &quot;WEIBULL&quot;</source>
         <translation>Отсутствует параметр: значение после &quot;WEIBULL&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3020"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3050"/>
         <source>Invalid parameter: a value after &quot;WEIBULL&quot;</source>
         <translation>Неверный параметр: значение после &quot;WEIBULL&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3023"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3053"/>
         <source>Missing parameter: b value after &quot;WEIBULL&quot; {a}</source>
         <translation>Отсутствует параметр: значение b после &quot;WEIBULL&quot; {a}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3027"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3057"/>
         <source>Invalid parameter: b value after &quot;WEIBULL&quot; {a}</source>
         <translation>Неверный параметр: значение b после &quot;WEIBULL&quot; {a}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3030"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3060"/>
         <source>Missing parameter: shift value after &quot;WEIBULL&quot; {a} {b}</source>
         <translation>Отсутствует параметр: значение сдвига после &quot;WEIBULL&quot; {a} {b}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3034"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3064"/>
         <source>Invalid parameter: shift value after &quot;WEIBULL&quot; {a} {b}</source>
         <translation>Неверный параметр: значение сдвига после &quot;WEIBULL&quot; {a} {b}</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3042"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3072"/>
         <source>Invalid parameter: unknown distribution &quot;%1&quot;</source>
         <translation>Неверный параметр: неизвестное распределение &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3050"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3080"/>
         <source>Missing parameter: p-value after distribution</source>
         <translation>Отсутствует параметр: p-значение после распределения</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3054"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3084"/>
         <source>Invalid parameter: p-value after distribution</source>
         <translation>Неверный параметр: p-значение после распределения</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3061"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3091"/>
         <source>Missing parameter: neighbors after p-value</source>
         <translation>Отсутствует параметр: соседи после p-значения</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3065"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3095"/>
         <source>Invalid parameter: neighbors after p-value</source>
         <translation>Неверный параметр: соседи после p-значения</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3107"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3137"/>
         <source>Couldn&apos;t compute octree for cloud &apos;%1&apos;!</source>
         <translation>Не удалось вычислить октодерево для облака &apos;%1&apos;!</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3114"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3144"/>
         <source>[Chi2 Test] %1 test result = %2</source>
         <translation>[Тест Chi2] %1 результат теста = %2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3130"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3160"/>
         <source>_STAT_TEST_%1</source>
         <translation>_СТАТ_ТЕСТ_%1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3181"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3211"/>
         <source>Missing parameter: max edge length value after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: макс. длина стороны после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3185"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3215"/>
         <source>Invalid value for max edge length! (after %1)</source>
         <translation>Неверное значение для макс. длины стороны! (после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3186"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3216"/>
         <source>Max edge length: %1</source>
         <translation>Макс. длина стороны: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3194"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3224"/>
         <source>Axis aligned: %1</source>
         <translation>Ось сориентирована: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3211"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3241"/>
         <source>	Resulting mesh: #%1 faces, %2 vertices</source>
         <translation>	Результирующая модель: #%1 граней, %2 вершин</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3254"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3284"/>
         <source>Missing parameter(s): SF index and/or operation after &apos;%1&apos; (2 values expected)</source>
         <translation>Отсутствует параметр(ы): индекс СП и/или операция после  &apos;%1&apos; (необходимо 2 значения)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3266"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3354"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3548"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3568"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3296"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3384"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3578"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3598"/>
         <source>Invalid SF index! (after %1)</source>
         <translation>Неверный индекс СП (после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3275"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3364"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3305"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3394"/>
         <source>Unknown operation! (%1)</source>
         <translation>Неизвестная операция! (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3279"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3368"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3309"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3398"/>
         <source>Operation %1 can&apos;t be applied with %2</source>
         <translation>Операция %1 не может быть выполнена с %2</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3291"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3397"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3321"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3427"/>
         <source>Failed top apply operation on cloud &apos;%1&apos;</source>
         <translation>Не удалось применить операцию к облаку &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3314"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3420"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3344"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3450"/>
         <source>Failed top apply operation on mesh &apos;%1&apos;</source>
         <translation>Не удалось применить операцию к модели &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3340"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3370"/>
         <source>Missing parameter(s): SF index and/or operation and/or scalar value after &apos;%1&apos; (3 values expected)</source>
         <translation>Отсутствует параметр(ы): индекс СП и/или операция и/или значение масштаба после &apos;%1&apos; (необходимо 3 значения)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3379"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3409"/>
         <source>Invalid scalar value! (after %1)</source>
         <translation>Неверное скалярное значение! (после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3487"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3517"/>
         <source>Missing parameter: min error difference after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: разница мин. ошибки после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3491"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3521"/>
         <source>Invalid value for min. error difference! (after %1)</source>
         <translation>Неверный параметр: разница мин. ошибки! ( после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3499"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3529"/>
         <source>Missing parameter: number of iterations after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: число итераций после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3504"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3534"/>
         <source>Invalid number of iterations! (%1)</source>
         <translation>Неверное число итераций! (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3512"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3542"/>
         <source>Missing parameter: overlap percentage after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: зона перекрытия после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3517"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3547"/>
         <source>Invalid overlap value! (%1 --&gt; should be between 10 and 100)</source>
         <translation>Неверное значение перекрытия! (%1 --&gt; должно быть в пределах 10 и 100)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3525"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3555"/>
         <source>Missing parameter: random sampling limit value after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: значение допуска случайного прореживания после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3529"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3559"/>
         <source>Invalid random sampling limit! (after %1)</source>
         <translation>Неверное значение порога случайного прореживания (после %1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3537"/>
-        <location filename="../ccCommandLineCommands.cpp" line="3557"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3567"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3587"/>
         <source>Missing parameter: SF index after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: индекс СП после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3603"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3633"/>
         <source>Invalid parameter: unknown rotation filter &quot;%1&quot;</source>
         <translation>Неверный параметр: неизвестный фильтр вращения &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3607"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3637"/>
         <source>Missing parameter: rotation filter after &quot;-%1&quot; (XYZ/X/Y/Z/NONE)</source>
         <translation>Отсутствует параметр: фильтр вращения после &quot;-%1&quot; (XYZ/X/Y/Z/NONE)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3649"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3679"/>
         <source>Invalid SF index for data entity! (%1)</source>
         <translation>Неверный индекс СП для элемента данных! (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3655"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3685"/>
         <source>[ICP] SF #%1 (data entity) will be used as weights</source>
         <translation>[ICP] СП #%1 (элемент данных) будут использоваться как веса</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3665"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3695"/>
         <source>Invalid SF index for model entity! (%1)</source>
         <translation>Неверный индекс СП для элемента модели! (%1)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3671"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3701"/>
         <source>[ICP] SF #%1 (model entity) will be used as weights</source>
         <translation>[ICP] СП #%1 (элемент модели) будут использоваться как веса</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3701"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3731"/>
         <source>Entity &apos;%1&apos; has been registered</source>
         <translation>Элемент &apos;%1&apos; был зарегистрирован</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3702"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3732"/>
         <source>RMS: %1</source>
         <translation>СКО: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3703"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3733"/>
         <source>Number of points used for final step: %1</source>
         <translation>Кол-во точек, использованных в последнем шаге: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3707"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3737"/>
         <source>%1/%2_REGISTRATION_MATRIX</source>
         <translation>%1/%2_МАТРИЦА_РЕГИСТРАЦИИ</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3718"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3748"/>
         <source>_REGISTERED</source>
         <translation>_ЗАРЕГИСТРИРОВАНО</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qFBXIO/src/FBXCommand.cpp" line="46"/>
         <source>Missing parameter: FBX format (string) after &apos;%1&apos;</source>
-        <translation>Отсутствует параметр: формат FBX (строки) после &apos;%1&apos;</translation>
+        <translation type="vanished">Отсутствует параметр: формат FBX (строки) после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qFBXIO/src/FBXCommand.cpp" line="49"/>
         <source>FBX format: %1</source>
-        <translation>Формат FBX: %1</translation>
+        <translation type="vanished">Формат FBX: %1</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3741"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3771"/>
         <source>Missing parameter: format (ASCII, BINARY_LE, or BINARY_BE) after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: формат (ASCII, BINARY_LE, or BINARY_BE) после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3756"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3786"/>
         <source>Invalid PLY format! (&apos;%1&apos;)</source>
         <translation>Неверный формат PLY! (&apos;%1&apos;)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3953"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3983"/>
         <source>Missing parameter: option after &apos;%1&apos; (%2/%3)</source>
         <translation>Отсутствует параметр:опция после &apos;%1&apos; (%2/%3)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3968"/>
+        <location filename="../ccCommandLineCommands.cpp" line="3998"/>
         <source>Unrecognized option after &apos;%1&apos; (%2 or %3 expected)</source>
         <translation>Нераспознанная опция после &apos;%1&apos; (требуется %2 или %3)</translation>
     </message>
     <message>
-        <location filename="../ccCommandLineCommands.cpp" line="3981"/>
+        <location filename="../ccCommandLineCommands.cpp" line="4011"/>
         <source>Missing parameter: filename after &apos;%1&apos;</source>
         <translation>Отсутствует параметр: имя файла после &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="41"/>
         <source>Importing Bundler file: &apos;%1&apos;</source>
-        <translation>Импорт файла Bundler: &apos;%1&apos;</translation>
+        <translation type="vanished">Импорт файла Bundler: &apos;%1&apos;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="87"/>
         <source>Missing parameter: vertices count after &quot;-%1&quot;</source>
-        <translation>Отсутствует параметр: кол-во узлов после &quot;-%1&quot;</translation>
+        <translation type="vanished">Отсутствует параметр: кол-во узлов после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerCommand.cpp" line="91"/>
         <source>Invalid parameter: vertices count after &quot;-%1&quot;</source>
-        <translation>Неверный параметр: кол-во узлов после &quot;-%1&quot;</translation>
+        <translation type="vanished">Неверный параметр: кол-во узлов после &quot;-%1&quot;</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerFilter.cpp" line="230"/>
         <source>Open Bundler file</source>
-        <translation>Открыть файл Bundler</translation>
+        <translation type="vanished">Открыть файл Bundler</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerFilter.cpp" line="231"/>
         <source>Cameras: %1
 Points: %2</source>
-        <translation>Камер: %1
+        <translation type="vanished">Камер: %1
 Точек: %2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerFilter.cpp" line="628"/>
         <source>Open &amp; process images</source>
-        <translation>Открыть и обработать изображения</translation>
+        <translation type="vanished">Открыть и обработать изображения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerFilter.cpp" line="629"/>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="2302"/>
         <source>Images: %1</source>
-        <translation>Изображений: %1</translation>
+        <translation type="vanished">Изображений: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/BundlerFilter.cpp" line="648"/>
         <source>Preparing colored DTM</source>
-        <translation>Подготовка ЦМР в заливке</translation>
+        <translation type="vanished">Подготовка ЦМР в заливке</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PNFilter.cpp" line="98"/>
         <source>Save PN file</source>
-        <translation>Сохранить файл PN</translation>
+        <translation type="vanished">Сохранить файл PN</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PNFilter.cpp" line="99"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PNFilter.cpp" line="171"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PVFilter.cpp" line="102"/>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PVFilter.cpp" line="168"/>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="268"/>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1027"/>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1097"/>
-        <location filename="../../libs/qCC_db/ccGBLSensor.cpp" line="697"/>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5364"/>
         <source>Points: %L1</source>
-        <translation>Точек: %L1</translation>
+        <translation type="vanished">Точек: %L1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PNFilter.cpp" line="170"/>
         <source>Open PN file</source>
-        <translation>Открыть файл PN</translation>
+        <translation type="vanished">Открыть файл PN</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PVFilter.cpp" line="101"/>
         <source>Save PV file</source>
-        <translation>Сохранить файл PN</translation>
+        <translation type="vanished">Сохранить файл PN</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/PVFilter.cpp" line="167"/>
         <source>Open PV file</source>
-        <translation>Открыть файл PV</translation>
+        <translation type="vanished">Открыть файл PV</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/SoiFilter.cpp" line="90"/>
         <source>Open SOI file</source>
-        <translation>Открыть файл SOI</translation>
+        <translation type="vanished">Открыть файл SOI</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qAdditionalIO/src/SoiFilter.cpp" line="91"/>
         <source>%1 scans / %2 points</source>
-        <translation>%1 сканов / %2 точек</translation>
+        <translation type="vanished">%1 сканов / %2 точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoProcess.cpp" line="532"/>
         <source>Remaining points to classify: %1
 Source points: %2</source>
-        <translation>Осталось классифицировать точек: %1
+        <translation type="vanished">Осталось классифицировать точек: %1
 Исходных точек: %2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoProcess.cpp" line="533"/>
         <source>Classification</source>
-        <translation>Классификация</translation>
+        <translation type="vanished">Классификация</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoProcess.cpp" line="901"/>
         <source>Core points: %1
 Source points: %2</source>
-        <translation>Ключевых точек: %1
+        <translation type="vanished">Ключевых точек: %1
 Исходных точек: %2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/qCanupoProcess.cpp" line="902"/>
         <source>Labelling</source>
-        <translation>Подписывание</translation>
+        <translation type="vanished">Подписывание</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/qFacets.cpp" line="435"/>
         <source>Facets creation</source>
-        <translation>Создание граней</translation>
+        <translation type="vanished">Создание граней</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/qFacets.cpp" line="436"/>
         <source>Components: %1</source>
-        <translation>Компонентов: %1</translation>
+        <translation type="vanished">Компонентов: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/src/stereogramDlg.cpp" line="123"/>
         <source>Stereogram</source>
-        <translation>Стереограмма</translation>
+        <translation type="vanished">Стереограмма</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/src/stereogramDlg.cpp" line="124"/>
         <source>Preparing polar display...</source>
-        <translation>Подготовка пузырькового дисплея...</translation>
+        <translation type="vanished">Подготовка пузырькового дисплея...</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="399"/>
         <source>Export LAS file</source>
-        <translation>Экспорт файла LAS</translation>
+        <translation type="vanished">Экспорт файла LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="400"/>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="657"/>
         <source>Points: %1</source>
-        <translation>Точек: %1</translation>
+        <translation type="vanished">Точек: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="649"/>
         <source>Reading %1 points</source>
-        <translation>Прочитано %1 точек</translation>
+        <translation type="vanished">Прочитано %1 точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="656"/>
         <source>Import LAS file</source>
-        <translation>Импорт файла LAS</translation>
+        <translation type="vanished">Импорт файла LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qLASFWFIO/Filter/LASFWFFilter.cpp" line="1089"/>
         <source>No valid point in file</source>
-        <translation>Нет годных точек в файле</translation>
+        <translation type="vanished">Нет годных точек в файле</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/src/qM3C2Commands.h" line="72"/>
         <source>_M3C2</source>
-        <translation>_M3C2</translation>
+        <translation type="vanished">_M3C2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/src/qM3C2Process.cpp" line="794"/>
         <source>M3C2 Distances Computation</source>
-        <translation>Расчет сравнения M3C2</translation>
+        <translation type="vanished">Расчет сравнения M3C2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qM3C2/src/qM3C2Process.cpp" line="795"/>
         <source>Core points: %1</source>
-        <translation>Ключевых точек: %1</translation>
+        <translation type="vanished">Ключевых точек: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationTool.cpp" line="318"/>
         <source>Cloud to profile radial distance</source>
-        <translation>Радиальное расстояние от облака до профиля</translation>
+        <translation type="vanished">Радиальное расстояние от облака до профиля</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qSRA/distanceMapGenerationTool.cpp" line="319"/>
         <source>Polyline: %1 vertices
 Cloud: %2 points</source>
-        <translation>Полилиния: %1 узлов
+        <translation type="vanished">Полилиния: %1 узлов
 Облако: %2 точек</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccGBLSensor.cpp" line="696"/>
         <source>Depth buffer</source>
-        <translation>Буфер глубины</translation>
+        <translation type="vanished">Буфер глубины</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMesh.cpp" line="594"/>
         <source>Laplacian smooth</source>
-        <translation>Лапласово сглаживание</translation>
+        <translation type="vanished">Лапласово сглаживание</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMesh.cpp" line="595"/>
         <source>Iterations: %1
 Vertices: %2
 Faces: %3</source>
-        <translation>Итераций: %1
+        <translation type="vanished">Итераций: %1
 Узлов: %2
 Граней: %3</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMinimumSpanningTreeForNormsDirection.cpp" line="202"/>
         <source>Orient normals (MST)</source>
-        <translation>Ориентирование нормалей (MST)</translation>
+        <translation type="vanished">Ориентирование нормалей (MST)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMinimumSpanningTreeForNormsDirection.cpp" line="204"/>
         <source>Compute Minimum spanning tree
 Points: %1
 Edges: %2</source>
-        <translation>Построить минимальное остовное дерево
+        <translation type="vanished">Построить минимальное остовное дерево
 Точек: %1
 Краев: %2</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMinimumSpanningTreeForNormsDirection.cpp" line="206"/>
         <source>Compute Minimum spanning tree
 Points: %1</source>
-        <translation>Построить минимальное остовное дерево
+        <translation type="vanished">Построить минимальное остовное дерево
 Точек: %1</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5147"/>
         <source>Normals computation</source>
-        <translation>Расчет нормалей</translation>
+        <translation type="vanished">Расчет нормалей</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5175"/>
         <source>Grid: %1 x %2</source>
-        <translation>Сетка: %1 x %2</translation>
+        <translation type="vanished">Сетка: %1 x %2</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5363"/>
         <source>Orienting normals</source>
-        <translation>Ориентирование нормалей</translation>
+        <translation type="vanished">Ориентирование нормалей</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5625"/>
         <source>FWF amplitude</source>
-        <translation>Амплитуда ФПВ (формы полной волны)</translation>
+        <translation type="vanished">Амплитуда ФПВ (формы полной волны)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPointCloud.cpp" line="5626"/>
         <source>Determining min and max FWF values
 Points: </source>
-        <translation>Определение мин. и макс. значений ФПВ
+        <translation type="vanished">Определение мин. и макс. значений ФПВ
 Точек: </translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccPolyline.cpp" line="619"/>
         <source>sampled</source>
-        <translation>прорежено</translation>
+        <translation type="vanished">прорежено</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccRasterGrid.cpp" line="217"/>
         <source>Grid generation</source>
-        <translation>Создание сетки</translation>
+        <translation type="vanished">Создание сетки</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccRasterGrid.cpp" line="218"/>
         <source>Points: %L1
 Cells: %L2 x %L3</source>
-        <translation>Точек: %L1
+        <translation type="vanished">Точек: %L1
 Ячеек: %L2 x %L3</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/AsciiFilter.cpp" line="210"/>
         <source>Saving cloud [%1]</source>
-        <translation>Сохранение облака [%1]</translation>
+        <translation type="vanished">Сохранение облака [%1]</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/AsciiFilter.cpp" line="211"/>
         <source>Number of points: %1</source>
-        <translation>Кол-во точек: %1</translation>
+        <translation type="vanished">Кол-во точек: %1</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/AsciiFilter.cpp" line="772"/>
         <source>Open ASCII file [%1]</source>
-        <translation>Открыть файл ASCII [%1]</translation>
+        <translation type="vanished">Открыть файл ASCII [%1]</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/AsciiFilter.cpp" line="773"/>
-        <location filename="../../libs/qCC_io/AsciiFilter.cpp" line="880"/>
         <source>Approximate number of points: %1</source>
-        <translation>Примерное кол-во точек: %1</translation>
+        <translation type="vanished">Примерное кол-во точек: %1</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="174"/>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="390"/>
         <source>BIN file</source>
-        <translation>Файл BIN</translation>
+        <translation type="vanished">Файл BIN</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="175"/>
         <source>Please wait... saving in progress</source>
-        <translation>Пожалуйста подождите... идет сохранение</translation>
+        <translation type="vanished">Пожалуйста подождите... идет сохранение</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="391"/>
         <source>Loading: %1</source>
-        <translation>Загрузка: %1</translation>
+        <translation type="vanished">Загрузка: %1</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="1127"/>
         <source>Open Bin file (old style)</source>
-        <translation>Открыть файл BIN (старый стиль)</translation>
+        <translation type="vanished">Открыть файл BIN (старый стиль)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/BinFilter.cpp" line="1153"/>
         <source>cloud %1/%2 (%3 points)</source>
-        <translation>облако %1/%2 (%3 точек)</translation>
+        <translation type="vanished">облако %1/%2 (%3 точек)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="458"/>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="768"/>
         <source>Write E57 file</source>
-        <translation>Запись файла E57</translation>
+        <translation type="vanished">Запись файла E57</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="459"/>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="1681"/>
         <source>Scan #%1 - %2 points</source>
-        <translation>Скан #%1 - %2 точек</translation>
+        <translation type="vanished">Скан #%1 - %2 точек</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="769"/>
         <source>Cloud #%1 - Images: %2</source>
-        <translation>Облако #%1 - Изображений: %2</translation>
+        <translation type="vanished">Облако #%1 - Изображений: %2</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="1680"/>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="2209"/>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="2301"/>
         <source>Read E57 file</source>
-        <translation>Чтение файла E57</translation>
+        <translation type="vanished">Чтение файла E57</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qE57IO/src/E57Filter.cpp" line="2210"/>
         <source>Scans: %1</source>
-        <translation>Сканов: %1</translation>
+        <translation type="vanished">Сканов: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="267"/>
         <source>Save LAS file</source>
-        <translation>Сохранить файл LAS</translation>
+        <translation type="vanished">Сохранить файл LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1026"/>
         <source>Open LAS file</source>
-        <translation>Открыть файл LAS</translation>
+        <translation type="vanished">Открыть файл LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1073"/>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1114"/>
         <source>LAS file</source>
-        <translation>Файл LAS</translation>
+        <translation type="vanished">Файл LAS</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1074"/>
         <source>Please wait... reading in progress</source>
-        <translation>Пожалуйста подождите... выполняется чтение</translation>
+        <translation type="vanished">Пожалуйста подождите... выполняется чтение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1096"/>
         <source>Tiling points</source>
-        <translation>Точки разделения</translation>
+        <translation type="vanished">Точки разделения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/src/LASFilter.cpp" line="1115"/>
         <source>Please wait... writing in progress</source>
-        <translation>Пожалуйста подождите... выполняется запись</translation>
+        <translation type="vanished">Пожалуйста подождите... выполняется запись</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/MAFilter.cpp" line="151"/>
         <source>Save MA file</source>
-        <translation>Сохранить файл MA</translation>
+        <translation type="vanished">Сохранить файл MA</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/MAFilter.cpp" line="152"/>
         <source>Triangles = %1</source>
-        <translation>Треугольников = %1</translation>
+        <translation type="vanished">Треугольников = %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/ObjFilter.cpp" line="114"/>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="124"/>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="216"/>
         <source>Saving mesh [%1]</source>
-        <translation>Сохранение ЦМР [%1]</translation>
+        <translation type="vanished">Сохранение ЦМР [%1]</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/ObjFilter.cpp" line="115"/>
         <source>Triangles: %1</source>
-        <translation>Треугольников: %1</translation>
+        <translation type="vanished">Треугольников: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/ObjFilter.cpp" line="480"/>
         <source>OBJ file</source>
-        <translation>Файл OBJ</translation>
+        <translation type="vanished">Файл OBJ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/ObjFilter.cpp" line="481"/>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="629"/>
-        <location filename="../../libs/qCC_io/PlyFilter.cpp" line="1672"/>
         <source>Loading in progress...</source>
-        <translation>Выполняется загрузка...</translation>
+        <translation type="vanished">Выполняется загрузка...</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/PlyFilter.cpp" line="1673"/>
         <source>PLY file</source>
-        <translation>Файл PLY</translation>
+        <translation type="vanished">Файл PLY</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/PTXFilter.cpp" line="119"/>
         <source>Loading PTX file</source>
-        <translation>Загрузка файла PLY</translation>
+        <translation type="vanished">Загрузка файла PLY</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ShpFilter.cpp" line="1927"/>
         <source>Load SHP file</source>
-        <translation>Загрузка файла SHP</translation>
+        <translation type="vanished">Загрузка файла SHP</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ShpFilter.cpp" line="1928"/>
         <source>File size: %1</source>
-        <translation>Размер файла: %1</translation>
+        <translation type="vanished">Размер файла: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/SimpleBinFilter.cpp" line="198"/>
-        <location filename="../../plugins/core/IO/qCoreIO/src/SimpleBinFilter.cpp" line="488"/>
         <source>Simple BIN file</source>
-        <translation>Простой файл BIN</translation>
+        <translation type="vanished">Простой файл BIN</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/SimpleBinFilter.cpp" line="199"/>
         <source>Saving %1 points / %2 scalar field(s)</source>
-        <translation>Сохранение %1 точек / %2 скалярных полей</translation>
+        <translation type="vanished">Сохранение %1 точек / %2 скалярных полей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/SimpleBinFilter.cpp" line="489"/>
         <source>Loading %1 points / %2 scalar field(s)</source>
-        <translation>Загрузка %1 точек / %2 скалярных полей</translation>
+        <translation type="vanished">Загрузка %1 точек / %2 скалярных полей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="125"/>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="217"/>
         <source>Number of facets: %1</source>
-        <translation>Кол-во граней: %1</translation>
+        <translation type="vanished">Кол-во граней: %1</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="628"/>
         <source>(ASCII) STL file</source>
-        <translation>Файл STL (ASCII)</translation>
+        <translation type="vanished">Файл STL (ASCII)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="955"/>
         <source>Loading binary STL file</source>
-        <translation>Загрузка двоичного файла STL</translation>
+        <translation type="vanished">Загрузка двоичного файла STL</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/src/STLFilter.cpp" line="956"/>
         <source>Loading %1 faces</source>
-        <translation>Загрузка %1 граней</translation>
+        <translation type="vanished">Загрузка %1 граней</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/FileIOFilter.cpp" line="274"/>
         <source>All (*.*)</source>
-        <translation>Все (*.*)</translation>
+        <translation type="vanished">Все (*.*)</translation>
     </message>
 </context>
 <context>
     <name>QuaGzipFile</name>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quagzipfile.cpp" line="60"/>
         <source>QIODevice::Append is not supported for GZIP</source>
-        <translation>QIODevice::Добавление не поддерживается для  GZIP</translation>
+        <translation type="vanished">QIODevice::Добавление не поддерживается для  GZIP</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quagzipfile.cpp" line="66"/>
         <source>Opening gzip for both reading and writing is not supported</source>
-        <translation>Открытие gzip для чтения и записи не поддерживается</translation>
+        <translation type="vanished">Открытие gzip для чтения и записи не поддерживается</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quagzipfile.cpp" line="74"/>
         <source>You can open a gzip either for reading or for writing. Which is it?</source>
-        <translation>Вы можете открыть gzip либо для чтения, либо для записи. Выбирайте!</translation>
+        <translation type="vanished">Вы можете открыть gzip либо для чтения, либо для записи. Выбирайте!</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quagzipfile.cpp" line="80"/>
         <source>Could not gzopen() file</source>
-        <translation>Нельзя открыть файл через  gzopen()</translation>
+        <translation type="vanished">Нельзя открыть файл через  gzopen()</translation>
     </message>
 </context>
 <context>
     <name>QuaZIODevice</name>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quaziodevice.cpp" line="147"/>
         <source>QIODevice::Append is not supported for QuaZIODevice</source>
-        <translation>QIODevice::Добавление не поддерживается для QuaZIODevice</translation>
+        <translation type="vanished">QIODevice::Добавление не поддерживается для QuaZIODevice</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quaziodevice.cpp" line="152"/>
         <source>QIODevice::ReadWrite is not supported for QuaZIODevice</source>
-        <translation>QIODevice::Чтение-запись не поддерживается для QuaZIODevice</translation>
+        <translation type="vanished">QIODevice::Чтение-запись не поддерживается для QuaZIODevice</translation>
     </message>
 </context>
 <context>
     <name>QuaZipFile</name>
     <message>
-        <location filename="../../plugins/core/IO/qPhotoscanIO/src/contrib/quazip-0.7.3/quazip/quazipfile.cpp" line="247"/>
         <source>ZIP/UNZIP API error %1</source>
-        <translation>ZIP/UNZIP API ошибка %1</translation>
+        <translation type="vanished">ZIP/UNZIP API ошибка %1</translation>
     </message>
 </context>
 <context>
     <name>RansacSDDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="14"/>
         <source>Ransac Shape Detection</source>
-        <translation>Определение форм RANSAC</translation>
+        <translation type="vanished">Определение форм RANSAC</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="24"/>
         <source>Primitives</source>
-        <translation>Примитивы</translation>
+        <translation type="vanished">Примитивы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="30"/>
         <source>Plane</source>
-        <translation>Плоскость</translation>
+        <translation type="vanished">Плоскость</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="40"/>
         <source>Sphere</source>
-        <translation>Сфера</translation>
+        <translation type="vanished">Сфера</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="50"/>
         <source>Cylinder</source>
-        <translation>Цилиндр</translation>
+        <translation type="vanished">Цилиндр</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="60"/>
         <source>Cone</source>
-        <translation>Конус</translation>
+        <translation type="vanished">Конус</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="70"/>
         <source>Torus</source>
-        <translation>Тор</translation>
+        <translation type="vanished">Тор</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="83"/>
         <source>Advanced parameters</source>
-        <translation>Дополнительные параметры</translation>
+        <translation type="vanished">Дополнительные параметры</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="91"/>
         <source>max distance to primitive</source>
-        <translation>макс. отклонения от примитива</translation>
+        <translation type="vanished">макс. отклонения от примитива</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="98"/>
         <source>Maximum distance of samples to the ideal shape</source>
-        <translation>Макс. расстояние выборки от идеальной формы</translation>
+        <translation type="vanished">Макс. расстояние выборки от идеальной формы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="124"/>
         <source>sampling resolution</source>
-        <translation>разрешение выборки</translation>
+        <translation type="vanished">разрешение выборки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="131"/>
         <source>Should correspond to the distance between neighboring points in the data</source>
-        <translation>Должно соответствовать расстоянию между соседними точками данных</translation>
+        <translation type="vanished">Должно соответствовать расстоянию между соседними точками данных</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="157"/>
         <source>max normal deviation</source>
-        <translation>макс. отклонения нормалей</translation>
+        <translation type="vanished">макс. отклонения нормалей</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="164"/>
         <source>Maximum deviation from the ideal shape normal vector (in degrees)</source>
-        <translation>Максимальное отклонение от нормального вектора идеальной формы (в градусах)</translation>
+        <translation type="vanished">Максимальное отклонение от нормального вектора идеальной формы (в градусах)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="190"/>
         <source>overlooking probability</source>
-        <translation>вероятность пропуска</translation>
+        <translation type="vanished">вероятность пропуска</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="197"/>
         <source>Probability that no better candidate was overlooked during sampling (the lower the better!)</source>
-        <translation>Вероятность того, что ни один лучший кандидат не был пропущен во время выборки (чем меньше, тем лучше!)</translation>
+        <translation type="vanished">Вероятность того, что ни один лучший кандидат не был пропущен во время выборки (чем меньше, тем лучше!)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="223"/>
         <source>Min support points per primitive</source>
-        <translation>Мин. точек на примитив</translation>
+        <translation type="vanished">Мин. точек на примитив</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="230"/>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="233"/>
-        <location filename="../../plugins/core/Standard/qRANSAC_SD/ransacSDDlg.ui" line="236"/>
         <source>This is the minimal number of points required for a primitive</source>
-        <translation>Это минимальное количество точек, необходимое для вписывания примитива</translation>
+        <translation type="vanished">Это минимальное количество точек, необходимое для вписывания примитива</translation>
     </message>
 </context>
 <context>
@@ -12038,170 +11267,139 @@ replaced by the cell&apos;s average height!</source>
 <context>
     <name>SIFTExtractDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="20"/>
         <source>SIFT Extraction</source>
-        <translation>Извлечение SIFT</translation>
+        <translation type="vanished">Извлечение SIFT</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="28"/>
         <source>Intensity Field</source>
-        <translation>Поле интенсивности</translation>
+        <translation type="vanished">Поле интенсивности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="38"/>
         <source>Scales per Octave</source>
-        <translation>Уровней на октаву</translation>
+        <translation type="vanished">Уровней на октаву</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="55"/>
         <source>Minimum Scale</source>
-        <translation>Мин. масштаб</translation>
+        <translation type="vanished">Мин. масштаб</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="78"/>
         <source>Number of Octaves</source>
-        <translation>Кол-во октав</translation>
+        <translation type="vanished">Кол-во октав</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/SIFTExtractDlg.ui" line="98"/>
         <source>Minimum Contrast</source>
-        <translation>Мин. контраст.</translation>
+        <translation type="vanished">Мин. контраст.</translation>
     </message>
 </context>
 <context>
     <name>SaveLASFileDialog</name>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="14"/>
         <source>LAS/LAZ scale</source>
-        <translation>Масштаб LAS/LAZ</translation>
+        <translation type="vanished">Масштаб LAS/LAZ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="22"/>
         <source>Choose the output LAS/LAZ scale/resolution:</source>
-        <translation>Укажите масштаб/разрешение вывода в LAS/LAZ:</translation>
+        <translation type="vanished">Укажите масштаб/разрешение вывода в LAS/LAZ:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="46"/>
         <source>Highest resolution</source>
-        <translation>Высочайшее разрешение</translation>
+        <translation type="vanished">Высочайшее разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="80"/>
         <source>Ensures optimal accuracy (up to 10^-7 absolute)</source>
-        <translation>Обеспечивает оптимальную точность (до 10 ^ -7 в абсолюте)</translation>
+        <translation type="vanished">Обеспечивает оптимальную точность (до 10 ^ -7 в абсолюте)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="83"/>
         <source>will decrease LAZ compression efficiency</source>
-        <translation>снизит эффективность сжатия LAZ</translation>
+        <translation type="vanished">снизит эффективность сжатия LAZ</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="95"/>
         <source>Original resolution</source>
-        <translation>Исходное разрешение</translation>
+        <translation type="vanished">Исходное разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="108"/>
         <source>(0,0,0)</source>
-        <translation>(0,0,0)</translation>
+        <translation type="vanished">(0,0,0)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="135"/>
         <source>might not preserve data accuracy
 (especially if you have transformed the original data)</source>
-        <translation>точность данных может не сохраниться
+        <translation type="vanished">точность данных может не сохраниться
 (особенно если вы изменяли исходные данные)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="148"/>
         <source>Custom resolution</source>
-        <translation>Собственное разрешение</translation>
+        <translation type="vanished">Собственное разрешение</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="197"/>
         <source>bigger scale = best LAZ compression = lower resolution(*)</source>
-        <translation>больше масштаб = лучше сжатие = ниже разрешение(*)</translation>
+        <translation type="vanished">больше масштаб = лучше сжатие = ниже разрешение(*)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="215"/>
         <source>(*) careful, if chosen too low coordinates will loose accuracy</source>
-        <translation>(*) малое значение = низкая точность</translation>
+        <translation type="vanished">(*) малое значение = низкая точность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qPDALIO/ui/saveLASFileDlg.ui" line="225"/>
         <source>Save additional field(s)</source>
-        <translation>Сохранить дополнительные поле(я)</translation>
+        <translation type="vanished">Сохранить дополнительные поле(я)</translation>
     </message>
 </context>
 <context>
     <name>SaveMascaretFileDlg</name>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="14"/>
         <source>Save Mascaret profile</source>
-        <translation>Сохранить профиль Mascaret</translation>
+        <translation type="vanished">Сохранить профиль Mascaret</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="20"/>
         <source>Reach/bief name</source>
-        <translation>Имя Reach/bief</translation>
+        <translation type="vanished">Имя Reach/bief</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="27"/>
         <source>Profile</source>
-        <translation>Профиль</translation>
+        <translation type="vanished">Профиль</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="34"/>
         <source>Bed type</source>
-        <translation>Тип основания</translation>
+        <translation type="vanished">Тип основания</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="42"/>
         <source>B (bathy)</source>
-        <translation>B (бати)</translation>
+        <translation type="vanished">B (бати)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/IO/qCoreIO/ui/saveMascaretFileDlg.ui" line="47"/>
         <source>T (topo)</source>
-        <translation>T (топо)</translation>
+        <translation type="vanished">T (топо)</translation>
     </message>
 </context>
 <context>
     <name>SaveSHPFileDlg</name>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="14"/>
         <source>Save SHP file</source>
-        <translation>Сохранить файл SHP</translation>
+        <translation type="vanished">Сохранить файл SHP</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="20"/>
         <source>3D polylines</source>
-        <translation>Полилинии 3D</translation>
+        <translation type="vanished">Полилинии 3D</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="28"/>
         <source>Vertical dimension</source>
-        <translation>Вертикальный размер</translation>
+        <translation type="vanished">Вертикальный размер</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="62"/>
         <source>Save the 3D polylines as 2D ones (make sure to set the right &apos;vertical dimension&apos;)</source>
-        <translation>Сохранить 3D-полилинии как 2D (проверьте правильность &apos;вертикального размера&apos;)</translation>
+        <translation type="vanished">Сохранить 3D-полилинии как 2D (проверьте правильность &apos;вертикального размера&apos;)</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="65"/>
         <source>save as 2D polylines</source>
-        <translation>сохранить как 2D-полилинии</translation>
+        <translation type="vanished">сохранить как 2D-полилинии</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="72"/>
         <source>The height of each polyline (considered as constant!) will be saved as a field in the associated DBF file</source>
-        <translation>Высота каждой полилинии (считается постоянной!), сохранится как поле в связанном файле DBF</translation>
+        <translation type="vanished">Высота каждой полилинии (считается постоянной!), сохранится как поле в связанном файле DBF</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_io/ui_templates/saveSHPFileDlg.ui" line="75"/>
         <source>save (constant) height of polylines as a DBF field</source>
-        <translation>постоянная высота полилинии как поле DBF</translation>
+        <translation type="vanished">постоянная высота полилинии как поле DBF</translation>
     </message>
 </context>
 <context>
@@ -12499,28 +11697,24 @@ nSigma * стандартное отклонение)</translation>
 <context>
     <name>StatisticalOutliersRemoverDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/StatisticalOutliersRemoverDlg.ui" line="14"/>
         <source>Statistical Outliers Removal</source>
-        <translation>Исключение статистических выбросов</translation>
+        <translation type="vanished">Исключение статистических выбросов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/StatisticalOutliersRemoverDlg.ui" line="22"/>
         <source>Number of points to use for 
 mean distance estimation</source>
-        <translation>Кол-во точек для расчета
+        <translation type="vanished">Кол-во точек для расчета
 средней дистанции</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/StatisticalOutliersRemoverDlg.ui" line="47"/>
         <source>Standard deviation
  multiplier threshold (nSigma)</source>
-        <translation>(nSigma) порог множителя
+        <translation type="vanished">(nSigma) порог множителя
 стандартного отклонения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCL/PclUtils/filters/dialogs/StatisticalOutliersRemoverDlg.ui" line="72"/>
         <source>(max distance = average distance + nSigma * std. dev.)</source>
-        <translation>(макс. интервал = средний интервал + 
+        <translation type="vanished">(макс. интервал = средний интервал + 
 nSigma * стандартное отклонение)</translation>
     </message>
 </context>
@@ -12668,126 +11862,99 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>StereogramDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="14"/>
         <source>Stereogram</source>
-        <translation>Стереограмма</translation>
+        <translation type="vanished">Стереограмма</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="50"/>
         <source>dip direction: 0°</source>
-        <translation>азимут: 0°</translation>
+        <translation type="vanished">азимут: 0°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="202"/>
         <source>[Mean] dip direction: 0° - dip 0°</source>
-        <translation>[Средн.] азимут: 0° - угол падения 0°</translation>
+        <translation type="vanished">[Средн.] азимут: 0° - угол падения 0°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="224"/>
         <source>Stereogram parameters</source>
-        <translation>Параметры стереограммы</translation>
+        <translation type="vanished">Параметры стереограммы</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="256"/>
         <source>Display options</source>
-        <translation>Параметры экрана</translation>
+        <translation type="vanished">Параметры экрана</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="271"/>
         <source>Density color scale</source>
-        <translation>Цветовая гамма плотности</translation>
+        <translation type="vanished">Цветовая гамма плотности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="286"/>
         <source>Steps</source>
-        <translation>Дискретность</translation>
+        <translation type="vanished">Дискретность</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="318"/>
         <source>Other</source>
-        <translation>Дополнительно</translation>
+        <translation type="vanished">Дополнительно</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="335"/>
         <source>Ticks frequency</source>
-        <translation>Подсектора</translation>
+        <translation type="vanished">Подсектора</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="371"/>
         <source>Show families color (on the stereogram outer edge)</source>
-        <translation>Легенда цветов (на стереограмме снаружи)</translation>
+        <translation type="vanished">Легенда цветов (на стереограмме снаружи)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="374"/>
         <source>Show families color</source>
-        <translation>Легенда цветов</translation>
+        <translation type="vanished">Легенда цветов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="387"/>
         <source>Interactive filter</source>
-        <translation>Интерактивный фильтр</translation>
+        <translation type="vanished">Интерактивный фильтр</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="405"/>
         <source>Filter facets by orientation</source>
-        <translation>Фильтр граней по ориентации</translation>
+        <translation type="vanished">Фильтр граней по ориентации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="420"/>
         <source>Center</source>
-        <translation>Центр</translation>
+        <translation type="vanished">Центр</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="427"/>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="474"/>
         <source>dip</source>
-        <translation>угол падения</translation>
+        <translation type="vanished">угол падения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="434"/>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="454"/>
         <source> deg.</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="447"/>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="497"/>
         <source>dip dir.</source>
-        <translation>азимут</translation>
+        <translation type="vanished">азимут</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="467"/>
         <source>Span</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramDlg.ui" line="565"/>
         <source>Export</source>
-        <translation>Экспорт</translation>
+        <translation type="vanished">Экспорт</translation>
     </message>
 </context>
 <context>
     <name>StereogramParamsDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramParamsDlg.ui" line="14"/>
         <source>Stereogram</source>
-        <translation>Стереограмма</translation>
+        <translation type="vanished">Стереограмма</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramParamsDlg.ui" line="22"/>
         <source>main sectors step</source>
-        <translation>шаг основ. секторов</translation>
+        <translation type="vanished">шаг основ. секторов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramParamsDlg.ui" line="29"/>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramParamsDlg.ui" line="55"/>
         <source> deg.</source>
-        <translation>°</translation>
+        <translation type="vanished">°</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qFacets/ui/stereogramParamsDlg.ui" line="48"/>
         <source>resolution</source>
-        <translation>разрешение</translation>
+        <translation type="vanished">разрешение</translation>
     </message>
 </context>
 <context>
@@ -12921,12 +12088,10 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>TrainDisclaimerDialog</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/trainDisclaimerDlg.ui" line="14"/>
         <source>qCANUPO (disclaimer)</source>
-        <translation>qCANUPO (предупреждение)</translation>
+        <translation type="vanished">qCANUPO (предупреждение)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCanupo/trainDisclaimerDlg.ui" line="48"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -12937,7 +12102,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d; background-color:#ffffff;&quot;&gt;Funded by Université Européenne de Bretagne, Centre National de la Recherche Scientifique and EEC Marie-Curie actions&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d; background-color:#ffffff;&quot;&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:&apos;Calibri,sans-serif&apos;; font-size:10pt; color:#1f497d;&quot;&gt;Enjoy!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -13298,9 +12463,8 @@ You should fill the empty cells...</source>
 <context>
     <name>cc3DMouseManager</name>
     <message>
-        <location filename="../devices/3dConnexion/cc3DMouseManager.cpp" line="224"/>
         <source>Enable</source>
-        <translation>Включить</translation>
+        <translation type="vanished">Включить</translation>
     </message>
 </context>
 <context>
@@ -13324,12 +12488,12 @@ You should fill the empty cells...</source>
 <context>
     <name>ccComparisonDlg</name>
     <message>
-        <location filename="../ccComparisonDlg.cpp" line="527"/>
+        <location filename="../ccComparisonDlg.cpp" line="540"/>
         <source>Determining optimal octree level</source>
         <translation>Подбор оптимального уровня октодерева</translation>
     </message>
     <message>
-        <location filename="../ccComparisonDlg.cpp" line="528"/>
+        <location filename="../ccComparisonDlg.cpp" line="541"/>
         <source>Testing %1 levels...</source>
         <translation>Тест %1 уровней...</translation>
     </message>
@@ -13337,32 +12501,27 @@ You should fill the empty cells...</source>
 <context>
     <name>ccCompass</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ccCompass.cpp" line="3634"/>
         <source>SVG Output file</source>
-        <translation>Вых. файл SVG</translation>
+        <translation type="vanished">Вых. файл SVG</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ccCompass.cpp" line="3634"/>
         <source>SVG files (*.svg)</source>
-        <translation>файлы SVG (*.svg)</translation>
+        <translation type="vanished">файлы SVG (*.svg)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ccCompass.cpp" line="3783"/>
         <source>Output file</source>
-        <translation>Вывод в файл</translation>
+        <translation type="vanished">Вывод в файл</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ccCompass.cpp" line="3783"/>
         <source>CSV files (*.csv *.txt);;XML (*.xml)</source>
-        <translation>файлы CSV (*.csv *.txt);;XML (*.xml)</translation>
+        <translation type="vanished">файлы CSV (*.csv *.txt);;XML (*.xml)</translation>
     </message>
 </context>
 <context>
     <name>ccGamepadManager</name>
     <message>
-        <location filename="../devices/gamepad/ccGamepadManager.cpp" line="242"/>
         <source>Enable</source>
-        <translation>Включить</translation>
+        <translation type="vanished">Включить</translation>
     </message>
 </context>
 <context>
@@ -13393,19 +12552,16 @@ You should fill the empty cells...</source>
 <context>
     <name>ccMaterialDB</name>
     <message>
-        <location filename="../../libs/qCC_db/ccMaterial.cpp" line="57"/>
         <source>File &apos;%1&apos; has been updated</source>
-        <translation>Файл &apos;%1&apos; был обновлен</translation>
+        <translation type="vanished">Файл &apos;%1&apos; был обновлен</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMaterial.cpp" line="67"/>
         <source>Failed to load the new version of the file</source>
-        <translation>Не удалось загрузить новую версию файла</translation>
+        <translation type="vanished">Не удалось загрузить новую версию файла</translation>
     </message>
     <message>
-        <location filename="../../libs/qCC_db/ccMaterial.cpp" line="72"/>
         <source>File &apos;%1&apos; has been deleted or renamed</source>
-        <translation>Файл &apos;%1&apos; был удален или переименован</translation>
+        <translation type="vanished">Файл &apos;%1&apos; был удален или переименован</translation>
     </message>
 </context>
 <context>
@@ -13656,6 +12812,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="401"/>
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="807"/>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="974"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
@@ -14075,6 +13232,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="807"/>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="974"/>
         <source>undefined</source>
         <translation>не задано</translation>
     </message>
@@ -14225,6 +13383,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="959"/>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="971"/>
         <source>Array</source>
         <translation>Массив</translation>
     </message>
@@ -14242,6 +13401,21 @@ p, li { white-space: pre-wrap; }
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="963"/>
         <source>Yes (%1)</source>
         <translation>Да (%1)</translation>
+    </message>
+    <message>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="977"/>
+        <source>Elements</source>
+        <translation type="unfinished">Элементы</translation>
+    </message>
+    <message>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="980"/>
+        <source>Capacity</source>
+        <translation type="unfinished">Емкость</translation>
+    </message>
+    <message>
+        <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="983"/>
+        <source>Memory</source>
+        <translation type="unfinished">Память</translation>
     </message>
     <message>
         <location filename="../db_tree/ccPropertiesTreeDelegate.cpp" line="1130"/>
@@ -14358,157 +13532,127 @@ Number of points: %2</source>
 <context>
     <name>compassDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="20"/>
         <source>Compass</source>
-        <translation>Компас</translation>
+        <translation type="vanished">Компас</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="38"/>
         <source>Mode:</source>
-        <translation>Режим:</translation>
+        <translation type="vanished">Режим:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="45"/>
         <source>Activate compass mode to make structural measurements</source>
-        <translation>Активировать режим компаса для выполнения структурных измерений</translation>
+        <translation type="vanished">Активировать режим компаса для выполнения структурных измерений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="68"/>
         <source>Activate map mode to define geological features</source>
-        <translation>Активировать режим карты для определения геологических элементов</translation>
+        <translation type="vanished">Активировать режим карты для определения геологических элементов</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="92"/>
         <source>Tool:</source>
-        <translation>Метод:</translation>
+        <translation type="vanished">Метод:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="105"/>
         <source>Picking Tool. Use this to select GeoObjects or measurements.</source>
-        <translation>Инструмент отбора. Используйте для выбора ГеоОбъектов или измерений.</translation>
+        <translation type="vanished">Инструмент отбора. Используйте для выбора ГеоОбъектов или измерений.</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="122"/>
         <source>Plane Tool: Measure surface orientations</source>
-        <translation>Инструмент плоскости: Измеряет ориентации участков поверхности</translation>
+        <translation type="vanished">Инструмент плоскости: Измеряет ориентации участков поверхности</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="148"/>
         <source>Trace Tool: Measure orientation from structure trace</source>
-        <translation>Инструмент трассировки: Определяет ориентацию структурной линии</translation>
+        <translation type="vanished">Инструмент трассировки: Определяет ориентацию структурной линии</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="168"/>
         <source>Lineation Tool: Measure distances and directions</source>
-        <translation>инструмент линейности: Измеряет расстояния и направления</translation>
+        <translation type="vanished">инструмент линейности: Измеряет расстояния и направления</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="185"/>
         <source>Other Tools</source>
-        <translation>Прочие инструменты</translation>
+        <translation type="vanished">Прочие инструменты</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="212"/>
         <source>Change tool and visibility settings</source>
-        <translation>Изменить инструмент и настройки видимости</translation>
+        <translation type="vanished">Изменить инструмент и настройки видимости</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="235"/>
         <source>Undo last action</source>
-        <translation>Отменить последнее действие</translation>
+        <translation type="vanished">Отменить последнее действие</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="242"/>
         <source>Ctrl+Z</source>
-        <translation>Ctrl+Z</translation>
+        <translation type="vanished">Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="249"/>
         <source>Export interpretation and measurements</source>
-        <translation>Экспорт результатов дешифровки и измерений</translation>
+        <translation type="vanished">Экспорт результатов дешифровки и измерений</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="252"/>
         <source>Save current label (added to cloud children)</source>
-        <translation>Сохранить текущую надпись (добавляется в подраздел облака)</translation>
+        <translation type="vanished">Сохранить текущую надпись (добавляется в подраздел облака)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="263"/>
         <source>Show readme and help information</source>
-        <translation>Показать справку</translation>
+        <translation type="vanished">Показать справку</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="274"/>
         <source>Accept latest changes</source>
-        <translation>Применить последние изменения</translation>
+        <translation type="vanished">Применить последние изменения</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="281"/>
         <source>Return</source>
-        <translation>Вернуться</translation>
+        <translation type="vanished">Вернуться</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="288"/>
         <source>Exit ccCompass plugin. Thanks for visiting :)</source>
-        <translation>Покинуть плагин ccCompass. Благодарим за визит :)</translation>
+        <translation type="vanished">Покинуть плагин ccCompass. Благодарим за визит :)</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/compassDlg.ui" line="295"/>
         <source>Esc</source>
-        <translation>Esc</translation>
+        <translation type="vanished">Esc</translation>
     </message>
 </context>
 <context>
     <name>mapDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="20"/>
         <source>Map</source>
-        <translation>Карта</translation>
+        <translation type="vanished">Карта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="38"/>
         <source>GeoObjects:</source>
-        <translation>ГеоОбъекты:</translation>
+        <translation type="vanished">ГеоОбъекты:</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="48"/>
         <source>Create new GeoObject</source>
-        <translation>Создать новый ГеоОбъект</translation>
+        <translation type="vanished">Создать новый ГеоОбъект</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="86"/>
         <source>No Selection</source>
-        <translation>Нет выборки</translation>
+        <translation type="vanished">Нет выборки</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="176"/>
         <source>Digitise to lower-contact of GeoObject</source>
-        <translation>Оцифровка нижнего края ГеоОбъекта</translation>
+        <translation type="vanished">Оцифровка нижнего края ГеоОбъекта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="179"/>
         <source>Lower</source>
-        <translation>Нижний</translation>
+        <translation type="vanished">Нижний</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="259"/>
         <source>Digitise to upper-contact of GeoObject</source>
-        <translation>Оцифровка верхнего края ГеоОбъекта</translation>
+        <translation type="vanished">Оцифровка верхнего края ГеоОбъекта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="262"/>
         <source>Upper</source>
-        <translation>Верхний</translation>
+        <translation type="vanished">Верхний</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="284"/>
         <source>Digitise to interior of geo-object</source>
-        <translation>Оцифровка внутренней части ГеоОбъекта</translation>
+        <translation type="vanished">Оцифровка внутренней части ГеоОбъекта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qCompass/ui/mapDlg.ui" line="287"/>
         <source>Interior</source>
-        <translation>Внутренний</translation>
+        <translation type="vanished">Внутренний</translation>
     </message>
 </context>
 <context>
@@ -14612,73 +13756,59 @@ Number of points: %2</source>
 <context>
     <name>qAnimation</name>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/qAnimation.cpp" line="71"/>
         <source>%1
 At least 2 viewports must be selected.</source>
-        <translation>%1
+        <translation type="vanished">%1
 Должны быть выбраны минимум 2 точки обзора.</translation>
     </message>
 </context>
 <context>
     <name>qAnimationDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/src/qAnimationDlg.cpp" line="280"/>
         <source>Output animation file</source>
-        <translation>Выходной файл анимации</translation>
+        <translation type="vanished">Выходной файл анимации</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qAnimation/src/qAnimationDlg.cpp" line="284"/>
         <source>Open Directory</source>
-        <translation>Открыть Директорий</translation>
+        <translation type="vanished">Открыть Директорий</translation>
     </message>
 </context>
 <context>
     <name>qBroomDlg</name>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="1907"/>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="1947"/>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="1966"/>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="1995"/>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="2066"/>
         <source>Not enough memory</source>
-        <translation>Недостаточно памяти</translation>
+        <translation type="vanished">Недостаточно памяти</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qBroom/src/qBroomDlg.cpp" line="2060"/>
         <source>Not enough memory to apply the last segmentation</source>
-        <translation>Недостаточно памяти для учета последней сегментации</translation>
+        <translation type="vanished">Недостаточно памяти для учета последней сегментации</translation>
     </message>
 </context>
 <context>
     <name>qPCV</name>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/qPCV.cpp" line="251"/>
         <source>Invalid object type</source>
-        <translation>Неверный тип объекта</translation>
+        <translation type="vanished">Неверный тип объекта</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/qPCV.cpp" line="288"/>
         <source>An error occurred during entity &apos;%1&apos; illumination!</source>
-        <translation>Произошла ошибка во время освещения объекта &quot;%1&quot;!</translation>
+        <translation type="vanished">Произошла ошибка во время освещения объекта &quot;%1&quot;!</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/qPCV.cpp" line="300"/>
         <source>Entity &apos;%1&apos; normals have been automatically disabled</source>
-        <translation>Нормали объекта &apos;%1&apos; были автоматически выключены</translation>
+        <translation type="vanished">Нормали объекта &apos;%1&apos; были автоматически выключены</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/qPCV.cpp" line="318"/>
         <source>Process has been cancelled by the user</source>
-        <translation>Процесс был прерван пользователем</translation>
+        <translation type="vanished">Процесс был прерван пользователем</translation>
     </message>
     <message>
-        <location filename="../../plugins/core/Standard/qPCV/PCVCommand.cpp" line="77"/>
         <source>No mesh is available. The CLI PCV implementation currently only supports a single mesh.</source>
-        <translation>Нет доступной модели. Метод CLI PCV сейчас поддерживает только одну модель.</translation>
+        <translation type="vanished">Нет доступной модели. Метод CLI PCV сейчас поддерживает только одну модель.</translation>
     </message>
 </context>
 <context>
